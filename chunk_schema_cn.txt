@@ -1,0 +1,15 @@
+      
+start_pat	NN
+start_pat	NR
+start_pat	JJ
+start_pat	CD
+        
+
+cont_pat	NN
+cont_pat	NR
+cont_pat	JJ - 现行 现有 普遍 通用
+cont_pat	DEG
+cont_pat	DEC
+cont_pat	CD
+        
+end_pat	NN - 领域 发明 问题 目的 缺点 优点 
