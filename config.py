@@ -95,26 +95,6 @@ PROCESSING_AREAS = \
                   'o1_index', 'o2_matcher', 'o3_selector', 'workspace' ]
 
 
-### MALLET settings
-### -----------------------------------------------------------------------
-
-# NOTE: this is left in because experiments.py uses it, but it should only be
-# used in ../classification
-
-MALLET_RELEASE = '2.0.7'
-
-# mallet directory, note that there should be no trailing slash in the directory name
-if location == 'FUSENET':
-    # location on the fuse VM
-    MALLET_DIR = "/home/fuse/tools/mallet/mallet-2.0.7/bin"
-elif location == 'MAC':
-    # assumed location on any Mac
-    MALLET_DIR = '/Applications/ADDED/nlp/mallet/mallet-2.0.7/bin'
-else:
-    # location on the department machines
-    MALLET_DIR = "/home/j/corpuswork/fuse/code/patent-classifier/tools/mallet/mallet-2.0.7/bin"
-
-
 ### Stanford parser/segmenter settings
 ### -----------------------------------------------------------------------
 
@@ -163,31 +143,3 @@ STANFORD_OUTPUT_FORMAT = "wordsAndTags"
 # output_format = "penn,typedDependenciesCollapsed"
 
 # See discarded/sdp_config for Some older settings that are not used anymore
-
-
-
-### configuration for data used by patent_analysis.py and pipeline.py
-### -----------------------------------------------------------------------
-
-DATA_ROOT = "data"
-
-# for patent_analysis.py
-
-# directory of patent xml files arranged into yearly subdirectories
-EXTERNAL_PATENT_PATH = "/home/j/clp/chinese/corpora/fuse-patents/500-patents/DATA/Lexis-Nexis/US/Xml"
-
-# location where patents are copied to local directory for processing steps.  The directory structure 
-# arranges files by language/step/year
-# The .xml qualifier is expected on file names in all subdirectories, so that the file
-# names within the step subdirectories are identical.
-WORKING_PATENT_PATH = os.path.join(DATA_ROOT, "patents")
-
-# for pipeline.py
-
-# For each RDG (related document group), there must be a filelist containing
-# doc_id year external_file_path
-EXTERNAL_RDG_FILELIST = os.path.join(DATA_ROOT, "external/en1.txt")
-
-# For each RDG, create a local working directory
-WORKING_RDG_PATH = os.path.join(DATA_ROOT, "working/rdg/en1")
-
