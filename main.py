@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
     options = ['language=', 'corpus=', 'filelist=', 'verbose',
                'stanford-segmenter-dir=', 'stanford-tagger-dir=']
-    (opts, args) = getopt.getopt(sys.argv[1:], 'n:', options)
+    (opts, args) = getopt.getopt(sys.argv[1:], 'l:f:c:n:v', options)
 
     source_file = None
     corpus_path = None
@@ -133,24 +133,21 @@ if __name__ == '__main__':
     limit = None
 
     for opt, val in opts:
-        print opt, val
-        if opt == '--language': language = val
-        if opt == '--filelist': source_file = val
-        if opt == '--corpus': corpus_path = val
-        if opt == '--verbose': verbose = True
+        if opt in ('-l', '--language'): language = val
+        if opt in ('-f', '--filelist'): source_file = val
+        if opt in ('-c', '--corpus'): corpus_path = val
+        if opt in ('-v', '--verbose'): verbose = True
         if opt == '-n': limit = int(val)
         if opt == '--stanford-segmenter-dir': update_stanford_segmenter(val)
         if opt == '--stanford-tagger-dir': update_stanford_tagger(val)
 
-    print config.STANFORD_TAGGER_DIR
-    print config.STANFORD_SEGMENTER_DIR
     pipeline = config.DEFAULT_PIPELINE
     pipeline_file = 'pipeline-default.txt'
     if language == 'cn':
         pipeline = config.DEFAULT_PIPELINE_CN
 
-    if source_file is None: exit("ERROR: missing --filelist option")
-    if corpus_path is None: exit("ERROR: missing --corpus option")
+    if source_file is None: exit("ERROR: missing -f or --filelist option")
+    if corpus_path is None: exit("ERROR: missing -c or --corpus option")
 
     c = Corpus(language, source_file, None, corpus_path, pipeline, None)
     rconfig = RuntimeConfig(corpus_path, None, None, language, pipeline_file)

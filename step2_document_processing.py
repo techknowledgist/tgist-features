@@ -70,7 +70,7 @@ def read_opts():
                'verbose', 'pipeline=', 'show-data', 'show-pipelines',
                'show-processing-time']
     try:
-        return getopt.getopt(sys.argv[1:], 'l:n:', options)
+        return getopt.getopt(sys.argv[1:], 'l:n:c:v', options)
     except getopt.GetoptError as e:
         sys.exit("ERROR: " + str(e))
 
@@ -78,7 +78,7 @@ def read_opts():
 if __name__ == '__main__':
 
     # default values of options
-    corpus_path = config.WORKING_PATENT_PATH
+    corpus_path = None
     source = 'LEXISNEXIS'
     language = config.LANGUAGE
     stage = None
@@ -89,11 +89,11 @@ if __name__ == '__main__':
     
     (opts, args) = read_opts()
     for opt, val in opts:
-        if opt == '--corpus': corpus_path = val
+        if opt in ('-c', '--corpus'): corpus_path = val
         if opt == '--source': source = val
         if opt == '-l': language = val
         if opt == '-n': limit = int(val)
-        if opt == '--verbose': verbose = True
+        if opt in ('-v', '--verbose'): verbose = True
         if opt == '--pipeline': pipeline_config = val
         if opt == '--show-data': show_data_p = True
         if opt == '--show-pipelines': show_pipelines_p = True

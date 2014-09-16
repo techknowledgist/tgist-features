@@ -400,11 +400,11 @@ class Corpus(object):
         self.conf_path = os.path.join(self.target_path, 'config')
         if self.source_file is not None or self.source_path is not None:
             self._initialize_directory()
-            
+
     def _initialize_directory(self):
         self._generate_settings()
         if os.path.exists(self.target_path):
-            sys.exit("[--init] ERROR: %s already exists" % self.target_path)
+            sys.exit("WARNING: %s already exists, exiting" % self.target_path)
         self._print_initialize_message()
         self._create_directories()
         self._create_general_config_file()

@@ -115,24 +115,24 @@ import config, corpus
 if __name__ == '__main__':
 
     options = ['language=', 'corpus=', 'filelist=', 'source=', 'shuffle']
-    (opts, args) = getopt.getopt(sys.argv[1:], '', options)
+    (opts, args) = getopt.getopt(sys.argv[1:], 'f:c:l:s:', options)
 
     source_file = None
     source_path = None
-    target_path = config.WORKING_PATENT_PATH
+    target_path = None
+    shuffle = False
     language = config.LANGUAGE
-    shuffle_file = False
     pipeline_config = config.DEFAULT_PIPELINE
     
     for opt, val in opts:
-        if opt == '--language': language = val
-        if opt == '--filelist': source_file = val
-        if opt == '--source': source_path = val
-        if opt == '--corpus': target_path = val
-        if opt == '--shuffle': shuffle_file = True
+        if opt in ('-l', '--language'): language = val
+        if opt in ('-f', '--filelist'): source_file = val
+        if opt in ('-s', '--source'): source_path = val
+        if opt in ('-c', '--corpus'): target_path = val
+        if opt == '--shuffle': shuffle = True
 
     if language == 'cn':
             pipeline_config = config.DEFAULT_PIPELINE_CN
 
-    corpus.Corpus(language, source_file, source_path,
-                  target_path, pipeline_config, shuffle_file)
+    corpus.Corpus(language, source_file, source_path, target_path,
+                  pipeline_config, shuffle)
