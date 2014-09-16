@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111027" file="CN87102734A.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20091229" time-changed="120748">
+  <bibliographic-data lang="chi">
+    <publication-reference publ-type="Application" publ-desc="Unexamined application for a patent for invention">
+      <document-id>
+        <country>CN</country>
+        <doc-number>87102734</doc-number>
+        <kind>A</kind>
+        <date>19881207</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>87102734</doc-number>
+        <date>19870415</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>chi</language-of-publication>
+    <priority-claims date-changed="20070810">
+      <priority-claim sequence="1" kind="national">
+        <country>CN</country>
+        <doc-number>87102734</doc-number>
+        <date>19870415</date>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20091223">
+      <gazette-reference>
+        <date>19881207</date>
+      </gazette-reference>
+      <unexamined-printed-without-grant>
+        <date>19881207</date>
+      </unexamined-printed-without-grant>
+    </dates-of-public-availability>
+    <classification-ipc date-changed="20091227">
+      <main-classification>
+        <text>  F 16H   1/00   A</text>
+        <section>F</section>
+        <class>16</class>
+        <subclass>H</subclass>
+        <main-group>1</main-group>
+        <subgroup>00</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20091227">
+      <classification-ipcr sequence="1">
+        <text>F16H   1/00        20060101C I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>F</section>
+        <class>16</class>
+        <subclass>H</subclass>
+        <main-group>1</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>F16H   1/00        20060101A I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>F</section>
+        <class>16</class>
+        <subclass>H</subclass>
+        <main-group>1</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <number-of-claims calculated="yes">7</number-of-claims>
+    <invention-title id="title_chi" date-changed="20091229" lang="chi" format="original">蜗杆滚珠传动装置</invention-title>
+    <invention-title id="title_eng" date-changed="20091229" lang="eng" format="original">Ball-worm transmission</invention-title>
+    <parties date-changed="20091223">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>欧子文</orgname>
+            <address>
+              <address-1>贵州省贵阳市四方河安装公司</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>OU ZIWEN</orgname>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="original">
+          <addressbook lang="chi">
+            <orgname>欧子文</orgname>
+            <address>
+              <address-1>贵州省贵阳市四方河安装公司</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>OU ZIWEN</orgname>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>欧子文</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>OU ZIWEN</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="original">
+          <addressbook lang="chi">
+            <name>欧子文</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>OU ZIWEN</name>
+          </addressbook>
+        </inventor>
+      </inventors>
+    </parties>
+    <patent-family date-changed="20070826">
+      <main-family family-id="71833657">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>87102734</doc-number>
+            <kind>A</kind>
+            <date>19881207</date>
+          </document-id>
+          <application-date>
+            <date>19870415</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="71764870">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>87102734</doc-number>
+            <kind>A</kind>
+            <date>19881207</date>
+          </document-id>
+          <application-date>
+            <date>19870415</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20091227" lang="chi" format="original">
+    <p num="1">蜗杆滚珠传动装置，本发明是属机械工程，本发明是提高蜗杆传动装置的效率和扩大蜗杆传动装置的使用领域，蜗杆滚珠传动装置的特征是由蜗杆、滚珠、滚珠导轨和滚珠回路所组成。蜗杆滚珠传动装置体积小，结构紧凑，传动效率高，角速比大，运输平稳，无噪声，适用于机械设备的增速和减速传动，定级和变级传动以及高速传动。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20091227" lang="eng" format="original">
+    <p>The patent refers to the field of 'gearing'.It is characterized by that it is made up of the worm, the balls, the guide rack and the return passage for the balls. It offers the merits of small volume, compact structure, high transmission efficiency, high angular velocity ratio, steady running, no noise. It is suitable to be used in acceleration and deceleration transmission, fixed stage and variable stage transmission as well as high speed transmission for the machinery equipment.</p>
+  </abstract>
+  <legal-data date-changed="20090828">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>19871216</date>
+      </publication-date>
+      <event-code-1>C10</event-code-1>
+      <legal-description>REQUEST OF EXAMINATION AS TO SUBSTANCE</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    87102734A</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="2">
+      <publication-date>
+        <date>19881207</date>
+      </publication-date>
+      <event-code-1>C06</event-code-1>
+      <effect>+</effect>
+      <legal-description>PUBLICATION</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    87102734A</docdb-publication-number>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20091223">
+    <p id="p-d0-zh" num="001">本发明是属机械工程            <br /></p>
+    <p id="p-d1-zh" num="002">根据清华大学机械设计教研组和中央广播电视大学合编的《机械原理》中所述，现有技术中，蜗杆是与蜗轮直接啮合完成机械传动的，在蜗杆蜗轮传动装置中，蜗杆是直径小，轴向长，齿数少，螺旋升角小的螺旋齿轮。蜗轮是直径大，轴向短，齿数多，螺旋升角大的螺旋齿轮。在现有技术中，蜗杆是用钢材制成，蜗轮是用青铜制成。            <br /></p>
+    <p id="p-d2-zh" num="003">蜗杆蜗轮装置的缺点是传动效率低，不能用于大功率，增速和高速的传动领域中，改变角速比时必须同时更换蜗杆和蜗轮，制造成本高，体积尙嫌大。            <br /></p>
+    <p id="p-d3-zh" num="004">本发明的目的是提高蜗杆传动装置的效率，扩大使用领域，缩小体积，降低制造成本。            <br /></p>
+    <p id="p-d4-zh" num="005">蜗杆滚珠传动装置是由蜗杆、滚珠、滚珠导轨和滚珠回路所组成。            <br /></p>
+    <p id="p-d5-zh" num="006">在蜗杆滚珠传动装置中，主动蜗杆和从动蜗杆的轴心线相平行，两蜗杆地最小轴心距是蜗杆齿顶园半径之和。显而易见，两蜗杆不直接啮合，它们是通过与滚珠的啮合实现机械传动的。机械力的传递过程是：主动蜗杆-滚珠-从动蜗杆。            <br /></p>
+    <p id="p-d6-zh" num="007">在蜗杆滚珠传动装置中，蜗杆的螺旋齿槽是与滚珠相啮合的园弧形。            <br /></p>
+    <p id="p-d7-zh" num="008">蜗杆滚珠传动装置中的蜗杆根据需要可制成左旋或是右旋，单头或是多头，小螺旋升角或是大螺旋升角，单段或是多段，不同升角及旋向的蜗杆。一般情况下蜗杆是用园钢在斜压机或车床            <br />中加工成。特殊用途的蜗杆可用减摩擦材料或特需的材料制成。            <br /></p>
+    <p id="p-d8-zh" num="009">蜗杆滚珠传动装置中的滚珠是园形的钢性球体。抛光的钢球特别适用于蜗杆滚珠传动装置。滚珠在蜗杆滚珠传动装置中，直接与主动蜗杆和从动蜗杆啮合，滚珠既是两蜗杆机械力传递的桥梁，又是装置赖以运转的枢纽。            <br /></p>
+    <p id="p-d9-zh" num="010">蜗杆滚珠传动装置中的滚珠导轨是由刚性的轨道所组成。所述导轨的刚性轨道的轨面是与滚珠相啮合的园弧形。滚珠导轨是和壳体一起铸造加工而成，可在轨面上镀上减摩擦耐磨材料，或是用减摩擦耐磨材料制成的导轨固定在壳体或专用的支架上。滚珠导轨在传动装置中的作用是保持滚珠与蜗杆的正常啮合和引导滚珠的正常运行。            <br /></p>
+    <p id="p-d10-zh" num="011">蜗杆滚珠传动装置中的滚珠回路是与导轨两端相含接的供滚珠循环运动的孔道所组成。滚珠回路是与壳体一起铸造加工而成，或是用管道制成的滚珠回路固定在壳体上。滚珠回路中必须光滑，使滚珠能在其中顺利地循环运动。            <br /></p>
+    <p id="p-d11-zh" num="012">在图1中，主动蜗杆1旋转运动时，蜗杆螺旋齿产生的轴向力推动与之啮合的滚珠3沿着导轨4作直线运动，滚珠3的直线运动作用于与之啮合的从动蜗杆2的螺旋齿上，螺旋齿产生的径向力推动从动蜗杆2旋转，从而完成机械传动的全过程。            <br /></p>
+    <p id="p-d12-zh" num="013">主动蜗杆1的不断旋转运动，使滚珠3沿着导轨4往前运动，当滚珠3运动到导轨的终端时，被导轨的弧线轨道推出啮合中心线，与两蜗杆脱离啮合，接着被旋转的蜗杆推进滚珠回路5，此时滚珠回路中已储满了滚珠，进入滚珠回路中的滚珠3就将另一端的一颗滚珠推进导轨，与两蜗进行啮合。这是蜗杆滚珠传动装置的同时換珠过程。蜗杆滚珠传动装置的另一种換珠过程是延时            <br />換珠过程，延时換珠过程中进入滚珠回路中的滚珠和回路中另一端的滚珠进入导轨的时间不是同时进行的。在換珠过程中，最少要有一颗滚珠与两蜗杆保持正常的啮合，以保持蜗杆滚珠传动装置的正常运转。            <br /></p>
+    <p id="p-d13-zh" num="014">在只需作有限往复旋转的蜗杆滚珠传动装置中，不需要滚珠回路。            <br /></p>
+    <p id="p-d14-zh" num="015">在蜗杆滚珠传动装置中，蜗杆的旋转方向是由主动蜗杆与从动蜗杆的螺旋线方向所决定的，两蜗杆的螺旋线方向相同则旋转方向也相同，两蜗杆的螺旋线方向相反则旋转方向也相反。其原理如图2。            <br /></p>
+    <p id="p-d15-zh" num="016">在图2&lt;1&gt;中，主动蜗杆1是右螺旋线的蜗杆，从动蜗杆2也是右螺旋线的蜗杆。当蜗杆1往箭头方向顺时针旋转时，推动滚珠3沿着导轨4往箭头方向作直线运动，蜗杆2在滚珠3的作用下往箭头方向作顺时针旋转。            <br /></p>
+    <p id="p-d16-zh" num="017">在图2&lt;2&gt;中，主动蜗杆1是右螺旋线的蜗杆，从动蜗杆2是左螺旋线的蜗杆。当蜗杆1往箭头方向顺时针旋转时，推动滚珠3沿着导轨4往箭头方向作直线运动，右螺旋线蜗杆2在滚珠3的作用下，往箭头方向作反时针运转。            <br /></p>
+    <p id="p-d17-zh" num="018">在蜗杆滚珠传动装置中，两蜗杆的角速比是与蜗杆的直径和蜗杆螺旋升角正切值的乘积成反比，            <br /></p>
+    <p id="p-d18-zh" num="019">公式是：i<sub>12</sub>＝d<sub>1</sub>tgλ<sub>1</sub>/d<sub>2</sub>tgλ<sub>2</sub><br /></p>
+    <p id="p-d19-zh" num="020">式中i<sub>12</sub>是两蜗杆的角速比;d<sub>1</sub>是蜗杆1的直径;λ<sub>1</sub>是蜗杆1的螺旋升角;d<sub>2</sub>是蜗杆2的直径;λ<sub>2</sub>是蜗杆2的螺旋升角。            <br /></p>
+    <p id="p-d20-zh" num="021">实际应用中，蜗杆1常与蜗杆2的直径相等，这样的蜗杆滚珠传动装置的角速比就由两蜗杆的螺旋升角决定。            <br /></p>
+    <p id="p-d21-zh" num="022">蜗杆滚珠传动装置的角速比大，一般工作在100以下，高的可达500，二级变速可达10000以上。            <br /></p>
+    <p id="p-d22-zh" num="023">图3是二级蜗杆滚珠传动装置。第一级的主动蜗杆1旋转时，推动与之啮合的滚珠3沿着第一级的导轨4作直线运动，滚珠3的运动推动与之啮合的蜗杆2旋转。蜗杆2分两段，第一段是第一级的从动蜗杆，第二段是第二级的主动蜗杆。蜗杆2的旋转，推动第二段蜗杆相啮合的滚珠23沿着导轨24作直线运动，滚珠23的直线运动推动第二级从动蜗杆22旋转，从而实现二级传动。在二级蜗杆滚珠传动装置中，各级的滚珠、滚珠导轨，滚珠回路是自成系统的。            <br /></p>
+    <p id="p-d23-zh" num="024">在蜗杆滚珠传动装置中，蜗杆的螺旋升角小时，蜗杆产生的轴向推力大，为了克服轴向推力，可采用两段螺旋齿的蜗杆，这两段螺旋齿螺旋升角相等，螺旋方向相反。在无轴向力蜗杆滚珠传动装置中，各段的滚珠、滚珠导轨、滚珠回路是自成系统的。            <br /></p>
+    <p id="p-d24-zh" num="025">蜗杆滚珠传动装置的积极效果是传动效率高、角速比大、结构紧奏，改变转速和转向只需更换一根蜗杆，运转平稳无噪声，体积小，重量轻，制造成本低。蜗杆滚珠传动装置适用于机械设备的定级传动、变级传动、增速传动、减速传动和高速传动。            <br /></p>
+    <p id="p-d25-zh" num="026">实施例：车床蜗杆滚珠变速箱            <br /></p>
+    <p id="p-d26-zh" num="027">车床蜗杆滚珠变速箱是由四根蜗杆和三套滚珠系统所组成。如图4所示。            <br /></p>
+    <p id="p-d27-zh" num="028">变速箱中的四根蜗杆，每一根上都有三段不同螺旋升角的螺旋齿。滚珠系统中的滚珠导轨和滚珠回路是与蜗杆滚珠传动装置的壳体一起加工成后，再固定在箱体中。变速箱的变速是由三挡手动齿轮条机构变换不同升角的螺旋齿段实现的。四杆三段的蜗            <br />杆滚珠变速箱可输出81挡转速。            <br /></p>
+    <p id="p-d28-zh" num="029">变速箱在換挡时，拉出手轮，手轮上的定位销退出定位孔，齿轮也与锁紧齿条脱离啮合。旋转手轮时，与手轮联成一体的齿轮就传动始终与之啮合的拨叉齿条沿轴向运动，齿条上拨叉推动蜗杆完成变换螺齿段的动作。此时松开手轮，在压力弹簧的作用下，定位销进入定位孔，齿轮同时与锁紧齿条啮合，实行自锁，并承受蜗杆上的轴向推力。            <br /></p>
+    <p id="p-d29-zh" num="030">变速箱中的蜗杆采用分段加工，然后用键销将它们组合成蜗杆，这种方法加工容易，适合大规模的生产。其余可采用现有技术加工。            <br /></p>
+    <p id="p-d30-zh" num="031">图4标记的说明：1、2蜗杆，3、滚珠，4、导轨，5、滚珠回路，6、壳体，7、花键轴，8、光杆轴，9、齿轮，10、手轮轴，11、拨叉齿条，12、锁紧齿条，13、齿条导轨，14、轴向推力球轴承，15、压力弹簧，16、定位销，17、手轮，18、19箱体，20、螺栓孔。            <br /></p>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20091223">
+    <claim num="1">
+      <claim-text>
+        <claim-text>1、一种蜗杆传动装置，其特征是由蜗杆，滚珠、滚珠导轨和滚珠回路所组成。                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>
+        <claim-text>2、根据权利要求1所述的装置，其特征在于所述的蜗杆的螺旋齿槽是与滚珠相啮合的园弧形。                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>
+        <claim-text>3、根据权利要求1所述的装置，其特征在于所述的蜗杆轴心线相平行，最小轴心距是两蜗杆半径之和。                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>
+        <claim-text>4、根据权利要求1所述的装置，其特征在于所述的滚珠是园形的刚性球体。                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>
+        <claim-text>5、根据权利要求1所述的装置，其特征在于所述的滚珠导轨是由刚性轨道所组成。                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>
+        <claim-text>6、根据权利要求5所述的导轨，其特征在于所述的刚性轨道的轨面是与滚珠相啮合的园弧形。                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>
+        <claim-text>7、根据权利要求1所述的装置，其特征在于所述的滚珠回路是由与滚珠导轨两端相含接的供滚珠循环运动的孔道所组成。                <br /></claim-text>
+      </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

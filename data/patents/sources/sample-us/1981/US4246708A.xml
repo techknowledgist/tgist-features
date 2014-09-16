@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20110927" file="US4246708A.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20090728" time-changed="050138">
+  <bibliographic-data lang="eng">
+    <publication-reference publ-type="Grant" publ-desc="Patent">
+      <document-id>
+        <country>US</country>
+        <doc-number>4246708</doc-number>
+        <kind>A</kind>
+        <date>19810127</date>
+      </document-id>
+    </publication-reference>
+    <application-reference appl-type="utility">
+      <document-id>
+        <country>US</country>
+        <doc-number>06078065</doc-number>
+        <date>19790924</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>eng</language-of-publication>
+    <priority-claims date-changed="20090314">
+      <priority-claim sequence="1" kind="national">
+        <country>CH</country>
+        <doc-number>01270578</doc-number>
+        <kind>A</kind>
+        <date>19781214</date>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="original">
+        <doc-number>12705/78</doc-number>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="epodoc">
+        <doc-number>CH19780012705</doc-number>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20090314">
+      <unexamined-printed-without-grant>
+        <date>19810127</date>
+      </unexamined-printed-without-grant>
+      <printed-with-grant>
+        <date>19810127</date>
+      </printed-with-grant>
+    </dates-of-public-availability>
+    <classification-ipc date-changed="20090728">
+      <main-classification>
+        <text>  A 43B  23/00   A</text>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>23</main-group>
+        <subgroup>00</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+      <further-classification sequence="1">
+        <text>  A 43B   5/04   B</text>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>5</main-group>
+        <subgroup>04</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+      <further-classification sequence="2">
+        <text>  A 43B  13/12   B</text>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>13</main-group>
+        <subgroup>12</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20090728">
+      <classification-ipcr sequence="1">
+        <text>A43B   5/00        20060101C I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>5</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>A43B   5/04        20060101C I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>5</main-group>
+        <subgroup>04</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="3">
+        <text>A43B   5/04        20060101A I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>5</main-group>
+        <subgroup>04</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="4">
+        <text>A43B   5/10        20060101A I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>5</main-group>
+        <subgroup>10</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <classification-national date-changed="20090728">
+      <country>US</country>
+      <main-classification>
+        <text>36/107</text>
+        <class>36</class>
+        <subclass>107</subclass>
+      </main-classification>
+      <further-classification sequence="1">
+        <text>36/30.R</text>
+        <class>36</class>
+        <subclass>30.R</subclass>
+      </further-classification>
+      <further-classification sequence="2">
+        <text>36/117.2</text>
+        <class>36</class>
+        <subclass>117.2</subclass>
+      </further-classification>
+    </classification-national>
+    <classifications-ecla date-changed="20090728">
+      <classification-ecla sequence="1" classification-scheme="EC" country="EP">
+        <text>A43B  5/04C</text>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>5</main-group>
+        <subgroup>04</subgroup>
+        <additional-subgroups>
+          <additional-subgroup sequence="1">C  </additional-subgroup>
+        </additional-subgroups>
+      </classification-ecla>
+      <classification-ecla sequence="2" classification-scheme="EC" country="EP">
+        <text>A43B  5/10</text>
+        <section>A</section>
+        <class>43</class>
+        <subclass>B</subclass>
+        <main-group>5</main-group>
+        <subgroup>10</subgroup>
+      </classification-ecla>
+    </classifications-ecla>
+    <field-of-search date-changed="20070524">
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/30R</text>
+          <class>36</class>
+          <subclass>30R</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/31</text>
+          <class>36</class>
+          <subclass>31</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/32R</text>
+          <class>36</class>
+          <subclass>32R</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/117</text>
+          <class>36</class>
+          <subclass>117</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/118</text>
+          <class>36</class>
+          <subclass>118</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/119</text>
+          <class>36</class>
+          <subclass>119</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/120</text>
+          <class>36</class>
+          <subclass>120</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/121</text>
+          <class>36</class>
+          <subclass>121</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>36/107</text>
+          <class>36</class>
+          <subclass>107</subclass>
+        </main-classification>
+      </classification-national>
+    </field-of-search>
+    <number-of-claims calculated="yes">11</number-of-claims>
+    <invention-title id="title_eng" date-changed="20070524" lang="eng" format="original">Sport shoe, especially for cross-country skiing and tennis</invention-title>
+    <references-cited date-changed="20110208">
+      <patent-citations name="patcit" date-changed="20070709" />
+      <forward-citations name="fwdcit" date-changed="20110208" />
+      <citation srep-phase="e">
+        <patcit num="1">
+          <document-id>
+            <country>US</country>
+            <doc-number>3613270</doc-number>
+            <kind>A</kind>
+            <name>Eie</name>
+            <date>19711019</date>
+          </document-id>
+          <application-date>
+            <date>19700528</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>36/30R</text>
+            <class>36</class>
+            <subclass>30R</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation srep-phase="e">
+        <patcit num="2">
+          <document-id>
+            <country>US</country>
+            <doc-number>4102063</doc-number>
+            <kind>A</kind>
+            <name>Ihlen</name>
+            <date>19780725</date>
+          </document-id>
+          <application-date>
+            <date>19770207</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>36/117</text>
+            <class>36</class>
+            <subclass>117</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation srep-phase="e">
+        <patcit num="3">
+          <document-id>
+            <country>US</country>
+            <doc-number>4106223</doc-number>
+            <kind>A</kind>
+            <name>Benseler</name>
+            <date>19780815</date>
+          </document-id>
+          <application-date>
+            <date>19770322</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>36/117</text>
+            <class>36</class>
+            <subclass>117</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation srep-phase="e">
+        <patcit num="4">
+          <document-id>
+            <country>US</country>
+            <doc-number>4108467</doc-number>
+            <kind>A</kind>
+            <name>Kreyenbuhl</name>
+            <date>19780822</date>
+          </document-id>
+          <application-date>
+            <date>19760315</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>36/117</text>
+            <class>36</class>
+            <subclass>117</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation srep-phase="e">
+        <patcit num="5">
+          <document-id>
+            <country>US</country>
+            <doc-number>4174121</doc-number>
+            <kind>A</kind>
+            <name>Benseler</name>
+            <date>19791113</date>
+          </document-id>
+          <application-date>
+            <date>19780224</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>36/117</text>
+            <class>36</class>
+            <subclass>117</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation>
+        <fwdcit num="1">
+          <document-id>
+            <country>US</country>
+            <doc-number>5452526</doc-number>
+            <kind>A</kind>
+            <date>19950926</date>
+          </document-id>
+          <application-date>
+            <date>19931222</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="2">
+          <document-id>
+            <country>US</country>
+            <doc-number>5189815</doc-number>
+            <kind>A</kind>
+            <date>19930302</date>
+          </document-id>
+          <application-date>
+            <date>19911028</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="3">
+          <document-id>
+            <country>US</country>
+            <doc-number>4494322</doc-number>
+            <kind>A</kind>
+            <date>19850122</date>
+          </document-id>
+          <application-date>
+            <date>19820903</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="4">
+          <document-id>
+            <country>US</country>
+            <doc-number>4439937</doc-number>
+            <kind>A</kind>
+            <date>19840403</date>
+          </document-id>
+          <application-date>
+            <date>19820726</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="5">
+          <document-id>
+            <country>US</country>
+            <doc-number>4334367</doc-number>
+            <kind>A</kind>
+            <date>19820615</date>
+          </document-id>
+          <application-date>
+            <date>19791212</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="6">
+          <document-id>
+            <country>US</country>
+            <doc-number>7533475</doc-number>
+            <kind>B2</kind>
+            <date>20090519</date>
+          </document-id>
+          <application-date>
+            <date>20051028</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="7">
+          <document-id>
+            <country>US</country>
+            <doc-number>7421808</doc-number>
+            <kind>B2</kind>
+            <date>20080909</date>
+          </document-id>
+          <application-date>
+            <date>20050607</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="8">
+          <document-id>
+            <country>US</country>
+            <doc-number>6990752</doc-number>
+            <kind>B2</kind>
+            <date>20060131</date>
+          </document-id>
+          <application-date>
+            <date>20020801</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="9">
+          <document-id>
+            <country>US</country>
+            <doc-number>6845574</doc-number>
+            <kind>B2</kind>
+            <date>20050125</date>
+          </document-id>
+          <application-date>
+            <date>19981015</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="10">
+          <document-id>
+            <country>US</country>
+            <doc-number>6877257</doc-number>
+            <kind>B2</kind>
+            <date>20050412</date>
+          </document-id>
+          <application-date>
+            <date>20040316</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="11">
+          <document-id>
+            <country>US</country>
+            <doc-number>6412196</doc-number>
+            <kind>B1</kind>
+            <date>20020702</date>
+          </document-id>
+          <application-date>
+            <date>20000126</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="12">
+          <document-id>
+            <country>US</country>
+            <doc-number>7707750</doc-number>
+            <kind>B2</kind>
+            <date>20100504</date>
+          </document-id>
+          <application-date>
+            <date>20090204</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="13">
+          <document-id>
+            <country>US</country>
+            <doc-number>7883658</doc-number>
+            <kind>B2</kind>
+            <date>20110208</date>
+          </document-id>
+          <application-date>
+            <date>20080813</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+    </references-cited>
+    <parties date-changed="20070524">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="eng">
+            <orgname>"Montana-Research" Muller and Co.</orgname>
+            <address>
+              <city>Hergiswil</city>
+              <country>CH</country>
+            </address>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="eng">
+            <last-name>Gladek</last-name>
+            <first-name>Janez</first-name>
+            <address>
+              <city>Hergiswil</city>
+              <country>CH</country>
+            </address>
+          </addressbook>
+        </inventor>
+      </inventors>
+      <agents>
+        <agent sequence="1" rep-type="attorney">
+          <addressbook lang="eng">
+            <last-name>Kleeman</last-name>
+            <first-name>Werner W.</first-name>
+          </addressbook>
+        </agent>
+      </agents>
+    </parties>
+    <examiners>
+      <primary-examiner>
+        <name>Lawson; Patrick D.</name>
+      </primary-examiner>
+    </examiners>
+    <patent-family date-changed="20070529">
+      <main-family family-id="37407047">
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>4246708</doc-number>
+            <kind>A</kind>
+            <date>19810127</date>
+          </document-id>
+          <application-date>
+            <date>19790924</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>2854567</doc-number>
+            <kind>A1</kind>
+            <date>19800703</date>
+          </document-id>
+          <application-date>
+            <date>19781218</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="37205389">
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>2854567</doc-number>
+            <kind>A1</kind>
+            <date>19800703</date>
+          </document-id>
+          <application-date>
+            <date>19781218</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>4246708</doc-number>
+            <kind>A</kind>
+            <date>19810127</date>
+          </document-id>
+          <application-date>
+            <date>19790924</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_eng" date-changed="20070524" lang="eng" format="original">
+    <p>An athletic or sport shoe, for instance a cross-country skiing shoe or a tennis shoe is disclosed, which has a sole formed of, for instance, polyurethane which is molded at the upper portion of the shoe. In the material of the polyurethane sole there is molded a resilient or spring plate, formed of a suitable metal or plastic. The resilient plate is provided at its front region with flange means serving as support or contact means for the ski binding jaw or the like and holes or perforations for the binding pins or mandrils. The resilient plate extends over essentially the entire length of the shoe sole and is only visible through its flanges at the sole edges. The plate is structured such that at the region of the ball of the foot it is easier to resiliently bend while at the region of the shoe stiffener it is practically hardly resiliently bendable, so that the rolling-off of the foot is possible practically without any hinderance, but the foot is supported laterally and against torsion.</p>
+  </abstract>
+  <description id="descr_eng" lang="eng" format="original" date-changed="20070524">
+    <summary>
+      <heading>BACKGROUND OF THE INVENTION</heading>
+      <p>The present invention relates to a new and improved construction of athletic or sport shoe, especially for cross-country skiing and tennis and which is of the type having a sole which is molded or otherwise formed at the upper portion or part of the shoe. In the context of this disclosure the term "shoe" is used in its broadest sense to encompass not only shoes as such but also boots and other similar type of footwear.Such type athletic or sport shoes, especially cross-country skiing shoes or the like, should have a shoe sole which is as light and flexible as possible, so that there is not hindered the rolling-off action of the user's foot. However, they also should provide good support for the user's foot in a direction transversely with respect to the roll-off direction and should prevent to the extent possible any lateral deviation or torsion of the foot. With the heretofore known shoes it is hardly possible to realize the foregoing. Even the most modern shoes, possessing a sole which is molded at the upper part of the shoe and having a front cap and a rear cap, can only partially fulfill these requirements. The same situation prevails in the case of tennis shoes.</p>
+      <heading>SUMMARY OF THE INVENTION</heading>
+      <p>Therefore, with the foregoing in mind it is a primary object of the present invention to provide a new and improved construction of sport shoe of the character described which is not afflicted with the aforementioned drawbacks and limitations of the prior art constructions.Still another significant object of the present invention aims at a new and improved construction of athletic shoe or the like which is relatively simple in design, economical to manufacture, and affords good lateral support for the user's foot and adequate resistance against the action of torsional forces.Another and more specific but extremely important object of the present invention relates to a new and improved construction of sport shoe, especially for cross-country skiing, which provides for the user's foot satisfactory lateral support, sufficient resistance against torsion and still enables relatively free roll-off of the user's foot.Now in order to implement these and still further objects of the invention, which will become more readily apparent as the description proceeds, the sport shoe of the present development is manifested by the features that there is embedded in the shoe sole an at least partially spring-elastic or resiliently elastic plate which extends approximately over the entire length of the sole.The at least partially resiliently or spring elastic plate, embedded in the sole material, extending almost over the entire lengthwise region of the sole, from the shoe tip up to the heel, can appreciably increase the torsional resistance of the sole and its lateral stability, while still hardly hindering the rolling-off of the user's foot.The plate, in the case of cross-country skiing shoes, should possess the bores or holes for the binding parts which are normally provided at the shoe sole, in order to increase its effect and which are also useful, during the fabrication of the shoe or boot, for the centering of the sole and plate.At the front region the resilient plate should extend at least up to the lateral sole edge, so that it can come into guiding contact with the jaws or the like of a ski binding. The thus realized effect can be augmented by the provision of lateral flanges at the plate, which additionally can serve as a protection against wear. To prevent that the flexibility of the sole is not improperly impaired by the flange it can be provided with transverse slots or cutouts or the like.In order to be able to elevationally center the plate in the shoe sole during fabrication of the shoe, the plate advantageously should be provided at its surfaces with appropriate projections or protuberances which, at the finished shoe, extend up to the surfaces of the sole. In this way it is possible to dispense with the use of appropriate centering pins in the mold, which furthermore would lead to the formation of holes.The plate or plate member advantageously possesses over its length zones or regions of different degrees of flexibility. At the region of the ball of the foot it should be easily flexible and at the region of the shoe stiffener it should be at the very least quite difficult to flex. This can be obtained by appropriately configuring the plate and/or by appropriately selecting its dimensions. Thus, for instance, if the plate is a metallic plate then it can be provided with holes or perforations at the region of the ball of the foot and can be provided with ribs or corregations at the region of the shoe stiffener. Suitable as a metallic plate is an aluminium alloy plate, although other metals can be employed. In analagous manner the plates can be formed of other materials, for instance from plastic materials, such as an epoxy resin or polyester, with or without reinforcements, and the dimensions in the width and thickness can be decisive as can also be the reinforcement of such plates.</p>
+    </summary>
+    <description-of-drawings>
+      <heading>BRIEF DESCRIPTION OF THE DRAWINGS</heading>
+      <p>The invention will be better understood and objects other than those set forth above, will become apparent when consideration is given to the following detailed description thereof. Such description makes reference to the annexed drawings wherein:FIG. 1 is a side view of a sport or athletic shoe according to the invention, here shown as a cross-country skiing shoe;FIG. 2 is a top plan view of a plate of the shoe sole of such cross-country skiing shoe;FIG. 3 is a view of the plate of FIG. 2, looking in the direction of the arrow III; andFIG. 4 is an enlarged and extended sectional view of the plate, taken substantially along the line IV--IV of FIG. 3.</p>
+    </description-of-drawings>
+    <detailed-desc>
+      <heading>DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS</heading>
+      <p>Describing now the drawings, in FIG. 1 there will be recognized an exemplary embodiment of athletic or sport shoe, here shown by way of example as a cross-country skiing shoe, containing an upper shoe portion 1 which extends up to the region of the broken lines 2 where, not taking into account an intermediate sole and the like, there starts the upper surface of the shoe sole 3, formed for instance of polyurethane, and enclosing the shoe heel as well as a front and rear cap. In the sole material there is molded or otherwise embedded a plate or plate member 4 whose front edge flange or flange means 5 is interrupted by slots or cutouts 6 or equivalent structure. The slotted flange means extends by means of its outer surface up to the not particularly designated side edge of the shoe sole and serve as a support or contact means for the ski binding jaw means, whereas for the mandrils or pins of the ski binding there are provided the holes or apertures 7 in the tip or toe portion of the plate member or plate 4.Further, it will be seen by referring to FIGS. 2 and 3 that pins 8, provided at both surfaces, i.e. the top and bottom surfaces of the plate 4 serve for centering such plate during molding of the shoe sole 3.Holes or apertures 10 are provided at the region of the ball of the foot, generally indicated by reference character 9, as best seen by referring to FIG. 2, in order to weaken the plate 4 at such location, so that it is more flexible at this region of the ball of the foot than in the unperforated regions of such plate 4, without having to reduce the plate width. A narrower plate would of course have less transverse rigidity or stiffness.In order to make stiffer the stiffener region 11 of the plate 4 there can be provided, as schematically shown in broken lines, corregations or undulated ribs 12.The plate 4 can be accommodated to the extent needed in the lengthwise and transverse direction three-dimensionally to the form of the user's foot. In this manner it is possible to fulfill the previously incompatible requirements at a cross-country skiing shoe.When employing the invention with other types of athletic shoes, particulary in the case of tennis shoes, it is possibly advantageous if the plate has at its front and rear portions a flange for taking-up thrust forces and tensional forces, which flanges preferably extend upwardly and which can be similar to the described side flanges 5 of the showing of FIG. 4.While there are shown and described present preferred embodiments of the invention, it is to be distinctly understood that the invention is not limited thereto, but may be otherwise variously embodied and practised within the scope of the following claims. Accordingly,</p>
+    </detailed-desc>
+  </description>
+  <claims id="claims_eng" lang="eng" format="original" date-changed="20070524">
+    <claim num="1">
+      <claim-text>1. A sport shoe, especially for cross-country skiing and tennis, comprising: an upper portion and a sole formed at the upper portion; an at least partially resiliently elastic plate embedded in said sole; said plate extending approximately over the entire length of the sole; said sole having a tip region; and said plate having bores at the tip region of the sole for the reception of parts of a ski binding. </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>2. The sport shoe as defined in claim 1, wherein: said plate has a front region; and said plate extending at its front region at least up to the edge of the sole. </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>3. The sport shoe as defined in claim 2, wherein: said plate includes lateral flange means at its front region; and said lateral flange means extending at least up to the sole edge. </claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>4. The sport shoe as defined in claim 3, wherein: said flange means include slot means extending transversely with respect to the plane of said plate. </claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>5. A sport shoe, especially for cross-country skiing and tennis, comprising: an upper portion and a sole formed at the upper portion; an at least partially resiliently elastic plate embedded in said sole; said plate extending approximately over the entire length of the sole; and said plate is provided with at least one centering projection at one of its surfaces, which centering projection extends up to a corresponding sole surface and serves to center said plate during embedding of said plate in said sole. </claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>6. A sport shoe, especially for cross-country skiing and tennis, comprising: an upper portion and a sole formed at the upper portion; an at least partially resiliently elastic plate embedded in said sole; said plate extending approximately over the entire length of the sole; and said plate is structured so as to possess over its length portions having different flexibility. </claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>7. The sport shoe as defined in claim 6, wherein: said plate is more flexible at the region of the ball of the foot than at other regions. </claim-text>
+    </claim>
+    <claim num="8">
+      <claim-text>8. The sport shoe as defined in claim 7, wherein: said plate is provided with holes at the region of the ball of the foot. </claim-text>
+    </claim>
+    <claim num="9">
+      <claim-text>9. The sport shoe as defined in claim 6, wherein: said plate includes a shoe stiffener portion provided with means for stiffening said shoe stiffener portion. </claim-text>
+    </claim>
+    <claim num="10">
+      <claim-text>10. The sport shoe as defined in claim 6, wherein: said plate is at least partially formed of a resilient aluminium alloy. </claim-text>
+    </claim>
+    <claim num="11">
+      <claim-text>11. The sport shoe as defined in claim 6, wherein: said plate is formed at least partially of plastic material. </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111027" file="CN86105254A.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20091229" time-changed="120315">
+  <bibliographic-data lang="chi">
+    <publication-reference publ-type="Application" publ-desc="Unexamined application for a patent for invention">
+      <document-id>
+        <country>CN</country>
+        <doc-number>86105254</doc-number>
+        <kind>A</kind>
+        <date>19870204</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>86105254</doc-number>
+        <date>19860805</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>chi</language-of-publication>
+    <priority-claims date-changed="20090308">
+      <priority-claim sequence="1" kind="national">
+        <country>US</country>
+        <doc-number>06762507</doc-number>
+        <kind>A</kind>
+        <date>19850805</date>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="original">
+        <doc-number>1985      762507</doc-number>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="epodoc">
+        <doc-number>US19850762507</doc-number>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20091223">
+      <gazette-reference>
+        <date>19870204</date>
+      </gazette-reference>
+      <unexamined-printed-without-grant>
+        <date>19870204</date>
+      </unexamined-printed-without-grant>
+    </dates-of-public-availability>
+    <classification-ipc date-changed="20091227">
+      <main-classification>
+        <text>  E 21B   3/00   A</text>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>3</main-group>
+        <subgroup>00</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+      <further-classification sequence="1">
+        <text>  E 21B  15/00   B</text>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>15</main-group>
+        <subgroup>00</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+      <further-classification sequence="2">
+        <text>  E 21C  11/00   B</text>
+        <section>E</section>
+        <class>21</class>
+        <subclass>C</subclass>
+        <main-group>11</main-group>
+        <subgroup>00</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20091227">
+      <classification-ipcr sequence="1">
+        <text>E21B   3/00        20060101AFI20060310RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>3</main-group>
+        <subgroup>00</subgroup>
+        <symbol-position>F</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20060310</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>E21B   3/00        20060101C I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>3</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="3">
+        <text>E21B   3/02        20060101A I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>3</main-group>
+        <subgroup>02</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="4">
+        <text>E21B  19/00        20060101CLI20060310RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>19</main-group>
+        <subgroup>00</subgroup>
+        <symbol-position>L</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20060310</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="5">
+        <text>E21B  19/08        20060101ALI20060310RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>19</main-group>
+        <subgroup>08</subgroup>
+        <symbol-position>L</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20060310</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <classifications-ecla date-changed="20091227">
+      <classification-ecla sequence="1" classification-scheme="EC" country="EP">
+        <text>E21B  3/02</text>
+        <section>E</section>
+        <class>21</class>
+        <subclass>B</subclass>
+        <main-group>3</main-group>
+        <subgroup>02</subgroup>
+      </classification-ecla>
+    </classifications-ecla>
+    <number-of-claims calculated="yes">13</number-of-claims>
+    <invention-title id="title_chi" date-changed="20091229" lang="chi" format="original">侧传动钻井</invention-title>
+    <invention-title id="title_eng" date-changed="20091229" lang="eng" format="original">Sideway driving motion dirller</invention-title>
+    <parties date-changed="20091223">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>维特柯近海工业公司</orgname>
+            <address>
+              <address-1>美国·得克萨斯州·休斯敦，阿德莫尔路7135号</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>VETCO OFFSHORE INDUSTRIES INC.</orgname>
+            <address>
+              <address-1>7135 ARDMORE ROAK, HOUSTONK, U.S.A.</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="original">
+          <addressbook lang="chi">
+            <orgname>维特柯近海工业公司</orgname>
+            <address>
+              <address-1>美国·得克萨斯州·休斯敦，阿德莫尔路7135号</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>VETCO OFFSHORE INDUSTRIES INC.</orgname>
+            <address>
+              <address-1>7135 ARDMORE ROAK, HOUSTONK, U.S.A.</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>艾戈·克拉斯洛夫</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>IGOR KRASNOV</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="original">
+          <addressbook lang="chi">
+            <name>艾戈·克拉斯洛夫</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>IGOR KRASNOV</name>
+          </addressbook>
+        </inventor>
+      </inventors>
+      <agents>
+        <agent sequence="1" rep-type="attorney">
+          <addressbook lang="chi">
+            <name>中国专利代理有限公司 (黄力行)</name>
+          </addressbook>
+        </agent>
+        <agent sequence="1" rep-type="attorney" data-format="original">
+          <addressbook lang="chi">
+            <name>中国专利代理有限公司 (黄力行)</name>
+          </addressbook>
+        </agent>
+      </agents>
+    </parties>
+    <patent-family date-changed="20070825">
+      <main-family family-id="5899546">
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>2178780</doc-number>
+            <kind>A</kind>
+            <date>19870218</date>
+          </document-id>
+          <application-date>
+            <date>19860710</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>8616840</doc-number>
+            <kind>D0</kind>
+            <date>19860820</date>
+          </document-id>
+          <application-date>
+            <date>19860710</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>62033992</doc-number>
+            <kind>A</kind>
+            <date>19870213</date>
+          </document-id>
+          <application-date>
+            <date>19860804</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>BR</country>
+            <doc-number>PI8603682</doc-number>
+            <kind>A</kind>
+            <date>19870310</date>
+          </document-id>
+          <application-date>
+            <date>19860804</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>86105254</doc-number>
+            <kind>A</kind>
+            <date>19870204</date>
+          </document-id>
+          <application-date>
+            <date>19860805</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IT</country>
+            <doc-number>1214510</doc-number>
+            <kind>B</kind>
+            <date>19900118</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>FR</country>
+            <doc-number>2589942</doc-number>
+            <kind>A1</kind>
+            <date>19870515</date>
+          </document-id>
+          <application-date>
+            <date>19860801</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IT</country>
+            <doc-number>8621279</doc-number>
+            <kind>D0</kind>
+            <date>19860728</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NL</country>
+            <doc-number>8601992</doc-number>
+            <kind>A</kind>
+            <date>19870302</date>
+          </document-id>
+          <application-date>
+            <date>19860804</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NO</country>
+            <doc-number>863021</doc-number>
+            <kind>A</kind>
+            <date>19870206</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NO</country>
+            <doc-number>863021</doc-number>
+            <kind>D0</kind>
+            <date>19860728</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="5524058">
+        <family-member>
+          <document-id>
+            <country>IT</country>
+            <doc-number>8621279</doc-number>
+            <kind>D0</kind>
+            <date>19860728</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>2178780</doc-number>
+            <kind>A</kind>
+            <date>19870218</date>
+          </document-id>
+          <application-date>
+            <date>19860710</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>8616840</doc-number>
+            <kind>D0</kind>
+            <date>19860820</date>
+          </document-id>
+          <application-date>
+            <date>19860710</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>62033992</doc-number>
+            <kind>A</kind>
+            <date>19870213</date>
+          </document-id>
+          <application-date>
+            <date>19860804</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NL</country>
+            <doc-number>8601992</doc-number>
+            <kind>A</kind>
+            <date>19870302</date>
+          </document-id>
+          <application-date>
+            <date>19860804</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NO</country>
+            <doc-number>863021</doc-number>
+            <kind>A</kind>
+            <date>19870206</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>FR</country>
+            <doc-number>2589942</doc-number>
+            <kind>A1</kind>
+            <date>19870515</date>
+          </document-id>
+          <application-date>
+            <date>19860801</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>BR</country>
+            <doc-number>PI8603682</doc-number>
+            <kind>A</kind>
+            <date>19870310</date>
+          </document-id>
+          <application-date>
+            <date>19860804</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>86105254</doc-number>
+            <kind>A</kind>
+            <date>19870204</date>
+          </document-id>
+          <application-date>
+            <date>19860805</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IT</country>
+            <doc-number>1214510</doc-number>
+            <kind>B</kind>
+            <date>19900118</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NO</country>
+            <doc-number>863021</doc-number>
+            <kind>D0</kind>
+            <date>19860728</date>
+          </document-id>
+          <application-date>
+            <date>19860728</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20091227" lang="chi" format="original">
+    <p num="1">公开的是一种从钻机平台(10)上钻/扩海上或陆上油或气井的装置和方法，它用一个方钻杆(22)转动一个轴向可移动的方钻杆驱动套筒(36)和驱动装置(46-62或46a-62a)以传递转矩给钻杆。马达(26)，方钻杆(22)和方钻杆驱动套筒(36)位于钻杆旋转轴线之外，因此叫做侧传动。这种装置和方法允许用多个钻杆连接在一起进行钻和扩井而不需要用大功率顶部传动马达和大功率电线附件，不需要增加传统井架的高度。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20091227" lang="eng" format="original">
+    <p>The patent refers to the field of 'methods or apparatus for drilling '. This invention discloses apparatus and a method used for drilling/reaming of offshore or onshore oil or gas wells from a rig platform (10) by using a motor (26) driven rotatable, axially stationary, kelly (22) for rotating an axially moveable kelly driven bushing (36) and drive assembly (46-62) to impart torque to drill pipe 20. The motor (26), kelly (22) and kelly driven bushing (36) are located 32 apart from the drill pipe rotational axis and hence referred to as a side drive. This apparatus and method allows well bore drilling and reaming with 20 multi-connected drill pipe (triples) without heavy duty top drive motors and attendant heavy duty electrical cables, without increasing conventional derrick height thereby facilitating retro-fitting of existing derricks and may be practiced either on floating or stationary platforms.</p>
+  </abstract>
+  <legal-data date-changed="20090828">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>19861224</date>
+      </publication-date>
+      <event-code-1>C10</event-code-1>
+      <legal-description>REQUEST OF EXAMINATION AS TO SUBSTANCE</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    86105254A</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="2">
+      <publication-date>
+        <date>19870204</date>
+      </publication-date>
+      <event-code-1>C06</event-code-1>
+      <effect>+</effect>
+      <legal-description>PUBLICATION</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    86105254A</docdb-publication-number>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20091223">
+    <technical-field>
+      <p id="p-d0-zh" num="001">本发明涉及海上或陆上的油气井的钻探，特别是立根钻井（即三根钻杆组成一个整体的）的钻探方法和装置。 	    	 
+            <br /></p>
+    </technical-field>
+    <background-art>
+      <p id="p-d1-zh" num="002">最广泛应用的普通钻探系统，包括钻井平台、钻井架以及游动滑车组合。钻井平台上有一个转盘用来将转矩传递给可以上下移动的方钻杆以及钻杆。游动滑车组合则在钻井架里面，用来吊起及放下那穿过钻井平台中地孔道的钻杆。钻杆的每一节逐一与游动滑车组合连续，利用转盘把它们下放，以钻进井眼。在这种普通的系统中，扩孔，即将转动的钻杆从井眼取出，只不过是一个相反的程序，即在平台台面将钻杆的每一节逐一分离。可连续移动的平台（如在船上或是半潜式平台）和固定钻井平台（包括自升式和钢绳“张力腿”式平台），以及陆上钻井用的固定平台，都使用这种系统。 	    	 
+            <br /></p>
+      <p id="p-d2-zh" num="003">最近，人们发展了一种用立根钻探的系统。在这种系统里，三根钻杆连接成一体，整个组合通过平台下放。一般认为，这种立根式钻探系统，比普通钻探系统效率高，因为三根钻杆是在钻孔区域以外接合的。还发现，立根式钻探系统在铰孔工作上有特别的优点。这种系统的详细资料可以参考波叶杰夫的美国专利4，421，179;4，437，524;4，449，596;及4，458，728号。	 	 	 	 
+            <br /></p>
+      <p id="p-d3-zh" num="004">在这些已取得专利的系统，又称为上部传动系统中，利用一个装在轨道上，在钻井架中垂直上下移动的巨型电动机，转动三根钻杆的组合中最上面的钻杆。不过，这些已得专利的上部传动系统，虽然可以节省时间，但还是有很大的缺点的。为了安装传动部件，要对现有的钻井机  		  	 
+            <br />作重大的改装工作，因为井架的高度必须增加。巨大的转矩令轨道的负荷很重。上部传动部件需要在井架上安装100安培，长22.86米（75英尺）的电缆，这经常会造成极大的危险，尤其是在使用运动补偿器的活动平台上，危险性就更大了。使用上部传动系统，还要顾虑到钻机维修时间，因为巨型电动机是很复杂的装置，操作人员常常要保留传统的转盘和方钻杆驱动作为后备。此外，由于上部的传动装置的重量关系，传动装置要安放在侧边，还要在游动滑车上加上一个吊钩，用来操纵重型的箱体。	 	 	 	 
+            <br /></p>
+    </background-art>
+    <disclosure>
+      <p id="p-d4-zh" num="005">本发明改善了传统的单一钻杆钻探系统，以及使用上部传动装置的立根式钻探系统，因此具有以下的优点：	 	 	 	 
+            <br /></p>
+      <p id="p-d5-zh" num="006">可以使用现有的钻探工具，  		  	 
+            <br /></p>
+      <p id="p-d6-zh" num="007">它是一种不昂贵的系统， 		 	 	 
+            <br /></p>
+      <p id="p-d7-zh" num="008">它可以安装在任何钻机上，而只需要很少的改装， 	    	 
+            <br /></p>
+      <p id="p-d8-zh" num="009">无需在钻井架上安装大功率的电动机，	 	 	 	 
+            <br /></p>
+      <p id="p-d9-zh" num="010">可以使用一种内部防喷装置的系统，  		  	 
+            <br /></p>
+      <p id="p-d10-zh" num="011">它简单轻便，并且无需对操作人员进行再教育或进行特别训练， 		 	 	 
+            <br /></p>
+      <p id="p-d11-zh" num="012">它可以用在带有现有的运动补偿器的浅海钻船上， 	    	 
+            <br /></p>
+      <p id="p-d12-zh" num="013">它允许重型箱体的运动。	 	 	 	 
+            <br /></p>
+      <p id="p-d13-zh" num="014">对于精于此项技术的人员，将可从以下的附图、摘要和详细描述中看出本发明还有其他在上面未详述的优点，  		  	 
+            <br /></p>
+      <p id="p-d14-zh" num="015">本发明的装置和方法包括，一个垂直布置的固定方钻杆，该方钻杆的高度与钻塔的高度基本上相等，由一个放在近于平台平面或低于平台平面的常规电动机带动，该方钻杆上连接着一个由方钻杆驱动的套筒。该方钻杆驱动的套筒在方钻杆上作垂直移动，并通过一个驱动装置与在一个钻孔装置上的钻杆驱动轴连接在一起。 		 	 	 
+            <br /></p>
+      <p id="p-d15-zh" num="016">通过方钻杆驱动的套筒的垂直上下移动和链轮装置，合适的转矩就 	    	 
+            <br />能传给钻杆以完成三钻杆钻孔和扩孔。 		 	 	 
+            <br /></p>
+      <p id="p-d16-zh" num="017">本发明还提供了一种带有操作重型箱体装置的上部连接装置。 	    	 
+            <br /></p>
+    </disclosure>
+    <description-of-drawings>
+      <p id="p-d17-zh" num="018">现将附图简介如下： 	    	 
+            <br /></p>
+      <p id="p-d18-zh" num="019">图1表示一个在无转盘平台上的典型钻井架的主视图，该钻井架结合了本发明的侧传动。	 	 	 	 
+            <br /></p>
+      <p id="p-d19-zh" num="020">图2是图1用箭头2圈住部分的钻探系统的放大图，  		  	 
+            <br /></p>
+      <p id="p-d20-zh" num="021">图3是图2沿线3-3所示的钻探系统的侧被视图， 		 	 	 
+            <br /></p>
+      <p id="p-d21-zh" num="022">图4是图2沿线4-4的剖视图，表示把转矩传给钻杆的链轮传动装置， 	    	 
+            <br /></p>
+      <p id="p-d22-zh" num="023">图5与图4，相似，但表示一个通过皮带轮装置将转矩传给钻杆的装置。	 	 	 	 
+            <br /></p>
+      <p id="p-d23-zh" num="024">图6是图4沿线6-6的剖视图，表示驱动链轮和将一部分方钻杆驱动套筒垂直切去后，链轮和方钻杆驱动套筒的连接，  		  	 
+            <br /></p>
+      <p id="p-d24-zh" num="025">图7是图6沿线7-7的剖视图，表示方钻杆驱动套筒， 		 	 	 
+            <br /></p>
+      <p id="p-d25-zh" num="026">图8是图4沿切线8-8所切出驱动链轮的横切面的正视图，以及 	    	 
+            <br /></p>
+      <p id="p-d26-zh" num="027">图9和图10分别是类似于图2、图3的侧视图和正视图但表示了运动补偿器是钻孔系统的一部分。	 	 	 	 
+            <br /></p>
+    </description-of-drawings>
+    <mode-for-invention>
+      <p id="p-d27-zh" num="028">图1表示一个平台（10）和一个钻井架（14），该平台具有一个中心孔道（12），通过此中心孔道可以进行钻孔和扩孔的操作;该钻井架为通常的大小和型号，由平台（10）支承。用于将连接于该处的钻杆吊起和放下的钻孔系统（16）位于钻井架（14）内，只有一部份表示在图示在图中。该钻探系统（16）将在以后详细描述，但在这里要注意一点，三段钻杆（20）在平台上连接或一个整体进行钻孔和扩孔。这叫做立根钻孔或扩孔，位于平台上面的组件与位于平台下面的相似组件相连接。孔道（12）的中心，装置（16）的运动路线和钻杆（20）的回转轴线以常规的形式都同在钻井架（14）的中心线	 	 	 	 
+            <br />上。这也可以被称为主轴线或钻孔轴线。平台和钻井架可以布置在一个浅海钻船（船或半潜式钻船）上或固定式海上平台（钢绳“张力腿”式）上进行浅海钻井，也可以作为陆基钻机的一部分进行陆上钻井。 	    	 
+            <br /></p>
+      <p id="p-d28-zh" num="029">根据本发明，如图4所示，一个具有平侧面（24）（在图中可见三面）的细长实心杆（22）伸展到钻井架（14）的顶点，它与平台（10）以下向着孔道（10）的一边的电动机和齿轮箱（26）相连接。电动机可以是象现在用于驱动转盘的普通的水平安装电动机。在平台（10）上向着孔道（12）的一边有第二孔道（28）使连接杆（22）可以同电动机和齿轮箱（26）连接。该称为方钻杆的细长杆（22）位于垂直布置的用工字钢（30）做的导向装置的中心，该导向装置沿井架全长在多处固定在井架上，而且平行于主轴线。任何适合方法都可以用来将导向装置固定在钻井架上，只要有足够强度承受任何传递于其上的转矩;图1所示的固定方式是用14条横挡（32）。根据操作者的方便，电动机和齿轮箱（26）可以根据工人的操作方便位于平台或其上，同时，以任何适合的方式与平台或井架的下部相连接。主要要求是电动机和齿轮箱要放在开口（12）的一边上，连接垂直布置的方钻杆并带动其旋转。再者，方钻杆的轴承（图中没表示）可以设置在其顶部和底部，同时以任何合适的方式固定在钻井架上，以求稳定方钻杆和使方钻杆少摩擦地旋转。	 	 	 	 
+            <br /></p>
+      <p id="p-d29-zh" num="030">由方钻杆可转动地驱动的套筒（34）在（在图4中用虚线表示，在图7中则显示得更清楚），位于一个在工字钢构件（30）里面的输送器（36）上，带有合适的轴承（40）来帮助输送器及方钻杆驱动的套筒作垂直上下移动。在八个轴承（40）中只有4个在图中表示出来合适地固定在输送器（36）上。该轴承的数量和型号是熟悉此技术的人所熟知的。  		  	 
+            <br /></p>
+      <p id="p-d30-zh" num="031">由方钻杆驱动的套筒（36）包括有多个排列成三角形的滚轮 		 	 	 
+            <br />（42）（图中表示出3个），它与在方钻杆上相同数量的平面边（24）相吻合，这样方钻杆可以把转矩传送到套筒上去。滚轮的安排根据方钻杆上平面边的数量而定。如图所示，转盘滚轮（42）本身设置有适合的轴承（44），以利其相对于方钻杆的旋转，并减少方钻杆驱动套筒（34）在方钻杆上垂直上下移动时的摩擦。  		  	 
+            <br /></p>
+      <p id="p-d31-zh" num="032">如图4和图7所示的实施例中，方钻杆驱动套筒（36）合适地固定在链轮（46）上，以致该链轮可以同方钻杆驱动套筒（36）一起旋转，并驱动一个连接于其上的传动链条（50）。该链轮（46）也是将要描述的链轮传动装置的一个传动元件，在所示的实施例中，将方钻杆驱动套筒（36）固定在链轮（46）上的装置是多个螺钉52。位于链轮箱（56）和链轮（46）之间的轴承（44）有利于摩擦小的旋转运动。 		 	 	 
+            <br /></p>
+      <p id="p-d32-zh" num="033">一个用来转动驱动轴（64）的大链轮（62），通过传动链条（50），与链轮（46）连接。该传动轴象传统的一样中心有通孔用来通过钻孔液体。如图1，4和8所示，壳体（56）包封了链条链轮装置，该壳体装有用来润滑和冷却链条链轮装置的油，并在所有需要的位置上设有合适的密封（70）用以防止漏油。传动轴（64）构成钻探系统（16）的一部分，把旋转传送到钻杆和所有被驱动部件上，方钻杆驱动套筒和链条链轮装置安装在一个滑车（68）上，该滑车作为钻孔系统（16）的一部分作垂直上下的移动。链轮（62）如链轮（46）一样设置有为减少摩擦位于链轮和壳体（56）之间的合适轴承（66）。 	    	 
+            <br /></p>
+      <p id="p-d33-zh" num="034">图5表示另一种链条链轮驱动装置。在此图中，两个链轮（46），（62）和链条（50）被两个带轮（46a），和带（50a）所替换。新部件以相同的数字表示，只是它们在数目字后面加多个a字，因为它们同链条装置一样起着驱动装置的作用。	 	 	 	 
+            <br /></p>
+      <p id="p-d34-zh" num="035">从可以理解，链条链轮或带传动装置是作为例子表示出来的。其他传动方法例如一个齿轮系统可以用来将转矩从方钻杆驱动套筒传到钻探装置上去。	 	 	 	 
+            <br /></p>
+      <p id="p-d35-zh" num="036">从以上的描述可见本发明与现有技术的几处不同点。方钻杆驱动套筒不再安放在平台平面上，也不在主轴线或在钻孔轴上，并且鸸再是用来把转矩传送到一个可垂直上下移动的方钻杆的驱动件上。方钻杆驱动套筒变成了一个被驱动件，而方钻杆则成为驱动构件，它相对平台是静止不动的。换言之，方钻杆驱动套筒和方钻杆在本发明中的作用与在传统探钻探系统中作用完全相反。同样很明显，由于垂直布置的方钻杆及其动力源都在主轴线的一边，加上方钻杆驱动套筒能够上下垂直移动，，在井架顶部的大电动机，以及用来驱动这个大电动机的高功率电缆的复杂装置就可以取消了。再者，很明显，顶端驱动电动机取消后，井架高度无需再升高。因此，可以用传统的钻井架，或者将传统的钻井架进行改装，用来进行三钻杆钻孔或扩孔。  		  	 
+            <br /></p>
+      <p id="p-d36-zh" num="037">现在将用作吊起和放下钻杆和其他管状构件，以及转盘和链条链轮装置的吊起和放干的钻探系统（16），加以详细说明。现在请看图2，3，9和10。 		 	 	 
+            <br /></p>
+      <p id="p-d37-zh" num="038">这些图表示用作吊起和放下钻杆的钻探系统（16），该系统也用作吊起和放下方钻杆驱动套筒和链条链轮传动装置，本实施例也公开了吊起和放下重型箱体的装置。 	    	 
+            <br /></p>
+      <p id="p-d38-zh" num="039">因此，钻探系统（16）包括一个游动滑车（80），该游动滑车典型地连接在钻井架顶部的天车上（没有在图中示出）。天车支持着：一个回转接头（82），由车（68）支承并与驱动轴（64）连接的方钻杆驱动套筒（36）和链条链轮装置（46-62）（或46a-62a），一个内部防喷装置（86），一个水压回转接头（90），一个在其下方装有上方钻杆阀栓（94）的大功率工作连接调节器（92），	 	 	 	 
+            <br />和一个利用与它连接的下井钟（100）来断开的接头（86）。钻杆开降机（104）通过连接杆（102）与大功率工作连接调节器（92）相连接。 	    	 
+            <br /></p>
+      <p id="p-d39-zh" num="040">为了操作重型箱体，一个顶部连接调节器（106）可与游动滑车（80）相连接，同时通过大功率工作连接杆（102）与大功率连接调节器相连接。	 	 	 	 
+            <br /></p>
+      <p id="p-d40-zh" num="041">通过钻杆升降机（104）与连接在一起的三条钻杆顶端相连接来断开钻杆。  		  	 
+            <br /></p>
+      <p id="p-d41-zh" num="042">图9和图10表示钻探系统（16）及连于其上的运动补偿器（110），以表示本发明可同这种设备一起用。因为钻探系统（16）的所有他部分与图1图2和图3的相同，所以它们用同样的数字表示在图中。再者，因为运动补偿器是旧的和众所周知的，所以无需对它的操作作描述。 		 	 	 
+            <br /></p>
+    </mode-for-invention>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20091223">
+    <claim num="1">
+      <claim-text>
+        <claim-text>1、一种钻油井或气井的系统，其特征是，包括： 	    	 
+                <br /></claim-text>
+        <claim-text>用于通过平台的开口提起，放下和传动钻杆以放下，提升和驱动用来钻上述井的钻头的第一装置；	 	 	 	 
+                <br /></claim-text>
+        <claim-text>上述开口和第一装置可在一个垂直轴线上运转，以及  		  	 
+                <br /></claim-text>
+        <claim-text>可在一个第二垂直轴线上运转以便向上述钻杆传递转矩的第二装置。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>
+        <claim-text>2、如权利要求1所述之系统，其特征是，上述第二装置向上述钻杆的顶部施加上述钻杆的顶部施加上述转矩。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>
+        <claim-text>3、如权利要求2所述之系统，其特征是，多个钻杆连接成一个组件，转矩施加丁组件，转矩施加于组件的顶部。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>
+        <claim-text>4、如权利要求2所述之系统，其特征是，上述钻杆每三个连接成为一个组件，转矩施加于组件的顶部。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>
+        <claim-text>5、一种钻油井或气井的系统，具有一个带开口的平台，通过该开口可进行操作，以及具有一个在上述平台上并对准上述开口的井架，其特征是，包括： 		 	 	 
+                <br /></claim-text>
+        <claim-text>驱动装置， 	    	 
+                <br /></claim-text>
+        <claim-text>一个布置在上述井架内并连接于上述驱动装置以便使其旋转的细长杆装置，	 	 	 	 
+                <br /></claim-text>
+        <claim-text>上述细长杆装置平行于上述开口的中心和上述井架的垂直中心线，  		  	 
+                <br /></claim-text>
+        <claim-text>对由上述驱动装置施加于上述细长杆装置的转矩起反应的被驱动装置，它连接于钻孔工作藉以通过上述开口进行的钻孔装置。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>
+        <claim-text>6、如权利要求5所述之系统，其特征是，上述钻孔装置包括不止一个钻杆连接在一起，而上述被驱动装置向其传递转矩。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>
+        <claim-text>7、如权利要求6所述之系统，其特征是，上述细长杆装置是方钻杆，而上述被驱动装置包括一个方钻杆驱动套筒，它可以在上述方钻杆上垂直移动。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="8">
+      <claim-text>
+        <claim-text>8、如权利要求7所述之系统，其特征是，上述被驱动装置还包括一个链条和链轮装置，它包括一个固定在转盘上的链轮和一个固定在轴上的第二链轮，上述链条围绕上述两个链轮，上述轴以驱动关系同上述钻孔装置相连接。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="9">
+      <claim-text>
+        <claim-text>9、如权利要求7所述之系统，其特征是，上述被驱动装置还包括一个带和带轮装置，它包括一个固定在上述转盘的带轮和一个固定在轴上的第二带轮，带子围绕上述两个带轮，上述轴以驱动关系同上述钻孔装置相连接。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="10">
+      <claim-text>
+        <claim-text>10、如权利要求9所述之系统，其特征是，上述被驱动系统包括在上述井架上用以引导上述方钻杆驱动套筒的垂直运动的垂直导向装置。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="11">
+      <claim-text>
+        <claim-text>11、一种钻紧挨平台之下的井孔的方法，该平台有一个开口，钻孔工作可通过该开口进行，其特征是，该方法包括以下步骤：	 	 	 	 
+                <br /></claim-text>
+        <claim-text>通过上述开口的中心在一个垂直线上提升和降下钻杆，  		  	 
+                <br /></claim-text>
+        <claim-text>从一个同上述主轴线有间隔的动力源将动力施加于上述钻杆的顶部。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="12">
+      <claim-text>
+        <claim-text>12、一种钻紧挨平台之下的井孔的方法，该平台有一个开口，钻孔工作可通过该开口进行，其特征是，该方法包括以下步骤：  		  	 
+                <br /></claim-text>
+        <claim-text>在平台区域但离开上述开口的地方提供一个转动动力源， 		 	 	 
+                <br /></claim-text>
+        <claim-text>提供通过上述开口升起和降下钻杆以及升起和降下下述装置的装置，下述装置被上述动力源连续驱动向上述钻杆提供转动动力，它当上述钻杆通过上述开口升起降下时实际上用在平台平面之上。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="13">
+      <claim-text>
+        <claim-text>13、如权利要求12所述之方法，其特征是，转动动力施加于钻杆的顶部。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

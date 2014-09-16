@@ -1,0 +1,9 @@
+$ python main.py -f data/lists/sample-us.txt -c data/patents/corpora/sample-us -v
+
+timestamp    =  09/16/14 14:28:13
+language     =  en
+source_file  =  data/lists/sample-us.txt
+source_path  =  None
+target_path  =  data/patents/corpora/sample-us
+shuffle      =  None
+git_commit   =  v0.4-94-g43af65f

@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111027" file="CN86204813U.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20110628" time-changed="210817">
+  <bibliographic-data lang="chi">
+    <publication-reference publ-type="undefined" publ-desc="Utility model application">
+      <document-id>
+        <country>CN</country>
+        <doc-number>86204813</doc-number>
+        <kind>U</kind>
+        <date>19880323</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>86204813</doc-number>
+        <date>19860702</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>chi</language-of-publication>
+    <priority-claims date-changed="20070810">
+      <priority-claim sequence="1" kind="national">
+        <country>CN</country>
+        <doc-number>86204813</doc-number>
+        <date>19860702</date>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20091229">
+      <gazette-reference>
+        <date>19880323</date>
+      </gazette-reference>
+      <unexamined-printed-without-grant>
+        <date>19870909</date>
+      </unexamined-printed-without-grant>
+    </dates-of-public-availability>
+    <classification-ipc date-changed="20070810">
+      <main-classification>
+        <text> 4A 61F  11/00   A</text>
+        <edition>4</edition>
+        <section>A</section>
+        <class>61</class>
+        <subclass>F</subclass>
+        <main-group>11</main-group>
+        <subgroup>00</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20070810">
+      <classification-ipcr sequence="1">
+        <text>A61F  11/00        20060101C I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>A</section>
+        <class>61</class>
+        <subclass>F</subclass>
+        <main-group>11</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>A61F  11/00        20060101A I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>A</section>
+        <class>61</class>
+        <subclass>F</subclass>
+        <main-group>11</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <number-of-claims calculated="yes">4</number-of-claims>
+    <invention-title id="title_chi" date-changed="20091229" lang="chi" format="original">转动式蹬骨手术器械</invention-title>
+    <invention-title id="title_eng" date-changed="20091229" lang="eng" format="original">ROTARY APPLIANCE FOR STAPES OPERATION</invention-title>
+    <parties date-changed="20091227">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>山东医科大学附属医院</orgname>
+            <address>
+              <address-1>山东省济南市文化路107号</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>HOSPITAL ATTACHED TO SHANDONG MEDICAL UNIV.</orgname>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="original">
+          <addressbook lang="chi">
+            <orgname>山东医科大学附属医院</orgname>
+            <address>
+              <address-1>山东省济南市文化路107号</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>HOSPITAL ATTACHED TO SHANDONG MEDICAL UNIV.</orgname>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>安骏</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>AN JUN</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2">
+          <addressbook lang="chi">
+            <name>王延础</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>WANG YANCHU</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3">
+          <addressbook lang="chi">
+            <name>张大良</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>ZHANG DALIANG</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="4">
+          <addressbook lang="chi">
+            <name>张建华</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>ZHANG JIANHUA</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="original">
+          <addressbook lang="chi">
+            <name>安骏</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>AN JUN</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2" data-format="original">
+          <addressbook lang="chi">
+            <name>王延础</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2" data-format="docdba">
+          <addressbook lang="eng">
+            <name>WANG YANCHU</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3" data-format="original">
+          <addressbook lang="chi">
+            <name>张大良</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3" data-format="docdba">
+          <addressbook lang="eng">
+            <name>ZHANG DALIANG</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="4" data-format="original">
+          <addressbook lang="chi">
+            <name>张建华</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="4" data-format="docdba">
+          <addressbook lang="eng">
+            <name>ZHANG JIANHUA</name>
+          </addressbook>
+        </inventor>
+      </inventors>
+      <agents>
+        <agent sequence="1" rep-type="attorney">
+          <addressbook lang="chi">
+            <name>山东省专利服务处 (宋永丽)</name>
+          </addressbook>
+        </agent>
+        <agent sequence="1" rep-type="attorney" data-format="original">
+          <addressbook lang="chi">
+            <name>山东省专利服务处 (宋永丽)</name>
+          </addressbook>
+        </agent>
+      </agents>
+    </parties>
+    <patent-family date-changed="20070826">
+      <main-family family-id="71807553">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>86204813</doc-number>
+            <kind>U</kind>
+            <date>19880323</date>
+          </document-id>
+          <application-date>
+            <date>19860702</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="71739288">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>86204813</doc-number>
+            <kind>U</kind>
+            <date>19880323</date>
+          </document-id>
+          <application-date>
+            <date>19860702</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20091227" lang="chi" format="original">
+    <p num="1">转动式蹬骨手术器械，用于医疗手术。它由手柄、长臂和工作端所构成。长臂由可转动的外套和内轴组成，工作端与长臂之间构成夹角。该器械与相应的人工蹬骨配套使用，具有手术时不遮挡手术者视线，占据空间小，安装蹬骨方便，易于调整、易于掌握操作方法，操作方法简便等优点。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20091227" lang="eng" format="original">
+    <p>The utility model relates to a rotary appliance for stapes operation, which is used for medical operation and is composed of a handle, a long arm and a working end. The long arm is composed of a rotary outer sleeve and an inner shaft, and an included angle is formed between the working end and the long arm. The utility model is matched with a corresponding artificial stapes to use, and has the advantages of little occupation space, convenient installation, easy adjustment, easy operation method control, simple operation method, etc. The utility model can not shield the operator' s eyesight during operation.</p>
+  </abstract>
+  <legal-data date-changed="20090828">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>19870909</date>
+      </publication-date>
+      <event-code-1>C06</event-code-1>
+      <effect>+</effect>
+      <legal-description>PUBLICATION</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    86204813U</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="2">
+      <publication-date>
+        <date>19880323</date>
+      </publication-date>
+      <event-code-1>C14</event-code-1>
+      <effect>+</effect>
+      <legal-description>GRANTED</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    86204813U</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="3">
+      <publication-date>
+        <date>19920429</date>
+      </publication-date>
+      <event-code-1>C17</event-code-1>
+      <effect>-</effect>
+      <legal-description>EXPIRY</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    86204813U</docdb-publication-number>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20110628">
+    <technical-field>
+      <p id="p-d0-zh" num="001">本实用新型是一种用于医疗手术、主要用于中耳手术的医疗器械。 	    	 
+            </p>
+    </technical-field>
+    <background-art>
+      <p id="p-d1-zh" num="002">目前治疗耳硬化症的方法是蹬骨摘除术，蹬骨摘除后，可以用各种人工物代替，这种代替物通常叫人工蹬骨。安装人工蹬骨的器械一般是根据人工蹬骨自身的形状所设计，手术的技巧与器械地灵活适用，是保证手术成功不可少的条件。已有的蹬骨手术器械一般是手柄和工作端在同一平面内或者是由手柄、长臂、工作端组成，长臂可以轴向移动等，这种结构的器械，使用时易遮挡手术者视线，占据空间大，手柄前端或长臂很难做的足够小，还有的器械结构比较复杂，操作难度较大，不易掌握，致使蹬骨手术目前只能在极少数医院进行。	 	 	 	 
+            </p>
+    </background-art>
+    <disclosure>
+      <p id="p-d2-zh" num="003">本实用新型的目的是，针对上述器械存在的不足，设计一种转动式蹬骨手术器械，它与相应的人工蹬骨配套使用，使蹬骨手术变得比较简单易行，使它成为具有一般显微手术经验的医师所能进行的一种普通手术，从而解除广大病人的痛苦。  		  	 
+            </p>
+      <p id="p-d3-zh" num="004">本实用新型的主要结构特点是，工作端与长臂构成夹角，长臂由外套、内轴组成，使用时，外套、内轴均可转动，工作端上有两个钢柱，钢柱可直接插入蹬骨园环中，套入砧骨长突处，由于长臂与工作端处于异面，所以手术时，不易遮挡手术者视线，手柄可用弹性材料制做或者在手柄之间加限位弹簧，使手柄自身有一定的限位作用。由于本实用新型是根据相应的人工蹬骨所设计，能够与这种蹬骨配套使用的器械，也可采用长臂与手柄在同一平面内的结构，或者长臂的外套、内轴不转动的结构，但工作端必须与长臂构成角度；本实用新型的工作端还可以制成钳式、剪式、镊式、听骨钳式、扩张器式等形状，它们可以制成各种不同尺寸和规格，用在许多狭窄管腔等部位。 		 	 	 
+            </p>
+      <p id="p-d4-zh" num="005">由于本实用新型的工作端与长臂之间构成角度，长臂采用了可 	    	 
+            <br />转动的外套、内轴的结构等，所以解决了手术时易遮挡视线的问题，这种结构的械械能够做得足够小，手术占据空间小适应了手术需要，使蹬骨安装方便，易于调整，该器械结构简单，易于掌握操作方法，具有一般显微手术经验的医生，均可方便地用本器械进行蹬骨手术。 		 	 	 
+            </p>
+    </disclosure>
+    <mode-for-invention>
+      <p id="p-d5-zh" num="006">下面对照附图，将最佳方案及操作步骤做进一步说明。 	    	 
+            </p>
+      <p id="p-d6-zh" num="007">附图1是本实用新型的主视图，附图2是左视图，附图3是工作端放大剖视图。附图1中（1）是工作端，工作端（1）有两个小钢柱（5）、（6），钢柱（5）与内轴（4）、手柄（8）连为一体，钢柱（6）与外套（3）、手柄（10）连为一体，安装蹬骨时，钢柱（5）、（6）插入蹬骨的园环中，长臂（2）将蹬骨送至砧骨长突豆状突外侧，收缩手柄（8）、（10），外套（3）、内轴（4）分别转动，使钢柱（5）、（6）间距扩大，即相应的蹬骨园环扩大，此时，将蹬骨套入砧骨长突，然后放松手柄，使蹬骨上的弹簧夹夹在砧骨长突上，退出本器械，蹬骨安装工作完成。手柄与长臂（2）之间的连接处可以焊接，手柄之间加的限位弹簧（9）分别固定在手柄突出端（7）、（11）上。附图4、5、6、7、8分别是本实用新型可用于其它医疗手术中工作端的结构图，附图4是钳式，附图5是听骨钳式，附图6是扩张器式，附图7是镊式，附图8是剪式。	 	 	 	 
+            </p>
+    </mode-for-invention>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20110628">
+    <claim num="1">
+      <claim-text>1、一种用于中耳手术的蹬骨医疗器械，它由手柄(8)、(10)，长臂(2)和工作端(1)所构成。其特征在于，工作端(1)与长臂(2)之间构成夹角，长臂(2)由可以转动的外套(3)和内轴(4)组成。  		  	 
+                </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>2、按照权利要求1的蹬骨医疗器械，其特征在于，长臂（2）与手柄（8）、（10）之间可构成不同的角度，或者长臂（2）与手柄（8）、（10）在同一平面内。	 	 	 	 
+                </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>3、按照权利要求1或2的蹬骨医疗器械，其特征在于，手柄（8）、（10）可用弹性材料制做或在手柄（8）、（10）之间加限位弹簧，使手柄自身有一定的限位作用。 	    	 
+                </claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>4、按照权利要求1的蹬骨医疗器械，其特征在于，工作端（1）可以是钳式、镊式、剪式、听骨钳式或扩张器式。 		 	 	 
+                </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

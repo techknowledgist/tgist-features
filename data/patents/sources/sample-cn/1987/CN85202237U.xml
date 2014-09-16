@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111027" file="CN85202237U.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20110630" time-changed="214317">
+  <bibliographic-data lang="chi">
+    <publication-reference publ-type="undefined" publ-desc="Utility model application">
+      <document-id>
+        <country>CN</country>
+        <doc-number>85202237</doc-number>
+        <kind>U</kind>
+        <date>19870513</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>85202237</doc-number>
+        <date>19850612</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>chi</language-of-publication>
+    <priority-claims date-changed="20070810">
+      <priority-claim sequence="1" kind="national">
+        <country>CN</country>
+        <doc-number>85202237</doc-number>
+        <date>19850612</date>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20091229">
+      <gazette-reference>
+        <date>19870513</date>
+      </gazette-reference>
+      <unexamined-printed-without-grant>
+        <date>19861029</date>
+      </unexamined-printed-without-grant>
+    </dates-of-public-availability>
+    <classification-ipc date-changed="20070810">
+      <main-classification>
+        <text> 4B 62M   9/04   A</text>
+        <edition>4</edition>
+        <section>B</section>
+        <class>62</class>
+        <subclass>M</subclass>
+        <main-group>9</main-group>
+        <subgroup>04</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+      <further-classification sequence="1">
+        <text> 4B 62M  25/04   B</text>
+        <edition>4</edition>
+        <section>B</section>
+        <class>62</class>
+        <subclass>M</subclass>
+        <main-group>25</main-group>
+        <subgroup>04</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20070810">
+      <classification-ipcr sequence="1">
+        <text>B62M   9/00        20060101C I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>B</section>
+        <class>62</class>
+        <subclass>M</subclass>
+        <main-group>9</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>B62M   9/04        20060101A I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>B</section>
+        <class>62</class>
+        <subclass>M</subclass>
+        <main-group>9</main-group>
+        <subgroup>04</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="3">
+        <text>B62M  25/00        20060101C I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>B</section>
+        <class>62</class>
+        <subclass>M</subclass>
+        <main-group>25</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="4">
+        <text>B62M  25/04        20060101A I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>B</section>
+        <class>62</class>
+        <subclass>M</subclass>
+        <main-group>25</main-group>
+        <subgroup>04</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <number-of-claims calculated="yes">3</number-of-claims>
+    <invention-title id="title_chi" date-changed="20091229" lang="chi" format="original">小大双链两档自行车</invention-title>
+    <invention-title id="title_eng" date-changed="20091229" lang="eng" format="original">TWO-GEAR BICYCLE WITH LARGER AND SMALLER TWO CHAINS</invention-title>
+    <parties date-changed="20091227">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>柴丕谟</orgname>
+            <address>
+              <address-1>山西省繁峙县繁峙中学</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>CAI PEIMO</orgname>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="original">
+          <addressbook lang="chi">
+            <orgname>柴丕谟</orgname>
+            <address>
+              <address-1>山西省繁峙县繁峙中学</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>CAI PEIMO</orgname>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>柴丕谟</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>CAI PEIMO</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="original">
+          <addressbook lang="chi">
+            <name>柴丕谟</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>CAI PEIMO</name>
+          </addressbook>
+        </inventor>
+      </inventors>
+    </parties>
+    <patent-family date-changed="20070826">
+      <main-family family-id="71687662">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>85202237</doc-number>
+            <kind>U</kind>
+            <date>19870513</date>
+          </document-id>
+          <application-date>
+            <date>19850612</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="71626058">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>85202237</doc-number>
+            <kind>U</kind>
+            <date>19870513</date>
+          </document-id>
+          <application-date>
+            <date>19850612</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20091227" lang="chi" format="original">
+    <p num="1">该自行车中轴里侧装与内接链轮相咬合的从动轮和同轴装的离合轮，离合轮以链条连接飞轮。为1∶5的高速档。外侧装链轮以链条连接飞轮。为1∶3的低速档。离合轮一侧有牙嵌，另一侧装换档叉与车前换档杆相连，以子柄滑动在母柄导槽中的活动曲柄，在工作部分，子柄被牵引轮推出，曲柄伸长，在空转部分，子柄被拉回，曲柄缩短。牵引轮由内外两圈组成，内圈固装在立管与下管上，外圈有轮咀与子柄相连，随子柄旋转，它起着偏心轮作用，带动子柄在母柄导槽中伸出缩回。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20091227" lang="eng" format="original">
+    <p>The utility model relates to a two-gear bicycle with larger and smaller two chains and the inner side of the middle axis of the bicycle is provided with a driven wheel being articulated with an inner chain wheel and a clutch wheel with the same axis, wherein, the clutch wheel is connected with flywheels through chains and the inner side is a 1: 5 high-speed gear. The outer side of the middle axis is provided with chain wheels to connect the flywheels by chains as a 1: 3 low-speed gear. One side of the clutch wheel is provided with a jaw and the other side is provided with a gear-shifting fork which is connected with a gear-shifting bar. An auxiliary handle slides at the movable crank of the groove of a main handle, so in operation the auxiliary handle is pushed out by a traction wheel and the crank is extended while in spinning the auxiliary handle is pulled back and the crank is shortened. The traction wheel is composed of an inner and an outer cycles, wherein, the inner cycle is fixed on a standpipe and a lower pipe and the outer cycle is provided with a wheel nozzle to be connected with the auxiliary handle. The traction wheel is rotated along the auxiliary handle and has the role of an eccentric wheel to drive the auxiliary handle to extend and retract from the groove of the main handle.</p>
+  </abstract>
+  <legal-data date-changed="20090828">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>19861029</date>
+      </publication-date>
+      <event-code-1>C06</event-code-1>
+      <effect>+</effect>
+      <legal-description>PUBLICATION</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    85202237U</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="2">
+      <publication-date>
+        <date>19870513</date>
+      </publication-date>
+      <event-code-1>C14</event-code-1>
+      <effect>+</effect>
+      <legal-description>GRANTED</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    85202237U</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="3">
+      <publication-date>
+        <date>19900221</date>
+      </publication-date>
+      <event-code-1>C17</event-code-1>
+      <effect>-</effect>
+      <legal-description>EXPIRY</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN    85202237U</docdb-publication-number>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20110630">
+    <disclosure>
+      <p id="p-d0-zh" num="001">本实用新型是一种前轮小、后轮大、车架低、双链条高低速两档自行车。            </p>
+    </disclosure>
+    <background-art>
+      <p id="p-d1-zh" num="002">现行的普通自行车，已有百年的历史，其缺点首先是一档一速不能完全适应各种道路、坡度、风向等不同的具体情况；其次，前轮大叉腿长，扭转沉重，车架高，鞍座升降幅度小，不能满足各种骑车人的要求。            </p>
+    </background-art>
+    <disclosure>
+      <p id="p-d2-zh" num="003">本实用新型的任务在于克服上述缺点，提高效率，使其达到蹬车轻、跑的快、力量大的目的能够适应长途、短途、城市、农村，供男女老少骑人带物上下车方便的自行车。            </p>
+      <p id="p-d3-zh" num="004">本实用新型的结构特征如下：            </p>
+      <p id="p-d4-zh" num="005">1、在中轴左端装有由活动曲柄与内接链轮相咬合的外侧有牙嵌地从动轮和其同轴装的能转动亦能轴向滑动的离合轮，以链条连接飞轮，以1：4.8的齿轮比速度组成高速档。离合轮里侧有牙嵌，外侧装有与车前管装的换档杆连接的换档叉，按下或提起换档杆拨动换档叉，使离合轮与从动轮的牙嵌咬合成高速档，分离成低速档。中轴右端装有活动曲柄与低速链轮以链条连接飞轮，以1：3的齿轮比速度组成低速档。            </p>
+      <p id="p-d5-zh" num="006">2、由子柄滑动在母柄导槽中构成活动曲柄，母柄一端装在中轴，子柄一端装脚蹬，另一端以螺钉穿过母柄底部的长方            <br />形孔，旋紧在牵引轮外圈轮咀的螺孔中，使子柄与牵引轮外圈一同转动，由于中轴与牵引轮中心点位置不同，牵引轮起偏心轮作用，在工作部分，子柄被牵引轮推出，曲柄伸长，在空转部分，子柄被牵引轮拉回，曲柄缩短，曲柄伸长力量大，蹬车轻，曲柄缩短，蹬车时绕圈小。            </p>
+      <p id="p-d6-zh" num="007">3、牵引轮由内圈和外圈组成，外圈里面有槽与内圈外缘相咬合，但有间隙能转动，外缘有轮咀，以螺钉穿过子柄及母柄底部长方形孔与轮咀旋紧，内圈里面有螺钉耳八个，以螺钉固装在牵引轮架上，牵引轮架以支撑装在下管与立管上，下面有双头螺栓三个，上管与立管间有一个，安装在牵引轮架的拐角处（图1），把车架里外两牵引轮架固紧。            </p>
+      <p id="p-d7-zh" num="008">4、弹簧鞍座箱，骑车人按自己需要来增减箱内弹簧。            </p>
+      <p id="p-d8-zh" num="009">本实用新型有二六、二八两种型号，各种型号的基础技术数据，见附表。            </p>
+      <p id="p-d9-zh" num="010">现以二六型车的具体结构，对照附图详细说明，            </p>
+    </disclosure>
+    <description-of-drawings>
+      <p id="p-d10-zh" num="011">图1、全车外形结构示意图，比例为1：10。            </p>
+      <p id="p-d11-zh" num="012">图2、高速状态两档结构剖视图，比例为1：3。            </p>
+    </description-of-drawings>
+    <mode-for-invention>
+      <p id="p-d12-zh" num="013">参照图1，一种前轮〔1〕小、后轮〔2〕大、车架〔3〕低双链两档自行车，在车把〔4〕下面前管〔5〕的上下接头上装有陈物篮筐〔6〕，车后有马鞍形前后相对的弹簧双夹子衣架〔7〕，中间是弹簧鞍座箱〔8〕，中轴〔9〕左端装有左活动曲柄的母柄〔10〕，一端以逆螺纹把内接链轮〔11〕旋紧并与从动轮〔12〕咬合，从动轮〔12〕同轴            <br />〔13〕装有离合轮〔14〕，以链条〔15〕连接左飞轮〔16〕组成高速档。中轴〔9〕右端装低速链轮〔17〕以顺螺纹旋于右活动曲柄的母柄上，（未划出），以链条〔18〕连接右飞轮〔19〕组成低速档。左活动曲柄的子柄〔20〕一端装左脚蹬〔21〕，另一端以螺钉穿过母柄〔10〕底部的长方形孔连接左牵引轮外圈〔22〕，以左牵引轮架〔23〕用支撑把牵引轮内圈（未划出）固定在立管〔24〕与下管〔25〕上（右活动曲柄的结构与左同并见图2），车架后轴咀〔26〕除固定立叉〔27〕外，还装有衣架腿〔28〕后挡泥板〔29〕的支腿〔30〕，前轮〔1〕上面装前挡泥板〔31〕。            </p>
+      <p id="p-d13-zh" num="014">参照图2，在中轴〔9〕左端装有子柄〔20〕滑动在母柄〔10〕导槽中的左活动曲柄，子柄〔20〕一端装左脚蹬〔21〕，另一端以螺钉〔32〕穿过母柄〔10〕导槽底部的长方形孔旋紧在牵引轮外圈〔22〕的轮咀〔33〕的螺孔中，左牵引轮内圈〔34〕里面有螺钉耳八个，以螺钉加垫圈〔35〕把内圈〔34〕旋紧在牵引轮架〔23〕上，在下管〔25〕上以支撑〔36〕把左牵引轮架〔23〕用螺钉〔37〕固定（立管未划出装法同），双头螺栓〔38〕连接并加固左右两牵引轮架〔23〕、〔53〕，母柄〔10〕一端以销钉〔39〕固装在中轴〔9〕上，以逆螺纹旋紧内接链轮〔11〕，从动轮〔12〕与内接链轮咬合，其外面有牙嵌〔40〕共4个，与离合轮〔14〕同轴〔13〕固装在平            <br />叉单管〔41〕中，离合轮〔14〕能转动亦能轴向滑动，里侧有牙嵌4个，与从动轮的牙嵌〔40〕咬合，外侧有和换挡杆〔42〕连接的换挡叉〔43〕以螺钉〔44〕装在平叉单管〔41〕中，链条〔15〕连接左飞轮〔16〕（见图1），处在高速状态。中轴〔9〕右端装有子柄〔45〕滑动在母柄〔46〕导槽中的右活动曲柄，右子柄〔45〕一端装右脚蹬〔47〕另一端以螺钉〔48〕穿过右母柄〔46〕导槽底部的长方形孔，旋紧在右牵引轮外圈〔49〕的轮咀〔50〕的螺孔中，右牵引轮内圈〔51〕里面有螺釘耳八个，以螺钉加垫圈〔52〕把内圈〔51〕旋紧在右牵引轮架〔53〕上，下管〔25〕上以支撑〔36〕把右牵引轮架〔53〕用螺钉〔37〕固定（立管未划出装法同），右母柄〔46〕以销钉〔54〕固装在中轴〔9〕上，以顺螺纹旋紧低速链轮〔17〕以链条〔18〕连接右飞轮〔19〕（见图1），成低速档空转。            </p>
+    </mode-for-invention>
+    <disclosure>
+      <p id="p-d14-zh" num="015">本实用新型的优点是：            </p>
+      <p id="p-d15-zh" num="016">1、两档速度，对于平地、爬坡、逆风等各种不同情况都能调节速度，如汽车那样换档变速，使其适应各种情况而顺利蹬车前进。            </p>
+      <p id="p-d16-zh" num="017">2、速度高，高速档的齿轮比为1：4.8，比普通车1：2.4，中国双速自行车1：2.3超过一倍，即达到自行车全速32公里／时的要求（二八型，二六型为30公里／时），每分钟蹬50转，飞轮可达240转，超过日本木村            <br />秀政的鹳式人力飞机螺旋桨每分钟转速210转，故高速档又可用于人力飞机，            </p>
+      <p id="p-d17-zh" num="018">3、力量大，蹬车轻，低速档的齿轮比为1：3，超过普通车1：2.4，中国双速自行车1：1.8，普通车曲柄长175毫米，链轮半径100毫米，相差75毫米，活动曲柄伸长为262毫米，链轮半径112毫米，相差150毫米，力矩增大一倍，这样蹬车就可省力二分之一，力量却增大一倍，左右两活动曲柄水平时长387毫米，普通车350毫米，故蹬车时绕圈不感太大，低速档可用于人力三轮车。            </p>
+      <p id="p-d18-zh" num="019">4、前轮小，叉腿短，扭转轻便，减轻车重，且不易损坏，车架低，上下车方便，尤其车后带有货物，更属便利。            </p>
+      <p id="p-d19-zh" num="020">小大双链两档自行车，蹬车轻，跑的快，力量大，上下车方便的目的完全能够达到，它将成为“75”期间的一种交通利器盛行在祖国各地。            </p>
+      <p id="p-d20-zh" num="021">
+        <img wi="438" he="570" file="85202237_img2.tif" img-format="tif" />
+        <br />
+      </p>
+      <p id="p-d21-zh" num="022">
+        <br />
+      </p>
+      <p id="p-d22-zh" num="023">
+        <img wi="432" he="540" file="85202237_img3.tif" img-format="tif" />
+        <br />
+      </p>
+      <p id="p-d23-zh" num="024">
+        <br />
+      </p>
+      <p id="p-d24-zh" num="025">
+        <img wi="450" he="546" file="85202237_img4.tif" img-format="tif" />
+        <br />
+      </p>
+      <p id="p-d25-zh" num="026">
+        <br />
+      </p>
+    </disclosure>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20110630">
+    <claim num="1">
+      <claim-text>1、一种小大双链两档自行车，其特征是前轮[1]小、后轮[2]大，车架[3]低，中轴[9]一端装有左牵引轮外圈[22]控制的左活动曲柄，其母柄[10]一端装内接链轮[11]和咬合的从动轮[12]及同轴[13]装的离合轮[14]以链条[15]连接左飞轮[16]组成高速档，中轴[9]另一端装有右牵引轮外圈[49]控制的右活动曲柄，其母柄[46]一端装低速链轮[17]以链条[18]连接右飞轮[19]组成低速档。                </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>2、如权利要求1中所述的自行车，其特征是由子柄〔20〕滑动在母柄〔10〕导槽中组成左活动曲柄和由子柄〔45〕滑动在母柄〔46〕导槽中组成右活动曲柄。                </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>3、如权利要求1中所述的自行车，其特征是由转动的外圈〔22〕与固定在车架〔3〕上的内圈〔34〕组成左牵引轮和由转动的外圈〔49〕与固定在车架〔3〕上的内圈〔51〕组成右牵引轮。                </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

@@ -1,0 +1,4 @@
+1987	data/patents/sources/sample-cn/1987/CN85202237U.xml	1987/CN85202237U.xml
+1987	data/patents/sources/sample-cn/1987/CN86105254A.xml	1987/CN86105254A.xml
+1988	data/patents/sources/sample-cn/1988/CN86204813U.xml	1988/CN86204813U.xml
+1988	data/patents/sources/sample-cn/1988/CN87102734A.xml	1988/CN87102734A.xml
