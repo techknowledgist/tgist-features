@@ -1,6 +1,4 @@
-"""
-
-Script that manages the part of the processing chain that deals with individual documents,
+"""Script that manages the part of the processing chain that deals with individual documents,
 that is document parsing, segmentation, tagging, chunking and creation of phrase-level and
 document-level feature vectors.
 
@@ -48,6 +46,17 @@ Examples:
    %  python step2_document_processing.py --corpus data/patents/en --txt2tag -n 5
    %  python step2_document_processing.py --corpus data/patents/en --tag2chk -n 5
 
+There are two options that allow you to specifiy the location of the Stanford
+tagger and segmenter. These should be used if these tools are not on a location
+as used by the code developers, which means that in most cases these options
+should be used.
+
+  --stanford-tagger-dir PATH
+  --stanford-segmenter-dir PATH
+       These can be used to overrule the default directories for the Stanford
+       segmenter and tagger. The path should be the root of the stanford tool,
+       the directory that includes the 'bin' sub directory.
+
 """
 
 
@@ -67,6 +76,7 @@ from ontology.utils.batch import show_processing_time
 def read_opts():
     options = ['corpus=', 'source=', 'populate',
                'xml2txt', 'txt2tag', 'txt2seg', 'seg2tag', 'tag2chk',
+               'stanford-segmenter-dir=', 'stanford-tagger-dir=',
                'verbose', 'pipeline=', 'show-data', 'show-pipelines',
                'show-processing-time']
     try:
@@ -98,6 +108,8 @@ if __name__ == '__main__':
         if opt == '--show-data': show_data_p = True
         if opt == '--show-pipelines': show_pipelines_p = True
         if opt == '--show-processing-time': show_processing_time_p = True
+        if opt == '--stanford-segmenter-dir': config.update_stanford_segmenter(val)
+        if opt == '--stanford-tagger-dir': config.update_stanford_tagger(val)
         if opt in ALL_STAGES:
             stage = opt
 

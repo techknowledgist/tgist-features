@@ -121,6 +121,19 @@ else:
     STANFORD_TAGGER_DIR = os.path.join(tools_path, "stanford-postagger-full-2012-07-09" )
     STANFORD_SEGMENTER_DIR = os.path.join(tools_path, "stanford-segmenter-2012-07-09")
 
+def update_stanford_tagger(path):
+    """Method to update the path to the Stanford tagger."""
+    if os.path.isdir(path):
+        config.STANFORD_TAGGER_DIR = path
+    else:
+        print "WARNING: invalid path specified for STANFORD_TAGGER_DIR"
+
+def update_stanford_segmenter(path):
+    """Method to update the path to the Stanford segmenter."""
+    if os.path.isdir(path):
+        config.STANFORD_SEGMENTER_DIR = path
+    else:
+        print "WARNING: invalid path specified for STANFORD_SEGMENTER_DIR"
 
 # memory use for the stanford tagger and segmenter
 STANFORD_MX = "2000m"

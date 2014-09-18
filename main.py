@@ -106,19 +106,6 @@ from corpus import POPULATE, XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
 from ontology.utils.batch import RuntimeConfig
 
 
-def update_stanford_tagger(path):
-    if os.path.isdir(path):
-        config.STANFORD_TAGGER_DIR = path
-    else:
-        print "WARNING: invalid path specified for STANFORD_TAGGER_DIR"
-
-def update_stanford_segmenter(path):
-    if os.path.isdir(path):
-        config.STANFORD_SEGMENTER_DIR = path
-    else:
-        print "WARNING: invalid path specified for STANFORD_SEGMENTER_DIR"
-
-
 if __name__ == '__main__':
 
     options = ['language=', 'corpus=', 'filelist=', 'verbose',
@@ -138,8 +125,8 @@ if __name__ == '__main__':
         if opt in ('-c', '--corpus'): corpus_path = val
         if opt in ('-v', '--verbose'): verbose = True
         if opt == '-n': limit = int(val)
-        if opt == '--stanford-segmenter-dir': update_stanford_segmenter(val)
-        if opt == '--stanford-tagger-dir': update_stanford_tagger(val)
+        if opt == '--stanford-segmenter-dir': config.update_stanford_segmenter(val)
+        if opt == '--stanford-tagger-dir': config.update_stanford_tagger(val)
 
     pipeline = config.DEFAULT_PIPELINE
     pipeline_file = 'pipeline-default.txt'
