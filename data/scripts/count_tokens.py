@@ -18,7 +18,6 @@ would obviously never run this to just get the number of files.
 
 
 import os, sys, time
-
 sys.path.append(os.path.abspath('../../../..'))
 from ontology.utils.file import open_input_file
 
