@@ -592,14 +592,17 @@ class Sentence_chinese(Sentence):
         
         return(fname("prev_N", res))
     
+    """
+    #buggy feature, disabled 12/25/14 PGA
     @feature_method
     def penultimate_word (self, index):
         last_index = self.chart[index].chunk_end - 1
         if last_index ==0:
-            return(fname("last_word", ''))
+            return(fname("pen_word", ''))
         else:
             res = self.chart[last_index-1].tok
-            return(fname("last_word", res))
+            return(fname("pen_word", res))
+    """
         
     @feature_method
     def prev_V(self, index):
