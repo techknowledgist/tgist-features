@@ -107,11 +107,16 @@ def run_populate(rconfig, limit, verbose=False):
         src_file = fspec.source
         dst_file = os.path.join(rconfig.target_path, 'data', output_name,
                                 dataset.version_id, 'files', fspec.target)
+        # allow for compressed files, while being handed the name without
+        # extension
+        if not os.path.exists(src_file):
+            src_file += ".gz"
+            dst_file += ".gz"
         if verbose:
             print "[--populate] %04d %s" % (count, dst_file)
         ensure_path(os.path.dirname(dst_file))
         shutil.copyfile(src_file, dst_file)
-        # at some point there seemed to be an issue with compressig for Chinese,
+        # at some point there seemed to be an issue with compressing for Chinese,
         # so added this to do language dependent compressing, there is now no
         # difference for the population phase
         if rconfig.language == 'en': compress(dst_file)
