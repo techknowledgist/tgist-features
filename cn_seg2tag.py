@@ -24,6 +24,7 @@ paren_tag = re.compile('([()])_[^\s]*' )
 # include them as part of a noun phrase.
 def fix_paren_tag(line):
     return(re.sub(paren_tag, r'\1_PU', line))
+    #return(re.sub(paren_tag, r'\1_TEST', line))
 
 def tag(input, output, tagger):
     s_input = codecs.open(input, encoding='utf-8')
