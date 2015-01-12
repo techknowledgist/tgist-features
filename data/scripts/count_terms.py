@@ -1,4 +1,4 @@
-"""count_tokens.py
+"""count_terms.py
 
 Counts the number of terms and technologies in a corpus.
 
