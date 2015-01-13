@@ -142,11 +142,11 @@ if __name__ == '__main__':
         limit = len([f for f in open(rconfig.filenames).readlines() if len(f.split()) > 1])
 
     c.populate(rconfig, limit, verbose)
-    c.xml2txt(rconfig, limit, {}, source, verbose)
+    c.xml2txt(rconfig, limit, rconfig.get_options(XML2TXT), source, verbose)
     if language == 'en':
-        c.txt2tag(rconfig, limit, {}, verbose)
+        c.txt2tag(rconfig, limit, rconfig.get_options(TXT2TAG), verbose)
     elif language == 'cn':
-        c.txt2seg(rconfig, limit, {}, verbose)
-        c.seg2tag(rconfig, limit, {}, verbose)
-    c.tag2chk(rconfig, limit, {}, verbose)
+        c.txt2seg(rconfig, limit, rconfig.get_options(TXT2SEG), verbose)
+        c.seg2tag(rconfig, limit, rconfig.get_options(SEG2TAG), verbose)
+    c.tag2chk(rconfig, limit, rconfig.get_options(TAG2CHK), verbose)
 

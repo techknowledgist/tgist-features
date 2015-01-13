@@ -126,13 +126,13 @@ if __name__ == '__main__':
         show_processing_time(rconfig, config.DATA_TYPES)
         exit()
 
-    # note that the second argument always has to be the limit, this is required
-    # by update_state()
     options = rconfig.get_options(stage)
 
     # corpus already exists in a directory, so not all arguments are needed
     corpus = Corpus(None, None, None, corpus_path, None, None)
 
+    # note that the second argument always has to be the limit, this is required
+    # by update_state()
     if stage == POPULATE:
         corpus.populate(rconfig, limit, verbose)
     elif stage == XML2TXT:
