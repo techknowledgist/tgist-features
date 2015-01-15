@@ -107,7 +107,10 @@ if location == 'BRANDEIS':
     STANFORD_TAGGER_DIR = base_dir + "stanford-postagger-full-2012-07-09" 
     STANFORD_SEGMENTER_DIR = base_dir + "stanford-segmenter-2012-07-09"
 elif location == 'FUSENET':
+    # the tools are at both spots, but the former is on a partition with less
+    # space so may be removed
     base_dir = "/home/fuse/tools/"
+    base_dir = "/shared/home/marc/tools/"
     STANFORD_TAGGER_DIR = base_dir + "stanford-postagger-full-2012-07-09"
     STANFORD_SEGMENTER_DIR = base_dir + "stanford-segmenter-2012-07-09"
 elif location == 'MAC':
