@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-                                                                                                                         
 # cn_sef2tag.py
 # tag segmented chinese files
 # formatted as follows:
@@ -9,9 +10,21 @@
 import sdp
 import os
 import codecs
+import re
 
 debug_p = False
 #debug_p = True
+
+# pattern to match a parenthesis and its tag (e.g. )_NN )
+paren_tag = re.compile('([()])_[^\s]*' )
+
+# replace all parenthesis tags in a tagger output line with the tag <paren>_PU
+# This is needed to override the Stanford tagger's incorrect tagging of parens in 
+# Chinese text.  Sometimes they are tagged as _NN, which would cause the chunker to
+# include them as part of a noun phrase.
+def fix_paren_tag(line):
+    return(re.sub(paren_tag, r'\1_PU', line))
+    #return(re.sub(paren_tag, r'\1_TEST', line))
 
 def tag(input, output, tagger):
     s_input = codecs.open(input, encoding='utf-8')
@@ -37,6 +50,9 @@ def tag(input, output, tagger):
                 # process the sentences in the section
                 l_tag_string = tagger.tag(line)
                 for tag_string in l_tag_string:
+                    # replace all tags for parens with <paren>_PU
+                    # (fixes a bug in the Stanford tagger)
+                    tag_string = fix_paren_tag(tag_string)
                     tag_string = tag_string.encode('utf-8')
                     if debug_p:
                         print "[tag]tag_string: %s" % tag_string
