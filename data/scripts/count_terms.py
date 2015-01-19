@@ -4,47 +4,39 @@ Counts the number of terms and technologies in a corpus.
 
 Usage:
 
-    $ python count_terms.py CORPUS_PATH
+    $ python count_terms.py TERMS_FILE
 
-The CORPUS_PATH holds a corpus as created by the script step2_process.py in
-ontology/doc_processing. The default for CORPUS_PATH is the example corpus.
+The TERMS_FILE holds the result of the collect_terms.py script, that is, a list
+of tab-sepated frequency-term pairs. The total number of term types and term
+instances is printed to the standards output.
 
-Prints the term count and technology count to the standard output.
+If TERMS_FILE is enclosed in double quotes and contains unix wild cards, then
+counts are printed for each file that the TERMS_FILE expression covers.
 
-It takes about X minutes to run this scripts on a 6MB, 500K token corpus. 
+Examples:
+
+    $ setenv TERMS /home/j/corpuswork/fuse/FUSEData/corpora/ln-cn-all-600k/terms
+    $ python count_terms.py $TERMS/ln-cn-all-600k-1995-terms.txt
+    $ python count_terms.py "$TERMS/ln-cn-all-600k-199?-terms.txt"
 
 """
 
-
-import os, sys, time
-sys.path.append(os.path.abspath('../../../..'))
-from ontology.utils.file import open_input_file
-
+import os, sys, codecs, glob
 
 CORPUS = '../patents/corpora/sample-us'
 
-
-def count_tokens_in_corpus(corpus):
-    t1 = time.time()
-    file_count = 0
-    sentence_count = 0
+def count_terms(terms_file):
+    type_count = 0
     token_count = 0
-    done = 0
-    for line in open(os.path.join(corpus, 'config', 'files.txt')):
-        #if done >= 100: break
-        fname = line.split()[2]
-        fname = os.path.join(corpus, 'data', 'd2_tag', '01', 'files', fname)
-        file_count += 1
-        for line in open_input_file(fname):
-            sentence_count += 1
-            token_count += len(line.split())
-        done += 1
-    print corpus, file_count, sentence_count, token_count, "(%d seconds)" \
-          % (time.time() - t1)
-
+    for line in codecs.open(terms_file):
+        freq, term = line.split("\t")
+        freq = int(freq)
+        type_count += 1
+        token_count += freq
+    basename = os.path.basename(terms_file)
+    print "%s\t%8d\t%8d" % (basename, type_count, token_count)
 
 if __name__ == '__main__':
-
-    if len(sys.argv) > 1:
-        CORPUS = sys.argv[1]
-    count_tokens_in_corpus(CORPUS)
+    terms_file = sys.argv[1]
+    for terms_file in sorted(glob.glob(sys.argv[1])):
+        count_terms(terms_file)
