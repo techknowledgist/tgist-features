@@ -7,17 +7,13 @@ typically used by scripts that process files in batch.
 
 # TODO
 #
-# - Filenames like files.txt and general.txt are defined in the code, should be
-#   put up front; the same holds for names of processing stages and input and
-#   output directories like d2_tag.
-#
 # - Add option to grow an already initialized corpus. One question to answer here
 #   is whether you just add lines to config/files.txt or also add some lines
 #   saying that x files were added at time t.
 #
 # - The run_X methods all update the count in state/processed.txt every STEP
 #   files. And at the end of each method, the final remainder is added and the
-#   state/processing_hiistory fiel is updated. We may want to update the history
+#   state/processing_history file is updated. We may want to update the history
 #   with every STEP files as well and at the end get a final tally. Currently,
 #   there is not guaranteed to be an entry when an error happens.
 #
@@ -28,6 +24,11 @@ typically used by scripts that process files in batch.
 #   function).
 #
 # - I do not really want to import sdp here, hide it in the segmenter code.
+#
+# - When populating a corpus, the code does not check whether there is anything
+#   left to do. So if you have a corpus with 10 files and you do a --populate
+#   with n=10, and you then do it again, then it will not complain, but it will
+#   add a line to the state/processing-history.txt file.
 
 
 import os, sys, shutil, getopt, errno, random, time, codecs
@@ -72,6 +73,12 @@ DOCUMENT_PROCESSING_IO = \
 # state directory is updated, this way we still have a reasonably recent count
 # if there is an error that is not trapped.
 STEP = 100
+
+# Names of some standard files
+FNAME_FILELIST = 'files.txt'
+FNAME_INFO_GENERAL = 'general.txt'
+FNAME_INFO_ADDITIONS = 'additions.txt'
+FNAME_PIPELINE_DEFAULT = 'pipeline-default.txt'
 
 
 def update_state(fun):
@@ -442,8 +449,8 @@ class Corpus(object):
     def _create_filelist(self):
         """Create a list of files either by copying a given list or by traversing a
         given directory."""
-        print "[--init] creating %s/files.txt" % (self.conf_path)
-        file_list = os.path.join(self.conf_path, 'files.txt')
+        print "[--init] creating %s/%s" % (self.conf_path, FNAME_FILELIST)
+        file_list = os.path.join(self.conf_path, FNAME_FILELIST)
         if self.source_file is not None:
             shutil.copyfile(self.source_file, file_list)
         elif self.source_path is not None:
@@ -460,7 +467,7 @@ class Corpus(object):
         read_only(file_list)
 
     def _create_general_config_file(self):
-        filename = os.path.join(self.conf_path, 'general.txt')
+        filename = os.path.join(self.conf_path, FNAME_INFO_GENERAL)
         print "[--init] creating %s" % (filename)
         fh = open(filename, 'w')
         fh.write(self.command)
@@ -468,7 +475,7 @@ class Corpus(object):
         read_only(filename)
 
     def _create_default_pipeline_config_file(self):
-        filename = os.path.join(self.conf_path, 'pipeline-default.txt')
+        filename = os.path.join(self.conf_path, FNAME_PIPELINE_DEFAULT)
         print "[--init] creating %s" % (filename)
         fh = open(filename, 'w')
         fh.write(self.pipeline_config.lstrip())

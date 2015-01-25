@@ -18,6 +18,7 @@ USAGE
    % python step1_initialize.py OPTIONS
 
 OPTIONS
+   --add                    add paths to an alreay existing corpus
    --language en|de|cn      language, default is 'en'
    --filelist PATH          a file with a list of source files
    --source PATH            a directory with all the source files
@@ -25,15 +26,14 @@ OPTIONS
    --shuffle                randomly sort config/files.txt, used with the
                              --source option
 
-You must run this script from the directory it is in.
-
-There are two typical invocations, one where a file list is given to
-initialize the corpus and one where a source directory is given:
+There are two typical invocations for initializing a corpus, one where a file
+list is given to initialize the corpus and one where a source directory is
+given:
 
   % python step1_initialize.py \
       --language en \
       --corpus data/patents/test \
-      --filelist filelist.txt
+      --filelist data/lists/sample-us.txt
 
   % python step1_initialize.py \
       --language en \
@@ -43,10 +43,10 @@ initialize the corpus and one where a source directory is given:
 
 Both commands create a directory data/patents/test, in which the corpus will be
 initialized. It will include config/ and data/ subdirectories and several files
-mentioned above in the config/ subdirectory. The first form copies filelist.txt
-to en/config/files.txt. The second form traverses the directory ../external/US,
-takes all file paths, randomly shuffles them, and then saves the result to
-en/config/files.txt.
+mentioned above in the config/ subdirectory. The first form copies the file list
+data/lists/sample-us.txt to data/patents/config/files.txt. And the second form
+traverses the directory ../external/US, takes all file paths, randomly shuffles
+them, and then saves the result to data/patents/config/files.txt.
 
 When the --filelist options is used, the system expects that FILE has two or
 three columns with year, source file and an optional target file, which is the
@@ -57,6 +57,17 @@ be stripped.
 
 With the --source option, the source and target will always be the same and the
 year will always be set to 0000. It is up to the user to change this if needed.
+
+
+This script can also be used to add paths to the file list of the corpus.
+
+  % python step1_initialize.py \
+      --add
+      --corpus data/patents/test \
+      --filelist data/lists/sample-us-extra.txt
+
+The corpus data/patents/test has to exist and the content of sample-us-extra.txt
+is added to config/files.txt. Other options are ignored.
 
 
 NOTES
@@ -106,20 +117,69 @@ pipeline-default.txt).
 
 """
 
-
 import os, sys, shutil, getopt, errno, random, time
-
 import config, corpus
+sys.path.append(os.path.abspath('../..'))
+from ontology.utils.file import read_only, make_writable
+from ontology.utils.git import get_git_commit
+
+
+def add_files_to_corpus(corpus_dir, extra_files):
+    """Append lines in extra_files to files.txt in the corpus. First create a
+    time-stamped backup of files.txt. Do not add files that already are in
+    files.txt."""
+    if not os.path.isdir(corpus_dir):
+        exit("WARNING: there is no corpus at %s" % corpus_dir)
+    fname_current = os.path.join(corpus_dir, 'config', corpus.FNAME_FILELIST)
+    fname_current_bak = "%s-%s.txt" % (fname_current[:-4],
+                                       time.strftime("%Y%m%d:%H%M%S"))
+    make_writable(fname_current)
+    shutil.copyfile(fname_current, fname_current_bak)
+    current_files = read_files(fname_current)
+    fh_current = open(fname_current, 'a')
+    added = 0
+    for line in open(extra_files):
+        fname = line.strip().split("\t")[1]
+        if not fname in current_files:
+            added += 1
+            print "adding", fname
+            fh_current.write(line)
+    fh_current.close()
+    read_only(fname_current)
+    add_info_file(corpus_dir, extra_files, added)
+
+def read_files(filelist):
+    fh = open(filelist)
+    files = {}
+    for line in fh:
+        fname = line.strip().split("\t")[1]
+        files[fname] = True
+    fh.close()
+    return files
+
+def add_info_file(corpus_dir, extra_files, added):
+    """Append information to CORPUS/config/additions.txt."""
+    info_file = os.path.join(corpus_dir, 'config', corpus.FNAME_INFO_ADDITIONS)
+    make_writable(info_file)
+    fh = open(info_file, 'a')
+    fh.write("$ %s\n\n" % ' '.join(sys.argv))
+    fh.write("timestamp    =  %s\n" % time.strftime("%x %X"))
+    fh.write("file_list    =  %s\n" % extra_files)
+    fh.write("files_added  =  %s\n" % added)
+    fh.write("git_commit   =  %s\n\n\n" % get_git_commit())
+    fh.close()
+    read_only(info_file)
 
 
 if __name__ == '__main__':
 
-    options = ['language=', 'corpus=', 'filelist=', 'source=', 'shuffle']
+    options = ['language=', 'corpus=', 'filelist=', 'source=', 'shuffle', 'add']
     (opts, args) = getopt.getopt(sys.argv[1:], 'f:c:l:s:', options)
 
     source_file = None
     source_path = None
     target_path = None
+    add_files = False
     shuffle = False
     language = config.LANGUAGE
     pipeline_config = config.DEFAULT_PIPELINE
@@ -130,9 +190,13 @@ if __name__ == '__main__':
         if opt in ('-s', '--source'): source_path = val
         if opt in ('-c', '--corpus'): target_path = val
         if opt == '--shuffle': shuffle = True
+        if opt == '--add': add_files = True
 
     if language == 'cn':
-            pipeline_config = config.DEFAULT_PIPELINE_CN
+        pipeline_config = config.DEFAULT_PIPELINE_CN
 
-    corpus.Corpus(language, source_file, source_path, target_path,
-                  pipeline_config, shuffle)
+    if add_files:
+        add_files_to_corpus(target_path, source_file)
+    else:
+        corpus.Corpus(language, source_file, source_path, target_path,
+                      pipeline_config, shuffle)
