@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Modeled after schema fuseArticleSchema_2.xsd.
+     However it does not conform to the schema -->
+<fs:JournalArticle xmlns:fs="http://www.iarpa.gov/FUSE/Schema/Article">
+  <fs:FuseProcessingMetaData>
+    <fs:ArticlePageCount>4</fs:ArticlePageCount>
+    <fs:FuseFileCreationDate>11/19/2013 9:56:35 PM</fs:FuseFileCreationDate>
+    <fs:CopyRightString>© Tsinghua Tongfang Knowledge Network Technology Co., Ltd.(Beijing)(TTKN) All rights reserved.</fs:CopyRightString>
+    <fs:FileName>S:\fusePipeline\FUSEData\workingDirectory_14\e66d13c3-1967-4928-a63e-af225f9b2389\SKJX200807017.pdf</fs:FileName>
+    <fs:FileId>
+    </fs:FileId>
+    <fs:FuseChineseTransformerVersion>FUSE_V3.4.598</fs:FuseChineseTransformerVersion>
+  </fs:FuseProcessingMetaData>
+  <fs:JournalMetadataFront>
+    <fs:JournalArticleId>
+    </fs:JournalArticleId>
+    <fs:ChineseLibraryCode>
+    </fs:ChineseLibraryCode>
+    <fs:ChineseDocCode>
+    </fs:ChineseDocCode>
+  </fs:JournalMetadataFront>
+  <fs:ArticleMetadataFront>
+    <fs:PageRange>
+    </fs:PageRange>
+    <fs:Issue>
+    </fs:Issue>
+  </fs:ArticleMetadataFront>
+  <fs:FrontMatter>
+    <fs:ArticleMetaData>
+      <fs:PublicationDate>2008</fs:PublicationDate>
+    </fs:ArticleMetaData>
+    <fs:ArticleTitle lang="zh">液压上击器台架试验动力学探讨
+
+
+刘长艳1 , 吕瑞典1 , 李怀中2 2 , 何敬革
+( 1. </fs:ArticleTitle>
+    <fs:AuthorBlock>西南石油大学, 成都 610500
+; 2. 塔里木油田 打捞及工具中心, 新疆 库尔勒 841000)
+</fs:AuthorBlock>
+    <fs:AbstractBlock lang="zh">摘要
+: 为掌握液压震击器震击性能, 提高井下作业效率, 分析了试验台架液压上击器的震击过程; 建立
+了试验台架液压上击器震击效果的计算模型。根据弹性波理论与动力学相结合的办法, 得出台
+架上心轴撞击垫与缸套承击体撞击时的冲击能以及心轴对缸套产生的撞击力, 为现场测试和上击器
+的优化设计提供了依据。
+</fs:AbstractBlock>
+    <fs:KeywordBlock lang="zh">关键词
+: 液压上击器
+; 试验台架
+; 弹性波
+; 动力学
+; 震击力
+
+中图分类号: </fs:KeywordBlock>
+    <fs:ChineseLibraryCode>TE9</fs:ChineseLibraryCode>
+    <fs:Stuff>
+. 07 文献标识码: A
+</fs:Stuff>
+    <fs:TranslatedTitle lang="en">Dynamic Analysis of Hydra2Jar in Test2bed</fs:TranslatedTitle>
+
+LIU Chang2yan1 , L B Rui2dian1 , LI H uai2zhong2 , H E Jing2ge2
+( 1. S outhwest P etroleum Univer sity, Cheng du 610500, China; 2. F ishing and Tools Center ,
+Ta r im Oilf ield , K uer le 841000, China)
+<fs:AbstractBlock lang="zh"><fs:P lang="en">Abstr act: In order to master the performance of H ydra2Jar and impr ove the efficiency of the
+downhole oper ation, the process of jarr ing in test2bed is analyzed in this paper, and the H ydr a2
+Jar. s Calculation model based on test2bench is built . T he impact ener gy and the impact force are
+attained about the mandrel and the cylinder liner with the plane wave pr opagation theories and
+dynamics. The result offers the academic evidence for the latter locating examination and provides</fs:P>
+
+the principle for the H ydr a2Jar. s optimization design.
+前提。通常只是将游动系统质量加到管柱上, 但这
+种方法需要仔细评价游动系统的强度、 井下管柱的
+屈曲安全余量和屈曲严重度后才能安全使用。
+2) 建立了大位移井套管力学三维数值计算模型
+, 并开发了相应的计算软件, 经现场验证具有重要
+的实际推广应用价值。
+3) 通过对大钩载荷的模拟计算, 可为大位移
+井套管下入深度预测和套管下入方式提供依据。
+</fs:AbstractBlock></fs:FrontMatter>
+  <fs:BackMatter>参考文献
+:
+[ <fs:Reference>1</fs:Reference><fs:P>] Johansick C A . T orque and design dir ectional wells
+predict ion and measurement[ G] . SP E 11 380, 1983.
+[ </fs:P><fs:Reference>2</fs:Reference><fs:P>] 鲁宾斯基 . 钻井工程进展: 第 1 册[ M] . 北京: 石油工业
+出版社, 1994.
+[ </fs:P><fs:Reference>3</fs:Reference><fs:P>] H o H S. An improved modeling progr am for compu2
+ting the tor que and drag in directional and deep wells
+[ G] . SPE 18 047, 1988.
+[ 4] 徐苏欣, 段 勇, 雒维国. 大位移井下套管受力 分析 和
+计算[ J] . 西安石油 学院学报, 2001, 16( 4) : 71273.
+[ 5] 齐月魁, 徐学军, 李洪俊, 等. BPX3X1 大位移井下套 管摩阻
+预测[ J] . 石油 钻采工艺, 2005( 27) : 11213.
+[ 6] 刘绘新, 李晋. 深 井小尺寸套管下入遇阻时最大下 放力
+的确定[ J] . 西南 石油大学学报, 2002, 24( 2) : 44246.
+[ 7] 高德利, 覃成锦, 李文勇. 南 海西江 大位移 井摩阻 和扭矩
+数值分析研究[ J] . 石油钻采工艺, 2003, 25( 5) : 7212.
+收稿日期: 2007212225
+作者简介: 刘长艳 ( 19842) , 女, 四 川达州人, 硕士研究生, 主要从事石油矿场 机械震击 测试研究工作, E2mail: showmemy@
+tom. com。
+第 37 卷 第 7 期 刘长艳, 等: 液压上击器台架 试验动力学探讨 # 57 #
+Key words: hydra2jar; test2bed; plane wave; dynamics; impact force
+液压上击器利用钻具拉伸其内的活塞来压缩液
+体产生弹性势能, 弹性势能被释放后, 产生向上的巨大
+震击动载荷, 以此达到打捞、 取芯等目的, 它具有
+结构简单, 震击力较大, 回位容易, 操作方便等优点。
+液压上击器在现场使用之前, 需要在试验台架
+上进行拉力试验。通常在连接好拉力试验接头后,
+将液压上击器置于试验台架上, 以中低拉力载荷拉开
+, 约在 3~ 5 min 内释放, 接着调定为标准拉力试
+压 3~ 5 次, 确认其工作正常后, 才能投入现场使用。
+目前的台架试验仅可检查震击器是否能正常工作
+, 不能检测其产生的震击力大小。正确地描述震击
+过程以及准确地计算震击时的动载荷, 对掌握震击器
+的性能非常重要。本文的目的就是通过对液压
+上击器震击过程进行描述, 探讨台架试验时震击力
+的计算方法。
+2 震击过程分析
+在试验台架上进行震击试验时, 震击器所受拉力
+由台架液缸施加, 震击器震击过程分为蓄能、 释放
+加速和震击 3 个阶段。
+2. 1 拉伸蓄能阶段( 如图 2)
+震击器是在水平的试验台架上做试验, 忽略摩擦力
+的影晌, 心轴受的提拉力就是台架施加给震击器
+的力 F 。 在力 F 作用下, 由于受活塞机构的约束,
+心轴不能自由移动, 迫使心轴产生弹性伸长, 逐渐积聚
+弹性变形能。当拉力增加到所要求的载荷时, 保持
+拉力不变, 由缝隙泄流理论计算出的心轴速度远
+小于释放阶段心轴的运动速度, 故认为在积聚能量
+[ 1 ] 阶段, 心轴的速度近似为零 。此时, 作用在震击器
+上的拉力为 F 。
+1 基本假设
+在试验台架( 如图 1) 上对液压上击器进行拉力
+试验, 没有井内工况的影响, 不受井壁摩擦力、 泥浆
+阻力及钻柱自身重力的影响。为了更好地求解震击
+模型, 提出基本假设。
+a) 把心轴与缸套都看作是一根有质量的连续
+分布的弹性体, 服从虎克定律。
+1 ) 心轴; 2 ) 泄油缝隙; 3) 液缸; 4) 台架
+图 2 震击器台架试验拉伸阶段
+2. 2 释放阶段( 如图 3)
+1 ) 心轴; 2 ) 泄油缝隙; 3) 液缸; 4) 台架
+图 3 震击器台架试验释放阶段
+图 1 液压上击器试验台架
+b) 撞击过程中只有动能与弹性势能的转换,
+没有 其 他能 量, 例 如 摩擦 能、 阻力能 和 重力 势 能
+损失。
+c) 震击过程中的撞击是完全非弹性碰撞, 碰撞
+后无弹性回跳影响。
+当心轴带动活塞运动到卸载腔时, 突然失去拉力
+, 心轴积聚的弹性变形能开始释放, 此时心轴带动
+撞击垫向右运动。当心 轴运动到与缸套接触的瞬间
+, 震击发生。由弹性波传播理论 , 在弹性波传播瞬间
+, 并不是在弹性体的所有部分都能立即引起位移、
+变形和应力, 距离弹性波较远的部分不受干扰。弹性
+波在心轴中的传播相当于弹性波在杆中的一维纵
+向传播, 其传播方程为
+# 58 # 石油 矿场 机械 2008 年 7月52
+u
+5t 2 = v2 a 52 u
+5x2 ( 1)
+式中, va 为 弹性 波在 钻柱中 的纵 向传播 速度, 取
+5 800 m/ s; u 为关于时间 t 和沿杆长分布的坐标为
+x 的点的位移函数。
+[ 2 ] 根据弹性波理论 , 此时在心轴中弹性波以一
+个卸载波的形式传播, 在上击器释放瞬间, 心轴下端
+得到的初速度为
+vc= F va
+A1E ( 2)
+式中, F 为震击器所受拉力, N; E 为钻柱材料的弹性
+模量, MPa; A1 为心轴的横截面积, m2 。
+卸载后, 缸套也会产生一个同样的初速度向左
+做有阻尼的自由震动, 由于缸套一端固定, 使得缸套
+很快停止震动, 可近似认为, 在碰撞前缸套处于固定
+不动状态。在碰撞前的瞬间, 心轴收缩时还处于不
+平衡状态, 会产生一刚体位移[ 3 ] 。当心轴走过卸载
+腔行程 h 时, 心轴的速度进一步增加, 即
+ve = F # h
+m1 va
+( 3)
+式中, m1 为震击器心轴质量, kg; h 为震击器自由行程
+, m。
+所以, 碰撞时刻心轴的速度为
+v= vc+ ve ( 4)
+2. 3 碰撞阶段( 如图 4)
+在碰撞时刻, 由于没有井下钻柱的影响, 心轴发生
+的弹性伸长很小, 心轴与缸套的碰撞相当于 2 个
+弹性刚体的碰撞。 故心轴获得的动能为
+Ekd = 1
+2 # m1v2 ( 5)
+v2 = m1 v/ ( m1 + m2 ) ( 6)
+碰撞后, 心轴、 缸套应有的总动能为
+Ek = ( m2 + m1 ) v2 2 / 2 ( 7)
+可见, 碰撞后液压上击器总动能与碰撞前心轴
+的动能相比有所减小, 此过程发生了能量损失, 损失
+的能量转换成了碰撞瞬间的声能和热能, 即
+US = Ekd- Ekg ( 8)
+式中, E kg 为震击器缸套动能, N # m。
+此刻, 缸套获得的动能为
+Ekg = 1
+2 m2 v2 2 ( 9)
+由于在试验前把心轴、 缸套看成是 2 个有质量
+的弹性体, 所以碰撞后把心轴和缸套可以看成是 2
+个串联的弹簧, 碰撞后心轴的动能转变为克服震击
+器与试验台架的摩擦力。根据前面的假设, 在撞击
+过程中的弹性能除了部分能量损失外, 缸套动能全
+部转换成缸套的弹性变形能, 系统既无位能的增加,
+[ 5 ] 也无位能的减少 。即
+E kg = E kb = 1
+2 K2 D2 2 ( 10)
+式中, E kb 为缸套弹性变形能, N # m ; K 2 为缸套的
+刚度系数, N/ m。K2 = E A2
+L2
+, 其中, A2 为缸套的横截
+面积, m2 , L2 为缸套长度, m ; D2 为缸套在撞击力下
+的变形, m。
+设缸套 在撞击力 F d 的作用下产生的变形为
+D2 , 假设服从虎克定律, 即
+F d = K 2D2 ( 11)
+所以有
+F d = K 2D2 = 2K 2Ekb = Fm1 K2m2
+m1 + m2
+va
+A1E + h
+m1 va
+( 12)
+3 计算实例
+1 ) 心轴; 2 ) 泄油缝隙; 3 ) 液缸; 4 ) 台架
+图 4 震击器台架试验碰撞阶段
+根据假设, 发生在试验台架上的震击为完全非
+弹性碰撞[ 4 ] 。由动量守恒定律
+m1 v+ m2 v0 = ( m1 + m2 ) v2
+式中, m2 为震击器缸套质量, kg; v、 v0 分别为心轴、
+缸套碰撞前的即时速度, m/ s; v2 为碰撞后的速度,
+m/ s。
+当 v0 = 0 时, 得
+某型号液压上击器在试验台架上以 500 kN 的
+标准拉力进行地面试验。液压上击器注满 L2H M32
+抗磨液压油, 有 效行 程 h = 01 16 m。 取 E = 210
+GPa, 心轴厚度为 20 mm, 长度 L1 = 21 563 m, 质量
+m1 = 1061 73 kg。缸 套厚度为 30 mm, 长度 L2 =
+21 513 m, 质量 m2 = 2931 27 kg。
+计算得: 心轴截面积 A1 = 4 4081 56 mm2 , 缸套
+截面积 A2 = 13 9411 6 mm2 , 刚度 K2 = 111 65 @108
+N/ m。
+在 F = 500 kN 的标准试验拉力作用下, 心轴产生
+的初速度为
+大斜度井井下工具通过能力分析
+甘庆明 , 杨承宗, 黄伟, 姚斌
+( </fs:P></fs:BackMatter>
+  <fs:FrontMatter>
+    <fs:AuthorBlock>长庆油田分公司 油气工艺技术研究院, 西安 710021
+)
+</fs:AuthorBlock>
+    <fs:AbstractBlock lang="zh">摘要
+: 在计算实际钻井井眼轨迹曲率半径的基础上, 结合井下几何关系, 得到了大斜度井井下工具
+通过能力的计算公式, 并给出了算例, 对井下作业管串设计具有一 定的指导意义 。
+</fs:AbstractBlock>
+    <fs:KeywordBlock lang="zh">关键词
+: 大斜度井
+; 曲率半径
+; 通过能力
+
+中图分类号: </fs:KeywordBlock>
+    <fs:ChineseLibraryCode>TE355</fs:ChineseLibraryCode>
+    <fs:Stuff>
+. 5 文献标识码: B
+Analysis for Passage Capacity of Downhole Tool in High Deviating Wells
+</fs:Stuff>
+    <fs:AuthorBlock>
+      <fs:AuthorName lang="en">GAN Qing2ming</fs:AuthorName>
+, <fs:AuthorName lang="en">YANG Cheng2zong</fs:AuthorName></fs:AuthorBlock>
+  </fs:FrontMatter>
+  <fs:Body>, H U ANG wei, YAO Bin
+vc= 500 @ 103 @ 5 80021
+1 @ 1011 @4 4081 56 @ 10- 6 = 31 13 m/ s
+ve =
+代入数据得
+500 @ 103
+1061 73
+F d = 501 84 @ 104 N
+01 16 # = 01 13 m/ s 5 800
+v= 31 26 m/ s
+可见, 在台架上进行拉力试验时产生的震击力
+约为作用于震击器的拉力的 11 02 倍, 液压震击器不
+受井下安装位置及钻具组合的影响; 产生的震击力
+与作用于震击器的上提拉力成线性关系; 作用于震击器
+的力是产生震击动载荷的关键因素, 由于受到
+材料强度和接箍限制, 不能无限地增加上提拉力。液
+压震击器自身结构参数也是影响震击力的重要因素。
+4 结论
+1) 心轴长度短, 产生的弹性变形小, 但作用在
+心轴上的拉力在震击过程中保持不变, 所以在试验
+台架上, 即使心轴产生较小的弹性变形, 由于有较大
+的初速度, 仍能与缸套发生碰撞。
+2) 在液压上击器的震击解卡过程中, 只有作
+用在卡点上的力才是真正起作用的震击载荷; 上击器
+安装位置离卡点越远, 震击力传递到卡点处的损失
+就越大; 如果震击载荷小于粘卡力, 则应该增大上
+提拉力, 或采取加快提拉钻柱速度、 加装加速器等其
+他措施。
+3) 在试验台架上, 液压上击器的卸载腔长度
+对液压震击器 的震击效果随卸载腔长度增加而提高
+。但井下工况与水平试验台架不同, 井下卸载腔
+长度增加, 导致钻柱向上克服重力的势能以及摩擦
+阻力增加, 所以震击器卸载腔长度不能过大, 具体长度
+应结合井下工况进行最优设计。
+4) 液压密封系统的可靠性以及能承受高温、
+高压环境是保证震击器能正常工作的前提条件。上
+击器心轴震击垫与缸套承击体是液压上击器关键部
+件, 应经过冷加工, 以获得更好的疲劳寿命。
+
+<fs:BodySection><fs:Title lang="en">Binary Content Body Section</fs:Title><fs:P><fs:BinaryObject>SKJX200807017_I1.tif</fs:BinaryObject><fs:BinaryObject>SKJX200807017_I2.tif</fs:BinaryObject><fs:BinaryObject>SKJX200807017_I3.tif</fs:BinaryObject></fs:P></fs:BodySection></fs:Body>
+  <fs:BackMatter>参考文献
+:
+[ <fs:Reference>1</fs:Reference><fs:P>] 张兆德, 李向军, 王德禹. 震击器解卡过程的动力学 分析
+[ J] . 石油矿场机械, 2004, 33( 1) : 8211.
+[ </fs:P><fs:Reference>2</fs:Reference><fs:P>] Skeem M R, Fr iendman M B, Walker B H . Drillstring
+dynamics dur ing jar operation[ J ] . JPT , 1979, 31( 11) :
+1 38121 386.
+[ </fs:P><fs:Reference>3</fs:Reference><fs:P>] 张兆德, 戴瑞斌, 王德禹. 液压式上击器 解卡的震击力
+计算[ J] . 上海交通大学学报, 2002, 36( 1) : 1212124.
+[ </fs:P><fs:Reference>4</fs:Reference><fs:P>] 孙仁甫, 黄蓓蕾. 石油钻井震击工具 向上震击动载 荷
+计算[ J] . 石油机械, 1997, 25( 5) : 427.
+[ </fs:P><fs:Reference>5</fs:Reference><fs:P>] 夏元白, 周锡容. 液压 震击器的机械特性及动 力学 分析
+[ J] . 石油机械, 1991, 19 ( 5) : 32237.
+收稿日期: 2007212213
+作者简介: 甘庆明( 19772) , 男, 河南信阳人, 硕士, 现主要从事采油工艺技术研究, E2mail: ganqm_cq@petrochina. com. cn。  </fs:P></fs:BackMatter>
+</fs:JournalArticle>

@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Modeled after schema fuseArticleSchema_2.xsd.
+     However it does not conform to the schema -->
+<fs:JournalArticle xmlns:fs="http://www.iarpa.gov/FUSE/Schema/Article">
+  <fs:FuseProcessingMetaData>
+    <fs:ArticlePageCount>5</fs:ArticlePageCount>
+    <fs:FuseFileCreationDate>11/12/2013 9:54:03 PM</fs:FuseFileCreationDate>
+    <fs:CopyRightString>© Tsinghua Tongfang Knowledge Network Technology Co., Ltd.(Beijing)(TTKN) All rights reserved.</fs:CopyRightString>
+    <fs:FileName>S:\fusePipeline\FUSEData\workingDirectory_12\196f6793-2e7a-476b-bb83-c70a98125f8d\ZXCW200812025.pdf</fs:FileName>
+    <fs:FileId>
+    </fs:FileId>
+    <fs:FuseChineseTransformerVersion>FUSE_V3.4.598</fs:FuseChineseTransformerVersion>
+  </fs:FuseProcessingMetaData>
+  <fs:JournalMetadataFront>
+    <fs:JournalArticleId>
+    </fs:JournalArticleId>
+    <fs:ChineseLibraryCode>
+    </fs:ChineseLibraryCode>
+    <fs:ChineseDocCode>
+    </fs:ChineseDocCode>
+  </fs:JournalMetadataFront>
+  <fs:ArticleMetadataFront>
+    <fs:PageRange>
+    </fs:PageRange>
+    <fs:Issue>
+    </fs:Issue>
+  </fs:ArticleMetadataFront>
+  <fs:FrontMatter>
+    <fs:ArticleMetaData>
+      <fs:PublicationDate>2008</fs:PublicationDate>
+    </fs:ArticleMetaData>
+    <fs:ArticleTitle lang="zh">犬膀胱平滑肌细胞的体外连续培养
+
+智伟
+1，2 杨志明 1 陈晓禾 1 李秀群 1 韩平 3 谭美云 1 唐耘熳 4邓力 1，2
+【</fs:ArticleTitle>
+    <fs:AbstractBlock lang="zh">摘 要
+】 目的 通过体外培养不同代次的犬膀胱平滑肌细胞， 比较其生物学特征， 探讨多次传代后的平滑肌细胞
+作为种子细胞的可行性， 为构建组织工程膀胱和尿道筛选种子细胞提供方法和依据。 方法 取体重 10 ～ 12 kg 的
+12 月龄雄性犬膀胱肌层， 混合酶消化法获取平滑肌细胞， 并于含 10% 小牛血清的培养基中培养， 观察比较不同代次细胞
+的形态变化及生长、 增殖过程， 电镜下观察细胞超微结构， 并通过免疫组织化学方法检测特征性蛋白的表达。 结果 体
+外培养的平滑肌细胞单层生长至亚融合状态后， 倒置相差显微镜下细胞呈长梭形， 并呈峰 - 谷样结构， 可连续传至 12 代。
+
+生长曲线显示第 7 代以前的细胞具有相似的增殖特点， 约每 40 小时为 1 次生长周期， 透射电镜下可见平滑肌细胞特有的
+密体结构， 平滑肌肌动蛋白免疫组织化学染色为阳性 ； 第 7 代后细胞增殖逐渐迟滞， 至第 10 代细胞内肌丝及密体结构消失
+。 结论 犬膀胱平滑肌细胞可在体外连续培养， 通过适当的纯化方法可获得大量高纯度的平滑肌细胞。第 7 代以前
+的平滑肌细胞均可作为种子细胞， 用于构建组织工程膀胱和尿道。
+【</fs:AbstractBlock>
+    <fs:KeywordBlock lang="en">关键词
+】 组织工程膀胱平滑肌细胞 细胞培养 犬
+
+中图分类号 ：R318.1 Q813.11 文献标志码 ： A
+SERIAL CULTIVATION OF CANINE SMOOTH MUSCLE CELLS FROM URINARY BLADDERS/ZHI Wei1,2, YANG
+Zhiming1, CHEN Xiaohe1, LI Xiuqun1, HAN Ping3, TAN Meiyun1, TANG Yunman4, DENG Li1,2. 1Division of Stem Cell and Tissue
+Engineering, State Key Laboratory of Biotherapy, West China Hospital, 2West China School of Pharmacy, 3Department of Urinary
+Surgery, West China Hospital, 4Department of Pediatric Surgery, West China Hospital, Sichuan University, Chengdu Sichuan,
+610041, P.R.China. Corresponding author: DENG Li, E-mail: dengli2000@21cn.com
+【</fs:KeywordBlock>
+    <fs:AbstractBlock lang="en">
+      <fs:P lang="en">Abstract</fs:P>
+      <fs:P lang="en">】 Objective To provide an ideal seed cell for tissue engineered urinary bladder and urethra by serially
+culturing canine smooth muscle cells from urinary bladder in vitro and compare biological characteristics of different passages
+of cells. Methods Bladder smooth muscle cells of 12-month-old male dogs weighing 10-12 kg were isolated from adult dogs’
+urinary bladders by collagenase and trypsin digestion and serially cultured in DMEM medium supplemented with 10% serum of
+newborn bovines. Morphology and proliferation of the cells were observed and the serially-cultured cells were identified with the
+transmission electron microscope and immunohistochemistry. Results The cells appeared spindle in parallel rows when they
+grew to the degree of subconfluence, and showed the “peak-valley” structure under the inverted phase contrast microscope. The
+cells could be proliferated serially to the 12th passage in vitro. The growth curve showed the cells before the 7th passage had the
+similar proliferation characteristics and the growth cycle was about 40 hours. The TEM showed myofilament and the dense body
+in cytoplasm of smooth muscle cells. Smooth muscle actin was positive by immunohistochemical staining. After the 7th passage,
+the cells’ growth became slow, and myofilament and the dense body in cytoplasm vanished. Conclusion The canine smooth
+muscle cells from urinary bladder can be serially cultured in vitro and highly purified and largely proliferated by the appropriate
+method. The cells before the 7th passage can be used as optimal seed cells for tissue engineered urinary bladder and urethra.
+</fs:P>
+    </fs:AbstractBlock>
+    <fs:KeywordBlock lang="en">【Key words】 Tissue engineered urinary bladder Smooth muscle cell Cell culture Canine
+Foundation items: New Century Excellent Talent Plan of Department of Education (NCET-07-0575); China Postdoctor
+Science Foundation (20070410389)
+</fs:KeywordBlock>
+  </fs:FrontMatter>
+  <fs:Body>
+近年随着组织工程技术的发展以及具有良好组织
+相容性材料的出现， 体外构建组织工程膀胱和尿道成
+基金项目 ： 教育部新世纪优秀人才支持计划 （NCET-07-0575）； 中国
+博士后科学基金资助项目 （20070410389）
+作者单位 ： 1 四 川大学华西医院 生物治疗国家重点实验室 • 干细胞
+与组织工程研究室 （成都， 610041）， 2 华西药学院， 3 华西医院泌尿外科
+， 4 华西医院小儿外科
+通讯作者 ： 邓力， 副研究员， 硕士导师， 研究方向 ： 药物的筛选和生物
+评价， E-mail: dengli2000@21cn.com
+[1-6 为可能 ]。研究基本路线包括种子细胞培养、 可降解支
+架材料的选择、 细胞与支架材料的复合及组织工程
+[2 膀胱和尿道的构建 ]， 其中最基础与最重要的环节之
+一是对种子细胞的研究。平滑肌细胞是构建肌性器官
+的重要种子细胞， 对重建膀胱和尿道收缩挤压功能具
+[7-8 有重要作用 ]。建立标准的膀胱平滑肌细胞体外培
+[9-13 养扩增技术是大量获取该细胞的关键 ]。目前关于
+犬膀胱平滑肌细胞体外培养的文献报道， 多以探讨不
+同动物模型的膀胱平滑肌细胞原代培养方法为主， 对
+于其在体外连续培养后细胞生物学特性的研究罕见报
+[1，3 道 ]。本研究旨在探索体外连续传代培养犬膀胱平
+滑肌细胞的方法， 比较不同代次细胞的生物学特性，
+以探讨多次传代后的平滑肌细胞作为种子细胞的可行性
+， 为进一步构建组织工程膀胱和尿道提供依据。
+1 材料与方法
+1.1 实验动物与主要试剂、 仪器
+12 月龄雄性成年犬 2 只， 体重 10 ～ 12 kg， 由四
+川大学华西医院实验动物中心提供。DF 混合培养基
+（DMEM 和 F12 以 1 ∶ 1 混 合）、 胰 蛋 白酶、 Ⅰ型 胶 原酶
+、 中性蛋白酶 （GIBCO 公司， 美国）； 小牛血清 （Hy-
+Clone 公司， 新西兰）； α- 平滑肌肌动蛋白单克隆抗体
+（α-smooth muscle actin， α-SMA， 小鼠抗犬一 抗）、 生物
+素化山羊抗小鼠二抗 （ 武汉博士德生物工程有限公司）；
+辣根过氧化物酶亲和素、 DAB 显色试剂盒 （ 北京中杉
+金桥生物技术有限公司）； MTT、 DMSO（Sigma 公司，
+美 国）。CO2 培 养 箱 （SANYO 公司， 日 本）； 倒 置 相 差显
+微 镜 （Olympus 公司， 日 本）； H-600Ⅳ型 透射 电 镜
+（Hitachi 公司， 日本）。
+1.2 实验方法
+1.2.1 膀胱平滑肌细胞的原代培养 完整切取 2 只犬
+膀胱， 75% 酒精漂洗 10 s， PBS 漂洗 2 次 ； 剥取肌层组织
+， 剪成肉糜， 加入以 1 ∶ 1 混合的 0.1% Ⅰ型胶原酶和
+0.25% 胰蛋白酶， 37℃消化 30 min。消化液通过 100
+目滤网过滤后加入含 10% 小牛血清的 DF 混合培养基
+终止消化， 300 × g 离心 5 min， 弃上清， 以含 10% 小牛
+血清的 DF 混合培养基吹打混悬细胞， 细胞计数。调整
+细胞密度为 4 × 104 个/mL， 以每瓶 5 mL 接种至培养瓶，
+37℃静置 15 min 贴壁， 未贴壁的细胞悬液转至另一培
+养瓶内。于 37℃、 5% CO2 及饱和湿度培养箱中培养，
+每隔 3 天换液， 并于倒置相差显微镜下动态观察细胞
+生长情况及形态特征。
+1.2.2 膀胱平滑肌细胞纯化与传代 原代细胞培养约
+2 周， 细胞生长至 80% ～ 90% 融合时弃培养基， 换无
+血清 DMEM 培养基 ， 24 h 后更换为含 10% 小牛血清
+DF 混合培养基， 培养 24 h 后传代。传代时， 吸除培养液
+， 加入含 0.25% 胰蛋白酶和 0.02% EDTA 的消化液，
+倒置相差显微镜下见细胞突触收缩， 细胞变圆， 细胞间隙
+增大后吸除消化酶， 37℃ 孵育 2 ～ 5 min。细胞从
+瓶壁上脱落后， 加入含 10% 小牛血清的 DF 混合培养
+基吹打混悬， 将细胞悬液以 4 × 104 个 /mL 密度接种于
+培养瓶内， 于 37℃、 5%CO2 及饱和湿度培养箱中培养，
+每隔 2 d 换液。第 2 ～ 7 代细胞生长速度较快， 细胞培
+养 3 ～ 4 d 即可达到单层 80% ～ 90% 融合， 随即传代。
+第 8 ～ 12 代细胞生长速度减慢， 5 ～ 6 d 传代。
+1.2.3 MTT 法测绘细胞的生长曲线 取第 1、 2、 4、 7、
+9 及 12 代膀胱平滑肌细胞， 分别以胰蛋白酶 -EDTA
+消化后， 300 × g 离心 5 min 后收集， 加入 DF 混合培
+养基， 制备密度为 2 × 104 个 /mL 的细胞悬液， 以每孔
+200μL 接种于 96 孔板内， 8 孔为 1 组， 每代细胞各设
+5组， 分别于接种后 1、 3、 5、 7、 9 d 检测， 检测时每孔加入
+20μL MTT 液后继续培养 4 h， 吸除全部液体， 每孔
+加入 50μL DMSO 避光振荡 10 min， 在酶标仪上检测
+波长分别为 550 nm 和 650 nm 的吸光度 （A） 值。以时
+间为横坐标， A 值为纵坐标绘制细胞生长曲线， 比较不
+同代次细胞的生长周期及生长速度。
+1.2.4 组织学观察 将第 1、 2、 4、 7、 9 及 12 代膀胱平
+滑肌细胞分别接种至预铺胶原的盖玻片上， 培养 2 d 后
+取出， PBS 冲洗 3 次， 95% 酒精固定 15 min， HE 染色、
+封片， 光镜观察细胞形态。
+1.2.5 免疫组织化学染色 取第 2、 7、 9 及 12 代膀胱
+滑肌细胞分别接种至盖玻片上， 培养 3 d 后 PBS 冲洗
+3次， 浸于 4% 多聚甲醛， 室温固定 30 min ； 蒸馏水浸洗
+3 次， 每次 3 min， 加入封闭液 （30% H2O2 与纯甲醇体积
+比为 1 ∶ 50）， 避光孵育细胞爬片 20 min ； PBS 浸洗
+2次， 每次 5 min， 10% 正常山羊血清室温下孵育 2 h。
+吸除血清， 滴加α-SMA （1 ∶ 100 稀释）， 置于湿盒内 4℃
+过夜 ； PBS 浸洗 2 次， 每次 5 min， 滴加生物素化山羊
+抗鼠二抗 （1 ∶ 200 稀释）， 37℃ 孵育 40 min， PBS 浸洗
+2次， 每次 5 min， 滴加辣根过氧化物酶亲和素 （1 ∶ 200
+稀释）， 37℃ 孵育 30 min， PBS 浸洗 2 次， 每次 5 min。
+DAB 试剂镜下观察显色， 苏木素复染细胞核， 脱水， 透明
+， 加拿大树脂封片， 显微镜下观察， 采集图片。同时
+以犬成纤维细胞爬片作为阴性对照。
+1.2 .6 细胞超微结构观察 取第 2、 7、 10 及 12 代膀胱平
+滑肌细胞， 分别以 0.25% 胰蛋白酶与 0.1%EDTA 以
+1 ∶ 1 混合消化， 镜下见细胞变圆脱壁后， 加 DF 混合培
+养基吹打混悬， 400 × g 离心 12 min， 弃上清。取 0.5%
+戊二醛沿管壁缓慢加入， 4℃静置 15 min， 以 10 000 × g
+离心 12 min， 弃上清。取 3% 戊二醛沿管壁缓慢加入，
+4℃静置保存， 环氧树脂包埋、 超薄切片后以醋酸铀及
+枸橼酸铅双重染色， 透射电镜观察。
+1.2.7 细胞周期和 DNA 倍体水平检测 取第 2、 7、
+9及 12 代膀胱平滑肌细胞， 以 2 × 105 个 / 孔接种于 6孔板
+， 每代细胞 3 孔， 分别于接种后 3、 5、 7 d 各检测 1 孔 ；
+检测时用 0.25% 胰蛋白酶和 0.1% EDTA 混合消化液
+消化收集细胞， 采用流式细胞仪检测不同代次膀胱平滑肌
+细胞的细胞周期和 DNA 倍体水平有无差异。
+2 结果
+2.1 膀胱平滑肌细胞生长特性
+原代细胞呈圆形， 体积较小， 大小均一， 轮廓清晰
+光滑， 胞浆透亮， 镜下观察有立体感。接种 3 h 后， 悬浮
+细胞沉降于培养瓶底。24 h 后， 大部分细胞贴壁， 胞质
+逐渐展开， 细胞变大， 呈长梭形， 折光度降低， 胞核清晰
+可见， 完全铺展后细胞大小为贴壁前的 4 ～ 6 倍， 未见
+明显杂细胞污染。3 ～ 5 d 后， 平滑肌细胞在瓶底相互
+融合为大片状， 胞核呈卵圆形居中， 有多个核仁， 胞浆
+丰富， 紧密排列为规整的梭形条纹状， 呈典型峰 - 谷状
+排列， 符合平滑肌细胞特征， 边缘区细胞形态小， 结合
+紧密， 呈伪足样向外伸展。 7 ～ 10 d 后， 细胞长满传代。
+传代后平滑肌细胞贴壁生长能力明显增强， 接种
+6 h 后细胞贴壁伸展 ； 40 h 后细胞开始增殖分裂， 进入
+对数生长期 ； 7 d 后细胞融合成片状， 出现接触性抑制
+（ 图1）。7 代前细胞形态、 大小均一 ； 8 代后细胞形态变
+大， 生长速度减缓， 但大小仍较均一 ； 10 代以后部分区
+域贴壁细胞增殖能力下降、 密度稀疏， 细胞形态不佳，
+胞浆内出现空泡和黑色小颗粒， 胞核散大， 细胞间连接
+松散， 细胞增殖普遍减缓、 停滞， 最后呈片状脱落、 凋亡
+。混杂的少量成纤维细胞失去平滑肌细胞抑制后，
+开始呈片状生长， 直至占据整个培养瓶。
+2.2 细胞生长曲线
+生长曲线可见第 7 代前平滑肌细胞生长速度及生长
+周期均相似， 第 7 代后细胞生长速度减慢， 增殖减缓，
+至 12 代细胞几乎无生长增殖高峰 （ 图 2）。
+2.3 组织学观察
+第 1、 2、 4、 7 代细胞培养 3 d 后 HE 染色观察可见
+细胞呈长梭形， 胞核蓝染， 胞浆红染， 可见中期核分裂相
+。第 9 代细胞形态变大， 仍可见清晰的细胞核， 胞浆
+红染， 中期核分裂相较少。第 12 代细胞形态不规则，
+细胞核分散， 中期核分裂相极少。
+2.4 免疫组织化学染色
+免疫组织化学染色后， 第 7 代前 95% 以上的细胞
+胞浆呈棕黄色， 高倍镜下可见细胞内规则平行排列的细丝
+状棕黄色线条， 即为 α- 平滑肌肌动蛋白丝。第 7 代
+后细胞胞浆内显色明显减弱， 且阳性率逐渐降低 （ 图3）。
+第 9代细胞只有 60% 胞浆呈阳性， 第 12 代胞浆内几无阳性
+表达。阴性对照犬成纤维细胞爬片染色为阴性。
+2.5 细胞超微结构特点第
+7 代前细胞胞浆内除含正常细胞器外还可见大量
+密体和肌丝， 细胞核大而圆， 核仁明显， 常染色质丰富
+， 异染色质较少， 线粒体丰富。第 10 代后细胞老化
+明显， 肌丝和密体消失， 细胞胞浆内出现密集的溶酶
+体， 细胞核皱缩， 核仁不明显 （ 图 4）。
+2.6 细胞周期和 DNA 倍体水平检测
+第 2、 7、 9 及 12 代细胞 S 期细胞分别为 46.85% ±
+1.40%、 20.16% ± 0.70%、 15.90% ± 9.30%、 4.35% ±
+0.60% ； G2/G1 分 别 为 1.82 ± 0.12、 1.53 ± 0.09、 1.36 ±
+0.15、 1.38 ± 0.20 ； 凋 亡率 为 2.12% ± 0.60%、 9.27% ±
+1.50%、 30.27% ± 5.30%、 47.12% ± 10.60%。体外培养
+的第 2、 7、 9、 12 代膀胱平滑肌细胞均为二倍体细胞。
+3 讨论
+平滑肌广泛分布于多种空腔脏器组织， 作为各器
+官系统必要的动力基础， 具有重要的生理意义。目前
+对平滑肌细胞的研究主要集中于呼吸及心血管系统，
+[14-16 对尿路平滑肌细胞的研究较少 ] [12] 。Baskin 等 培养
+了人和胎牛的膀胱平滑肌细胞， 并就其胶原分泌特性
+进行研究， 以探讨平滑肌组织在下尿路慢性梗阻情况
+下的病理生理改变。 由于平滑肌具有收缩挤压功能，
+因而可与上皮细胞 （ 尿路上皮细胞） 分别复合于生物材料
+的 两面构建组织工程膀胱和尿道， 用于相应组织缺损
+的修复。研究表明， 当平滑肌细胞先与基质材料复
+合后， 对后期种植上皮细胞的贴附和生长有明显促进
+[17-18 作用 ]， 可见膀胱平滑肌细胞对于构建组织工程膀
+[2，8，19-20 胱和尿道的修复重建具有重要意义 ]。
+组织工程膀胱和尿道肌层组织的构建需要大量高
+纯度、 活性良好的种子细胞， 建立一个稳定高效的膀胱平
+滑肌细胞体外培养扩增体系成为构建组织工程膀胱
+和尿道的基础和关键。目前虽已建立了比较成熟的膀
+[9-13，17胱平滑肌细胞原代培养方法 ]， 但对其体外连续培养
+后生物学特性的研究尚不深入， 而对在组织工程膀胱
+和尿道修复重建中常用研究模型——犬膀胱平滑肌
+[19 的体外连续培养则更少 ]。由于细胞经过体外培养并
+多次传代后会逐渐丧失其形态、 表型和生物学特征， 从
+而失去作为种子细胞的能力， 而犬作为泌尿系统修复
+与再生研究中常用的动物模型， 常需培养其细胞作为
+种子细胞。因此我们的研究以犬为研究对象， 通过比
+较体外培养的不同代次膀胱平滑肌细胞形态、 结构、 功
+能各方面的异同， 探索多次传代后的平滑肌细胞作为
+种子细胞的可行性， 为今后构建组织工程膀胱和尿道
+种子细胞的选择提供理论依据。
+我们首先进行了细胞的原代培养， 目前原代培养
+[1，3 方法主要包括组织块培养法和酶消化法两种 ]。组织
+块培养法操作简便， 能避免消化酶对细胞的损伤，
+但从组织块中萌出的细胞数量较少， 仅见植块周边有
+部分细胞萌出， 且原代培养周期较长 （ 需 14 ～ 21 d），
+细胞萌出率低， 容易混杂大量成纤维细胞。采用低浓
+图 1 犬膀胱平滑肌细胞培养观察 （倒置相差显微镜 × 100） 第 2 代细胞 第 4 代细胞 第 7 代细胞 图 2 第 1、 2、 4、 7、 9、 12 代细胞生长
+曲线 图3 犬膀胱平滑肌细胞免疫组织化学染色观察 （SABC × 400） 第 2 代细胞 第 7 代细胞 图 4 犬膀胱平滑肌细胞超微结构观察
+第 2 代细胞 （透射电镜 × 6 000 ） 第 7 代细胞 （透射电镜 × 12 k） 第 12 代细胞 （透射电镜 × 10 k）
+Fig.1 Observation of cell shape (Inverted phase contrast microscope ×100) The 2nd passage of cultured canine bladder smooth muscle cells
+The 4th passage of cultured canine bladder smooth muscle cells The 7th passage of cultured canine bladder smooth muscle cells Fig.2 The growth
+curve of the primary, 2nd, 4th, 7th, 9th, 12th passages of the canine bladder smooth muscle cells Fig.3 Immunohistochemical staining of the cultured
+canine bladder smooth muscle cells (SABC × 400) The 2nd passage of cultured canine bladder smooth muscle cells The 7th passage of cultured
+canine bladder smooth muscle cells Fig.4 Ultrastructure of cultured canine bladder smooth muscle cells The 2nd passage of cultured canine bladder
+smooth muscle cells (TEM × 6 000) The 7th passage of cultured canine bladder smooth muscle cells (TEM × 12 k) The 12th passage of cultured
+canine bladder smooth muscle cells (TEM × 10 k)
+度蛋白水解酶与Ⅰ型胶原酶混合消化的方法可以从
+较小的组织标本中获取大量的单细胞悬液， 体外培养
+8 ～ 12 d 即可进行细胞传代， 原代培养时间短。因此，
+我们采用混合酶消化法分离膀胱平滑肌细胞。在取材
+过程中严格执行无菌操作， 取材后尽快进行细胞分离
+获取， 保持细胞活性， 消化过程中严格控制消化时间，
+尽量减少对细胞的损伤， 这样获取的细胞活力良好， 体
+外增殖能力旺盛， 培养 2 周左右即可观察到原代细胞
+生长至 80% ～ 90% 融合。需注意的是在膀胱平滑肌
+细胞原代培养中成纤维细胞和内皮细胞的污染问题，
+通常的纯化方式是采用差速贴壁法， 将贴壁速度较快
+的成纤维细胞除去， 但该方法容易丢失平滑肌种子细胞
+， 且纯化效率不高， 同时也对种子细胞的活性造成
+一 定程度的影响。因此在实验中我们采用营养耐受
+的方法进行种子细胞纯化， 在观察到原代细胞生长至
+80% ～ 90% 融合时弃去培养基， 换成无血清 DMEM
+培养基培养 24 h， 除去混杂在平滑肌细胞中的成纤维
+细胞和内皮细胞后， 重新换成含 10% 小牛血清 DF 混
+合培养基， 培养 1 d 后传代。由于平滑肌细胞对无血清
+培养基的耐受远高于成纤维细胞和内皮细胞， 因此在
+用无血清培养基培养原代细胞 24 h 后几乎所有的杂细
+胞均能被除去， 从而获得高纯度的膀胱平滑肌细胞。
+我们在对体外连续传代培养的平滑肌细胞进行
+的细胞生物学观察中发现 ： 体外培养的细胞可传至 12
+代， 第 7 代以前的细胞长满后呈长梭形， 规则平行生长
+， 呈典型的峰 - 谷状排列， 生长期 3 ～ 5 d， 增殖能力
+强， 每 40 小时为 1 个生长周期， 细胞形态均一， 结构清晰
+。透射电镜下可见典型的平滑肌细胞密体和肌丝结
+[1，12 构 ] ； 应用免疫组织化学法染色标记平滑肌细胞特异性
+标志α-SMA， 培养细胞胞浆内阳性染色率达 95 %
+以上。以上结果均表明这些细胞为高纯度的具有正常
+生理功能结构的平滑肌细胞。第 8 ～ 10 代平滑肌细胞
+的细胞形态变大， 生长速度减缓， 生长期 5 ～ 6 d， 但
+大小仍较均一 ； 免疫组织化学法染色标记 α-SMA 可见
+细胞胞浆内显色明显减弱， 且阳性率逐渐降低， 第 9代
+细胞只有 60% 的细胞胞浆呈阳性， 提示细胞在体外长
+期传代后出现了生理功能上的衰退， 因此不适合作为
+种子细胞。第 10 代以后的平滑肌细胞形态不均、 密度
+稀疏， 胞浆内出现空泡和黑色小颗粒， 胞核散大， 细胞
+间连接松散， 生长迟滞， 细胞开始成片脱落， 透射电镜
+下可见细胞老化明显， 细胞胞浆内出现密集的溶酶体 ；
+免疫组织化学染色标记可见细胞胞浆内几无阳性表达
+， 表明 10 代以后的膀胱平滑肌细胞基本丧失了正常
+平滑肌细胞的生理功能， 已不能用作种子细胞。
+我们的实验建立了一种较简便且易重复的犬膀胱平
+滑肌细胞体外连续培养传代方法， 通过无血清培养
+基除去混杂在原代膀胱平滑肌细胞中的成纤维细胞和
+内皮细胞， 得到的平滑肌细胞生长增殖能力强， 能在体外
+连续传代培养， 达到构建组织工程泌尿组织器官所
+需要的数量和纯度。同时通过比较体外培养的不同代
+次细胞在形态、 结构、 功能各方面的异同， 发现第 7 代
+以前的膀胱平滑肌细胞可作为组织工程膀胱和尿道的
+种子细胞， 为构建组织工程膀胱和尿道以及进一步的
+泌尿道修复重建奠定了理论依据。
+4 
+<fs:BodySection><fs:Title lang="en">Binary Content Body Section</fs:Title><fs:P><fs:BinaryObject>ZXCW200812025_I0.tif</fs:BinaryObject><fs:BinaryObject>ZXCW200812025_I1.tif</fs:BinaryObject><fs:BinaryObject>ZXCW200812025_I2.tif</fs:BinaryObject></fs:P></fs:BodySection></fs:Body>
+  <fs:BackMatter>参考文献
+<fs:Reference>1
+</fs:Reference><fs:P> Lai JY, Yoon CY, Yoo JJ, et al. Phenotypic and functional characterization
+of in vivo tissue engineered smooth muscle from normal and
+pathological bladders. J Urol, 2002, 168(4 Pt 2): 1853-1857.
+</fs:P><fs:Reference>2</fs:Reference><fs:P> 杨志明. 组织工程基础与临床. 成都: 四 川科学技术出版社, 2000:
+1225.
+</fs:P><fs:Reference>3</fs:Reference><fs:P> 韩平, 杨志明, 智伟, 等. 膀胱平滑肌细胞与小肠黏膜下层体外复合
+培养的实验研究. 中国修复重建外科杂志, 2007, 21(12): 1366-1370.
+</fs:P><fs:Reference>4</fs:Reference><fs:P> 韩平, 宋超, 魏强, 等. 小肠黏膜下层在泌尿系统组织工程中的研究
+应用. 临床泌尿外科杂志, 2006, 21(2) : 157-159.
+</fs:P><fs:Reference>5</fs:Reference><fs:P> Brown AL, Brook-Allred TT, Waddell JE, et al. Bladder acellular matrix
+as a substrate for studying in vitro bladder smooth muscle-urothelial
+cell interactions. Biomaterials, 2005, 26(5): 529-543.
+</fs:P><fs:Reference>6</fs:Reference><fs:P> Danielsson C, Adelöw C, Hubschmid U, et al. In-vitro engineering of
+implantable human urinary tract tissue matrices. Swiss Med Wkly,
+2007, 137 Suppl 155: 93S-98S.
+7 郭希民, 侯卫平, 王常勇, 等. 采用组织工程技术在裸鼠体内再造膀胱
+组织结构的研究. 中华实验外科杂志, 2003, 20(4): 343-344.
+8 韩平, 魏强, 杨宇如. 组织工程尿道重建的进展. 中国修复与重建外科
+杂志, 2006, 20(3): 243-246.
+9 吕丹瑜, 董静霞, 毕振伍, 等. 平滑肌细胞的体外培养. 解剖学杂志,
+2005, 28(5): 602-603.
+10 程文, 高建平, 张征宇, 等. 兔膀胱平滑肌细胞的分离、培养和鉴定.
+医学研究生学报, 2005, 18(2): 119-121.
+11 徐小鹏, 王共先, 袁铿, 等. 兔膀胱平滑肌细胞体外培养初探. 实用临床
+医学, 2003, 4(1): 24-25.
+12 Baskin LS, Howard PS, Duckett JW, et al. Bladder smooth muscle
+cells in culture: Identification and characterization. J Urol, 1993, 149:
+190-197.
+13 张金明, 黄红军, 何涛. 新西兰兔尿道海绵体平滑肌细胞的原代培养
+及鉴定. 中华实验外科杂志, 2005, 22(9): 1051-1052.
+14 Mitterberger M, Pinggera GM, Marksteiner R, et al. Functional and
+histological changes after myoblast injections in the porcine rhabdosphincter.
+Eur Urol, 2007, 52 (6): 1736-1743.
+15 Strasser H, Marksteiner R, Margreiter E, et al. Autologous myoblasts
+and fibroblasts versus collagen for treatment of stress urinary incontinence
+in women: a randomised controlled trial. Lancet, 2007,
+369(9580): 2179-2186.
+16 Torrente Y , Belicchi M, Marchesi C, et al. Autologous transplantation
+of muscle-derived CD133+ stem cells in Duchenne muscle patients.
+Cell Transplant, 2007, 16(6): 563-577.
+17 Imamura M, Kanematsu A, Yamamoto S, et al. Basic fibroblast growth
+factor modulates proliferation and collagen expression in urinary
+bladder smooth muscle cells. Am J Physiol Renal Physiol, 2007, 293(4):
+F1007-1017.
+18 Zhang Y, Kropp BP, Moore P, et al. Coculture of bladder urothelial
+and smooth muscle cells on small intestinal submucosa: potential applications
+for tissue engineering technology. J Urol, 2000, 164(3 Pt 2):928
+-934.
+19 Brown AL, Rinquette MJ, Prestwich GD, et al. Effects of hyaluronan
+and SPARC on fibroproliferative events assessed in an in vitro bladder
+acellular matrix model. Biomaterials, 2006, 27(20): 3825-3835.
+20 Oberpenning F, Meng J, Yoo JJ, et al. De novo reconstitution of a functional
+mammalian urinary bladder by tissue engineering. Nat Biotechnol,
+1999, 17 (2) : 149-155.
+（收稿 ： 2008-05-21 修回 ： 2008-09-03）
+（ 本文编辑 ： 苟莉）  </fs:P></fs:BackMatter>
+</fs:JournalArticle>

@@ -1,0 +1,6 @@
+2004	data/cnki/sources/sample/HY2/PDF/QK/2004/XJ/GY/XJGY200403015/XJGY200403015.fuse.xml	2004/XJGY200403015.fuse.xml
+2011	data/cnki/sources/sample/HY3/2011/G/GWLD/GWLD201107005/GWLD201107005.fuse.xml	2011/GWLD201107005.fuse.xml
+2008	data/cnki/sources/sample/disk1/PDF/journal/2008/SK/JX/SKJX200807017/SKJX200807017.fuse.xml	2008/SKJX200807017.fuse.xml
+2011	data/cnki/sources/sample/Drive1/disk1/PDF/journal/2011/GL/DZ/GLDZ201104018/GLDZ201104018.fuse.xml	2011/GLDZ201104018.fuse.xml
+2008	data/cnki/sources/sample/disk2/PDF/QK/2008/ZX/CW/ZXCW200812025/ZXCW200812025.fuse.xml	2008/ZXCW200812025.fuse.xml
+2010	data/cnki/sources/sample/Drive1/disk2/PDF/QK/2010/YT/CT/YTCT201006075/YTCT201006075.fuse.xml	2010/YTCT201006075.fuse.xml
