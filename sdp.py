@@ -1077,26 +1077,16 @@ class corpus_db:
         node = graph.nodes.get(token_id)
         return node
 
-################################################################
-# wrapper for Standford tagger
+
 
 class STagger:
 
-    def get_config(self):
-        # use defaults in config.py
-        self.stag_dir = config.STANFORD_TAGGER_DIR
-        self.tokenized = config.STANFORD_TOKENIZED
-        self.mx = config.STANFORD_MX
-        self.tag_separator = config.STANFORD_TAG_SEPARATOR
-        self.sentences = config.STANFORD_SENTENCES
-        self.debug_p = config.STANFORD_DEBUG_P
-        global debug_p
-        debug_p = 0
+    """Wrapper for the Standford tagger.
 
-    # model should be a file name in the tagger models subdirectory 
-    # /home/j/anick/fuse/share/stanford-postagger-full-2012-07-09/models
-    # .props files contain properties of specific models (e.g. tagseparator)
-    """
+    The model should be a file name in the tagger models subdirectory of
+    self.stag_dir. The .props files contain properties of specific models
+    (e.g. tagseparator). 
+
     chinese7.tagger
     chinese7.tagger.props
     chinese.tagger
@@ -1115,161 +1105,103 @@ class STagger:
     german-fast.tagger.props
     german-hgc.tagger
     german-hgc.tagger.props
+
+    st = sdp.STagger("english-caseless-left3words-distsim.tagger")
+
+    The STagger works on Linux but does not work properly on Mac OSX. The right
+    kind of string is handed in by give_input_and_end(), but when the method
+    get_output_to_end() reads lines from the output pipe something is wrong with
+    the encoding. In fact, the tagger itself must have gotten the wrong string
+    since the tags are not correct.
+
     """
 
-    # eg. st = sdp.STagger("english-caseless-left3words-distsim.tagger")
     def __init__(self, model):
-        #pdb.set_trace()
-        # PGA modified to use config data
-        self.get_config()
-        #print "\n\ninitializing stagWrapper--init()\n"
 
-        # model is a file name found within <stag_dir>/models
-        # It corresponds to a specific language, e.g.
-        # german-fast.tagger
-        # english-bidirectional-distsim.tagger
+        self.stag_dir = config.STANFORD_TAGGER_DIR
+        self.mx = config.STANFORD_MX
+        self.tag_separator = config.STANFORD_TAG_SEPARATOR
         self.model = model
-
-        # print debugging statements if True
         self.verbose = False
         #self.verbose = True
 
-        # set tokenized_p to 1 if sentence is already tokenized, otherwise 0 (default).        
-        if self.tokenized == 1:
-            tokenized_flag = " -tokenized "
-        else:
-            tokenized_flag = ""
-
         if self.tag_separator != "":
-            # add -tagSeparator option to call
             tag_separator_option = " -tagSeparator " + self.tag_separator + " "
         else:
             tag_separator_option = ""
-            
-        if self.sentences != "":
-            sentences_option = " -sentences " + self.sentences
 
-
-        # make the models directory explicit
-        # This fixes a broken pipe error that results when the entire models path is not specified.
-        # Note that option: -outputFormatOptions lemmatize  does not work.
-        tagcmd = ('java -mx' + self.mx + ' -cp \'' + self.stag_dir + '/stanford-postagger.jar:\' '  + 'edu.stanford.nlp.tagger.maxent.MaxentTagger ' + '-model /home/j/anick/fuse/share/stanford-postagger-full-2012-07-09/models/' + self.model + tag_separator_option + '  2>log.dat')
-        
+        # Make the models directory explicit to fix a broken pipe error that
+        # results when the entire models path is not specified. Note that
+        # option: -outputFormatOptions lemmatize does not work.
         tagger_jar = self.stag_dir + "/stanford-postagger.jar:"
         maxent_tagger = 'edu.stanford.nlp.tagger.maxent.MaxentTagger'
         model = "%s/models/%s" % (self.stag_dir, self.model)
-        tagcmd = ("java -mx%s -cp '%s' %s -model %s%s  2>log.dat" % \
-                  (self.mx, tagger_jar, maxent_tagger, model, tag_separator_option))
-        
+        tagcmd = "java -mx%s -cp '%s' %s -model %s%s  2>log.dat" % \
+                 (self.mx, tagger_jar, maxent_tagger, model, tag_separator_option)
         if self.verbose:
-            print "[stagWrapper init]tagcmd: %s" % tagcmd
+            print "[stagWrapper init] \n$ %s" % tagcmd
 
         # create a subprocess that reads from stdin and writes to stdout
-        #self.proc = Popen(tagcmd, shell=True, stdin=PIPE, stdout=PIPE, universal_newlines = True)
         self.proc = Popen(tagcmd, shell=True, stdin=PIPE, stdout=PIPE, universal_newlines = False)
 
-    # returns a list of tagged sentence strings
+
     def tag(self, text):
-        if self.verbose:
-            print "[process_to_end] text: %s" % text
-
+        """returns a list of tagged sentence strings"""
+        if self.verbose: print "[tag] text: %s" % text
         self.give_input_and_end(text)
-        if self.verbose:
-            print "[process_to_end] after give_input_and_end"
+        if self.verbose: print "[tag] after give_input_and_end"
         result = self.get_output_to_end()
-        if self.verbose:
-            print "[process_to_end] after setting result to: %s" % result
-        return(result)
+        if self.verbose: print "[tag] after setting result to: %s" % result
+        return result
 
-    # passes a string to the sdp tagger subprocess
-    # Also passes a special "~" string to use as a signal that tag output
-    # is finished.
-    def give_input_and_end(self,text):
-        #self.proc.stdin.flush()
-        terminated_line = text + '\n~_\n'
+
+    def give_input_and_end(self, text):
+        """Passes a string to the sdp tagger subprocess. Adds a special termination
+        string to use as a signal that tag output is finished."""
+        terminated_line = text + u'\n~_\n'
         if self.verbose:
             print "[give_input_and_end] terminated_line: |%s|" % terminated_line
         self.proc.stdin.write(terminated_line.encode('utf-8'))
-        #self.proc.stdin.write(text)
         self.proc.stdin.flush()
 
 
-    # Reads lines from the output of the subprocess (sdp parser) and 
-    # concatenates them into a single string, returned as the result
-    # We use a line with a single "~" to signal the end of the output
-    # from the tagger.  Note that the tagger will add _<tag> to the tilda,
-    # so we match on the first two characters only for the termination condition.
-    # TODO: this funciton is a mess and we still do not know how to deal with
-    # some of the encoding issues
     def get_output_to_end(self):
-        ###print "[get_output] entered..."
-        result = []
-        #line = self.proc.stdout.readline()
-        #line = self.proc.stdout.readline().decode('utf8')
-        line = self.proc.stdout.readline()
-        # Not sure why the != None is needed if this is called from pubmed.sh rather than 
-        #  fxml.test_pm() within python.  PGA
-        if line != None:
-            line = line.decode(sys.stdout.encoding)
-            
-        #line = self.proc.stdout.readline()
-        ###line = unicode(line)
-        #print "[tag: get_output_to_end]line is: |%s|" % line
-        #while len(line)>2 :
-        while True:
+        """Reads lines from the output of the subprocess (sdp parser) and returns them
+        as a list of unicode strings. We use a line "~-" to signal the end of
+        the output from the tagger. """
 
+        result = []
+        line = self.proc.stdout.readline()
+        # Not sure why this is needed if this is called from pubmed.sh rather than 
+        # fxml.test_pm() within python.  PGA
+        if line is None:
+            return result
+        # now turn the stdout line, which is of type str, into a unicode string
+        line = line.decode(sys.stdout.encoding)
+        if self.verbose:
+            print "[get_output_to_end] %s line is: |%s|" % (type(line).__name__, line)
+
+        while True:
             # remove tabs from sdp output (e.g. for Phrase structure)
             line = line.strip("\n")
             line = line.lstrip()
-
-            if line[0:2] =="~_": 
+            # The tagger will add a tag to the terminating line, so we match on
+            # the first two characters only.
+            if line[0:2] == "~_": 
                 if self.verbose:
-                    print "[get_output_to_end]found_terminator tilda. Breaking from while loop"
+                    print "[get_output_to_end] found_terminator string, breaking from while loop"
                 break
-
             if self.verbose:
-                print "[get_output_to_end]in while loop.  line: |%s|" % line
-            #result=result+line
-            # Append result only if line is not empty
+                print "[get_output_to_end] in while loop"
+                print "[get_output_to_end] appending line |%s|" % line
             if line != "":
                 result.append(line)
-            if self.verbose:
-                print "[get_output_to_end]result: |%s|" % result
-            #line = self.proc.stdout.readline()
-            #line = self.proc.stdout.readline().decode('utf8')
             line = self.proc.stdout.readline().decode(sys.stdout.encoding)
-            ###line = unicode(line)
             if self.verbose:
-                print "[get_output_to_end]next line: |%s|" % line
+                print "[get_output_to_end] next %s line: |%s|" % (type(line).__name__, line)
 
-        if self.verbose:
-            print "[get_output_to_end]Out of loop.  Returning..."
+        return result
 
-        return(result)
-
-
-    def test1(self):
-
-        print "sentence 1\n"
-
-        result = self.process_to_end('John went today. Second sentence exists.')
-        #self.give_input_and_end('John went to school today.')
-        #result = self.get_output_to_end()
-        print "result: %s" % result
-        
-        print "sentence 2\n"
-        
-        result = self.process_to_end('Mary went to school yesterday. Another sentence occurs!')
-        #self.give_input('Mary went to school yesterday. Another sentence occurs!')
-        #result = self.get_output()
-        print "result: %s" % result
-
-        print "sentence 3\n"
-
-        result = self.process_to_end('John went today. Repeated sent 1.')
-        #self.give_input_and_end('John went to school today.')
-        #result = self.get_output_to_end()
-        print "result: %s" % result
 
 
 ####---------------------------------------------------
