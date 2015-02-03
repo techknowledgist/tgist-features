@@ -113,7 +113,7 @@ if __name__ == '__main__':
             stage = opt
 
     # NOTE: this is named rconfig to avoid confusion with config.py
-    rconfig = RuntimeConfig(corpus_path, None, None, None, pipeline_config)
+    rconfig = RuntimeConfig(corpus_path, None, None, None, None, pipeline_config)
     rconfig.pp()
 
     if show_data_p:

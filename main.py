@@ -9,6 +9,7 @@ USAGE
 
 OPTIONS
    --language en|cn      language, default is 'en'
+   --data ln|wos|cnki    data source, default is 'ln'
    --filelist PATH       a file with a list of source files
    --corpus PATH         a directory where the corpus is created
    -n INTEGER            number of files to process, defaults to all files
@@ -64,7 +65,7 @@ The directory tree created inside the target directory is as follows:
         `-- workspace      'work space area'
 
 This script only performs document-level processing and fills in d0_xml, d1_txt,
-d2_seg (Chinese only), d2_tag and d3_phr_feats. The structure of those
+d2_seg (Chinese only), d2_tag and d3_phr_feats. The structures of those
 directories mirror each other and look as follows (this example only has two
 files listed):
 
@@ -102,25 +103,26 @@ import os, sys, getopt
 
 import config
 from corpus import Corpus
-from corpus import POPULATE, XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
+from corpus import XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
 from ontology.utils.batch import RuntimeConfig
 
 
 if __name__ == '__main__':
 
-    options = ['language=', 'corpus=', 'filelist=', 'verbose',
+    options = ['language=', 'data=', 'corpus=', 'filelist=', 'verbose',
                'stanford-segmenter-dir=', 'stanford-tagger-dir=']
-    (opts, args) = getopt.getopt(sys.argv[1:], 'l:f:c:n:v', options)
+    (opts, args) = getopt.getopt(sys.argv[1:], 'l:d:f:c:n:v', options)
 
     source_file = None
     corpus_path = None
     verbose = False
     language = config.LANGUAGE
-    source = 'LEXISNEXIS'
+    datasource = config.DATASOURCE
     limit = None
 
     for opt, val in opts:
         if opt in ('-l', '--language'): language = val
+        if opt in ('-d', '--data'): datasource = val
         if opt in ('-f', '--filelist'): source_file = val
         if opt in ('-c', '--corpus'): corpus_path = val
         if opt in ('-v', '--verbose'): verbose = True
@@ -130,19 +132,21 @@ if __name__ == '__main__':
 
     pipeline = config.DEFAULT_PIPELINE
     pipeline_file = 'pipeline-default.txt'
+    if datasource == 'cnki':
+        language = 'cn'
     if language == 'cn':
         pipeline = config.DEFAULT_PIPELINE_CN
 
     if source_file is None: exit("ERROR: missing -f or --filelist option")
     if corpus_path is None: exit("ERROR: missing -c or --corpus option")
 
-    c = Corpus(language, source_file, None, corpus_path, pipeline, None)
-    rconfig = RuntimeConfig(corpus_path, None, None, language, pipeline_file)
+    c = Corpus(language, datasource, source_file, None, corpus_path, pipeline, None)
+    rconfig = RuntimeConfig(corpus_path, None, None, language, datasource, pipeline_file)
     if limit is None:
         limit = len([f for f in open(rconfig.filenames).readlines() if len(f.split()) > 1])
 
     c.populate(rconfig, limit, verbose)
-    c.xml2txt(rconfig, limit, rconfig.get_options(XML2TXT), source, verbose)
+    c.xml2txt(rconfig, limit, rconfig.get_options(XML2TXT), verbose)
     if language == 'en':
         c.txt2tag(rconfig, limit, rconfig.get_options(TXT2TAG), verbose)
     elif language == 'cn':

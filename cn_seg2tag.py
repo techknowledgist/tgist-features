@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-                                                                                                                         
+# -*- coding: utf-8 -*-
+
 # cn_sef2tag.py
 # tag segmented chinese files
 # formatted as follows:
@@ -31,7 +32,10 @@ def tag(input, output, tagger):
     s_output = open(output, "w")
     section = ""
     sent_no_in_section = 0
+    c = 0
     for line in s_input:
+        c += 1
+        #if c > 2: break
         #line = line.strip("\n")
         if debug_p == True:
             print "[tag]Processing line: %s\n" % line
