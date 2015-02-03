@@ -46,6 +46,9 @@ else:
 # default language
 LANGUAGE = "en"
 
+# default data source
+DATASOURCE = 'ln'
+
 # annotations directory, general and for the language
 ANNOTATION_DIRECTORY = "../annotation"
 ANNOT_LANG_PATH = ANNOTATION_DIRECTORY + "/" + LANGUAGE

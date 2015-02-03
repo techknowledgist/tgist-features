@@ -1,4 +1,4 @@
-"""
+"""step1_init.py
 
 Script to initialize a working directory for patent processing. It does the
 following things:
@@ -18,8 +18,9 @@ USAGE
    % python step1_initialize.py OPTIONS
 
 OPTIONS
-   --add                    add paths to an alreay existing corpus
+   --add                    add file paths to an alreay existing corpus
    --language en|de|cn      language, default is 'en'
+   --data ln|wos|cnki       data source, default is 'ln'
    --filelist PATH          a file with a list of source files
    --source PATH            a directory with all the source files
    --corpus PATH            a directory where the corpus is initialized
@@ -32,11 +33,13 @@ given:
 
   % python step1_initialize.py \
       --language en \
+      --data ln \
       --corpus data/patents/test \
-      --filelist data/lists/sample-us.txt
+      --filelist data/lists/sample-lnus.txt
 
   % python step1_initialize.py \
       --language en \
+      --data ln \
       --corpus data/patents/test \
       --source ../external/US \
       --shuffle
@@ -44,7 +47,7 @@ given:
 Both commands create a directory data/patents/test, in which the corpus will be
 initialized. It will include config/ and data/ subdirectories and several files
 mentioned above in the config/ subdirectory. The first form copies the file list
-data/lists/sample-us.txt to data/patents/config/files.txt. And the second form
+data/lists/sample-lnus.txt to data/patents/config/files.txt. And the second form
 traverses the directory ../external/US, takes all file paths, randomly shuffles
 them, and then saves the result to data/patents/config/files.txt.
 
@@ -58,16 +61,20 @@ be stripped.
 With the --source option, the source and target will always be the same and the
 year will always be set to 0000. It is up to the user to change this if needed.
 
+The --data option defines the kind of data. The possible values are 'ln' (which
+stands for LexisNexis patent data) and 'cnki' (Chinese scientific articles), the
+first of these is the default.
 
 This script can also be used to add paths to the file list of the corpus.
 
   % python step1_initialize.py \
       --add
       --corpus data/patents/test \
-      --filelist data/lists/sample-us-extra.txt
+      --filelist data/lists/sample-lnus-extra.txt
 
-The corpus data/patents/test has to exist and the content of sample-us-extra.txt
-is added to config/files.txt. Other options are ignored.
+The corpus data/patents/test has to exist and the content of sample-lnus-extra.txt
+is added to config/files.txt, but files that are already in the corpus are not
+added. Other options are ignored.
 
 
 NOTES
@@ -93,7 +100,7 @@ The directory tree created inside the target directory is as follows:
         |-- d1_txt         'results of document structure parser'
         |-- d2_seg         'segmenter results'
         |-- d2_tag         'tagger results '
-        |-- d3_phr_feats   'results from candidate selection'
+        |-- d3_phr_feats   'results from chunking and feature extraction'
         |-- o1_index       'term indexes'
         |-- o2_matcher     'results of the pattern matcher'
         |-- o3_selector    'results of the selector'
@@ -173,8 +180,8 @@ def add_info_file(corpus_dir, extra_files, added):
 
 if __name__ == '__main__':
 
-    options = ['language=', 'corpus=', 'filelist=', 'source=', 'shuffle', 'add']
-    (opts, args) = getopt.getopt(sys.argv[1:], 'f:c:l:s:', options)
+    options = ['language=', 'data=', 'corpus=', 'filelist=', 'source=', 'shuffle', 'add']
+    (opts, args) = getopt.getopt(sys.argv[1:], 'f:c:l:d:s:', options)
 
     source_file = None
     source_path = None
@@ -182,21 +189,25 @@ if __name__ == '__main__':
     add_files = False
     shuffle = False
     language = config.LANGUAGE
+    datasource = config.DATASOURCE
     pipeline_config = config.DEFAULT_PIPELINE
     
     for opt, val in opts:
         if opt in ('-l', '--language'): language = val
+        if opt in ('-d', '--data'): datasource = val
         if opt in ('-f', '--filelist'): source_file = val
         if opt in ('-s', '--source'): source_path = val
         if opt in ('-c', '--corpus'): target_path = val
         if opt == '--shuffle': shuffle = True
         if opt == '--add': add_files = True
 
+    if datasource == 'cnki':
+        language = 'cn'
     if language == 'cn':
         pipeline_config = config.DEFAULT_PIPELINE_CN
 
     if add_files:
         add_files_to_corpus(target_path, source_file)
     else:
-        corpus.Corpus(language, source_file, source_path, target_path,
-                      pipeline_config, shuffle)
+        corpus.Corpus(language, datasource, source_file, source_path,
+                      target_path, pipeline_config, shuffle)

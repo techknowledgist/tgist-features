@@ -61,7 +61,7 @@ def xml2txt(xml_parser, source, source_file, target_file, workspace):
     basename = os.path.basename(target_file)
     cleaned_source_file = os.path.join(workspace, "%s.clean" % basename)
     clean_file(source_file, cleaned_source_file, opentag_idx, closetag_idx)
-    if source == 'LEXISNEXIS':
+    if source == 'ln':
         ds_text_file = os.path.join(workspace, "%s.text" % basename)
         ds_tags_file = os.path.join(workspace, "%s.tags" % basename)
         ds_fact_file = os.path.join(workspace, "%s.fact" % basename)
@@ -78,8 +78,12 @@ def xml2txt(xml_parser, source, source_file, target_file, workspace):
         for fname in (cleaned_source_file,
                       ds_text_file, ds_tags_file, ds_fact_file, ds_sect_file):
             os.remove(fname)
-    elif source == 'WOS':
+    # for wos and cnki we ignore the xml_parser that was handed in because we
+    # can use a simpler and faster one
+    elif source == 'wos':
         parse_wos_doc(cleaned_source_file, target_file)
+    elif source == 'cnki':
+        CNKIDoc(source_file, target_file).xml2txt()
 
 
 def add_sections(xml_parser, section_tags, text, fh_data):
@@ -267,7 +271,8 @@ STATS_DATES = {}
 def print_stats():
     print "\n".join(STATS_TITLES)
     for k,v in STATS_DATES.items(): print k, v
-            
+
+
 def parse_wos_doc(cleaned_source_file, target_file):
     fh_in = codecs.open(cleaned_source_file)
     fh_out = codecs.open(target_file, 'w')
@@ -275,7 +280,6 @@ def parse_wos_doc(cleaned_source_file, target_file):
     year = None
     abstract = None
     for line in fh_in:
-        #print line,
         if line.startswith('<item_title'):
             title = line.strip()[12:-13]
             STATS_TITLES.append(title)
@@ -285,103 +289,76 @@ def parse_wos_doc(cleaned_source_file, target_file):
             STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
         if line.startswith('<p>'):
             abstract = line.strip()[3:-4]
-    #print "\nFH_DATE:\n%s" % year
-    #print "FH_TITLE:\n%s" % title
-    #print "FH_ABSTRACT:\n%s" % abstract
-    #print "\n" + '-' * 80
     fh_out.write("FH_DATE:\n%s\n" % year)
     fh_out.write("FH_TITLE:\n%s\n" % title)
     fh_out.write("FH_ABSTRACT:\n%s\nEND\n" % abstract)
 
 
-### ALL THE FOLLOWING MAY BE OBSOLETE
 
-def xml2txt_dir(xml_parser, source_path, target_path,
-                ds_text_path, ds_tags_path , ds_fact_path, ds_sect_path):
-    # TODO: this does not work anymore and should be fixed, but only if it is going to be
-    # used again (which it isn't as of April 14, 2013)
-    print "[xml2txt_dir]source_path: %s, target_path: %s" % (source_path, target_path)
-    for file in os.listdir(source_path):
-        source_file = source_path + "/" + file
-        target_file = target_path + "/" + file
-        ds_text_file = ds_text_path + "/" + file
-        ds_tags_file = ds_tags_path + "/" + file
-        ds_fact_file = ds_fact_path + "/" + file
-        ds_sect_file = ds_sect_path + "/" + file
-        print "[xml2txt_dir]from %s to %s" % (source_file, target_file)
-        #p1 = Patent(source_file, target_file)
-        # xml_file, text_file, tags_file, fact_file, sect_file, onto_file)
-        xml_parser.create_ontology_creation_input(source_file, ds_text_file, ds_tags_file,
-                                                  ds_fact_file, ds_sect_file, target_file)
-
-
-def test():
-    xml_parser = Parser()
-    parser.language = "ENGLISH" 
-    #parser.language = "GERMAN" 
-    #parser.language = "CHINESE" 
-    source_path = "/home/j/anick/fuse/data/patents/en_test/xml"
-    target_path = "/home/j/anick/fuse/data/patents/en_test/pickle"
-    ds_text_path = "/home/j/anick/fuse/data/patents/en_test/ds_text"
-    ds_tags_path = "/home/j/anick/fuse/data/patents/en_test/ds_tags"
-    ds_fact_path = "/home/j/anick/fuse/data/patents/en_test/ds_fact"
-    ds_sect_path = "/home/j/anick/fuse/data/patents/en_test/ds_sect"
-    xml2txt_dir(xml_parser, source_path, target_path, ds_text_path, ds_tags_path,
-                ds_fact_path, ds_sect_path)
-
-# run xml doc analysis for lang (en, de, cn)
-# eg. xml2txt.patents_xml2txt("/home/j/anick/fuse/data/patents", "en")
-# eg. xml2txt.patents_xml2txt("/home/j/anick/fuse/data/patents", "de")
-def patents_xml2txt(patent_path, lang):
-    xml_parser = Parser()
-    xml_parser.onto_mode = True
-
-    if lang == "en":
-        xml_parser.language = "ENGLISH"
-        print "[patents_xml2txt]xml_parser.language: %s" % xml_parser.language
-    elif lang == "de":
-        xml_parser.language = "GERMAN"
-        print "[patents_xml2txt]xml_parser.language: %s" % xml_parser.language
-    elif lang == "cn":
-        xml_parser.language = "CHINESE"
-        print "[patents_xml2txt]xml_parser.language: %s" % xml_parser.language
-
-    lang_path = os.path.join(patent_path, lang)
-    xml_path = os.path.join(lang_path, "xml") 
+class CNKIDoc(object):
     
-    # create the year list and process those docs
-    for year in os.listdir(xml_path):
-        year = str(year)
-        source_path = os.path.join(xml_path, year)
-        target_path = lang_path + "/txt" + "/" + year
-        ds_text_path = lang_path + "/ds_text" + "/" + year
-        ds_tags_path = lang_path + "/ds_tags" + "/" + year
-        ds_fact_path = lang_path + "/ds_fact" + "/" + year
-        ds_sect_path = lang_path + "/ds_sect" + "/" + year
-        xml2txt_dir(xml_parser, source_path, target_path, ds_text_path, ds_tags_path,
-                    ds_fact_path, ds_sect_path)
+    def __init__(self, source_file, target_file, metadata=None):
+        self.source = source_file
+        self.target = target_file
+        self.metadata = metadata
+        self.year = self.get_year()
+        self.text = codecs.open(self.source, encoding='utf8').read()
+        self.title = self.get_title()
+        self.abstract = self.get_abstract()
+        self.body = self.get_body()
+        self.stuff = self.get_stuff()
 
-# we assume all the work will be done in a single directory
-def pipeline_xml2txt(root_dir, lang):
-    xml_parser = Parser()
-    xml_parser.onto_mode = True
-    if lang == "en":
-        xml_parser.language = "ENGLISH"
-        print "[pipeline_xml2txt]xml_parser.language: %s" % xml_parser.language
+    def __str__(self):
+        return "<CNKIDoc year=%s fname=%s>" % (self.year, os.path.basename(self.source))
+
+    def xml2txt(self):
+        #print len(self.title), len(self.abstract), len(self.body)
+        #if self.title: print self.title
+        fh = codecs.open(self.target, 'w', encoding='utf8')
+        if self.title: fh.write(u"FH_TITLE:\n%s\n" % self.title)
+        if self.year: fh.write(u"FH_DATE:\n%s\n" % self.year)
+        if self.abstract: fh.write(u"FH_ABSTRACT:\n%s\n" % self.abstract)
+        if self.body: fh.write(u"FH_BODY:\n%s\n" % self.body)
+        if self.stuff: fh.write(u"FH_STUFF:\n%s\n" % self.stuff)
+
+    def get_title(self):
+        return self.get_tag('fs:ArticleTitle lang="zh"')
+
+    def get_abstract(self):
+        return self.get_tag('fs:AbstractBlock lang="zh"')
         
-    elif lang == "de":
-        xml_parser.language = "GERMAN"
-        print "[pipeline_xml2txt]xml_parser.language: %s" % xml_parser.language
+    def get_body(self):
+        """Return the document text body. If there are no body tags, the empty
+        string is returned."""
+        return self.get_tag('fs:Body')
 
-    elif lang == "cn":
-        xml_parser.language = "CHINESE"
-        print "[pipeline_xml2txt]xml_parser.language: %s" % xml_parser.language
+    def get_stuff(self):
+        return self.get_tag('fs:Stuff')
 
-    source_path = root_dir + "/xml"
-    target_path = root_dir + "/txt"
-    ds_text_path = root_dir + "/ds_text" 
-    ds_tags_path = root_dir + "/ds_tags"
-    ds_fact_path = root_dir + "/ds_fact"
-    ds_sect_path = root_dir + "/ds_sect"
-    xml2txt_dir(xml_parser, source_path, target_path,
-                ds_text_path, ds_tags_path, ds_fact_path, ds_sect_path)
+    def get_tag(self, tagname):
+        """Return the document text body. If there are no body tags, the empty
+        string is returned."""
+        taglen = len(tagname) + 2
+        opentag = "<%s>" % tagname
+        closetag = "</%s>" % tagname.split()[0]
+        idx1 = self.text.find(opentag)
+        idx2 = self.text.find(closetag)
+        if idx1 == -1 or idx2 == -1:
+            return ''
+        return self.text[idx1+taglen:idx2]
+
+    def get_year(self):
+        """Get the year from the name of the file."""
+        year = ''
+        for c in os.path.basename(self.source):
+            if c.isdigit():
+                year += c
+            if len(year) == 4:
+                return year
+
+
+def is_chinese(c):
+    """Return True if c is a Chinese character, return False otherwise. This is
+    based in a range of chinese characters"""
+    # TODO: check with Si Li what is included
+    return c >= u'\u4e00' and c <= u'\u9fa5'

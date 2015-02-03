@@ -136,7 +136,7 @@ def run_populate(rconfig, limit, verbose=False):
 
 
 @update_state
-def run_xml2txt(rconfig, limit, options, source, verbose=False):
+def run_xml2txt(rconfig, limit, options, verbose=False):
 
     """Takes the xml file and produces a txt file with a simplified document
     structure, keeping date, title, abstract, summary, description_rest,
@@ -151,6 +151,7 @@ def run_xml2txt(rconfig, limit, options, source, verbose=False):
 
     count = 0
     doc_parser = make_parser(rconfig.language)
+
     workspace = os.path.join(rconfig.target_path, 'data', 'workspace')
     fspecs = get_lines(rconfig.filenames, output_dataset.files_processed, limit)
     for fspec in fspecs:
@@ -160,14 +161,15 @@ def run_xml2txt(rconfig, limit, options, source, verbose=False):
         file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
         uncompress(file_in)
         try:
-            xml2txt.xml2txt(doc_parser, source, file_in, file_out, workspace)
+            xml2txt.xml2txt(doc_parser, rconfig.datasource, file_in, file_out, workspace)
         except Exception as e:
             # just write an empty file that can be consumed downstream
             fh = codecs.open(file_out, 'w')
             fh.close()
             print "[--xml2txt] WARNING: error on", file_in
             print "           ", e
-        # we do compress the cn output of the document parser
+        # we now do compress the cn output of the document parser (which we
+        # initialy did not do)
         if rconfig.language == 'en': compress(file_in, file_out)
         elif rconfig.language == 'cn': compress(file_in, file_out)
         if count % STEP == 0:
@@ -203,7 +205,6 @@ def run_txt2tag(rconfig, limit, options, verbose):
             output_dataset.update_processed_count(STEP)
 
     return (count % STEP, [output_dataset])
-
 
 @update_state
 def run_txt2seg(rconfig, limit, options, verbose):
@@ -397,12 +398,13 @@ class Corpus(object):
     in the corpus. This class gives access to corpus initialization as well as
     corpus-level batch processing of the corpus contents."""
 
-    def __init__(self, language, source_file, source_path,
+    def __init__(self, language, datasource, source_file, source_path,
                  target_path, pipeline_config, shuffle_file):
         """Creates a directory named target_path and all subdirectories and
         files in there needed for further processing. See the module docstring
         in step1_initialize.py for more details."""
         self.language = language
+        self.datasource = datasource
         self.source_file = source_file
         self.source_path = source_path
         self.target_path = target_path
@@ -428,6 +430,7 @@ class Corpus(object):
         self.command = "$ python %s\n\n" % ' '.join(sys.argv)
         self.settings = ["timestamp    =  %s\n" % time.strftime("%x %X"),
                          "language     =  %s\n" % self.language,
+                         "datasource   =  %s\n" % self.datasource,
                          "source_file  =  %s\n" % self.source_file,
                          "source_path  =  %s\n" % self.source_path,
                          "target_path  =  %s\n" % self.target_path,
@@ -485,8 +488,8 @@ class Corpus(object):
         run_populate(rconfig, limit, verbose)
         if verbose: print
 
-    def xml2txt(self, rconfig, limit, options, source, verbose):
-        run_xml2txt(rconfig, limit, options, source, verbose)
+    def xml2txt(self, rconfig, limit, options, verbose):
+        run_xml2txt(rconfig, limit, options, verbose)
         if verbose: print
 
     def txt2tag(self, rconfig, limit, options, verbose):

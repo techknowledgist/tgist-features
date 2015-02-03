@@ -1,6 +1,8 @@
-"""Script that manages the part of the processing chain that deals with individual documents,
-that is document parsing, segmentation, tagging, chunking and creation of phrase-level and
-document-level feature vectors.
+"""step2_process.py
+
+Script that manages the part of the processing chain that deals with individual
+documents, that is corpus population, document parsing, segmentation, tagging,
+chunking and creation of phrase-level feature vectors.
 
 USAGE:
   % python step2_document_processing.py OPTIONS
@@ -13,9 +15,10 @@ OPTIONS:
   --seg2tag    tagging segemented text (Chinese only)
   --tag2chk    creating chunks in context and adding features
 
-  --corpus TARGET_PATH  corpus directory, default is data/patents
-  -l en|cn|de          provides the language, default is 'en'
-  -n INTEGER           number of documents to process, default is 1
+  --corpus TARGET_PATH         corpus directory, this is a required option
+#  (-l | --language) en|cn|de   provides the language, default is 'en'
+#  (-d | --data) ln|cnki        provides the data source, default is 'ln'
+  -n INTEGER                   number of documents to process, default is 1
 
   --verbose:
        print name of each processed file to stdout
@@ -35,7 +38,7 @@ OPTIONS:
       optional pipeline configuration file to overrule the default pipeline; this is just
       the basename not path, so with '--pipeline conf.txt', the config file loaded is
       TARGET_PATH/LANGUAGE/config/conf.txt
-                              
+
 The script assumes an initialized directory (created with step1_initialize.py)
 with a set of external files defined in TARGET_PATH/config/files.txt. Default
 pipeline configuration settings are in TARGET_PATH/config/pipeline-default.txt.
@@ -74,13 +77,13 @@ from ontology.utils.batch import show_processing_time
 
 
 def read_opts():
-    options = ['corpus=', 'source=', 'populate',
+    options = ['corpus=', 'populate', 
                'xml2txt', 'txt2tag', 'txt2seg', 'seg2tag', 'tag2chk',
                'stanford-segmenter-dir=', 'stanford-tagger-dir=',
                'verbose', 'pipeline=', 'show-data', 'show-pipelines',
                'show-processing-time']
     try:
-        return getopt.getopt(sys.argv[1:], 'l:n:c:v', options)
+        return getopt.getopt(sys.argv[1:], 'n:c:v', options)
     except getopt.GetoptError as e:
         sys.exit("ERROR: " + str(e))
 
@@ -89,19 +92,15 @@ if __name__ == '__main__':
 
     # default values of options
     corpus_path = None
-    source = 'LEXISNEXIS'
-    language = config.LANGUAGE
     stage = None
     pipeline_config = 'pipeline-default.txt'
     verbose, show_data_p, show_pipelines_p = False, False, False
     show_processing_time_p = False
     limit = 1
-    
+
     (opts, args) = read_opts()
     for opt, val in opts:
         if opt in ('-c', '--corpus'): corpus_path = val
-        if opt == '--source': source = val
-        if opt == '-l': language = val
         if opt == '-n': limit = int(val)
         if opt in ('-v', '--verbose'): verbose = True
         if opt == '--pipeline': pipeline_config = val
@@ -114,8 +113,8 @@ if __name__ == '__main__':
             stage = opt
 
     # NOTE: this is named rconfig to avoid confusion with config.py
-    rconfig = RuntimeConfig(corpus_path, None, None, language, pipeline_config)
-    #rconfig.pp()
+    rconfig = RuntimeConfig(corpus_path, None, None, None, pipeline_config)
+    rconfig.pp()
 
     if show_data_p:
         show_datasets(rconfig, config.DATA_TYPES, verbose)
@@ -129,14 +128,14 @@ if __name__ == '__main__':
     options = rconfig.get_options(stage)
 
     # corpus already exists in a directory, so not all arguments are needed
-    corpus = Corpus(None, None, None, corpus_path, None, None)
+    corpus = Corpus(None, None, None, None, corpus_path, None, None)
 
     # note that the second argument always has to be the limit, this is required
     # by update_state()
     if stage == POPULATE:
         corpus.populate(rconfig, limit, verbose)
     elif stage == XML2TXT:
-        corpus.xml2txt(rconfig, limit, options, source, verbose)
+        corpus.xml2txt(rconfig, limit, options, verbose)
     elif stage == TXT2TAG:
         corpus.txt2tag(rconfig, limit, options, verbose)
     elif stage == TXT2SEG:
