@@ -400,22 +400,28 @@ class Corpus(object):
 
     def __init__(self, language, datasource, source_file, source_path,
                  target_path, pipeline_config, shuffle_file):
-        """Creates a directory named target_path and all subdirectories and
-        files in there needed for further processing. See the module docstring
-        in step1_initialize.py for more details."""
+        """Create the corpus object which keeps informaiton about path,
+        pipeline, language, datasource and local file paths. Initialize
+        directories on disk if there is a source_file or source_path argument
+        that is not None."""
         self.language = language
         self.datasource = datasource
         self.source_file = source_file
         self.source_path = source_path
         self.target_path = target_path
+        self.location = target_path
         self.pipeline_config = pipeline_config
         self.shuffle_file = shuffle_file
         self.data_path = os.path.join(self.target_path, 'data')
         self.conf_path = os.path.join(self.target_path, 'config')
+        self.file_list = os.path.join(self.conf_path, FNAME_FILELIST)
         if self.source_file is not None or self.source_path is not None:
             self._initialize_directory()
 
     def _initialize_directory(self):
+        """Creates a directory named target_path and all subdirectories and
+        files in there needed for further processing. See the module docstring
+        in step1_init.py for more details."""
         self._generate_settings()
         if os.path.exists(self.target_path):
             sys.exit("WARNING: %s already exists, exiting" % self.target_path)
@@ -452,22 +458,21 @@ class Corpus(object):
     def _create_filelist(self):
         """Create a list of files either by copying a given list or by traversing a
         given directory."""
-        print "[--init] creating %s/%s" % (self.conf_path, FNAME_FILELIST)
-        file_list = os.path.join(self.conf_path, FNAME_FILELIST)
+        print "[--init] creating %s" % self.file_list
         if self.source_file is not None:
-            shutil.copyfile(self.source_file, file_list)
+            shutil.copyfile(self.source_file, self.file_list)
         elif self.source_path is not None:
             filenames = get_file_paths(self.source_path)
             if self.shuffle_file:
                 random.shuffle(filenames)
-            with open(file_list, 'w') as fh:
+            with open(self.file_list, 'w') as fh:
                 for fname in filenames:
                     fh.write("0000\t" + fname + "\n")
         else:
             sys.exit("[--init] ERROR: " +
                      "need to define input with --filelist or " +
                      "--source-directory option, aborting")
-        read_only(file_list)
+        read_only(self.file_list)
 
     def _create_general_config_file(self):
         filename = os.path.join(self.conf_path, FNAME_INFO_GENERAL)

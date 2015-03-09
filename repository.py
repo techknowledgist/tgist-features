@@ -13,6 +13,8 @@ the basename (using cut -f11 -d'/').
 
 
 import os, sys, re, time, shutil
+import config
+from corpus import Corpus
 sys.path.append(os.path.abspath('../..'))
 from ontology.utils.file import compress, ensure_path
 
@@ -22,6 +24,8 @@ re_PATENT_NUMBER = re.compile('^(B|D|H|HD|RE|PP|T)?(\d+)(.*)')
 LISTS_DIR = '/home/j/corpuswork/fuse/FUSEData/lists'
 IDX_FILE = LISTS_DIR + '/ln_uspto.all.index.txt'
 UPDATES_FILE = LISTS_DIR + '/ln-us-updates-2014-09-23-scrambled-basename.txt'
+
+PROCESSING_STEPS = ('d1_txt', 'd2_seg', 'd2_tag', 'd3_phr_feats')
 
 
 def analyze_filenames(fname):    
@@ -193,10 +197,10 @@ class Repository(object):
             identifiers[line.strip()] = True
         return identifiers
     
-    def idx_dir(self): return os.path.join(self.dir, 'idx')
-    def doc_dir(self): return os.path.join(self.dir, 'doc')
-    def data_dir(self): return os.path.join(self.dir, 'data')
-    def proc_dir(self): return os.path.join(self.dir, 'proc')
+    def idx_dir(self): return os.path.join(self.dir, 'index')
+    def doc_dir(self): return os.path.join(self.dir, 'documents')
+    def data_dir(self): return os.path.join(self.dir, 'data','sources')
+    def proc_dir(self): return os.path.join(self.dir, 'data', 'processed')
 
     def identifier_file(self): return os.path.join(self.idx_dir(), 'identifiers.txt')
     def filelist_file(self): return os.path.join(self.idx_dir(), 'files.txt')
@@ -204,47 +208,108 @@ class Repository(object):
 
 class PatentRepository(Repository):
 
-    def add_corpus_sources(self, corpus, limit=sys.maxint):
-        # TODO: may not do the right thing with gzipped files
+    def add_corpus(self, corpus_path, language='en', datasource='ln',
+                   limit=sys.maxint):
+
+        """Adds corpus data to the repository, both the source data (taken from
+        the external source of the corpus) and the processed files. Updates the
+        list of identifiers and the list of files in the index by appending
+        elements to the end o fthose files. Only adds patents that are not in
+        the identifier list.
+
+        The input corpus is expected to be one of the corpora created by
+        step1_init.py and step2_process.py.
+
+        Unlike with creating corpora, where we can create and process various
+        corpora on different cores/machines, this method should never be run in
+        parallel, always import one corpus at a time and wait for it to
+        finish."""
+
+        corpus = Corpus(language, datasource, None, None, corpus_path, 
+                        config.DEFAULT_PIPELINE, False)
+
         self.current_identifiers = self.read_identifiers()
         self.fh_identifiers = open(self.identifier_file(), 'a')
         self.fh_files = open(self.filelist_file(), 'a')
-        filelist = os.path.join(corpus, 'config', 'files.txt')
+        self.fh_processed = {}
+        for step in PROCESSING_STEPS:
+            self.fh_processed[step] = open("%s%sprocessed-%s.txt" %
+                                           (self.idx_dir(), os.sep, step), 'a')
+
         c = 0
-        for line in open(filelist):
+        for line in open(corpus.file_list):
             c += 1
             if c > limit: break
             fields = line.rstrip("\n\r\f").split("\t")
+            # these are the external source and the corpus-local source
             source = fields[1]
-            if not os.path.exists(source):
-                source = source + '.gz'
-            if not os.path.exists(source):
+            local_source = fields[2] if len(fields)> 2 else source
+            source = validate_filename(source)
+            if source is None:
                 print "WARNING, source not available for %s" % source
                 continue
-            #t = time.strftime("%Y%m%d")
-            t = time.strftime("%x-%X")
             (id, path, basename) = parse_patent_path(source)
-            self._add_patent(t, source, id, path, basename)
-
-    def _add_patent(self, t, source, id, path, basename):
-        if id in self.current_identifiers:
-            print "Skipping", source
-        else:
-            path = os.sep.join(path)
-            print "Adding", source, 'to', path
-            target_dir = os.path.join(self.data_dir(), path)
-            target_file = os.path.join(target_dir, basename)
-            ensure_path(target_dir)
-            shutil.copyfile(source, target_file)
-            compress(target_file)
-            if os.path.exists(target_file):
-                size = os.path.getsize(target_file)
+            if id in self.current_identifiers:
+                print "Skipping", source
             else:
-                size = os.path.getsize(target_file + '.gz')
-            self.fh_identifiers.write("%s\n" % id)
-            self.fh_files.write("%s\t%s\t%d\t%s%s%s\n" %
-                                (t, id, size, path, os.sep, basename))
-        
+                t = time.localtime()
+                self._add_patent_source(t, source, id, path, basename)
+                self._add_patent_processed(t, corpus, local_source, id, path, basename)
+
+    def _add_patent_source(self, t, source, id, path, basename):
+        path = os.sep.join(path)
+        print "Adding", source, 'to', path
+        target_dir = os.path.join(self.data_dir(), path)
+        target_file = os.path.join(target_dir, basename)
+        ensure_path(target_dir)
+        shutil.copyfile(source, target_file)
+        compress(target_file)
+        size = get_file_size(target_file)
+        self.fh_identifiers.write("%s\n" % id)
+        self.add_entry_to_file_index(t, id, size, path, basename)
+
+    def _add_patent_processed(self, t, corpus, local_source, id, path, basename):
+        for step in PROCESSING_STEPS:
+            fname = os.path.join(corpus.location,
+                                'data', step, '01', 'files', local_source)
+            fname = validate_filename(fname)
+            if fname is not None:
+                print '  ', fname
+                target_dir = os.path.join(self.proc_dir(), step, os.sep.join(path))
+                target_file = os.path.join(target_dir, basename)
+                print '  ', target_file
+                ensure_path(target_dir)
+                shutil.copyfile(fname, target_file)
+                compress(target_file)
+                self.add_entry_to_processed_index(t, id, step)
+
+    def add_entry_to_file_index(self, t, id, size, path, basename):
+        timestring = time.strftime("%Y%m%d:%H%M%S", t)
+        if basename.endswith('.gz'):
+            basename = basename[:-3]
+        self.fh_files.write("%s\t%s\t%d\t%s%s%s\n" %
+                            (timestring, id, size, path, os.sep, basename))
+
+    def add_entry_to_processed_index(self, t, id, step):
+        # for this, maybe use processed-d1_txt.txt with identifiers as context?
+        # NOOOO!, must add at least the git repo
+        timestring = time.strftime("%Y%m%d:%H%M%S", t)
+        self.fh_processed[step].write("%s\t%s\n" % (timestring, id))
+
+
+def validate_filename(fname):
+    """Validate the filename by checking whether it exists, potentially in
+    gzipped form. Return the actual filename None if there was no file. Note
+    that fname ty[ically never includes the .gz extension"""
+    if os.path.exists(fname + '.gz'): return fname + '.gz'
+    elif os.path.exists(fname): return fname
+    else: return None
+
+def get_file_size(fname):
+    """Returns the size of fname if it exists, or else the size of fname.gz."""
+    if not os.path.exists(fname):
+        fname += '.gz'
+    return os.path.getsize(fname)
 
 
 def parse_patent_path(path):
@@ -261,7 +326,7 @@ def patentid2path(id):
     """Split the patent identifier into three parts of a path. The first part of
     the path is either a year, one or two letters (D, PP, T etcetera), The last
     part is the last two digits of the identifier, which ensures that the
-    deepest directories in the tree never have more that 100 patents. Themiddle
+    deepest directories in the tree never have more that 100 patents. The middle
     part is what remains of the indentifier."""
     if id[:2] in ('19', '20'):
         return id[:4], id[4:-2], id[-2:]
@@ -278,5 +343,6 @@ if __name__ == '__main__':
 
     dirname = sys.argv[1]
     repo = PatentRepository(dirname)
-    corpus = '/home/j/corpuswork/fuse/FUSEData/corpora/ln-us-sample-500'
-    repo.add_corpus_sources(corpus, 10)
+    corpus_path = '/home/j/corpuswork/fuse/FUSEData/corpora/ln-us-sample-500'
+    corpus_path ='data/patents/corpora/sample-us'
+    repo.add_corpus(corpus_path, 10)
