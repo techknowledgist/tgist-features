@@ -10,8 +10,8 @@ several things:
     3- querying the repository for data
     4- analyzing the repository
 
-The first is implemented, the first has an initial version, the second and third
-do not yet exists.
+These are in varying stages of completion (and non-completion). See below for
+more details.
 
 
 USAGE:
@@ -49,10 +49,12 @@ After a repository is initialized it has the following structure:
        processed/
 
 All directories are empty, except for index/, which has a couple of index files
-that are all empty (because the repository is still empty). Other index files
-may be added over time, some specific to particular repository types.
+that are all empty (because the repository is still empty). Other directories
+may be added to repositories, for example a directory with scripts for local
+repository-spefici processing or a directory with lists of files. Other index
+files may be added over time, some specific to particular repository types.
 
-TODO: add an Sqlite database that replaces all the index files. The index files
+TODO: add an SQLite database that replaces all the index files. The index files
 could still be kept around as a kind of journal files.
 
 There will be several kinds of repositories, each making different assumptions
@@ -66,6 +68,24 @@ A PatentRepository assumes that the basename of a file is a unique file and
 stores patents using that uniqueness. It is the only repository type that exists
 at this point. When more types come into being a new option will be added.
 
+The index files contain a list of records with the following fields (this is for
+patents):
+
+    idx-ids.txt:
+        numerical identifier
+    idx-files.txt:
+        timestamp
+        numerical identifier
+        size of source file (compressed)
+        path i nrepository
+    idx-dates:
+        not yet used
+    idx-processed-X.txt:
+        timestamp
+        git commit
+        numerical id
+        options (zero or more columns)
+
 
 ADDING CORPUS DATA
 
@@ -73,19 +93,45 @@ To add all data from a corpus:
 
     $ python repository.py --add-corpus -r test -c data/patents/corpora/sample-us
 
+Existing data will not be overwritten. At some point we may add a flag that
+allows you to overwrite existing data. 
+
+
 More corpora can be added later. This needs to be done one corpus at a time, no
 conccurrency is implemented.
 
+During a corpus load, source files are added to /data/sources and processed
+files to data/processed. For patents, the directory strcuture in data/sources is
+generated from the filename, for the sample corpus we end up with the following
+files in a three-level directory structure:
+
+    data/sources/42/365/96/US4236596A.xml.gz
+    data/sources/42/467/08/US4246708A.xml.gz
+    data/sources/42/543/95/US4254395A.xml.gz
+    data/sources/41/927/70/US4192770A.xml.gz
+
+This structure is mirrored under data/processed, with the addition of the name
+of the processing step (d1_txt, d2_seg, d2_tag or d3_phr_feats), for example,
+for the tagged files we get:
+
+    data/processed/d2_tag/42/365/96/US4236596A.xml.gz
+    data/processed/d2_tag/42/467/08/US4246708A.xml.gz
+    data/processed/d2_tag/42/543/95/US4254395A.xml.gz
+    data/processed/d2_tag/41/927/70/US4192770A.xml.gz
+
+Corpus loads also update the index files and add a time-stamped log file to the
+logs directory.
 
 
-NOTES
+
+NOTES (THESE SHOULD BE ADDED TO ln-us)
 
 Adding new files from the update:
 
     ln-us-updates-2014-09-23-scrambled.txt
     ln-us-updates-2014-09-23-scrambled-basename.txt
     ln-us-updates-2014-09-23-scrambled-patnum.txt
-    
+
 The first is a file list created on eldrad. The seond is the same list but just
 the basename (using cut -f11 -d'/').
 
@@ -101,7 +147,8 @@ from ontology.utils.file import compress, ensure_path, read_only, make_writable
 
 REPOSITORY_DIR = '/home/j/corpuswork/fuse/FUSEData/repositories'
 
-re_PATENT_NUMBER = re.compile('^(B|D|H|HD|RE|PP|T)?(\d+)(.*)')
+re_PATENT = re.compile('^(B|D|H|HD|RE|PP|T)?(\d+)(.*)')
+
 
 LISTS_DIR = '/home/j/corpuswork/fuse/FUSEData/lists'
 IDX_FILE = LISTS_DIR + '/ln_uspto.all.index.txt'
@@ -179,20 +226,6 @@ def test_directory_structure():
         print '>', dir1, len(dirs[dir1])
         for dir2 in sorted(dirs[dir1]):
             print '  ', dir2, dirs[dir1][dir2]
-
-
-def get_patent_id(basename):
-    id = os.path.splitext(basename)[0]
-    if id.startswith('US'):
-        id = id[2:]
-    result = re_PATENT_NUMBER.match(id)
-    if result is None:
-        print "WARNING: no match on", fname
-        return None
-    prefix = result.groups()[0]
-    kind_code = result.groups()[-1]
-    number = ''.join([g for g in result.groups()[:-1] if g is not None])
-    return (prefix, kind_code, number)
 
 
 def compare_lists(list1, list2):
@@ -318,16 +351,21 @@ class PatentRepository(Repository):
         c = 0
         t1 = time.time()
         added = 0
-        for line in open(corpus.file_list):
-            c += 1
-            if c % 100 == 0: print c
-            if c > limit: c -= 1; break
-            added_p = self._add_patent_source_and_processed(current_identifiers, corpus, c, line)
-            if added_p:
-                added += 1
-        log("Added %d out of %d in %d seconds" % (added, c, time.time() - t1),
-            self.log, notify=True)
-        self._close_index_files()
+        try:
+            for line in open(corpus.file_list):
+                c += 1
+                if c % 100 == 0: print c
+                if c > limit: c -= 1; break
+                added_p = self._add_patent(current_identifiers, corpus, c, line)
+                if added_p:
+                    added += 1
+        except:
+            log("An Exception occurred - exiting...", self.log, notify=True)
+        finally:
+            log("Added %d out of %d in %d seconds" % (added, c, time.time() - t1),
+                self.log, notify=True)
+            self._close_log()
+            self._close_index_files()
 
 
     def _open_index_files(self):
@@ -341,6 +379,11 @@ class PatentRepository(Repository):
             fname = "%s%sidx-processed-%s.txt" % (self.idx_dir, os.sep, step)
             self.fh_processed[step] = open(fname, 'a')
 
+    def _close_log(self):
+        logname = self.log.name
+        self.log.close()
+        read_only(logname)
+
     def _close_index_files(self):
         fhs = [self.fh_ids, self.fh_files, self.fh_dates] + self.fh_processed.values()
         for fh in fhs:
@@ -348,7 +391,7 @@ class PatentRepository(Repository):
             fh.close()
             read_only(fname)
 
-    def _add_patent_source_and_processed(self, current_identifiers, corpus, c, line):
+    def _add_patent(self, current_identifiers, corpus, c, line):
         """Add a document source and the processed files. Do nothing if source
         cannot be found or if source is already in the list of current
         identifiers. Return True is data were added, false otherwise."""
@@ -357,7 +400,7 @@ class PatentRepository(Repository):
         # we imported before. And suppose that in the erarlier corpus this file
         # was not processed and it was processed in the later corpus. In that
         # case the processed files are not copied. Even if this occurs, it will
-        # not impact the integirty of the repository.
+        # not impact the integrity of the repository.
         (external_source, local_source) = get_filelist_paths(line)
         external_source = validate_filename(external_source)
         if external_source is None:
@@ -393,7 +436,8 @@ class PatentRepository(Repository):
                 target_file = os.path.join(target_dir, basename)
                 log("      Adding %s" % target_file, self.log)
                 copy_and_compress(fname, target_dir, target_file)
-                self.add_entry_to_processed_index(t, id, step, corpus.git_commits)
+                #self.add_entry_to_processed_index(t, id, step, corpus.git_commits)
+                self.add_entry_to_processed_index(t, id, step, corpus)
 
     def add_entry_to_file_index(self, t, id, size, path, basename):
         if basename.endswith('.gz'):
@@ -401,15 +445,19 @@ class PatentRepository(Repository):
         self.fh_files.write("%s\t%s\t%d\t%s%s%s\n" %
                             (t, id, size, path, os.sep, basename))
 
-    def add_entry_to_processed_index(self, t, id, step, commits):
-        self.fh_processed[step].write("%s\t%s\t%s\n" % (t, commits.get(step), id))
+    def add_entry_to_processed_index(self, t, id, step, corpus):
+        commit = corpus.git_commits.get(step)
+        options = "\t".join(corpus.options[step])
+        if options: options = "\t" + options
+        self.fh_processed[step].write("%s\t%s\t%s%s\n" % (t, commit, id, options))
 
 
 class CorpusInterface(object):
 
     """Object that acts as an intermediary to a corpus. It emulates part of the
     interface of corpus.Corpus (location and file_list instance variables and
-    adds information on commits in self.git_commits.."""
+    adds information on commits in self.git_commits and processing step options
+    in self.options."""
 
     def __init__(self, language, datasource, corpus_path):
         self.corpus = Corpus(language, datasource, None, None, corpus_path,
@@ -417,6 +465,7 @@ class CorpusInterface(object):
         self.location = self.corpus.location
         self.file_list = self.corpus.file_list
         self._collect_git_commits()
+        self._collect_step_options()
 
     def _collect_git_commits(self):
         """Collect the git commits for all steps in the processing chain."""
@@ -434,6 +483,18 @@ class CorpusInterface(object):
             line = open(fname).readline()
             return line.rstrip("\n\r\f").split("\t")[3]
         return None
+
+    def _collect_step_options(self):
+        self.options = {}
+        for step in PROCESSING_STEPS:
+            fname = os.path.join(self.location, 'data', step, '01', 'config', 'pipeline-head.txt')
+            if not os.path.exists(fname):
+                options = []
+            else:
+                content = open(fname).readline().split()
+                options = content[1:]
+            self.options[step] = options
+
 
 
 def timestamp():
@@ -480,20 +541,36 @@ def parse_patent_path(path):
     path = patentid2path(id)
     return id, path, basename
 
+def get_patent_id(basename):
+    """Get the prefix, kind code and unique numerical identifier from the file
+    name. Prefix and kind code can both be empty strings."""
+    id = os.path.splitext(basename)[0]
+    if id.startswith('US'):
+        id = id[2:]
+    result = re_PATENT.match(id)
+    if result is None:
+        print "WARNING: no match on", fname
+        return None
+    prefix = result.groups()[0]
+    kind_code = result.groups()[-1]
+    number = ''.join([g for g in result.groups()[:-1] if g is not None])
+    return (prefix, kind_code, number)
+
 def patentid2path(id):
-    """Split the patent identifier into three parts of a path. The first part of
-    the path is either a year, one or two letters (D, PP, T etcetera), The last
-    part is the last two digits of the identifier, which ensures that the
-    deepest directories in the tree never have more that 100 patents. The middle
-    part is what remains of the indentifier."""
+    """Generate a pathname from the patent identifier. Split the patent
+    identifier into three parts of a path. The first part of the path is either
+    a year, one or two letters (D, PP, T etcetera), The last part is the last
+    two digits of the identifier, which ensures that the deepest directories in
+    the tree never have more that 100 patents. The middle part is what remains
+    of the indentifier. Only the first and middle parts are returned"""
     if id[:2] in ('19', '20'):
-        return id[:4], id[4:-2], id[-2:]
+        return id[:4], id[4:-2]
     elif id[0].isalpha() and id[1].isalpha():
-        return  id[:2], id[2:-2], id[-2:]
+        return  id[:2], id[2:-2]
     elif id[0].isalpha():
-        return  id[:1], id[1:-2], id[-2:]
+        return  id[:1], id[1:-2]
     else:
-        return  id[:2], id[2:-2], id[-2:]
+        return  id[:2], id[2:-2]
 
 def copy_and_compress(source, target_dir, target_file):
     """Copy source to target file, making sure there is a directory. Compress
@@ -538,14 +615,13 @@ if __name__ == '__main__':
         if opt in ('-r', '--repository'): repository = val
         if opt in ('-c', '--corpus'): corpus = val
 
-    if init_p:
-        if repository is None:
-            exit("WARNING: missing repository argument")
+    if repository is None:
+        exit("WARNING: missing repository argument")
+    elif init_p:
         if os.path.exists(repository):
             exit("WARNING: repository '%s' already exists" % repository)
         print "Initializing repository '%s'" % repository
         PatentRepository(repository)
-
     else:
         repository = validate_location(repository)
         if add_corpus_p:

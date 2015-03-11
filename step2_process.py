@@ -114,7 +114,7 @@ if __name__ == '__main__':
 
     # NOTE: this is named rconfig to avoid confusion with config.py
     rconfig = RuntimeConfig(corpus_path, None, None, None, None, pipeline_config)
-    rconfig.pp()
+    #rconfig.pp()
 
     if show_data_p:
         show_datasets(rconfig, config.DATA_TYPES, verbose)
