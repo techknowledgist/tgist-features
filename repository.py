@@ -22,18 +22,22 @@ USAGE:
         --initialize
         --add-corpus
         --analyze
-        (-c | --corpus) PATH
         (-r | --repository) PATH
+        (-t | --type PATH
+        (-c | --corpus) PATH
 
 
 INITIALIZATION
 
 To initialize a repository:
 
-    $ python repository.py --initialize --repository test
+    $ python repository.py --initialize --repository test --type patents
 
-After a repository is initialized it has the following structure:
+The --type argument specifies the repository type, which is one of 'patents',
+'cnki' or 'pubmed'.  After a repository is initialized it has the following
+structure:
 
+    type.txt
     documents/
     logs/
     index/
@@ -52,17 +56,19 @@ All directories are empty, except for index/, which has a couple of index files
 that are all empty (because the repository is still empty). Other directories
 may be added to repositories, for example a directory with scripts for local
 repository-spefici processing or a directory with lists of files. Other index
-files may be added over time, some specific to particular repository types.
+files may be added over time, some specific to particular repository types. The
+type.txt file contains the type of the repository, which is used each time the
+repository is opened.
 
 TODO: add an SQLite database that replaces all the index files. The index files
 could still be kept around as a kind of journal files.
 
-There will be several kinds of repositories, each making different assumptions
-on identifiers:
+There are several kinds of repositories, each making different assumptions on
+identifiers:
 
-    PatentRepository
-    CnkiRepository
-    PubmedRepository
+    PatentRepository  (--type patents)
+    CnkiRepository    (--type cnki)
+    PubmedRepository  (--type pubmed)
 
 A PatentRepository assumes that the basename of a file is a unique file and
 stores patents using that uniqueness. It is the only repository type that exists
@@ -132,7 +138,7 @@ Adding new files from the update:
     ln-us-updates-2014-09-23-scrambled-basename.txt
     ln-us-updates-2014-09-23-scrambled-patnum.txt
 
-The first is a file list created on eldrad. The seond is the same list but just
+The first is a file list created on eldrad. The second is the same list but just
 the basename (using cut -f11 -d'/').
 
 """
@@ -146,6 +152,8 @@ from ontology.utils.file import compress, ensure_path, read_only, make_writable
 
 
 REPOSITORY_DIR = '/home/j/corpuswork/fuse/FUSEData/repositories'
+
+REPOSITORY_TYPES = ('patents', 'pubmed', 'cnki')
 
 re_PATENT = re.compile('^(B|D|H|HD|RE|PP|T)?(\d+)(.*)')
 
@@ -262,15 +270,42 @@ def compare_lists(list1, list2):
 
 
 
+def create_repository(repository, repotype="patents"):
+    """Creates a generic repository and initializes a skeleton directory
+    structure on disk. This method is solely intended to create the repository
+    on disk. The resulting generic repository object is not meant to be used for
+    further processing and it is therefore not returned."""
+    if os.path.exists(repository):
+        exit("WARNING: cannot create repository, directory already exists")
+    if not repotype in REPOSITORY_TYPES:
+        exit("WARNING: unkown repository type")
+    os.makedirs(repository)
+    repo = Repository(repository)
+    repo.create_skeleton_on_disk(repotype)
+
+def open_repository(repository):
+    repository = validate_location(repository)
+    with open(os.path.join(repository, 'type.txt')) as fh:
+        repotype = fh.read().strip()
+    if repotype == 'patents':
+        return PatentRepository(repository)
+    elif repotype == 'pubmed':
+        print "Not yet implemented"
+    elif repotype == 'cnki':
+        print "Not yet implemented"
+    else:
+        print "Unknown repository type"
+
+
 class Repository(object):
 
     def __init__(self, dirname):
-        """Initialize by storing the physical location of the repository. The
-        argument is a relative or absolute path to a repository. Often, this is
-        a directory insize of REPOSITORY_DIR, which is the standard location of
-        all repositories. If the repository does not yet exist it is initialized
-        on disk."""
+        """The argument is a relative or absolute path to a repository. Often,
+        this is a directory insize of REPOSITORY_DIR, which is the standard
+        location of all repositories."""
+        dirname = validate_location(dirname)
         self.dir = dirname
+        self.type_file = os.path.join(self.dir, 'type.txt')
         self.idx_dir = os.path.join(self.dir, 'index')
         self.doc_dir = os.path.join(self.dir, 'documents')
         self.log_dir = os.path.join(self.dir, 'logs')
@@ -279,20 +314,22 @@ class Repository(object):
         self.idx_ids = os.path.join(self.idx_dir, 'idx-ids.txt')
         self.idx_files = os.path.join(self.idx_dir, 'idx-files.txt')
         self.idx_dates = os.path.join(self.idx_dir, 'idx-dates.txt')
-        self._initialize_directory()
 
     def __str__(self):
         return "<Repository '%s'>" % self.dir
 
-    def _initialize_directory(self):
-        """Initialize directory structure and files on disk if needed."""
-        if not os.path.isdir(self.dir):
-            for d in (self.doc_dir, self.log_dir, self.idx_dir,
-                      self.data_dir, self.proc_dir):
-                os.makedirs(d)
-            for fname in self._index_files():
-                open(fname, 'w').close()
-                read_only(fname)
+    def create_skeleton_on_disk(self, repotype):
+        """Initialize directory structure and files on disk. The only file with
+        content is type.txt which stores the repository type."""
+        for d in (self.doc_dir, self.log_dir, self.idx_dir,
+                  self.data_dir, self.proc_dir):
+            os.makedirs(d)
+        with open(self.type_file, 'w') as fh:
+            fh.write("%s\n" % repotype)
+        read_only(self.type_file)
+        for fname in self._index_files():
+            open(fname, 'w').close()
+            read_only(fname)
 
     def _index_files(self):
         """Return a list of all index files."""
@@ -599,13 +636,14 @@ def validate_location(path):
 
 if __name__ == '__main__':
 
-    options = ['initialize', 'add-corpus', 'analyze', 'repository=', 'corpus=']
-    (opts, args) = getopt.getopt(sys.argv[1:], 'r:c:', options)
+    options = ['initialize', 'add-corpus', 'analyze', 'repository=', 'type=', 'corpus=']
+    (opts, args) = getopt.getopt(sys.argv[1:], 'r:t:c:', options)
 
     init_p = False
     add_corpus_p = False
     analyze_p = False
     repository = None
+    repotype = 'patents'
     corpus = None
 
     for opt, val in opts:
@@ -613,20 +651,19 @@ if __name__ == '__main__':
         if opt == '--add-corpus': add_corpus_p = True
         if opt == '--analyze': analyze_p = True
         if opt in ('-r', '--repository'): repository = val
+        if opt in ('-t', '--type'): repotype = val
         if opt in ('-c', '--corpus'): corpus = val
 
     if repository is None:
         exit("WARNING: missing repository argument")
-    elif init_p:
-        if os.path.exists(repository):
-            exit("WARNING: repository '%s' already exists" % repository)
+
+    if init_p:
         print "Initializing repository '%s'" % repository
-        PatentRepository(repository)
-    else:
-        repository = validate_location(repository)
-        if add_corpus_p:
-            if corpus is None:
-                exit("WARNING: missing corpus argument")
-            PatentRepository(repository).add_corpus(corpus)
-        elif analyze_p:
-            PatentRepository(repository).analyze()
+        create_repository(repository, repotype)
+    elif add_corpus_p:
+        if corpus is None:
+            exit("WARNING: missing corpus argument")
+        open_repository(repository).add_corpus(corpus)
+    elif analyze_p:
+        print "Analyzing repository '%s'" % repository
+        open_repository(repository).analyze()
