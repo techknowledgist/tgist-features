@@ -10,13 +10,13 @@ several things:
     3- querying the repository for data
     4- analyzing the repository
 
-These are in varying stages of completion (and non-completion). See below for
-more details.
+The above functionalities are in varying stages of (non) completion. See below
+for more details.
 
 
 USAGE:
 
-    $ python repository OPTIONS
+    $ python repository.py OPTIONS
 
     OPTIONS:
         --initialize
@@ -589,10 +589,10 @@ def check_repository_existence(repository):
         exit("WARNING: repository '%s' does not exist" % repository)
 
 def validate_location(path):
-    if os.path.isdir(path):
-        return path
     if os.path.isdir(os.path.join(REPOSITORY_DIR, path)):
         return os.path.join(REPOSITORY_DIR, path)
+    if os.path.isdir(path):
+        return path
     exit("WARNING: repository '%s' does not exist" % path)
 
 
