@@ -33,7 +33,11 @@ view and are mostly a historical record.
 
 Example:
 
-    python view.py
+    python view.py \
+           --initialize-from-corpus \
+           --view test-view \
+           --repository ln-us \
+           --corpus /home/j/corpuswork/fuse/FUSEData/corpora/ln-us-A21-computers/subcorpora/1997
 
 The second form checks whether identifiers listed in index/files.txt actually
 can be associated with files in the repository. It writes results to an info

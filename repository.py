@@ -16,15 +16,12 @@ for more details.
 
 USAGE:
 
-    $ python repository.py OPTIONS
+    $ python repository.py --initialize --repository PATH --type STRING
+    $ python repository.py --add-corpus --repository PATH --corpus PATH
+    $ python repository.py --analyze --repository PATH
 
-    OPTIONS:
-        --initialize
-        --add-corpus
-        --analyze
-        (-r | --repository) PATH
-        (-t | --type PATH
-        (-c | --corpus) PATH
+    There are short versions for some of the options: --repository (-r),
+    --type (-t) and --corpus (-c)
 
 
 INITIALIZATION
@@ -83,7 +80,7 @@ patents):
         timestamp
         numerical identifier
         size of source file (compressed)
-        path i nrepository
+        path in repository
     idx-dates:
         not yet used
     idx-processed-X.txt:
@@ -101,7 +98,6 @@ To add all data from a corpus:
 
 Existing data will not be overwritten. At some point we may add a flag that
 allows you to overwrite existing data. 
-
 
 More corpora can be added later. This needs to be done one corpus at a time, no
 conccurrency is implemented.
@@ -129,31 +125,44 @@ Corpus loads also update the index files and add a time-stamped log file to the
 logs directory.
 
 
+USING FROM OTHER SCRIPTS
 
-TODO (requests from Peter):
+There are a couple of utility methods intended to be used from other
+scripts. These methods convert between paths and identifiers:
 
-given a file path and view ==> returns a unique document id
+    filepath2longid(path)            returns a long identifier
+    filepath2shortid(path)           returns a short identifier
+    longid2filepath(longid)          returns a path to a source file
+    longid2filepath(longid, step)    returns a path to a processed file
+    shortid2filepath(sortid)         returns a path to a source file
+    shortid2filepath(shortid, step)  returns a path to a processed file
+    longid2shortid(longid)           returns a short identifier
 
-fetch a file instance by doc_id (e.g. if a client wanted a tag file for a particular doc_id).  Since we may have to live with two kinds of doc_ids for a while, the id type (long vs. short) could a parameter until we retire it.
+Methods that return paths will return None if the path does not exist.
 
-convert between id types (convert a long id to a short one)
+What is returned is actually the path with the .gz extension stripped off. This
+is so the result works nicely with ontology.utils.file.open_input_file(), which
+does not expect the .gz extension.
 
+These methods are now only implemented for PatentRepository, they may or may not
+make sense for other repository classes.
 
-NOTES (THESE SHOULD BE ADDED TO ln-us)
+Examples:
 
-Adding new files from the update:
-
-    ln-us-updates-2014-09-23-scrambled.txt
-    ln-us-updates-2014-09-23-scrambled-basename.txt
-    ln-us-updates-2014-09-23-scrambled-patnum.txt
-
-The first is a file list created on eldrad. The second is the same list but just
-the basename (using cut -f11 -d'/').
+    import repository
+    repo = repository.open_repository('ln-us')
+    print repo.filepath2longid('57/238/US5723853A.xml')
+    print repo.filepath2shortid('57/238/US5723853A.xml')
+    print repo.longid2filepath('US5723853A.xml')
+    print repo.longid2filepath('US5723853A.xml', 'd2_tag')
+    print repo.shortid2filepath('5723853')
+    print repo.shortid2filepath('5723853', 'd2_tag')
+    print repo.longid2shortid('US5723853A.xml')
 
 """
 
 
-import os, sys, re, time, shutil, getopt
+import os, sys, re, time, shutil, getopt, glob
 from config import DEFAULT_PIPELINE
 from corpus import Corpus
 sys.path.append(os.path.abspath('../..'))
@@ -166,116 +175,13 @@ REPOSITORY_TYPES = ('patents', 'pubmed', 'cnki')
 
 re_PATENT = re.compile('^(B|D|H|HD|RE|PP|T)?(\d+)(.*)')
 
-
-LISTS_DIR = '/home/j/corpuswork/fuse/FUSEData/lists'
-IDX_FILE = LISTS_DIR + '/ln_uspto.all.index.txt'
-UPDATES_FILE = LISTS_DIR + '/ln-us-updates-2014-09-23-scrambled-basename.txt'
-
 PROCESSING_STEPS = ('d1_txt', 'd2_seg', 'd2_tag', 'd3_phr_feats')
 
 
-def analyze_filenames(fname):    
-    """Checks whether all the numbers we extract from the filenames are
-    unique. This is the case for IDX_FILE."""
-    number2name = {}
-    number2path = {}
-    fh = open(fname)
-    basedir = fh.readline()
-    c = 1
-    for line in fh:
-        c += 1
-        if c % 100000 == 0: print c
-        #if c > 100000: break
-        (number, adate, pdate, path) = line.rstrip("\n\f\r").split("\t")
-        name = os.path.splitext(os.path.basename(path))[0]
-        if number2name.has_key(number):
-            print "Warning, duplicate number", number, path
-        number2name.setdefault(number,[]).append(name)
-        number2path.setdefault(number,[]).append(path)
 
-
-def analyze_filename_lengths(fname):    
-    """Checks lengths of file names."""
-    lengths = {}
-    fh = open(fname)
-    basedir = fh.readline()
-    c = 1
-    fhs = { 5: open('lengths-05.txt', 'w'),
-            6: open('lengths-06.txt', 'w'),
-            7: open('lengths-07.txt', 'w'),
-            8: open('lengths-08.txt', 'w'),
-            11: open('lengths-11.txt', 'w'),
-            12: open('lengths-12.txt', 'w') }
-    for line in fh:
-        c += 1
-        if c % 100000 == 0: print c
-        #if c > 100000: break
-        (number, adate, pdate, path) = line.rstrip("\n\f\r").split("\t")
-        name = os.path.splitext(os.path.basename(path))[0]
-        number_length = len(number)
-        lengths[number_length] = lengths.get(number_length,0) + 1
-        fhs[number_length].write("%s\n" % name)
-    print lengths
-
-
-def test_directory_structure():
-    """Some experiments to see how to do the directory structure of the
-    repository. The goal is to have the filenumber reflected in the path in a
-    predicatble manner. It looks like having a three-deep structure works
-    nicely. The deepest level just encodes the last two numbers of the number
-    (so no more than 100 documents in the leaf directories). Then the first is
-    either a year, one or two letters, or two numbers. The middle directory is
-    whatever remains of the filename."""
-    fh = open('tmp-patnums.txt')
-    fh.readline()
-    dirs = {}
-    c = 0
-    for line in fh:
-        c += 1
-        if c % 100000 == 0: print c
-        num = line.strip()
-        (dir1, dir2, dir3) = patentid2path(num)
-        dirs.setdefault(dir1,{})
-        dirs[dir1][dir2] = dirs[dir1].get(dir2,0) + 1
-        if not dir1 and dir2 and dir3:
-            print num, dir1, dir2, dir3
-    for dir1 in sorted(dirs):
-        print '>', dir1, len(dirs[dir1])
-        for dir2 in sorted(dirs[dir1]):
-            print '  ', dir2, dirs[dir1][dir2]
-
-
-def compare_lists(list1, list2):
-
-    """list1 is an index with four columns, list2 just has the one column."""
-
-    in1 = open(list1)
-    in2 = open(list2)
-    out1 = open("out-in-repo.txt", 'w')
-    out2 = open("out-not-in-repo.txt", 'w')
-    basedir = in1.readline()
-    repo = {}
-    c = 1
-    for line in in1:
-        c += 1
-        if c % 100000 == 0: print c
-        repo[line.split("\t")[0]] = True
-    in_repo = 0
-    not_in_repo = 0
-    c = 0
-    for line in in2:
-        c += 1
-        if c % 100000 == 0: print c
-        basename = line.strip()
-        (prefix, code, id) = get_patent_id(basename)
-        if id in repo:
-            in_repo += 1
-            out1.write("%s\n" % basename)
-        else:
-            not_in_repo += 1
-            out2.write("%s\n" % basename)
-    print 'in_repo', in_repo
-    print 'not_in_repo', not_in_repo
+class RepositoryError(Exception):
+    def __init__(self, value): self.value = value
+    def __str__(self): return repr(self.value)
 
 
 
@@ -325,7 +231,7 @@ class Repository(object):
         self.idx_dates = os.path.join(self.idx_dir, 'idx-dates.txt')
 
     def __str__(self):
-        return "<Repository '%s'>" % self.dir
+        return "<%s '%s'>" % (self.__class__.__name__, self.dir)
 
     def create_skeleton_on_disk(self, repotype):
         """Initialize directory structure and files on disk. The only file with
@@ -350,13 +256,19 @@ class Repository(object):
     def read_identifiers(self):
         """Return a dictionary with as keys all the identifiers in the
         repository. This works for now with smaller repositories, but we may
-        need to start using an sqlite database."""
+        need to start using an SQLite database."""
         identifiers = {}
         fh = open(self.idx_ids)
         for line in fh:
             identifiers[line.strip()] = True
         return identifiers
-    
+
+    def filepath2longid(self, path): raise RepositoryError("not yet implemented")
+    def filepath2shortid(self, path): raise RepositoryError("not yet implemented")
+    def longid2filepath(self, id): raise RepositoryError("not yet implemented")
+    def shortid2filepath(self, id): raise RepositoryError("not yet implemented")
+    def longid2shortid(self, id): raise RepositoryError("not yet implemented")
+
     def analyze(self):
         files = 0
         size = 0
@@ -367,6 +279,12 @@ class Repository(object):
         print self
         print "  %6sMB  - source size (compressed)" % (size/1000000)
         print "  %8s -  number of files" % files
+
+    def load_index(self):
+        self.index = RepositoryIndex(self)
+
+    def get(self, identifier, step=None):
+        self.index.get(identifier, step)
 
 
 class PatentRepository(Repository):
@@ -496,6 +414,59 @@ class PatentRepository(Repository):
         options = "\t".join(corpus.options[step])
         if options: options = "\t" + options
         self.fh_processed[step].write("%s\t%s\t%s%s\n" % (t, commit, id, options))
+
+    def filepath2longid(self, path):
+        return os.path.basename(path)
+
+    def filepath2shortid(self, path):
+        return self.longid2shortid(os.path.basename(path))
+
+    def longid2filepath(self, id, step='source'):
+        base_dir = self.data_dir
+        if not step == 'source':
+            if not step in PROCESSING_STEPS:
+                raise RepositoryError("illegal step - %s" % step)
+            base_dir = os.path.join(self.proc_dir, step)
+        path = os.path.join(
+            base_dir, os.sep.join(patentid2path(self.longid2shortid(id))), id)
+        return path if os.path.exists(path + '.gz') else None
+
+    def shortid2filepath(self, id, step='source'):
+        # use repo info to get full path
+        # use glob to get actual path
+        base_dir = self.data_dir
+        if not step == 'source':
+            if not step in PROCESSING_STEPS:
+                raise RepositoryError("illegal step - %s" % step)
+            base_dir = os.path.join(self.proc_dir, step)
+        path = os.path.join(
+            base_dir, os.sep.join(patentid2path(self.longid2shortid(id))), "*%s*.xml.gz" % id)
+        #return path
+        matches = glob.glob(path)
+        return matches[0] if len(matches) == 1 else None
+
+    def longid2shortid(self, id):
+        return get_patent_id(id)[2]
+
+
+
+class RepositoryIndex(object):
+
+    """An object like this will probably be needed at some point."""
+
+    def __init__(self, repository):
+        self.repository = repository
+        self.index = {}
+        c = 0
+        for line in open(self.repository.idx_files):
+            c += 1
+            if c > 10: break
+            (timestamp, id, size, path) = line.split()
+
+    def get(self, identifier):
+        """Return all information associated with an identifier."""
+        pass
+
 
 
 class CorpusInterface(object):
@@ -640,6 +611,117 @@ def validate_location(path):
     if os.path.isdir(path):
         return path
     exit("WARNING: repository '%s' does not exist" % path)
+
+
+
+### Some tests I ran before creating the repository code
+
+LISTS_DIR = '/home/j/corpuswork/fuse/FUSEData/lists'
+IDX_FILE = LISTS_DIR + '/ln_uspto.all.index.txt'
+UPDATES_FILE = LISTS_DIR + '/ln-us-updates-2014-09-23-scrambled-basename.txt'
+
+def test_filenames(fname):
+    """Checks whether all the numbers we extract from the filenames are
+    unique. This is the case for IDX_FILE."""
+    number2name = {}
+    number2path = {}
+    fh = open(fname)
+    basedir = fh.readline()
+    c = 1
+    for line in fh:
+        c += 1
+        if c % 100000 == 0: print c
+        #if c > 100000: break
+        (number, adate, pdate, path) = line.rstrip("\n\f\r").split("\t")
+        name = os.path.splitext(os.path.basename(path))[0]
+        if number2name.has_key(number):
+            print "Warning, duplicate number", number, path
+        number2name.setdefault(number,[]).append(name)
+        number2path.setdefault(number,[]).append(path)
+
+
+def test_filename_lengths(fname):
+    """Checks lengths of file names."""
+    lengths = {}
+    fh = open(fname)
+    basedir = fh.readline()
+    c = 1
+    fhs = { 5: open('lengths-05.txt', 'w'),
+            6: open('lengths-06.txt', 'w'),
+            7: open('lengths-07.txt', 'w'),
+            8: open('lengths-08.txt', 'w'),
+            11: open('lengths-11.txt', 'w'),
+            12: open('lengths-12.txt', 'w') }
+    for line in fh:
+        c += 1
+        if c % 100000 == 0: print c
+        #if c > 100000: break
+        (number, adate, pdate, path) = line.rstrip("\n\f\r").split("\t")
+        name = os.path.splitext(os.path.basename(path))[0]
+        number_length = len(number)
+        lengths[number_length] = lengths.get(number_length,0) + 1
+        fhs[number_length].write("%s\n" % name)
+    print lengths
+
+
+def test_directory_structure():
+    """Some experiments to see how to do the directory structure of the
+    repository. The goal is to have the filenumber reflected in the path in a
+    predicatble manner. It looks like having a three-deep structure works
+    nicely. The deepest level just encodes the last two numbers of the number
+    (so no more than 100 documents in the leaf directories). Then the first is
+    either a year, one or two letters, or two numbers. The middle directory is
+    whatever remains of the filename."""
+    fh = open('tmp-patnums.txt')
+    fh.readline()
+    dirs = {}
+    c = 0
+    for line in fh:
+        c += 1
+        if c % 100000 == 0: print c
+        num = line.strip()
+        (dir1, dir2, dir3) = patentid2path(num)
+        dirs.setdefault(dir1,{})
+        dirs[dir1][dir2] = dirs[dir1].get(dir2,0) + 1
+        if not dir1 and dir2 and dir3:
+            print num, dir1, dir2, dir3
+    for dir1 in sorted(dirs):
+        print '>', dir1, len(dirs[dir1])
+        for dir2 in sorted(dirs[dir1]):
+            print '  ', dir2, dirs[dir1][dir2]
+
+
+def test_compare_lists(list1, list2):
+
+    """list1 is an index with four columns, list2 just has the one column."""
+
+    in1 = open(list1)
+    in2 = open(list2)
+    out1 = open("out-in-repo.txt", 'w')
+    out2 = open("out-not-in-repo.txt", 'w')
+    basedir = in1.readline()
+    repo = {}
+    c = 1
+    for line in in1:
+        c += 1
+        if c % 100000 == 0: print c
+        repo[line.split("\t")[0]] = True
+    in_repo = 0
+    not_in_repo = 0
+    c = 0
+    for line in in2:
+        c += 1
+        if c % 100000 == 0: print c
+        basename = line.strip()
+        (prefix, code, id) = get_patent_id(basename)
+        if id in repo:
+            in_repo += 1
+            out1.write("%s\n" % basename)
+        else:
+            not_in_repo += 1
+            out2.write("%s\n" % basename)
+    print 'in_repo', in_repo
+    print 'not_in_repo', not_in_repo
 
 
 
