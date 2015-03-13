@@ -130,6 +130,15 @@ logs directory.
 
 
 
+TODO (requests from Peter):
+
+given a file path and view ==> returns a unique document id
+
+fetch a file instance by doc_id (e.g. if a client wanted a tag file for a particular doc_id).  Since we may have to live with two kinds of doc_ids for a while, the id type (long vs. short) could a parameter until we retire it.
+
+convert between id types (convert a long id to a short one)
+
+
 NOTES (THESE SHOULD BE ADDED TO ln-us)
 
 Adding new files from the update:
