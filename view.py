@@ -24,16 +24,15 @@ else where). After initialization, the directory structure of a view is as follo
 
 The file repository.txt holds a string that points to the repository. The file
 index/files.txt contains a list of identifier-path pairs. The path is the local
-path in the repository. This path is calculated from the identifier. This is
+path in the repository. This path is calculated from the identifier, which is
 specific for patents and may change in the future when views to non-patent
-repositories are created, probably by making the path field optional. The
-corpus-config and corpus-data directories contain some information lifted from
-the corpus. After initialization they are not essential to th eworkings of a
-view and are mostly a historical record.
+repositories are created. The corpus-config and corpus-data directories contain
+some information lifted from the corpus. After initialization they are not
+essential to the workings of a view and are mostly a historical record.
 
 Example:
 
-    python view.py \
+    $ python view.py \
            --initialize-from-corpus \
            --view test-view \
            --repository ln-us \
@@ -68,6 +67,9 @@ This will print a list of absolute paths accessable through the view.
 
 import os, sys, shutil, glob, getopt, time
 import repository
+sys.path.append(os.path.abspath('../..'))
+from ontology.utils.file import read_only
+
 
 
 def create_view(view_dir, repository_dir):
@@ -80,6 +82,7 @@ def create_view(view_dir, repository_dir):
     os.makedirs(view_dir)
     with open(os.path.join(view_dir, 'repository.txt'), 'w') as fh:
         fh.write("%s\n" % repository_dir)
+    read_only(os.path.join(view_dir, 'repository.txt'))
     view = View(view_dir)
     os.makedirs(view.index_dir)
 
@@ -169,7 +172,6 @@ class View(object):
         with open(self.filelist_file) as fh:
             for line in fh:
                 ids.append(line.split())
-        #return ids[:20]
         return ids
 
     def analyze(self):
@@ -198,7 +200,7 @@ class View(object):
 
 class RepositoryIterator(object):
 
-    """Iterator objects to iterate over files in a repository given a view."""
+    """Iterator object to iterate over files in a repository given a view."""
 
     def __init__(self, view, step=None):
         self.repository = view.repository.dir
@@ -214,7 +216,8 @@ class RepositoryIterator(object):
             fname = os.path.join(self.repository, self.path, next[1] + '.gz')
             if os.path.exists(fname):
                 return fname
-            return None
+            else:
+                return None
         except IndexError:
             raise StopIteration
 
