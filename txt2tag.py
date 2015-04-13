@@ -194,7 +194,8 @@ def get_tagger(language):
         return sdp.STagger("german-fast.tagger")
     elif language == "cn":
         return sdp.STagger("chinese.tagger")
-
+    else:
+        exit("There is no tagger for language=%s" % language)
 
 
 if __name__ == '__main__':

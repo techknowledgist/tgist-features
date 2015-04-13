@@ -76,8 +76,10 @@ def is_omitable(s):
 
 class SegmenterWrapper(object):
 
-    def __init__(self, segmenter):
+    def __init__(self, segmenter=None):
         self.segmenter = segmenter
+        if segmenter is None:
+            self.segmenter = sdp.Segmenter()
         self.model_loaded = False
 
     def process(self, infile, outfile, verbose=False):
