@@ -1,0 +1,41 @@
+Go to the WoS data
+
+$ cd /home/j/corpuswork/fuse/FUSEData/2013-04/WoS_2012_Aug
+
+
+What are the subjects?
+
+$ zcat WoS.out.2012000044.gz | grep 'subject code' | cut -f2 -d'>' | cut -f1 -d'<' | sort | uniq -c | wc
+
+This gives a list of 147 subjects, with counts
+
+
+Some more counting on one archive
+
+50 2013-04/WoS_2012_Aug> zcat WoS.out.2012000044.gz | grep '<REC>'|wc
+   1042    1042    6252
+51 2013-04/WoS_2012_Aug> zcat WoS.out.2012000044.gz | grep '<ui>' | wc
+   1042    1042   20840
+52 2013-04/WoS_2012_Aug> zcat WoS.out.2012000044.gz | grep '<io>' | wc
+   1042    1042   25008
+
+What is the bloody identifier?
+
+$ zcat WoS.out.2012000044.gz | grep '<ui>' | cut -f2 -d'>' | cut -f1 -d'<' | sort | uniq -c |wc
+    364     728    6916
+$ zcat WoS.out.2012000044.gz | grep '<io>' | cut -f2 -d'>' | cut -f1 -d'<' | sort | uniq -c | wc
+    364     728    8372
+$ zcat WoS.out.2012000044.gz | grep '<issn>' | cut -f2 -d'>' | cut -f1 -d'<' | sort | uniq -c | wc
+    280     560    5040
+$ zcat WoS.out.2012000044.gz | grep '<item_title>' | cut -f2 -d'>' | cut -f1 -d'<' | sort | uniq -c | wc
+   1039   13805  112765
+
+
+What about ui duplicates?
+
+$ python analyze.pu
+
+There are two examples there, they show that the duplicates for those two have
+all the same subject, but widely different titles. One also comes with two very
+different abstracts, for the other there is one abstract and six empty
+abstracts.
