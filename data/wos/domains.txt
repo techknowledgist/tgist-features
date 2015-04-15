@@ -1,0 +1,102 @@
+# Taken from an email from Olga of 4/15/15
+# issn numbers going with some eleven domains
+# note that the issn numbers have no hyphens
+
+DOMAIN	A01	Multi-disciplinary
+Science	00368075
+Nature	00280836
+Proceedings of the National Academy of Science (PNAS)	00278424
+
+DOMAIN	A02	Chemistry and Chemical Engineering
+Chemical Reviews	00092665 15206890
+Chemical Society Reviews	03060012 14604744
+Progress in Polymer Science (Oxford)	00796700
+Accounts of Chemical Research	00014842 15204898
+Angewandte Chemie - International Edition	14337851 15213773
+Journal of the American Chemical Society	00027863 15205126
+Journal of Catalysis	00219517 10902694
+Chemistry of Materials	08974756 15205002
+
+DOMAIN	A03	Neuroscience
+Nature Neuroscience	10976256
+Neuron	08966273
+Trends in Neurosciences	01662236
+Nature Reviews Neuroscience	1471003X 14710048
+Current Opinion in Neurobiology	09594388
+Journal of Neuroscience	02706474 15292401
+Progress in Neurobiology	03010082
+
+DOMAIN	A04	Physics
+Reviews of Modern Physics	00346861 15390756
+Advances in Physics	00018732 14606976
+Physics Reports	03701573
+Reports on Progress in Physics	00344885 13616633
+Physical Review Letters	00319007 10797114
+
+DOMAIN	A05	Computer Science: Pattern Recognition and Computer Vision
+IEEE Transactions on Pattern Analysis and Machine Intelligence	01628828
+International Journal of Computer Vision	09205691
+IEEE Transactions on Image Processing	10577149
+Computer Vision and Image Understanding	10773142 1090235X
+Pattern Recognition	00313203
+
+DOMAIN	A06	Nanotechnology
+Nano Letters	15306984 15306992
+Nanotechnology	09574484 13616528
+
+DOMAIN	A07	Materials Science (minus Nanotechnology-focused)
+Nature Materials	14761122 14764660
+Progress in Materials Science	00796425
+Materials Science and Engineering: R: Reports	0927796X
+Advanced Materials	09359648
+Materials Today	13697021
+Advanced Functional Materials	1616301X
+Acta Materialia	13596454
+
+DOMAIN	A08	Energy
+Progress in Energy and Combustion Science	03601285
+IEEE Transactions on Energy Conversion	08858969
+Progress in Photovoltaics: Research and Applications	10627995
+IEEE Transactions on Power Systems	08858950
+Solar Energy Materials and Solar Cells	09270248
+Renewable and Sustainable Energy Reviews	13640321
+
+DOMAIN	A09	Mathematics
+Acta Mathematica	00015962
+Annals of Mathematics	0003486X
+Inventiones Mathematicae	00209910 14321297
+Journal of the American Mathematical Society	08940347 10886834
+Applied and Computational Harmonic Analysis	10635203 1096603X
+Duke Mathematical Journal	00127094
+Communications on Pure and Applied Mathematics	00103640 10970312
+SIAM Review	00361445 10957200
+American Journal of Mathematics	00029327 10806377
+Journal of the European Mathematical Society	14359855 14359863
+Advances in Mathematics	00018708 10902082
+
+DOMAIN	A10	Molecular Biology, Biochemistry, and Genetics
+Nature Genetics	10614036
+Cell	00928674 10974172
+Nature Reviews Molecular Cell Biology	14710072 14710080
+Molecular Cell	10972765 10974164
+Nature Cell Biology	14657392
+Nature Reviews Genetics	14710056 14710064
+Current Opinion in Cell Biology	09550674
+Nature Structural and Molecular Biology	15459993 15459985
+Genome Research	10889051 15495469
+Trends in Cell Biology	09628924
+Developmental Cell	15345807
+Journal of Cell Biology	00219525
+Trends in Biochemical Sciences	09680004 01677640
+Critical Reviews in Biochemistry and Molecular Biology	10409238 15497798
+Nature Biotechnology	10870156
+ 
+DOMAIN	A11	Immunology
+Nature Immunology	15292908 15292916
+Immunity	10747613 10974180
+Nature Reviews Immunology	14741733
+Immunological Reviews	01052896 1600065X
+Advances in Immunology	00652776
+Current Opinion in Immunology	09527915
+Seminars in Immunology	10445323 10963618
+Trends in Immunology	14714906 14714981
