@@ -12,10 +12,10 @@ For WoS.out.2012000044.gz, we get 1042 REC tags and 966 non-empty abstracts.
 """
 
 
-import sys, os, gzip, codecs
+import sys, os, gzip, codecs, time
 
 WOS_DIR = '/home/j/corpuswork/fuse/FUSEData/2013-04/WoS_2012_Aug'
-ARCHIVE = 'WoS.out.2012000044.gz'
+ARCHIVE = 'WoS.out.2012000043.gz'
 FNAME = os.path.join(WOS_DIR, ARCHIVE)
 
 DUPLICATE_UIS = {'0003059653': True, '0003022535': True}
@@ -29,11 +29,6 @@ ABSTRACTS = 0
 SUBJECTS = {}
 ISSUE_TITLES = {}
 
-# Science
-# Nature
-# Proceedings of the National Academy of Science (PNAS)
-A01 = ['0036-8075', '0028-0836', '0027-8424']
-
 
 def read_domains():
     domains = {}
@@ -43,18 +38,21 @@ def read_domains():
         if line[0] == '#': continue
         if line.startswith('DOMAIN'):
             prefix, domain_code, domain_name = line.split("\t")
-            print domain_code, domain_name
+            #print domain_code, domain_name
         else:
             journal, issns = line.split("\t")
             for issn in issns.split():
-                print '  ', issn, domain_code
+                issn = issn[:4] + '-' + issn[4:]
+                #print '  ', issn, domain_code
+                domains[issn] = domain_code
+    return domains
 
 
 class WOSItem(object):
 
     def __init__(self):
         self.fields = {}
-        
+
     def add(self, item, line):
         item_value = line.split('>')[1].split('<')[0]
         self.fields[item] = item_value
@@ -62,6 +60,9 @@ class WOSItem(object):
 
     def add_line(self, field, line):
         self.fields['abstract'] = self.fields.get('abstract','') + line
+
+    def set_domain(self):
+        self.fields['domain'] = DOMAINS.get(self.fields.get('issn'), 'nil')
 
     def write(self, fh):
         fh.write("\n")
@@ -71,24 +72,35 @@ class WOSItem(object):
             fh.write("\n%s" % self.fields['abstract'])
         fh.write("\n")
 
-read_domains()
-exit()
-    
-index = open("out-subjects-%s.txt" % ARCHIVE, 'w')
+    def write_index_line(self, fh1, fh2):
+        fh1.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" %
+                  (self.fields.get('ut'), self.fields.get('ui'),
+                   self.fields.get('domain'), self.fields.get('issn'),
+                   len(self.fields.get('abstract','')),
+                   self.fields.get('subject'),
+                   self.fields.get('issue_title')))
+        fh2.write("%s\t%s\n" %
+                  (self.fields.get('ut'), self.fields.get('item_title')))
+
+
+DOMAINS = read_domains()
+
+index = open("out-index-main-%s.txt" % ARCHIVE, 'w')
+index_titles = open("out-index-titles-%s.txt" % ARCHIVE, 'w')
 subjects = open("out-subjects-%s.txt" % ARCHIVE, 'w')
 issue_titles = open("out-issue-titles-%s.txt" % ARCHIVE, 'w')
 duplicates = open("out-duplicates-%s.txt" % ARCHIVE, 'w')
-domain_a01 = open("out-domain-A01-%s.txt" % ARCHIVE, 'w')
-domain_a01b = open("out-domain-A01b-%s.txt" % ARCHIVE, 'w')
+
 
 in_abstract = False
 p_duplicates = False
-p_A01 = False
+
+t0 = time.time()
 
 for line in fh:
     if line.startswith('<REC>'):
         wos = WOSItem()
-        p_A01 = False
+        in_abstract = False
         p_duplicates = False
         RECS += 1
     elif line.startswith('<ut>'):
@@ -107,9 +119,7 @@ for line in fh:
         ISSUE_TITLES[title] = ISSUE_TITLES.get(title, 0) + 1
     elif line.startswith('<issn>'):
         issn = wos.add('issn', line)
-        if issn in A01:
-            parsing = True
-            p_A01 = True
+        wos.set_domain()
     elif line.startswith('<abstract avail="Y"'):
         in_abstract = True
         ABSTRACTS += 1
@@ -117,8 +127,7 @@ for line in fh:
         in_abstract = False
     elif line.startswith('</REC>'):
         if p_duplicates: wos.write(duplicates)
-        if p_A01:
-            wos.write(domain_a01b)
+        wos.write_index_line(index, index_titles)
     else:
         if in_abstract:
             wos.add_line('abstract', line)
@@ -132,3 +141,4 @@ for title, count in ISSUE_TITLES.items():
 print "Done"
 print "RECS:", RECS
 print "Abstracts:", ABSTRACTS
+print "Time elapsed: %d seconds" % (time.time() - t0)
