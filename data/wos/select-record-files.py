@@ -2,13 +2,25 @@
 
 Select records from WoS archives given a list of identifiers for some subjects.
 
-Builds a cropus in co
+To build A01, A04 and A10 corpora in corpora/ for 1995:
+
+    python select-record-files.py 1995
+
+The identifiers are pulled from subject-lists.
+
+The structure of the corpus is as follows:
+
+    	corpora/A01
+	corpora/A01/1995
+	corpora/A01/1995/WoS.out.1995000024
+	corpora/A01/1995/WoS.out.1995000024/A1994BC72Q00010.xml
+	corpora/A01/1995/WoS.out.1995000024/A1994BC72Q00001.xml
+	corpora/A01/1995/WoS.out.1995000024/A1994BC72Q00012.xml
 
 """
 
 
 import sys, os, gzip, codecs, time
-from utils import WOSItem
 
 WOS_DIR = '/home/j/corpuswork/fuse/FUSEData/2013-04/WoS_2012_Aug'
 

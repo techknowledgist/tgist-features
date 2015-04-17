@@ -31,7 +31,7 @@ if __name__ == '__main__':
         if not os.path.exists(os.path.join(SUBJECTS_DIR, year)):
             os.makedirs(os.path.join(SUBJECTS_DIR, year))
         fnames = glob.glob(os.path.join(INDEX_DIR, year) + os.sep + 'index-main-*')
-        for fname in fnames:
+        for fname in sorted(fnames):
             print '  ', fname
             outfname = os.path.basename(fname)[11:]
             out = open(os.path.join(SUBJECTS_DIR, year, outfname), 'w')

@@ -4,6 +4,10 @@ Create an index on WoS archives
 
 """
 
+# TODO. This script makes the incorrect assumption that each record has only one
+# subject. This needs to be fixed and then this step, and probably all or most
+# below, will need to be redone.
+
 
 import sys, os, gzip, codecs, time
 
@@ -87,6 +91,7 @@ def index_archive(archive):
             wos.add('ut', line)
         elif line.startswith('<ui>'):
             wos.add('ui', line)
+        # this is wrong, there can be more than one subject
         elif line.startswith('<subject '):
             wos.add('subject', line)
         elif line.startswith('<item_title>'):
