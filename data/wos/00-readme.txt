@@ -1,5 +1,5 @@
 Steps towards a bunch of subject domain specific corpora, most notable the
-domains A01, A04 and A10.
+domains A01, A04, A06 and A10.
 
 
 1. Run the indexer on all WoS archives
@@ -27,6 +27,16 @@ Run one script once:
 	$ python select-record-ids.py
 
 This builds a directory subject-lists/ that mirrors index/.
+
+Here is an idea of the total file count:
+
+	$ cut -f1 -d' ' subject-lists/*/* | sort | uniq -c
+	1595357 A01
+	1883523 A04
+	  24295 A06
+	1123725 A10
+
+Run count-subjects.sh for counts per year, it ignores A06 because it is so tiny.
 
 
 3. Extract the records

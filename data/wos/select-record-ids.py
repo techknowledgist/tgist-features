@@ -5,7 +5,7 @@ Select identifers for a couple of subject domains
 Input is in INDEX_DIR, in directories for each year.
 Output is in SUBJECTS_DIR, with same structure as INDEX_DIR.
 
-Creates files with subject groups (A01, A04 and A10) and <ut> identifiers.
+Creates files with subject groups (A01, A04, A06 and A10) and <ut> identifiers.
 
 """
 
@@ -14,12 +14,12 @@ import sys, os, glob, gzip, codecs, time
 INDEX_DIR = 'index'
 SUBJECTS_DIR = 'subject-lists'
 
-# These are substrings manuallt derived from looking at the subject domains and
+# These are substrings manually derived from looking at the subject domains and
 # all available subjects. If a subject matches one of the strings than the
-# subject is part of the group Axx. There seems to be no good option for A06,
-# Nanotechnology.
+# subject is part of the group Axx.
 A01 = ['MULTIDISCIPLINARY']
 A04 = ['PHYSICS,']
+A06 = ['NANO']
 A10 = ['BIOCHEMISTRY', 'GENETICS', 'BIOTECHNOLOGY', 'CELL BIOLOGY']
 
 
@@ -43,6 +43,8 @@ if __name__ == '__main__':
                     if subject.find(t) > -1: out.write("A01 %s\n" % ut)
                 for t in A04:
                     if subject.find(t) > -1: out.write("A04 %s\n" % ut)
+                for t in A06:
+                    if subject.find(t) > -1: out.write("A06 %s\n" % ut)
                 for t in A10:
                     if subject.find(t) > -1: out.write("A10 %s\n" % ut)
 

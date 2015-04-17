@@ -17,6 +17,8 @@ The structure of the corpus is as follows:
 	corpora/A01/1995/WoS.out.1995000024/A1994BC72Q00001.xml
 	corpora/A01/1995/WoS.out.1995000024/A1994BC72Q00012.xml
 
+Note that A06 is not built because it is so tiny.
+
 """
 
 
