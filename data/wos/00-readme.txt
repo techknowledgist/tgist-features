@@ -57,7 +57,11 @@ This builds the corpora in corpora/, which look like
 That is for each domain and each year, there are subdirectories for the archives
 in which the individual files live.
 
-See scripts/select-record-ids.sh for a full list.
+See scripts/select-record-ids.sh for a full list. It is usually better to this
+on a local disk, create the file lists (step 4) and then move it to the NSF
+share.
+
+Note: /home/j disk space started at 849GB
 
 
 4. Create file lists
@@ -70,7 +74,7 @@ First the directories:
 	mkdir file-lists/A10
 
 Then the lists:
-
+	
 	setenv TECHNOLOGER /local/chalciope/marc/fuse/patent-classifier
 	setenv WOS $TECHNOLOGER/ontology/doc_processing/data/wos
 	cd /
@@ -78,12 +82,22 @@ Then the lists:
 	find $WOS/corpora/A01/1996 | grep xml > $WOS/file-lists/A01/1996.txt
 	...
 
+The above works for when the corpora are in the local directory, replace the
+first two line with the following if the directories are on corpuswork
+
+	setenv WOS /home/j/corpuswork/fuse/FUSEData/2013-04/wos/extracted/
+
+You can use scripts/create-file-lists.sh to do this, but you would need minor
+edits to the $YEAR variable.
+
 
 5. Create file lists for corpus creation
 
 Run:
 
 	$ python create-corpus-filelist.py
+
+The resulting file lists are randomly ordered.
 
 Check years in output by
 

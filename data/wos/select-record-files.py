@@ -28,10 +28,14 @@ WOS_DIR = '/home/j/corpuswork/fuse/FUSEData/2013-04/WoS_2012_Aug'
 
 SUBJECTS_DIR = 'subject-lists'
 
-A01_DIR = 'corpora/A01'
-A04_DIR = 'corpora/A04'
-A10_DIR = 'corpora/A10'
+# it is much faster when you run this on a local disk and then move it to
+# corpuswork
+TARGET_DIR = "/home/j/corpuswork/fuse/FUSEData/2013-04/wos/extracted"
+TARGET_DIR = "corpora"
 
+A01_DIR = os.path.join(TARGET_DIR, 'A01')
+A04_DIR = os.path.join(TARGET_DIR, 'A04')
+A10_DIR = os.path.join(TARGET_DIR, 'A10')
 
 
 def select(year, fname):
