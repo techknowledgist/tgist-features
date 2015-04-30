@@ -122,7 +122,11 @@ def run_populate(rconfig, limit, verbose=False):
         if verbose:
             print "[--populate] %04d %s" % (count, dst_file)
         ensure_path(os.path.dirname(dst_file))
-        shutil.copyfile(src_file, dst_file)
+        try:
+            shutil.copyfile(src_file, dst_file)
+        except IOError:
+            print "                  WARNING: source file does not exist, not copying"
+            print "                  %s" % src_file
         # at some point there seemed to be an issue with compressing for Chinese,
         # so added this to do language dependent compressing, there is now no
         # difference for the population phase
@@ -167,7 +171,7 @@ def run_xml2txt(rconfig, limit, options, verbose=False):
             fh = codecs.open(file_out, 'w')
             fh.close()
             print "[--xml2txt] WARNING: error on", file_in
-            print "           ", e
+            #print "           ", e
         # we now do compress the cn output of the document parser (which we
         # initialy did not do)
         if rconfig.language == 'en': compress(file_in, file_out)

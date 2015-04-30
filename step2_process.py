@@ -15,10 +15,11 @@ OPTIONS:
   --seg2tag    tagging segemented text (Chinese only)
   --tag2chk    creating chunks in context and adding features
 
-  --corpus TARGET_PATH         corpus directory, this is a required option
-#  (-l | --language) en|cn|de   provides the language, default is 'en'
-#  (-d | --data) ln|cnki        provides the data source, default is 'ln'
-  -n INTEGER                   number of documents to process, default is 1
+  --corpus TARGET_PATH
+       corpus directory, this is a required option
+
+  -n INTEGER
+       number of documents to process, default is 1
 
   --verbose:
        print name of each processed file to stdout
@@ -38,6 +39,9 @@ OPTIONS:
       optional pipeline configuration file to overrule the default pipeline; this is just
       the basename not path, so with '--pipeline conf.txt', the config file loaded is
       TARGET_PATH/LANGUAGE/config/conf.txt
+
+Note that there are no --language and --data options, these were set at corpus
+initialization and are retrieved from the corpus.
 
 The script assumes an initialized directory (created with step1_initialize.py)
 with a set of external files defined in TARGET_PATH/config/files.txt. Default

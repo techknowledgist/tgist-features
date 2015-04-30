@@ -2,12 +2,8 @@
 # module to create a fielded text file from an xml (patent) file
 # top level call: patents_xml2txt(patent_path, lang)
 
-import os
-import pdb
-import sys
-import codecs
-import re
-import StringIO
+import os, sys, re, codecs, pdb, StringIO
+from xml.dom.minidom import parse, Node
 
 script_path = os.path.abspath(sys.argv[0])
 script_dir = os.path.dirname(script_path)
@@ -84,6 +80,8 @@ def xml2txt(xml_parser, source, source_file, target_file, workspace):
         parse_wos_doc(cleaned_source_file, target_file)
     elif source == 'cnki':
         CNKIDoc(source_file, target_file).xml2txt()
+    elif source == 'pm':
+        PubMedDoc(source_file, target_file).xml2txt()
 
 
 def add_sections(xml_parser, section_tags, text, fh_data):
@@ -336,8 +334,6 @@ class CNKIDoc(object):
         return self.get_tag('fs:Stuff')
 
     def get_tag(self, tagname):
-        """Return the document text body. If there are no body tags, the empty
-        string is returned."""
         taglen = len(tagname) + 2
         opentag = "<%s>" % tagname
         closetag = "</%s>" % tagname.split()[0]
@@ -362,3 +358,111 @@ def is_chinese(c):
     based in a range of chinese characters"""
     # TODO: check with Si Li what is included
     return c >= u'\u4e00' and c <= u'\u9fa5'
+
+
+class PubMedDoc(object):
+
+    """Simple document parser for Pubmed documents."""
+
+    # Note that this is based on code written for a different project, but
+    # forked off and made independent.
+
+    def __init__(self, xmlfile, txtfile):
+        self.fname = xmlfile
+        self.outfile = txtfile
+        self.dom = parse(xmlfile)
+        self.title = None
+        self.subject = None
+        self.year = None
+        self.abstract = []
+        self.paragraphs = []
+        self._set_title()
+        self._set_subject()
+        self._set_year()
+        self._set_paragraphs()
+
+    def __str__(self):
+        return "<PubMedDoc '%s'>" % self.fname
+
+    def _set_title(self):
+        titles = self.dom.getElementsByTagName('article-title')
+        for title in titles:
+            if title.parentNode.tagName == 'title-group':
+                self.title = title.firstChild.nodeValue
+
+    def _set_subject(self):
+        subjects = self.dom.getElementsByTagName('subject')
+        for subject in subjects:
+            if subject.parentNode.tagName == 'subj-group':
+                self.subject = subject.firstChild.nodeValue
+
+    def _set_year(self):
+        def in_pubdate(n): return n.parentNode.tagName == 'pub-date'
+        years = [y for y in self.dom.getElementsByTagName('year') if in_pubdate(y)]
+        for y in years:
+            year = int(y.firstChild.nodeValue)
+            if self.year is None or year < self.year:
+                self.year = year
+
+    def _set_paragraphs(self):
+        pnodes = self.dom.getElementsByTagName('p')
+        for p in pnodes:
+            parent_tag = p.parentNode.tagName
+            grandparent_tag = p.parentNode.parentNode.tagName
+            ptext = ''
+            for n1 in p.childNodes:
+                if n1.nodeType == Node.TEXT_NODE:
+                    ptext += n1.nodeValue
+                else:
+                    for n2 in n1.childNodes:
+                        if n2.nodeType == Node.TEXT_NODE:
+                            ptext += n2.nodeValue
+            #self.paragraphs.append([parent_tag, ptext])
+            if grandparent_tag == 'abstract':
+                self.abstract.append([parent_tag, ptext])
+            elif grandparent_tag == 'body':
+                self.paragraphs.append([parent_tag, ptext])
+
+    def xml2txt(self):
+        #print len(self.title), len(self.abstract), len(self.body)
+        #if self.title: print self.title
+        fh = codecs.open(self.outfile, 'w', encoding='utf8')
+        if self.title: fh.write(u"FH_TITLE:\n%s\n" % self.title)
+        if self.subject: fh.write(u"FH_SUBJECT:\n%s\n" % self.subject)
+        if self.year: fh.write(u"FH_DATE:\n%s\n" % self.year)
+        if self.abstract:
+            fh.write(u"FH_ABSTRACT:\n")
+            for para in self.abstract:
+                if para[0] == 'sec': fh.write("%s\n" % para[1])
+        if self.paragraphs:
+            fh.write(u"FH_BODY:\n")
+            for para in self.paragraphs:
+                if para[0] == 'sec': fh.write("%s\n" % para[1])
+
+    def save_to_file(self, output_directory):
+        output_file = os.path.basename(self.fname)
+        output_file = os.path.splitext(output_file)[0] + '.txt'
+        fh = open(os.path.join(output_directory, output_file), 'w')
+        self.save_to_fh(fh)
+
+    def save_to_fh(self, fh):
+        fh.write("SOURCE\t%s\n" % self.fname)
+        fh.write("TITLE\t%s\n" % normalize(self.title))
+        fh.write("YEAR\t%s\n" % self.year)
+        count = 0
+        for (parent, text, tokenized_text) in self.paragraphs:
+            count += 1
+            for sentence in [s for s in tokenized_text.split("\n") if s]:
+                sentence = normalize(sentence)
+                fh.write("P%d\t%s\t%s\n" % (count, parent.upper(), sentence))
+
+    def pp(self, verbose=False):
+        print "\n\n>>> %s\n%s\n" % (self.fname, '-' * 80)
+        print "YEAR:\t%s" % self.year
+        print "TITLE\t%s\n" % normalize(self.title)
+        if verbose:
+            count = 0
+            for (parent, text, tokenized_text) in self.paragraphs:
+                count += 1
+                for sentence in [s for s in tokenized_text.split("\n") if s]:
+                    sentence = normalize(sentence)

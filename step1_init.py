@@ -15,12 +15,12 @@ following things:
 
 
 USAGE
-   % python step1_initialize.py OPTIONS
+   % python step1_init.py OPTIONS
 
 OPTIONS
    --add                    add file paths to an alreay existing corpus
    --language en|de|cn      language, default is 'en'
-   --data ln|wos|cnki       data source, default is 'ln'
+   --data ln|wos|cnki|pm    data source, default is 'ln'
    --filelist PATH          a file with a list of source files
    --source PATH            a directory with all the source files
    --corpus PATH            a directory where the corpus is initialized
