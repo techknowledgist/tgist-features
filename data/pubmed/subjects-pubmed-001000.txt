@@ -1,0 +1,208 @@
+    1  1506
+    1  A Note from the Editor
+    1  Ablation for Atrial Fibrillation
+    2  Abstract
+   38  Article
+   40  Articles
+    1  Association Studies Articles
+    1  Biochemistry
+   29  Book Review
+   10  Book Reviews
+    2  Brief Communication
+    1  Brief Definitive Report
+    1  CME
+    1  CME Article
+    2  Cardiovascular Disorders/Vascular Biology
+   35  Case Report
+    5  Case report
+    1  Cell Biology/Cell Signaling
+    1  Cell Biology/Extra-Cellular Matrix
+    2  Cell Biology/Membranes and Sorting
+    1  Cell Biology/Morphogenesis and Cell Biology
+    1  Chemical Biology/Small Molecule Chemistry
+    4  Children's Health
+    1  Clinical Care/Education/Nutrition/Psychosocial Research
+    1  Clinical Image
+    1  Clinical Images
+    1  Clinical Study
+    2  Comment
+   12  Commentary
+    1  Computational Biology
+    5  Correction
+    4  Correspondence
+    9  Cover
+    6  Database
+    3  Debate
+    1  Dermatology
+    1  Developmental Biology/Organogenesis
+    1  Diabetes and Endocrinology/Endocrinology
+    1  Diabetes and Endocrinology/Type 1 Diabetes
+    1  Diabetes and Endocrinology/Type 2 Diabetes
+    1  Director's Perspective
+    5  Dispatch
+    1  Drosophila
+    1  EHPnet
+    1  Ecology/Spatial and Landscape Ecology
+    4  Editorial
+    1  Editorial Foreword
+    1  Environews: Science Selections
+    1  Epidemiology/Health Services Research
+    1  Erratum
+    2  Eubacteria
+    1  Evolution
+    1  Experimental
+    1  Focused Review
+    2  Forum
+    1  Genetics
+    2  Genetics and Genomics/Animal Genetics
+    1  Genetics and Genomics/Genomics
+    1  Genetics and Genomics/Plant Genetics and Gene Expression
+    1  Genomics
+    2  Guest Editorial
+    1  Historical Evidence
+    2  Homo (Human)
+    2  Human DNA Markers
+    2  Hypothesis
+    1  Image in Emergency Medicine
+    1  Images in Cardiovascular Medicine
+    1  Images in Nephrology
+    1  Immunomodulation
+    1  Infectious Diseases/Bacterial Infections
+    1  Infectious Diseases/HIV Infection and AIDS
+    2  Infectious Diseases/Protozoal Infections
+    1  Infectious Diseases/Respiratory Infections
+    1  Infectious Diseases/Urological Infections
+    1  Injury
+    1  Insects
+    1  Invited Review
+   21  Journal Matter
+    1  Keynote Lecture
+    7  Letter
+    2  Letter to the Editor
+    1  Letter to the Editors
+    1  Letters
+    1  Letters to Editor
+    2  Letters to the Editor
+    1  Lighter Moments
+    1  Main Articles
+    1  Marine and Aquatic Sciences/Climate Change
+    1  Maternal Medicine
+    1  Mathematics/Algorithms
+    1  Medical Journals
+    1  Medical Oncology
+    2  Medicine in Developing Countries
+    3  Meeting Abstract
+    3  Meeting Report
+    1  Meeting Reports
+    1  Metabolism
+    2  Method
+    6  Methodology
+    5  Methodology Article
+    1  Methodology Report
+    1  Methodology article
+    7  Methods Online
+    1  Microbiology/Innate Immunity
+    1  Microbiology/Microbial Physiology and Metabolism
+    2  Microbiology/Parasitology
+    1  Mini Review
+    2  Minireview
+    1  Molecular Basis of Cell and Developmental Biology
+    5  Molecular Biology
+    1  Molecular Biology/Chromosome Structure
+    1  Molecular Biology/DNA Repair
+    3  Molecular Biology/Molecular Evolution
+    1  Molecular Biology/Transcription Initiation and Activation
+    2  Molecular Biology/Translational Regulation
+    1  Molecular Diagnostics
+    2  Mus (Mouse)
+    1  Musculoskeletal
+    2  Nano Express
+    1  Neurological Disorders/Neuroimaging
+    1  Neurological Disorders/Neuropharmacology
+    1  Neurological Disorders/Prion Diseases
+    1  Neuroradiology
+    1  Neuroscience
+    1  Neuroscience/Cognitive Neuroscience
+    2  Neuroscience/Experimental Psychology
+    1  Neuroscience/Neuronal and Glial Cell Biology
+    1  Neuroscience/Psychology
+    1  New Books
+    1  Non-Clinical Medicine
+    1  Oncology/Breast Cancer
+    1  Oncology/Gastrointestinal Cancers
+    1  Ophthalmology/Inherited Eye Disorders
+    2  Oral Presentation
+   29  Original Article
+    6  Original Articles
+    1  Original Clinical Article
+    1  Original Investigation
+    5  Original Paper
+   14  Original Research
+    1  Orignal Research
+    1  Other Bioinformatics Applications
+    1  Pathology/Histopathology
+    1  Pathology/Molecular Pathology
+    1  Pathophysiology/Complications
+    1  Pediatric Original
+    1  Perspective
+    1  Physiology/Endocrinology
+    1  Physiology/Integrative Physiology
+    2  Physiology/Respiratory Physiology
+    1  Plant Biology/Plant-Biotic Interactions
+    6  Poster Presentation
+    1  Postgraduate Clinical Section
+    1  Preface
+    1  Pregnancy
+    3  Primary Research
+    1  Primates
+    2  Proceedings
+    1  Protein Interactions, Molecular Networks and Systems Biology
+    2  Public Health and Epidemiology/Global Health
+    1  Public Health and Epidemiology/Health Services Research and Economics
+    2  Public Health and Epidemiology/Infectious Diseases
+    1  Published: May 2010
+    1  RNA
+    1  Rapid Communication
+    1  Regular Article
+    2  Report
+   85  Research
+  289  Research Article
+    1  Research Articles
+    1  Research Papers
+    1  Research Perspective
+   18  Research article
+    1  Research report
+    1  Respiratory Medicine
+    1  Respiratory Medicine/Respiratory Infections
+   38  Review
+   14  Review Article
+    4  Reviews
+    1  Rheumatology/Bone and Mineral Metabolism
+    1  S. Pombe
+    3  Science Selections
+    1  Sequence Analysis
+    1  Serial Review
+    4  Short Report
+    1  Short Research Communication
+    1  Smoking
+    6  Software
+    2  Structural Biology
+    4  Study Protocol
+    1  Study protocol
+    1  Suicide (public health)
+    1  Surgery/Transplantation
+    1  Survey and Summary
+    4  Symposium
+    1  Symposium Paper
+    1  Technical Note
+    1  Text Mining
+    1  The Letters
+    1  Uroscan
+    1  Vested Interests Series
+    1  Violence (other)
+    1  Virology/Immunodeficiency Viruses
+    1  Virology/Persistence and Latency
+    1  Virology/Vaccines
+    2  Virology/Viral Replication and Gene Regulation
+    2  Virology/Viruses and Cancer
+    1  Viruses
