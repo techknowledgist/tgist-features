@@ -71,10 +71,9 @@ def xml2txt(xml_parser, source, source_file, target_file, workspace):
             fh_data[f] = []
         add_sections(xml_parser, section_tags, text, fh_data)
         write_sections(xml_parser, target_file, fh_data)
-        for fname in (cleaned_source_file,
-                      ds_text_file, ds_tags_file, ds_fact_file, ds_sect_file):
+        for fname in (ds_text_file, ds_tags_file, ds_fact_file, ds_sect_file):
             os.remove(fname)
-    # for wos and cnki we ignore the xml_parser that was handed in because we
+    # for wos, cnki and pubmed we ignore the xml_parser that was handed in because we
     # can use a simpler and faster one
     elif source == 'wos':
         parse_wos_doc(cleaned_source_file, target_file)
@@ -82,6 +81,7 @@ def xml2txt(xml_parser, source, source_file, target_file, workspace):
         CNKIDoc(source_file, target_file).xml2txt()
     elif source == 'pm':
         PubMedDoc(source_file, target_file).xml2txt()
+    os.remove(cleaned_source_file)
 
 
 def add_sections(xml_parser, section_tags, text, fh_data):
@@ -372,11 +372,13 @@ class PubMedDoc(object):
         self.outfile = txtfile
         self.dom = parse(xmlfile)
         self.title = None
+        self.journal = None
         self.subject = None
         self.year = None
         self.abstract = []
         self.paragraphs = []
         self._set_title()
+        self._set_journal()
         self._set_subject()
         self._set_year()
         self._set_paragraphs()
@@ -389,6 +391,9 @@ class PubMedDoc(object):
         for title in titles:
             if title.parentNode.tagName == 'title-group':
                 self.title = title.firstChild.nodeValue
+
+    def _set_journal(self):
+        self.journal = self.fname.split(os.sep)[-2]
 
     def _set_subject(self):
         subjects = self.dom.getElementsByTagName('subject')
@@ -428,6 +433,7 @@ class PubMedDoc(object):
         #if self.title: print self.title
         fh = codecs.open(self.outfile, 'w', encoding='utf8')
         if self.title: fh.write(u"FH_TITLE:\n%s\n" % self.title)
+        if self.journal: fh.write(u"FH_JOURNAL:\n%s\n" % self.journal)
         if self.subject: fh.write(u"FH_SUBJECT:\n%s\n" % self.subject)
         if self.year: fh.write(u"FH_DATE:\n%s\n" % self.year)
         if self.abstract:
