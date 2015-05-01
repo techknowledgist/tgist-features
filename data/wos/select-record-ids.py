@@ -16,10 +16,12 @@ SUBJECTS_DIR = 'subject-lists'
 
 # These are substrings manually derived from looking at the subject domains and
 # all available subjects. If a subject matches one of the strings than the
-# subject is part of the group Axx.
+# subject is part of the group Axx. Note that A07 includes A06 and the SOLAR
+# MATERIALS subset of A08.
 A01 = ['MULTIDISCIPLINARY']
 A04 = ['PHYSICS,']
 A06 = ['NANO']
+A07 = ['NANO', 'MATERIALS', 'ENGINEERING']
 A10 = ['BIOCHEMISTRY', 'GENETICS', 'BIOTECHNOLOGY', 'CELL BIOLOGY']
 
 
@@ -45,6 +47,7 @@ if __name__ == '__main__':
                     if subject.find(t) > -1: out.write("A04 %s\n" % ut)
                 for t in A06:
                     if subject.find(t) > -1: out.write("A06 %s\n" % ut)
+                for t in A07:
+                    if subject.find(t) > -1: out.write("A07 %s\n" % ut)
                 for t in A10:
                     if subject.find(t) > -1: out.write("A10 %s\n" % ut)
-

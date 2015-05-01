@@ -71,6 +71,7 @@ First the directories:
 	mkdir file-lists
 	mkdir file-lists/A01
 	mkdir file-lists/A04
+	mkdir file-lists/A07
 	mkdir file-lists/A10
 
 Then the lists:
@@ -83,7 +84,7 @@ Then the lists:
 	...
 
 The above works for when the corpora are in the local directory, replace the
-first two line with the following if the directories are on corpuswork
+first two lines with the following if the directories are on corpuswork
 
 	setenv WOS /home/j/corpuswork/fuse/FUSEData/2013-04/wos/extracted/
 
