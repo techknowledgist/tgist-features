@@ -121,5 +121,3 @@ Oddly, this gives very modest gains, so we may skip it.
 6. Initialize and process the corpus
 
 Using step1_init.py and step2_process.py in doc_processing.
-
-Probably needs some tweaking of the docstructure code.

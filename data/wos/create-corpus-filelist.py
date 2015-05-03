@@ -32,5 +32,8 @@ for fname in sorted(glob.glob(os.path.join(IN_DIR, '*', '*'))):
     random.shuffle(lines)
     for line in lines:
         year = line.split(os.sep)[-2][8:12]
-        fh_out.write("%s\t%s\t%s\n" %
-                     (year, line.strip(), os.sep.join(line.strip().split(os.sep)[-2:])))
+        longpath = line.strip()
+        shortpath = os.sep.join(line.strip().split(os.sep)[-2:])
+        if longpath. endswith('.gz'): longpath = longpath[:-3]
+        if shortpath. endswith('.gz'): shortpath = shortpath[:-3]
+        fh_out.write("%s\t%s\t%s\n" % (year, longpath, shortpath))
