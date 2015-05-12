@@ -278,14 +278,21 @@ def parse_wos_doc(cleaned_source_file, target_file):
     year = None
     abstract = None
     for line in fh_in:
-        if line.startswith('<item_title'):
+        if line.startswith('<item_title'): # wos12
             title = line.strip()[12:-13]
             STATS_TITLES.append(title)
-        if line.startswith('<bib_date'):
+        elif line.startswith('<title type="item">'): # wos14
+            title = line.strip()[19:-8]
+            STATS_TITLES.append(title)
+        elif line.startswith('<bib_date'): #  wos12
             year_idx = line.find('year="')
             year = line[year_idx+6:year_idx+10]
             STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
-        if line.startswith('<p>'):
+        elif line.startswith('<pub_info'): # wos14
+            year_idx = line.find('pubyear="')
+            year = line[year_idx+9:year_idx+13]
+            STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
+        elif line.startswith('<p>'): # wos12 and wos14
             abstract = line.strip()[3:-4]
     fh_out.write("FH_DATE:\n%s\n" % year)
     fh_out.write("FH_TITLE:\n%s\n" % title)
