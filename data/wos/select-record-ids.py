@@ -5,7 +5,10 @@ Select identifers for a couple of subject domains
 Input is in INDEX_DIR, in directories for each year.
 Output is in SUBJECTS_DIR, with same structure as INDEX_DIR.
 
-Creates files with subject groups (A01, A04, A06 and A10) and <ut> identifiers.
+Creates files with subject groups (A01, A04, A06, A07 and A10) and record
+identifiers. The identifiers are either the ones given by the <ut> tag in the
+2012 data drop or the <UID> tag in the 2014 data drop, from which the 2013 data
+were taken.
 
 """
 
@@ -30,6 +33,8 @@ if __name__ == '__main__':
 
     for year in sorted(os.listdir(INDEX_DIR)):
         print year
+        if not year == '2013':
+            continue
         if not os.path.exists(os.path.join(SUBJECTS_DIR, year)):
             os.makedirs(os.path.join(SUBJECTS_DIR, year))
         fnames = glob.glob(os.path.join(INDEX_DIR, year) + os.sep + 'index-main-*')
@@ -40,7 +45,8 @@ if __name__ == '__main__':
             for line in open(fname):
                 fields = line.split("\t")
                 ut = fields[0]
-                subject = fields[5]
+                # the 2014 data drop uses mixed case
+                subject = fields[5].upper()
                 for t in A01:
                     if subject.find(t) > -1: out.write("A01 %s\n" % ut)
                 for t in A04:

@@ -9,7 +9,8 @@ For example
 	$ index.py WoS.out.2012000044.gz
 
 There are batch scripts in scripts/ that do this. Move them to this directory,
-run them, and they will populate index/ with directories for each year.
+run them, and they will create files in out/, which you can use to populate
+index/, under directories for each year.
 
 Note: the script makes the incorrect assumption that each record has only one
 subject. This needs to be fixed and then this step, and probably all or most
@@ -58,10 +59,7 @@ That is for each domain and each year, there are subdirectories for the archives
 in which the individual files live.
 
 See scripts/select-record-ids.sh for a full list. It is usually better to this
-on a local disk, create the file lists (step 4) and then move it to the NSF
-share.
-
-Note: /home/j disk space started at 849GB
+on a local disk and then move the corpora to the NSF share.
 
 
 4. Create file lists

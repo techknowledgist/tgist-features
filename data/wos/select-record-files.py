@@ -19,11 +19,14 @@ The structure of the corpus is as follows:
 
 Note that A06 is not built because it is so tiny.
 
+This works for both the 2012 and 2014 data drop format.
+
 """
 
 
 import sys, os, gzip, codecs, time
 
+# this is overruled if the year is 2013
 WOS_DIR = '/home/j/corpuswork/fuse/FUSEData/2013-04/WoS_2012_Aug'
 
 SUBJECTS_DIR = 'subject-lists'
@@ -65,12 +68,22 @@ def select(year, fname):
     ut = None
     isA01, isA04, isA07, isA10 = False, False, False, False
     for line in fh:
-        if line.startswith('<REC>'):
+        # for the 2012 and 2014 format
+        if line.startswith('<REC') or line.startswith('<REC '):
             recs += 1
             rec = []
             ut = None
             isA01, isA04, isA07, isA10 = False, False, False, False
+        # for the 2012 format
         elif line.startswith('<ut>'):
+            rec.append(line)
+            ut = line.split('>')[1].split('<')[0]
+            if ut in A01: isA01 = True
+            elif ut in A04: isA04 = True
+            elif ut in A07: isA07 = True
+            elif ut in A10: isA10 = True
+        # for the 2014 format
+        elif line.startswith('<UID>'):
             rec.append(line)
             ut = line.split('>')[1].split('<')[0]
             if ut in A01: isA01 = True
@@ -102,8 +115,8 @@ def read_subjects(year, fname):
     return A01, A04, A07, A10
 
 def create_file(domain, dir, ut, rec):
-    if not domain == 'A07':
-        return
+    #if not domain == 'A07':
+    #    return
     fh = codecs.open(os.path.join(dir, ut + '.xml'), 'w', encoding='utf8')
     fh.write("<REC>\n%s</REC>\n" % ''.join(rec))
 
@@ -112,5 +125,7 @@ def create_file(domain, dir, ut, rec):
 if __name__ == '__main__':
 
     year = sys.argv[1]
+    if year == '2013':
+        WOS_DIR = '/home/j/corpuswork/fuse/FUSEData/2013-04/WoS_2014_Aug'
     for fname in sorted(os.listdir(os.path.join(SUBJECTS_DIR, year))):
         select(year, fname)
