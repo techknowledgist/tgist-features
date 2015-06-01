@@ -1,0 +1,72 @@
+# This classification was taken from 
+# 2014-1231-FUSE-GTF_Specification_Phase3_LNCN_PC_Terms_a41-a50_v02-U.docx
+
+# LexisNexis Chinese Patents Classification Codes
+# This section identifies the IPC codes and descriptions for each technical area
+# defined for LexisNexis Chinese (LNCN) Patents. The classification indicates
+# Section followed by Class followed by Subclass (e.g. C12M = Section C, Class 12,
+# Subclass M)
+
+A41 - Computer science
+	G06 – Computing, Calculating, Counting
+
+A42 – Communications
+	H04 – Electrical Communication Technique
+	G08 – Signaling
+
+A43 – Semiconductors and memory
+	H01L – Semiconductor Devices; Electric Solid State Devices Not Otherwise Provided For
+	G11 – Information Storage
+
+A44 – Optical systems and components
+	G02 – Optics
+
+A45 – Chemical engineering processes, apparatus, compositions
+	B01 – Physical or Chemical Processes or Apparatus in General
+
+A46 – Organic chemistry and compounds
+	C07 – Organic Chemistry
+	C08 – Organic Macromolecular Compounds; Their Preparation or Chemical Working-Up; Compositions Based Thereon
+
+A47 – Molecular biology, microbiology, and biotechnology
+	C12M – Apparatus for Enzymology or Microbiology
+	C12N - Micro–Organisms or Enzymes; Compositions Thereof
+	C12Q – Measuring or Testing Processes Involving Enzymes or Micro-Organisms; Compositions or Test Papers Therefor; Processes of Preparing Such Compositions; Condition-Responsive Control in MicroBiological or Enzymological Processes
+	C12R – Indexing Scheme Associated with Subclasses C12C-C12Q, Relating to Micro-Organisms
+	A61K – Preparations for Medical, Dental, or Toilet Purposes
+ 
+A48 – Mechanical engineering and manufacturing
+	B21 – Mechanical Metal-Working Without Essentially Removing Material; Punching Metal
+	B22 – Casting; Powder Metallurgy
+	B23 – Machine Tools; Metal-Working Not Otherwise Provided For
+	B24 – Grinding; Polishing
+	B25 – Hand Tools; Portable Power-DrivenTools; Handles for Hand Implements; Workshop Equipment; Manipulators
+	B26 - Hand Cutting Tools; Cutting; Severing
+	B27 – Working or Preserving Wood or Similar Material; Nailing or Stapling Machines in General
+	B28 – Working Cement, Clay, or Stone
+	B29 – Working of Plastics; Working of Substances in a Plastic State in General
+	B30 – Presses 
+
+A49 – Thermal and combustion technology
+	F01 – Machines or Engines in General; Engine Plants in General; Steam Engines
+	F02 – Combustion Engines; Hot-Gas or Combustion-Product Engine Plants
+	F22 – Steam Generation
+	F23 – Combustion Apparatus; Combustion Processes
+	F24 – Heating; Ranges; Ventilating
+	F27 – Furnaces; Kilns; Ovens; Retorts
+	F28 – Heat Exchange in General 
+
+A50 – Electrical circuits and electricity
+	H01B – Cables; Conductors; Insulators; Selection of Materials For Their Conductive, Insulating or Dielectric Properties
+	H01C – Resistors
+	H01F – Magnets; Inductances; Transformers; Selection of Materials For Their Magnetic Properties
+	H01G – Capacitors; Capacitors, Rectifiers, Detectors, Switching Devices, Light-Sensitive or Temperature-Sensitive Devices Of The Electrolytic Type
+	H01H – Electric Switches; Relays; Selectors; Emergency Protective Devices
+	H01J – Electric Discharge Tubes or Discharge Lamps
+	H01K – Electric Incandenscent Lamps
+	H01M – Processes or Means, e.g. Batteries, For The Direct Conversion of Chemical Energy Into Electrical Energy
+	H01P – Waveguides; Resonators, Lines or Other Devices of the Waveguide Type
+	H01Q – Aerials
+	H01R - Electrically–Conductive Connections; Structural Associations Of A Plurality Of Mutually-Insulated Electrical Connecting Elements; Coupling Devices; Current Collectors
+	H01S – Devices Using Stimulated Emission
+	H01T – Spark Gaps; Overvoltage Arresters Using Spark Gaps; Sparking Plugs; Corona Devices; Generation Ions To Be Introduced Into Non-Enclosed Gases
