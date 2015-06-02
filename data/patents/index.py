@@ -27,11 +27,15 @@ analyze_id_mapping():
     identifiers. This revealed that there is almost no overlap so we have a
     problem.
 
-get_domain_file_lists():
-    Create the domain file lists by combining information from various
-    list. This is now broken or needs to be run on a machine with much more
-    memory. In fact, it is useless till the identifier problem is solved.
+idx_years_domains(date_reader, domain_file, output, max=sys.maxint):
+    Combine the information from the date index and the domain index. When you
+    run these for 2013 and 2014 and concatenate the results, you will get a file
+    (full-path TAB year TAB domain) with 133-534k patents for the domains (3.3M
+    have None, no domain).
 
+create_file_lists():
+    Create file lists for all domains and for all years.
+    
 """
 
 import os, sys, glob
@@ -39,7 +43,6 @@ import os, sys, glob
 DATA1 = '/home/j/corpuswork/fuse/FUSEData/lists'
 DATA2 = '/home/j/corpuswork/fuse/FUSEData/2014-09-23/lists'
 DATA3 = '.'
-
 
 # long-identifier (CN85100490A) TAB full-path
 # over patents from 2013 data drop 
@@ -50,18 +53,24 @@ ID2PATH = os.path.join(DATA1, 'ln_cn.all.ordered.txt')
 DATES2PATH_2013 = os.path.join(DATA1, 'ln_cn.all.index.date2path.txt')
 DATES2PATH_2014 = os.path.join(DATA2, 'lncn-date-idx.txt')
 
-# short-identifier (5466294) COMMA year COMMA domain
-# over some set of patents from MITRE
-# this is a directory, files in there match lnusp-patent-documents-*.csv
-# this turns out to be useless because it is using BAE-internal identifiers
-ID2DOMAIN = os.path.join(DATA1, "patentsByGtf") 
-
 # full-path TAB domains
 PATH2DOMAINS_2013 = os.path.join(DATA3, 'lncn-2013-idx-domain.txt')
 PATH2DOMAINS_2014 = os.path.join(DATA3, 'lncn-2014-idx-domain.txt')
 
 # IPC codes from MITRE
-IPC_CODES =  os.path.join(DATA3, 'ipc-codes.txt')
+IPC_CODES = os.path.join(DATA3, 'ipc-codes.txt')
+
+# full-path TAB year TAB domain
+# these are created by this script
+YEARS_AND_DOMAINS_2013 = os.path.join(DATA3, 'lncn-2013-idx-year-domain.txt')
+YEARS_AND_DOMAINS_2014 = os.path.join(DATA3, 'lncn-2014-idx-year-domain.txt')
+YEARS_AND_DOMAINS_ALL = os.path.join(DATA3, 'lncn-all-idx-year-domain.txt')
+
+# short-identifier (5466294) COMMA year COMMA domain
+# over some set of patents from MITRE
+# this is a directory, files in there match lnusp-patent-documents-*.csv
+# this turns out to be useless because it is using BAE-internal identifiers
+ID2DOMAIN = os.path.join(DATA1, "patentsByGtf") 
 
 
 ## READING DATA
@@ -80,18 +89,23 @@ def read_ID2PATH(test=False, max=None, verbose=True):
         if test: return idx
     return idx
 
-def read_DATES2PATH_2013(test=False, max=None,verbose=True):
+def read_DATES2PATH_2013(max=None, verbose=True):
+    return read_DATES2PATH(DATES2PATH_2013, max, verbose)
+
+def read_DATES2PATH_2014(max=None, verbose=True):
+    return read_DATES2PATH(DATES2PATH_2014, max, verbose)
+
+def read_DATES2PATH(fname, max=None, verbose=True):
     if verbose:
-        print "Reading", DATES2PATH_2013
+        print "Reading", fname
     idx = {}
     count = 0
-    for line in open(DATES2PATH_2013):
+    for line in open(fname):
         count += 1
         if count % 100000 == 0 and verbose: print '  ', count
         if max is not None and count > max: break
         (appdate, pubdate, path) = line.strip().split()
         idx[path] = [appdate, pubdate]
-        if test: return idx
     return idx
 
 def read_ID2DOMAIN(test=False, max=None, verbose=True):
@@ -114,20 +128,6 @@ def read_ID2DOMAIN(test=False, max=None, verbose=True):
             if test: return idx
     return idx
 
-def read_DATES2PATH_2014(test=False, max=None, verbose=True):
-    if verbose:
-        print "Reading", DATES2PATH_2014
-    idx = {}
-    count = 0
-    for line in open(DATES2PATH_2014):
-        count += 1
-        if count % 100000 == 0 and verbose: print '  ', count
-        if max is not None and count > max: break
-        (appdate, pubdate, path) = line.strip().split()
-        idx[path] = [appdate, pubdate]
-        if test: return idx
-    return idx
-
 
 ## DOMAINS
 
@@ -147,7 +147,7 @@ class IPCcodes(object):
             elif line[0] == "\t":
                 classname = line.split()[0]
                 self.codes[classname] = domain
-                print domain, classname
+                #print domain, classname
 
     def get_domain(self, classname):
         """The classname handed in here is something like A-47-J (section,
@@ -160,6 +160,11 @@ class IPCcodes(object):
         if self.codes.has_key(sc):
             return sc, self.codes[sc]
         return scsc, self.codes.get(scsc, None)
+
+    def test(self):
+        print self.get_domain('C-12-M')
+        print self.get_domain('B-27-M')
+        print self.get_domain('X-27-M')
 
 
 ## UTILITIES
@@ -197,7 +202,7 @@ def test_reading():
                       ('ID2DOMAIN    ', read_ID2DOMAIN),
                       ('PATH2DATES   ', read_DATES2PATH_2013),
                       ('PATH2DATES_UP', read_DATES2PATH_2014)]:
-        idx = fun(test=True, verbose=False)
+        idx = fun(max=1, verbose=False)
         print "%-12s" % name, idx
     print
     
@@ -234,53 +239,62 @@ def analyze_id_mapping():
         else:
             no_mapping += 1
     print has_mapping, no_mapping
-    
-        
-def get_domain_file_lists():
-    ipc_codes = IPCcodes()
-    print ipc_codes.get_domain('C-12-M')
-    print ipc_codes.get_domain('B-27-M')
-    print ipc_codes.get_domain('X-27-M')
 
-    path2dates2014 = read_DATES2PATH_2014(max=10)
+
+def idx_years_domains(reader, path2domains, years_and_domains, max=sys.maxint):
+    ipc_codes = IPCcodes()
+    path2dates = reader(max)
     c = 0
-    for line in open(PATH2DOMAINS_2014):
+    out = open(years_and_domains, 'w')
+    print "Reading", path2domains
+    for line in open(path2domains):
         c += 1
-        if c > 10: break
+        if c > max: break
+        if c % 100000 == 0: print '  ', c
         path, classnames = line.rstrip("\n\r\f").split("\t")
         domains = {}
         for classname in classnames.split():
             name, domain = ipc_codes.get_domain(classname)
             if domain is not None:
                 domains[domain] = True
-        print path, path2dates2014[path][0][:4], domains.keys()
-    return
+        domains = domains.keys()
+        # just take the first of the domains, not quite right but at least the
+        # same as we did with WoS
+        domain = None if not domains else domains[0]
+        try:
+            year = path2dates[path][0][:4]
+        except KeyError:
+            year = '9999'
+        out.write("%s\t%s\t%s\n" % (path, year, domain))
 
-    id2path = read_ID2PATH(max=1000000000)
-    id2domain = read_ID2DOMAIN(max=100000000)
-    path2dates = read_DATES2PATH_2013(max=1000000000)
-    path2dates2 = read_DATES2PATH_2014(max=1000000000)
-    print len(id2path)
-    print len(id2domain)
-    print len(path2dates)
-    print len(path2dates2)
-    idx = Index()
-    for longid, path in id2path.items():
-        idx.add_longid_path(longid, path)
-    for shortid, year_and_domain in id2domain.items():
-        year = year_and_domain[0]
-        domain = year_and_domain[1]
-        idx.add_shortid_year_domain(shortid, year, domain)
-    for path, dates in path2dates.items():
-        idx.add_path_appdate_pubdate(path, dates[0], dates[1])
-    for path, dates in path2dates2.items():
-        idx.add_path_appdate_pubdate(path, dates[0], dates[1])
-    idx.export_domains()
-    #idx.pp(open('tmp-index.txt', 'w'))
+
+def create_file_lists():
+    domains = ('A41','A42','A43','A44','A45','A46','A47','A48','A49','A50')
+    years = range(1995, 2015)
+    fhs = {}
+    for domain in domains:
+        for year in years:
+            fhid = "%s-%s" % (domain, year)
+            fhs[fhid] = open("lists/domains/files-%s.txt" % fhid, 'w')
+    c = 0
+    #print fhs.keys()
+    for line in open(YEARS_AND_DOMAINS_ALL):
+        c += 1
+        #if c > 10: break
+        if c % 100000 == 0: print c
+        longpath, year, domain = line.rstrip("\n\r\f").split("\t")
+        #print domain, year
+        if domain != 'None' and int(year) in years:
+            shortpath = longpath.split('ln_cn/')[1]
+            fhid = "%s-%s" % (domain, year)
+            fh = fhs[fhid]
+            fh.write("%s\t%s\t%s\n" % (year, longpath, shortpath))
+            #print line,
     
-
 class Index(object):
 
+    """Not used anymore, perhaps delete it."""
+    
     def __init__(self):
         self.data = {}
 
@@ -389,8 +403,16 @@ class IndexElement(object):
 if __name__ == '__main__':
 
     test_reading()
-    #analyze_short_ids()
-    #analyze_domains()
-    #analyze_id_mapping()
-    
-    get_domain_file_lists()
+
+    # Perform some analytics
+    #
+    # analyze_short_ids()
+    # analyze_domains()
+    # analyze_id_mapping()
+
+    # Here is how you make the path-year-domain lists
+    #
+    # idx_years_domains(read_DATES2PATH_2013, PATH2DOMAINS_2013, 'lncn-2013-idx-year-domain.txt')
+    # idx_years_domains(read_DATES2PATH_2014, PATH2DOMAINS_2014, 'lncn-2014-idx-year-domain.txt')
+
+    create_file_lists()

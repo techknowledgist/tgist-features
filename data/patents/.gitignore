@@ -1,0 +1,9 @@
+!.gitignore
+lncn-*.log
+lncn-2013*
+lncn-2014*
+lncn-all-*
+out-*
+compare-dups-2014.txt
+compare-only-2014.txt
+only-2014.txt
