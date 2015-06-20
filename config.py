@@ -23,6 +23,17 @@ that is less urgent because non-Brandeis users will probably always use main.py.
 import os, sys
 
 
+def check_directory(path, vbl=None):
+    """Check whether path exists and whether it has spaces. The latter is needed
+    because calling the tagger causes a nasty loop and the code hangs if we hand
+    in a path with spaces. Exit with an error message if a problem was found."""
+    vbl_warning = " for %s" % vbl if vbl else ''
+    if not os.path.isdir(path):
+        exit("ERROR: invalid path specified%s - path does not exist" % vbl_warning)
+    if path.find(' ') > -1:
+        exit("ERROR: invalid path specified%s - path contains spaces" % vbl_warning)
+
+
 # First some code to determine what machine we are running this on, will be used
 # to determine default locations for the Stanford tools.
 
@@ -127,19 +138,25 @@ else:
     STANFORD_TAGGER_DIR = os.path.join(tools_path, "stanford-postagger-full-2012-07-09" )
     STANFORD_SEGMENTER_DIR = os.path.join(tools_path, "stanford-segmenter-2012-07-09")
 
+check_directory(STANFORD_TAGGER_DIR, 'STANFORD_TAGGER_DIR')
+check_directory(STANFORD_SEGMENTER_DIR, 'STANFORD_SEGMENTER_DIR')
+
+
 def update_stanford_tagger(path):
     """Method to update the path to the Stanford tagger."""
-    if os.path.isdir(path):
-        config.STANFORD_TAGGER_DIR = path
-    else:
-        print "WARNING: invalid path specified for STANFORD_TAGGER_DIR"
+    global STANFORD_TAGGER_DIR
+    STANFORD_TAGGER_DIR = path
+    check_directory(STANFORD_TAGGER_DIR, 'STANFORD_TAGGER_DIR')
 
 def update_stanford_segmenter(path):
     """Method to update the path to the Stanford segmenter."""
-    if os.path.isdir(path):
-        config.STANFORD_SEGMENTER_DIR = path
-    else:
-        print "WARNING: invalid path specified for STANFORD_SEGMENTER_DIR"
+    global STANFORD_SEGMENTER_DIR
+    chack_directory(STANFORD_SEGMENTER_DIR, 'STANFORD_SEGMENTER_DIR')
+    STANFORD_SEGMENTER_DIR = path
+    #if os.path.isdir(path):
+    #    config.STANFORD_SEGMENTER_DIR = path
+    #else:
+    #    exit("ERROR: invalid path specified for STANFORD_SEGMENTER_DIR")
 
 # memory use for the stanford tagger and segmenter
 STANFORD_MX = "2000m"
