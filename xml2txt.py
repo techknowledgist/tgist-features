@@ -5,12 +5,16 @@
 import os, sys, re, codecs, pdb, StringIO
 from xml.dom.minidom import parse, Node
 
+# we are doing all this so that scripts that use mallet.py can be called from
+# any directory, the typical case is that mallet.py is used from scripts in
+# ontology/classifier or ontology/roles
 script_path = os.path.abspath(sys.argv[0])
 script_dir = os.path.dirname(script_path)
+current_dir = os.getcwd()
 os.chdir(script_dir)
 os.chdir('../..')
 sys.path.insert(0, os.getcwd())
-os.chdir(script_dir)
+os.chdir(current_dir)
 
 from utils.docstructure.main import Parser, create_fact_file, open_write_file
 from utils.docstructure.main import load_data, restore_sentences
