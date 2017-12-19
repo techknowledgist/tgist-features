@@ -16,9 +16,9 @@ os.chdir('../..')
 sys.path.insert(0, os.getcwd())
 os.chdir(current_dir)
 
-from utils.docstructure.main import Parser, create_fact_file, open_write_file
-from utils.docstructure.main import load_data, restore_sentences
-from ontology.utils.misc import findall
+from docstructure.main import Parser, create_fact_file, open_write_file
+from docstructure.main import load_data, restore_sentences
+from utils.misc import findall
 
 TARGET_FIELDS = ['FH_TITLE', 'FH_DATE', 'FH_ABSTRACT', 'FH_SUMMARY',
                  'FH_TECHNICAL_FIELD', 'FH_BACKGROUND_ART',

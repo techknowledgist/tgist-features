@@ -127,8 +127,8 @@ pipeline-default.txt).
 import os, sys, shutil, getopt, errno, random, time
 import config, corpus
 sys.path.append(os.path.abspath('../..'))
-from ontology.utils.file import read_only, make_writable
-from ontology.utils.git import get_git_commit
+from utils.file import read_only, make_writable
+from utils.git import get_git_commit
 
 
 def add_files_to_corpus(corpus_dir, extra_files):

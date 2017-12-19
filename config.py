@@ -64,6 +64,9 @@ DATASOURCE = 'ln'
 ANNOTATION_DIRECTORY = "../annotation"
 ANNOT_LANG_PATH = ANNOTATION_DIRECTORY + "/" + LANGUAGE
 
+# Replacing the above with a resources directory
+RESOURCES = "resources"
+
 
 ### Pipeline settings
 ### -----------------------------------------------------------------------

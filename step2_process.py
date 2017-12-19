@@ -75,9 +75,9 @@ from corpus import POPULATE, XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
 from corpus import ALL_STAGES
 
 sys.path.append(os.path.abspath('../..'))
-from ontology.utils.batch import RuntimeConfig
-from ontology.utils.batch import show_datasets, show_pipelines
-from ontology.utils.batch import show_processing_time
+from utils.batch import RuntimeConfig
+from utils.batch import show_datasets, show_pipelines
+from utils.batch import show_processing_time
 
 
 def read_opts():

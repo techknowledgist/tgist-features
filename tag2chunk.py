@@ -11,7 +11,7 @@ import codecs
 import sentence
 
 sys.path.append(os.path.abspath('../..'))
-from ontology.utils.file import open_input_file, open_output_file
+from utils.file import open_input_file, open_output_file
 
 # returns True if lists share at least one term
 def share_term_p(l1, l2):

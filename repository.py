@@ -141,8 +141,8 @@ scripts. These methods convert between paths and identifiers:
 Methods that return paths will return None if the path does not exist.
 
 What is returned is actually the path with the .gz extension stripped off. This
-is so the result works nicely with ontology.utils.file.open_input_file(), which
-does not expect the .gz extension.
+is so the result works nicely with utils.file.open_input_file(), which does not
+expect the .gz extension.
 
 These methods are now only implemented for PatentRepository, they may or may not
 make sense for other repository classes.
@@ -166,7 +166,7 @@ import os, sys, re, time, shutil, getopt, glob
 from config import DEFAULT_PIPELINE
 from corpus import Corpus
 sys.path.append(os.path.abspath('../..'))
-from ontology.utils.file import compress, ensure_path, read_only, make_writable
+from utils.file import compress, ensure_path, read_only, make_writable
 
 
 REPOSITORY_DIR = '/home/j/corpuswork/fuse/FUSEData/repositories'

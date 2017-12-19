@@ -42,11 +42,11 @@ import cn_seg2tag
 import config
 
 sys.path.append(os.path.abspath('../..'))
-from utils.docstructure.main import Parser
-from ontology.utils.file import ensure_path, get_file_paths, read_only
-from ontology.utils.file import get_lines, compress, uncompress, get_year
-from ontology.utils.git import get_git_commit
-from ontology.utils.batch import RuntimeConfig, DataSet
+from docstructure.main import Parser
+from utils.file import ensure_path, get_file_paths, read_only
+from utils.file import get_lines, compress, uncompress, get_year
+from utils.git import get_git_commit
+from utils.batch import RuntimeConfig, DataSet
 
 
 # Names of processing stages

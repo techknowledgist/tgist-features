@@ -104,7 +104,7 @@ import os, sys, getopt
 import config
 from corpus import Corpus
 from corpus import XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
-from ontology.utils.batch import RuntimeConfig
+from utils.batch import RuntimeConfig
 
 
 if __name__ == '__main__':
