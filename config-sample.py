@@ -69,7 +69,7 @@ DEFAULT_PIPELINE_CN = """
 
 # Definition of sub directory names for processing stages.
 
-DATA_DIRS = ['d0_xml', 'd1_txt', 'd2_seg', 'd2_tag', 'd3_feats']
+DATA_DIRS = ['d0_xml', 'd1_txt', 'd2_seg', 'd2_tag', 'd3_feats', 'workspace']
 
 
 
