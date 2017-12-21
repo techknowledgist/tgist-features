@@ -1,0 +1,302 @@
+<html>
+
+<head>
+<title>Techknowledgist - Feature Extraction</title>
+<link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+
+<body>
+
+<h1>Techknowledgist - Feature Extraction</h1>
+
+<p class="abstract">
+The feature extractor collects documents into a corpus and then processes these
+documents, where processing includes document structure parsing (which also
+takes care of issues specific to a document source), sentence splitting,
+tokenization, tagging, term extraction and feature extraction. This phase is a
+requirement for subsequent processing. The documents processed can be US or
+Chinese patents from LexisNexis or Web of Science abstracts.</p>
+
+<p class="navigation">
+[ <a href="#installation">installation</a>
+| <a href="#input">input description</a> 
+| <a href="#howto">how to process a corpus</a> 
+| <a href="#output">output description</a> ]
+</p>
+
+
+
+<a name="installation"></a>
+<h2>Installation</h2>
+
+<p>Requirements for running the code:</p>
+
+<ol>
+<li>Python 2.7
+<li>Java 1.8 (Java 1.6 or 1.7 will probably also work)
+<li>Git (needed only for getting the code in case this file was not in a downloaded archive)
+</ol>
+
+<p>The code has been tested on Linux RHEL 6 and recent Mac OS 10 systems. The
+code has not been tested on Windows, but there are no major reasons that would
+prevent this code from running on Windows.</p>
+
+
+<p>Installation is a matter of getting the git repository and installing the
+  sub modules, installing the Stanford tools, and setting up your
+  configuration.</p>
+
+
+<ol>
+
+<li>Installing the code.
+
+<p>The code is available at the git repository
+  at <a href="https://github.com/techknowledgist/tgist-features">https://github.com/techknowledgist/tgist-features</a>. If
+  you downloaded the code as an archive then all you need to do is unpack it
+  somewhere (preferably in a directory without spaces). If you do not have the
+  full archive, you obtain the code by cloning the git repository:
+
+<pre class="example">
+$ git clone https://github.com/techknowledgist/tgist-features
+</pre>
+
+<p>After getting the clone, you need to initialize and update the submodules
+used by the repository:</p>
+
+<pre class="example">
+$ cd tgist-features
+$ git submodule init
+$ git submodule update 
+</pre>
+
+
+<li>Installing the Stanford Tools.
+
+  <p>The code uses version 3.1.3 of the tagger
+(the full version, not just English version) and version 1.6.6 of the
+segmenter. These versions can be downloaded from</p>
+
+<blockquote>
+<a href="http://nlp.stanford.edu/software/tagger.shtml">http://nlp.stanford.edu/software/tagger.shtml</a><br/>
+<a href="http://nlp.stanford.edu/software/segmenter.shtml">http://nlp.stanford.edu/software/segmenter.shtml</a>
+</blockquote>
+
+<p>More recent versions probably work, but have not been tested. Download the
+tools, unpack them and put them somewhere, making sure the path name does not
+include spaces. If you want to make the configuration step below trivial you
+could add the unpacked tools to a <code>tools</code> subdirectory.</p>
+
+<li>Configuration
+
+  <p>This distribution comes either with a configuration file
+  named <code>config.py</code> or with a sample configuration file
+  named <code>config-sample.py</code>. The former will be the case if you
+  downloaded an archive, the latter if you got the code with Git. If you just
+  have the sample file you need to copy it to <code>config.py</code>. To change
+  default settings edit the configuration file, typically all you need to do is
+  to change the values of the following two variables:</p>
+
+  <blockquote>
+    <code>STANFORD_TAGGER_DIR</code><br/>
+    <code>STANFORD_SEGMENTER_DIR</code>
+  </blockquote>
+
+</ol>
+
+<p>See below for how to run the code.</p>
+
+<p>In some cases, you may have to set some environment variables to avoid
+encoding issues. In particular, the tagger may report errors on certain input
+lines and hang after some number of errors. If you use Linux with a bash shell,
+add the following to .bash_profile if you have problems:</p>
+
+<pre class="example">
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+</pre>
+
+<p>The equivalent for a Linux csh is to add the following to .cshrc:</p>
+
+<pre class="example">
+setenv LC_ALL en_US.UTF-8  
+setenv LANG en_US.UTF-8
+</pre>
+
+<p>The problem has not been observed for Mac OSX and, oddly, problematic Linux
+servers have no problem when you log in from a Mac.</p>
+
+
+<a name="input"></a>
+<h2>Input Description</h2>
+
+<p>The input is a list with file path specifications where each line contains
+two or three tab-separated fields: a year, a file path and an optional shortened
+path. An example is printed below.</p>
+
+<pre class="example">
+1980    data/patents/xml/us/1980/12.xml   1980/12.xml
+1980    data/patents/xml/us/1980/13.xml   1980/13.xml
+1980    data/patents/xml/us/1980/14.xml
+0000    data/patents/xml/us/1980/15.xml
+</pre>
+
+<p>The file path points to the actual location of the file to be processed for
+this corpus. The shortened path can be used to specify a local path in the
+corpus, if it is not given, the local path will be the entire file path. SO with
+the four lines above, we will have a short local path for two of the files. The
+year can be given some imaginary value if it is not known or if it does not
+matter for current processing. Included in the distribution are two example file
+lists in <a href="../../data/lists/sample-us.txt"
+target="_blank">sample-us.txt</a>
+and <a href="../../data/lists/sample-cn.txt"
+target="_blank">sample-cn.txt</a>.
+
+
+<a name="howto"></a>
+<h2>How to Process a Corpus</h2>
+
+<p>There are two ways to create and process a corpus: one more suited for
+smaller corpora (up to a couple of thousand files) and one suited for larger
+corpora. They are equivalent in the sense that the results are identical when
+the two approaches are applied to the same list of files.</p>
+
+<p>The simplest way is to use the <code>main.py</code> script which requires as
+input a file list and an output directory (using the -c and -f options
+respectively, or --filelist and --corpus when using their long forms):</p>
+
+<pre class="example">
+$ python main.py -f data/lists/sample-us.txt -c data/sample-us
+</pre>
+
+<p>This will actually exit with a warning because this very command was used to
+generate the example corpus, which is described later on this page. Using
+another output directory for the corpus will get rid of the warning. There are
+two more options. The language defaults to English, but to specify that the
+language is Chines use "-l cn". To use verbose messages (basically printing
+filenames when they are processed), use -v
+or <span class="nowrap">--verbose</span>. See the documentation string
+in <code>main.py</code> for more information.</p>
+
+<p>The invocation above will look for the Stanford tools at a couple of places
+which are quite specific to the local setup used by code developers. Most users
+may need to use two extra options for specifying the location of the Stanford
+tagger and segmenter:</p>
+
+<pre class="example">
+--stanford-tagger-dir PATH
+--stanford-segmenter-dir PATH
+</pre>
+
+<p>The paths point to the root of the installation of these tools, that is, the
+directory that includes the <code>bin</code> directory. The path may not contain
+spaces. Also, the code checks whether PATH is an existing directory, but it does
+not check whether the directory includes the needed binaries. If PATH does not
+point at the desired Stanford tool then the code will enter a loop and hang.</p>
+
+<p>The main limitation with the one-size-fits-all <code>main.py</code> script is
+that processing time can get rather high for large corpora, for example,
+processing 40,000 US patents takes 1-2 days on a high-end desktop. The process
+can easily be parallelized by splitting the corpus in smaller chunks, but in
+that case some extra bookkeeping is needed, especially to prepare for subsequent
+processing. In addition, the script has been proven to a bit brittle at
+times. There is error trapping at the document processing level, but there are
+some ill-understood errors that are known to let the tagger hang at times.</p>
+
+<p>As an alternative way to create and process a corpus, there is a slightly
+more complicated series of batch processing steps that can be taken. To achieve
+the same results as with the <code>main.py</code> script we would do the
+following:</p>
+
+<pre class="example">
+$ python step1_init.py -f data/lists/sample-us.txt -c data/sample-us
+$ python step2_process.py -c data/sample-us -n 4 --populate
+$ python step2_process.py -c data/sample-us -n 4 --xml2txt
+$ python step2_process.py -c data/sample-us -n 4 --txt2tag
+$ python step2_process.py -c data/sample-us -n 4 --tag2chk
+</pre>
+
+<p>Again, this particular invocation will exit with a warning because the corpus
+created already exists, so another directory should be used. And you will
+probably need to use the <code>--stanford-tagger-dir</code> option. The main
+difference here, apart from using five commands instead of one, is
+that <code>main.py</code> processes all documents in the list but for these
+batch scripts the number of files to be processed has to be given (it defaults
+to processing one document). This allows for some more flexibility in how you
+want to process a corpus. See the documentation string of the two batch scripts
+for more information.</p>
+
+<p>The resulting corpus is almost identical to the one created
+with <code>main.py</code>, barring some configuration settings like timestamp
+and the initialization command used. Also, in case you feel compelled to do a
+diff on both results, it will claim that all files generated are different but
+this is because all files are compressed.</p>
+
+
+<a name="output"></a>
+<h2>Output Description</h2>
+
+We now look at the result of the command used above, repeated here for convenience.
+
+<pre class="example">
+$ python main.py -f data/lists/sample-us.txt -c data/sample-us
+</pre>
+
+<p>This creates a directory <code>data/sample-us</code>, in
+which the corpus is initialized and populated with the files listed
+in <code>data/lists/sample-us.txt</code>. The directory structure is as
+follows:
+
+<pre class="example">
+|-- config
+|   |-- files.txt
+|   |-- general.txt
+|   `-- pipeline-default.txt
+`-- data
+    |-- d0_xml         'import of XML data'
+    |-- d1_txt         'results of document structure parser'
+    |-- d2_seg         'segmenter results'
+    |-- d2_tag         'tagger results '
+    |-- d3_feats       'results from candidate selection and feature extraction'
+    `-- workspace      'work space area'
+</pre>
+
+<p>The script copied the file list to <code>config/files.txt</code> so there is
+a local copy of the list with all input files.
+
+<!--
+<p>The processed corpus generated from the first
+of these lists can be viewed
+at <a href="../../ontology/doc_processing/data/patents/corpora/sample-us"
+target="_blank">../../ontology/doc_processing/data/patents/corpora/sample-us</a>.
+-->
+
+<p>This script only performs document-level processing and fills in d0_xml, d1_txt,
+d2_seg (Chinese only), d2_tag and d3_feats. The structure of those
+directories mirror each other and look as follows:
+
+<pre class="example">
+ `-- 01
+     |-- state
+     |   |-- processed.txt
+     |   `-- processing-history.txt
+     |-- config
+     |   |-- pipeline-head.txt
+     |   `-- pipeline-trace.txt
+     `-- files
+         |-- 1980
+         |   | US4192770A.xml.gz
+         |   ` US4236596A.xml.gz
+         `-- 1981
+             | US4246708A.xml.gz 
+             ` US4254395A.xml.gz
+</pre>
+
+All files are compressed. The first part of the directory tree is a run
+identifier, usually always '01' unless the corpus was processed in different
+ways (using different chunker rules for example). As mentioned above, the
+structure under the files directory is determined by the third column in the
+file list.
+
+</body>
+</html>
