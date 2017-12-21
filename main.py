@@ -130,6 +130,9 @@ if __name__ == '__main__':
         if opt == '--stanford-segmenter-dir': config.update_stanford_segmenter(val)
         if opt == '--stanford-tagger-dir': config.update_stanford_tagger(val)
 
+    config.check_stanford_tagger()
+    config.check_stanford_segmenter()
+
     pipeline = config.DEFAULT_PIPELINE
     pipeline_file = 'pipeline-default.txt'
     if datasource == 'cnki':

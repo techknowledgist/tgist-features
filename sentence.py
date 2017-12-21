@@ -1278,7 +1278,6 @@ class chunkSchema:
     def add_noise_list(self, name, filename):
         # file should contain one term per line.
         # add a list of terms to be indexed under [name][term] as noisewords with value True
-        #filepath = os.path.join(config.ANNOTATION_DIRECTORY, filename)
         filepath = os.path.join(config.RESOURCES, filename)
         #print "[add_noise_list]Adding chunker noise list in %s" % filepath 
         s_noise = open(filepath)

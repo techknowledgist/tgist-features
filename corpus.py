@@ -41,10 +41,9 @@ import cn_txt2seg
 import cn_seg2tag
 import config
 
-sys.path.append(os.path.abspath('../..'))
 from docstructure.main import Parser
-from utils.file import ensure_path, get_file_paths, read_only
-from utils.file import get_lines, compress, uncompress, get_year
+from utils.path import ensure_path, get_file_paths, read_only
+from utils.path import get_lines, compress, uncompress, get_year
 from utils.git import get_git_commit
 from utils.batch import RuntimeConfig, DataSet
 
@@ -67,7 +66,7 @@ DOCUMENT_PROCESSING_IO = \
       TXT2TAG: { 'in': 'd1_txt', 'out': 'd2_tag' },
       TXT2SEG: { 'in': 'd1_txt', 'out': 'd2_seg' },
       SEG2TAG: { 'in': 'd2_seg', 'out': 'd2_tag' },
-      TAG2CHK: { 'in': 'd2_tag', 'out': 'd3_phr_feats' }}
+      TAG2CHK: { 'in': 'd2_tag', 'out': 'd3_feats' }}
 
 # This variable governs after how many files the files_processed counter in the
 # state directory is updated, this way we still have a reasonably recent count
@@ -455,7 +454,7 @@ class Corpus(object):
         """Create subdirectory structure in target_path."""
         print "[--init] creating directory structure in %s" % (self.target_path)
         ensure_path(self.conf_path)
-        for subdir in config.PROCESSING_AREAS:
+        for subdir in config.DATA_DIRS:
             subdir_path = self.data_path + os.sep + subdir
             ensure_path(subdir_path)
 

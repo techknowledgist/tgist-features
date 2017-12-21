@@ -84,10 +84,10 @@ settings are from this initialization script, but other configuration settings
 could be added later.
 
 The pipeline-default.txt file is tricky. It contains all default settings for
-arguments handed over to individual components (tagger, chunker, maxent model
-trainer etcetera). If more arguments are added, then this file should be updated
-manually and it should then also be used to fill in default values for past
-processing jobs (assuming that there is a default that makes sense).
+arguments handed over to individual components (tagger, chunker, etcetera). If
+more arguments are added, then this file should be updated manually and it
+should then also be used to fill in default values for past processing jobs
+(assuming that there is a default that makes sense).
 
 The directory tree created inside the target directory is as follows:
 
@@ -96,19 +96,12 @@ The directory tree created inside the target directory is as follows:
     |   |-- general.txt
     |   |-- pipeline-default.txt
     `-- data
-        |-- d0_xml         'import of XML data'
-        |-- d1_txt         'results of document structure parser'
-        |-- d2_seg         'segmenter results'
-        |-- d2_tag         'tagger results '
-        |-- d3_phr_feats   'results from chunking and feature extraction'
-        |-- o1_index       'term indexes'
-        |-- o2_matcher     'results of the pattern matcher'
-        |-- o3_selector    'results of the selector'
-        |-- t0_annotate    'input for annotation effort'
-        |-- t1_train       'vectors for the classifier and classifier models'
-        |-- t2_classify    'classification results'
-        |-- t3_test        'test and evaluation area'
-        `-- workspace      'work space area'
+        |-- d0_xml     'import of XML data'
+        |-- d1_txt     'results of document structure parser'
+        |-- d2_seg     'segmenter results'
+        |-- d2_tag     'tagger results '
+        `-- d3_feats   'results from chunking and feature extraction'
+
 
 Some of these directories are created for historical reasons and are not used
 anymore. Also note that the processing stages are grouped using prefixes, where
@@ -122,12 +115,18 @@ No existing files or directories will be overwritten, except for the files in
 the config directory that are listed above (general.txt, files.txt and
 pipeline-default.txt).
 
+
+TODO
+
+This script does not allow you to use command line arguments to override the
+location of the stanford tagger and segmenter (see the main.py script where this
+is possible).
+
 """
 
 import os, sys, shutil, getopt, errno, random, time
 import config, corpus
-sys.path.append(os.path.abspath('../..'))
-from utils.file import read_only, make_writable
+from utils.path import read_only, make_writable
 from utils.git import get_git_commit
 
 

@@ -73,8 +73,6 @@ import config
 from corpus import Corpus
 from corpus import POPULATE, XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
 from corpus import ALL_STAGES
-
-sys.path.append(os.path.abspath('../..'))
 from utils.batch import RuntimeConfig
 from utils.batch import show_datasets, show_pipelines
 from utils.batch import show_processing_time
@@ -121,12 +119,12 @@ if __name__ == '__main__':
     #rconfig.pp()
 
     if show_data_p:
-        show_datasets(rconfig, config.DATA_TYPES, verbose)
+        show_datasets(rconfig, config.DATA_DIRS, verbose)
         exit()
     if show_pipelines_p:
         show_pipelines(rconfig)
     if show_processing_time_p:
-        show_processing_time(rconfig, config.DATA_TYPES)
+        show_processing_time(rconfig, config.DATA_DIRS)
         exit()
 
     options = rconfig.get_options(stage)

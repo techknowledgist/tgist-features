@@ -66,9 +66,9 @@ This will print a list of absolute paths accessable through the view.
 """
 
 import os, sys, shutil, glob, getopt, time
+
 import repository
-sys.path.append(os.path.abspath('../..'))
-from utils.file import read_only
+from utils.path import read_only
 
 
 
