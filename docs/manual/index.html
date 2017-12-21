@@ -42,20 +42,19 @@ code has not been tested on Windows, but there are no major reasons that would
 prevent this code from running on Windows.</p>
 
 
-<p>Installation is a matter of getting the git repository and installing the
-  sub modules, installing the Stanford tools, and setting up your
-  configuration.</p>
+<p>Installation is a matter of getting the code, installing the Stanford tools,
+  and setting up your configuration.</p>
 
 
 <ol>
 
-<li>Installing the code.
+<li>Getting and installing the code.
 
-<p>The code is available at the git repository
-  at <a href="https://github.com/techknowledgist/tgist-features">https://github.com/techknowledgist/tgist-features</a>. If
-  you downloaded the code as an archive then all you need to do is unpack it
-  somewhere (preferably in a directory without spaces). If you do not have the
-  full archive, you obtain the code by cloning the git repository:
+<p>If you downloaded the code as an archive then all you need to do is unpack it
+  somewhere in a directory without spaces in its path. If you do not have the
+  full archive, you obtain the code by cloning
+  the <a href="https://github.com/techknowledgist/tgist-features"
+  target="_blank">git repository</a>:
 
 <pre class="example">
 $ git clone https://github.com/techknowledgist/tgist-features
@@ -85,7 +84,8 @@ segmenter. These versions can be downloaded from</p>
 <p>More recent versions probably work, but have not been tested. Download the
 tools, unpack them and put them somewhere, making sure the path name does not
 include spaces. If you want to make the configuration step below trivial you
-could add the unpacked tools to a <code>tools</code> subdirectory.</p>
+could create a <code>tools</code> subdirectory and add the unpacked tools
+there.</p>
 
 <li>Configuration
 
@@ -94,8 +94,8 @@ could add the unpacked tools to a <code>tools</code> subdirectory.</p>
   named <code>config-sample.py</code>. The former will be the case if you
   downloaded an archive, the latter if you got the code with Git. If you just
   have the sample file you need to copy it to <code>config.py</code>. To change
-  default settings edit the configuration file, typically all you need to do is
-  to change the values of the following two variables:</p>
+  the default settings edit the configuration file, typically all you need to do
+  is to change the values of the following two variables:</p>
 
   <blockquote>
     <code>STANFORD_TAGGER_DIR</code><br/>
@@ -104,9 +104,15 @@ could add the unpacked tools to a <code>tools</code> subdirectory.</p>
 
 </ol>
 
-<p>See below for how to run the code.</p>
+<p>At this point you should be able to run the code by doing</p>
 
-<p>In some cases, you may have to set some environment variables to avoid
+<pre class="example">
+$ python main.py -f data/lists/sample-us.txt -c data/sample-us
+</pre>
+
+<p>See <a href="#howto">below</a> for more details on how to run the code.</p>
+
+<p>NOTE. In some cases, you may have to set some environment variables to avoid
 encoding issues. In particular, the tagger may report errors on certain input
 lines and hang after some number of errors. If you use Linux with a bash shell,
 add the following to .bash_profile if you have problems:</p>
@@ -143,14 +149,13 @@ path. An example is printed below.</p>
 
 <p>The file path points to the actual location of the file to be processed for
 this corpus. The shortened path can be used to specify a local path in the
-corpus, if it is not given, the local path will be the entire file path. SO with
-the four lines above, we will have a short local path for two of the files. The
-year can be given some imaginary value if it is not known or if it does not
-matter for current processing. Included in the distribution are two example file
-lists in <a href="../../data/lists/sample-us.txt"
-target="_blank">sample-us.txt</a>
-and <a href="../../data/lists/sample-cn.txt"
-target="_blank">sample-cn.txt</a>.
+corpus, if it is not given, the local path will be the entire file path. For
+example, if the input file contains the four lines above, we will have a short
+local path for two of the files. The year can be given some imaginary value if
+it is not known or if it does not matter for current processing. Included in the
+distribution are two example file lists
+in <a href="../../data/lists/sample-us.txt" target="_blank">sample-us.txt</a>
+and <a href="../../data/lists/sample-cn.txt" target="_blank">sample-cn.txt</a>.
 
 
 <a name="howto"></a>
@@ -169,19 +174,16 @@ respectively, or --filelist and --corpus when using their long forms):</p>
 $ python main.py -f data/lists/sample-us.txt -c data/sample-us
 </pre>
 
-<p>This will actually exit with a warning because this very command was used to
-generate the example corpus, which is described later on this page. Using
-another output directory for the corpus will get rid of the warning. There are
-two more options. The language defaults to English, but to specify that the
-language is Chines use "-l cn". To use verbose messages (basically printing
-filenames when they are processed), use -v
+<p>There are two more options. The language defaults to English, but to specify
+that the language is Chines use "-l cn". To use verbose messages (basically
+printing filenames when they are processed), use -v
 or <span class="nowrap">--verbose</span>. See the documentation string
 in <code>main.py</code> for more information.</p>
 
-<p>The invocation above will look for the Stanford tools at a couple of places
-which are quite specific to the local setup used by code developers. Most users
-may need to use two extra options for specifying the location of the Stanford
-tagger and segmenter:</p>
+<p>The invocation above will look for the Stanford tools at the locations
+specified in <code>config.py</code>. You can overrule those settings by
+specifying the location of the Stanford tagger and segmenter on the command
+line:</p>
 
 <pre class="example">
 --stanford-tagger-dir PATH
@@ -192,7 +194,7 @@ tagger and segmenter:</p>
 directory that includes the <code>bin</code> directory. The path may not contain
 spaces. Also, the code checks whether PATH is an existing directory, but it does
 not check whether the directory includes the needed binaries. If PATH does not
-point at the desired Stanford tool then the code will enter a loop and hang.</p>
+point at the correct location then the code will enter a loop and hang.</p>
 
 <p>The main limitation with the one-size-fits-all <code>main.py</code> script is
 that processing time can get rather high for large corpora, for example,
@@ -216,15 +218,15 @@ $ python step2_process.py -c data/sample-us -n 4 --txt2tag
 $ python step2_process.py -c data/sample-us -n 4 --tag2chk
 </pre>
 
-<p>Again, this particular invocation will exit with a warning because the corpus
-created already exists, so another directory should be used. And you will
-probably need to use the <code>--stanford-tagger-dir</code> option. The main
-difference here, apart from using five commands instead of one, is
-that <code>main.py</code> processes all documents in the list but for these
-batch scripts the number of files to be processed has to be given (it defaults
-to processing one document). This allows for some more flexibility in how you
-want to process a corpus. See the documentation string of the two batch scripts
-for more information.</p>
+<p>This particular invocation may exit with a warning if you have run the
+example above with the <code>main.py</code> script because then the
+corpus <code>data/sample-us</code> would already exists, so then another
+directory should be used. The main difference here, apart from using five
+commands instead of one, is that <code>main.py</code> processes all documents in
+the list but for these batch scripts the number of files to be processed has to
+be given (it defaults to processing one document). This allows for some more
+flexibility in how you want to process a corpus. See the documentation string of
+the two batch scripts for more information.</p>
 
 <p>The resulting corpus is almost identical to the one created
 with <code>main.py</code>, barring some configuration settings like timestamp
@@ -273,7 +275,7 @@ target="_blank">../../ontology/doc_processing/data/patents/corpora/sample-us</a>
 
 <p>This script only performs document-level processing and fills in d0_xml, d1_txt,
 d2_seg (Chinese only), d2_tag and d3_feats. The structure of those
-directories mirror each other and look as follows:
+directories mirror each other and looks as follows:
 
 <pre class="example">
  `-- 01
