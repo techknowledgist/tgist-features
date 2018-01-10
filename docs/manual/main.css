@@ -38,6 +38,9 @@ p, li, table, tr, td {
 .author {
    font-size: 120%; }
 
+.header {
+   font-size: 120%; }
+
 .pre {
    font-family: "courier new", monospace; }
 
@@ -49,8 +52,10 @@ span.pre {
    white-space: normal; }
 
 pre.example {
-   margin-left: 2em;
-   font-family: "courier"; }
+    margin-left: 2em;
+    padding: 5px;
+    background-color: #f6f6f6;
+    font-family: "courier"; }
 
 p.abstract {
     padding: 5pt;

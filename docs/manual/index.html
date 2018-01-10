@@ -11,17 +11,19 @@
 
 <p class="abstract">
 The feature extractor collects documents into a corpus and then processes these
-documents, where processing includes document structure parsing (which also
-takes care of issues specific to a document source), sentence splitting,
-tokenization, tagging, term extraction and feature extraction. This phase is a
-requirement for subsequent processing. The documents processed can be US or
-Chinese patents from LexisNexis or Web of Science abstracts.</p>
+documents, where processing includes document structure parsing (which creates a
+normalized representation for the document, sentence splitting, tokenization,
+part-of-speech tagging, term extraction and feature extraction. This phase is a
+prerequisite for subsequent processing by other Techknowledgist modules. The
+documents processed can be US or Chinese patents from LexisNexis or Web of
+Science abstracts.</p>
 
 <p class="navigation">
 [ <a href="#installation">installation</a>
 | <a href="#input">input description</a> 
-| <a href="#howto">how to process a corpus</a> 
-| <a href="#output">output description</a> ]
+| <a href="#howto">processing a corpus</a>
+| <a href="#output">output description</a>
+| <a href="#architecture">architecture</a> ]
 </p>
 
 
@@ -34,16 +36,16 @@ Chinese patents from LexisNexis or Web of Science abstracts.</p>
 <ol>
 <li>Python 2.7
 <li>Java 1.8 (Java 1.6 or 1.7 will probably also work)
-<li>Git (needed only for getting the code in case this file was not in a downloaded archive)
+<li>Git (needed only if you want to get the code via a git clone)
 </ol>
 
 <p>The code has been tested on Linux RHEL 6 and recent Mac OS 10 systems. The
 code has not been tested on Windows, but there are no major reasons that would
-prevent this code from running on Windows.</p>
+prevent this code from running on it.</p>
 
 
 <p>Installation is a matter of getting the code, installing the Stanford tools,
-  and setting up your configuration.</p>
+and setting up your configuration.</p>
 
 
 <ol>
@@ -72,9 +74,9 @@ $ git submodule update
 
 <li>Installing the Stanford Tools.
 
-  <p>The code uses version 3.1.3 of the tagger
-(the full version, not just English version) and version 1.6.6 of the
-segmenter. These versions can be downloaded from</p>
+<p>The current code uses version 3.1.3 of the tagger (the full version, not just
+the English version) and version 1.6.6 of the segmenter. These versions can be
+downloaded from</p>
 
 <blockquote>
 <a href="http://nlp.stanford.edu/software/tagger.shtml">http://nlp.stanford.edu/software/tagger.shtml</a><br/>
@@ -89,30 +91,81 @@ there.</p>
 
 <li>Configuration
 
-  <p>This distribution comes either with a configuration file
-  named <code>config.py</code> or with a sample configuration file
-  named <code>config-sample.py</code>. The former will be the case if you
-  downloaded an archive, the latter if you got the code with Git. If you just
-  have the sample file you need to copy it to <code>config.py</code>. To change
-  the default settings edit the configuration file, typically all you need to do
-  is to change the values of the following two variables:</p>
+<p>This distribution comes either with a configuration file
+named <code>config.py</code> or with a sample configuration file
+named <code>config-sample.py</code>. The former will be the case if you
+downloaded an archive, the latter if you got the code with Git. If you just have
+the sample file you need to copy it to <code>config.py</code>. To change the
+default settings edit the configuration file, typically all you need to do is to
+change the values of the following two variables:</p>
 
-  <blockquote>
-    <code>STANFORD_TAGGER_DIR</code><br/>
-    <code>STANFORD_SEGMENTER_DIR</code>
-  </blockquote>
+<pre class="example">
+STANFORD_TAGGER_DIR
+STANFORD_SEGMENTER_DIR
+</pre>
+
+<p>For example, if you had downloaded the Stanford Tagger version 3.1.3 you
+would have an archive
+named <code>stanford-postagger-full-2012-07-09.tgz</code>. And if you had
+unpacked this in a top-level directory named <code>tools</code> then you would
+have to edit the line in configuration file with
+the <code>STANFORD_TAGGER_DIR</code> setting as follows:</p>
+
+<pre class="example">
+STANFORD_TAGGER_DIR = "/tools/stanford-postagger-full-2012-07-09"
+</pre>
 
 </ol>
 
-<p>At this point you should be able to run the code by doing</p>
+<p>At this point you should be able to run the code and you can test it by doing</p>
 
 <pre class="example">
 $ python main.py -f data/lists/sample-us.txt -c data/sample-us
 </pre>
 
-<p>See <a href="#howto">below</a> for more details on how to run the code.</p>
+<p>This should produce something very similar to the following output on your
+screen</p>
 
-<p>NOTE. In some cases, you may have to set some environment variables to avoid
+
+<pre class="example">
+[--init] initializing data/sample-us
+
+   timestamp    =  01/09/18 17:31:59
+   language     =  en
+   datasource   =  ln
+   source_file  =  data/lists/sample-us.txt
+   source_path  =  None
+   target_path  =  data/sample-us
+   shuffle      =  None
+   git_commit   =  782749d
+
+[--init] creating directory structure in data/xxx
+[--init] creating data/xxx/config/general.txt
+[--init] creating data/xxx/config/pipeline-default.txt
+[--init] creating data/xxx/config/files.txt
+
+[--populate] adding 4 files to &lt;DataSet d0_xml version_id=01 files=0>
+[--xml2txt] created &lt;DataSet d1_txt version_id=01 files=0>
+[--xml2txt] input &lt;DataSet d0_xml version_id=01 files=4>
+[--xml2txt] output &lt;DataSet d1_txt version_id=01 files=0>
+[--txt2tag] created &lt;DataSet d2_tag version_id=01 files=0>
+[--txt2tag] input &lt;DataSet d1_txt version_id=01 files=4>
+[--txt2tag] output &lt;DataSet d2_tag version_id=01 files=0>
+[--tag2chk] created &lt;DataSet d3_fea version_id=01 files=0>
+[--tag2chk] input &lt;DataSet d2_tag version_id=01 files=4>
+[--tag2chk] output &lt;DataSet d3_fea version_id=01 files=0>
+[--tag2chk] using 'en' chunker rules
+</pre>
+
+<p>In addition, you should now have a directory
+named <code>data/sample-us</code> with about 272K of
+content. See <a href="#howto">below</a> for more details on how to run the
+code.</p>
+
+
+<strong class="header">Known issues</strong>
+
+<p>In some cases, you may have to set some environment variables to avoid
 encoding issues. In particular, the tagger may report errors on certain input
 lines and hang after some number of errors. If you use Linux with a bash shell,
 add the following to .bash_profile if you have problems:</p>
@@ -148,10 +201,11 @@ path. An example is printed below.</p>
 </pre>
 
 <p>The file path points to the actual location of the file to be processed for
-this corpus. The shortened path can be used to specify a local path in the
+this corpus. In this case the paths are relative to the location of the script
+that is executed. The shortened path can be used to specify a local path in the
 corpus, if it is not given, the local path will be the entire file path. For
 example, if the input file contains the four lines above, we will have a short
-local path for two of the files. The year can be given some imaginary value if
+local path for two of the files. The year can be given the dummy value 0000 if
 it is not known or if it does not matter for current processing. Included in the
 distribution are two example file lists
 in <a href="../../data/lists/sample-us.txt" target="_blank">sample-us.txt</a>
@@ -162,12 +216,12 @@ and <a href="../../data/lists/sample-cn.txt" target="_blank">sample-cn.txt</a>.
 <h2>How to Process a Corpus</h2>
 
 <p>There are two ways to create and process a corpus: one more suited for
-smaller corpora (up to a couple of thousand files) and one suited for larger
+smaller corpora (up to a few hundred files) and one suited for larger
 corpora. They are equivalent in the sense that the results are identical when
 the two approaches are applied to the same list of files.</p>
 
 <p>The simplest way is to use the <code>main.py</code> script which requires as
-input a file list and an output directory (using the -c and -f options
+input a file list and an output directory (using the -f and -c options
 respectively, or --filelist and --corpus when using their long forms):</p>
 
 <pre class="example">
@@ -196,12 +250,12 @@ spaces. Also, the code checks whether PATH is an existing directory, but it does
 not check whether the directory includes the needed binaries. If PATH does not
 point at the correct location then the code will enter a loop and hang.</p>
 
-<p>The main limitation with the one-size-fits-all <code>main.py</code> script is
-that processing time can get rather high for large corpora, for example,
-processing 40,000 US patents takes 1-2 days on a high-end desktop. The process
-can easily be parallelized by splitting the corpus in smaller chunks, but in
-that case some extra bookkeeping is needed, especially to prepare for subsequent
-processing. In addition, the script has been proven to a bit brittle at
+<p>The main limitation with the <code>main.py</code> script is that processing
+time can get rather high for large corpora, for example, processing 40,000 US
+patents takes 1-2 days on a high-end desktop. The process can easily be
+parallelized by splitting the corpus in smaller chunks, but in that case some
+extra bookkeeping is needed, especially to prepare for subsequent processing. In
+addition, the <code>main.py</code> script has been proven to a bit brittle at
 times. There is error trapping at the document processing level, but there are
 some ill-understood errors that are known to let the tagger hang at times.</p>
 
@@ -299,6 +353,46 @@ identifier, usually always '01' unless the corpus was processed in different
 ways (using different chunker rules for example). As mentioned above, the
 structure under the files directory is determined by the third column in the
 file list.
+
+
+<a name="architecture"></a>
+<h2>Architecture</h2>
+
+<p>The four basic components of the feature extractor are shown below in the
+grey boxes.</p>
+
+<img src="architecture.jpg" width="600"/>
+
+<p>The Data Import step takes a list with file paths and initializes a corpus by
+copying all files from the file list to it. Recall that lines in the file list
+look as follows:</p>
+
+<pre class="example">
+1980    data/patents/xml/us/1980/12.xml   1980/12.xml
+1980    data/patents/xml/us/1980/13.xml   1980/13.xml
+</pre>
+
+<p>The second column contains the path external to the corpus and the third the
+location of the file in the corpus (if there is no third column than the
+location inside the corpus will be the same path as the external path).</p>
+
+<p>Once a corpus is created layers of anaylsis are added by several other components:</p>
+
+<ol class="spacy">
+
+<li>The Document Parser normalizes and simplifies the input by removing any
+markup and by extracting the title, the date, the abstract and the main body of
+the document. </li>
+
+<li>The Stanford Segmenter and the Stanford Tagger add part-of-speech tags and
+sentence boundaries. The Segmenter is not used for English, just for
+Chinese. </li>
+
+<li>The Term and Feature Extractor extracts terms and for each term a set of
+features such as <code>last_word</code> and <code>prev_V</code>.</li>
+
+</ol>
+
 
 </body>
 </html>
