@@ -144,8 +144,8 @@ def run_xml2txt(rconfig, limit, options, verbose=False):
     """Takes the xml file and produces a txt file with a simplified document
     structure, keeping date, title, abstract, summary, description_rest,
     first_claim and other_claims. Does this by calling the document structure
-    parser in onto mode if the document source is LEXISNEXIS and uses a simple
-    parser defined in xml2txt if the source is WOS.."""
+    parser in onto mode if the document source is LexisNexis and uses a simple
+    parser defined in xml2txt if the source is WoS."""
 
     input_dataset = find_input_dataset(XML2TXT, rconfig)
     output_dataset = find_output_dataset(XML2TXT, rconfig)
@@ -171,8 +171,6 @@ def run_xml2txt(rconfig, limit, options, verbose=False):
             fh.close()
             print "[--xml2txt] WARNING: error on", file_in
             #print "           ", e
-        # we now do compress the cn output of the document parser (which we
-        # initialy did not do)
         if rconfig.language == 'en': compress(file_in, file_out)
         elif rconfig.language == 'cn': compress(file_in, file_out)
         if count % STEP == 0:

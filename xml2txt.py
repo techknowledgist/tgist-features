@@ -1,20 +1,8 @@
 # xml2txt
 # module to create a fielded text file from an xml (patent) file
-# top level call: patents_xml2txt(patent_path, lang)
 
 import os, sys, re, codecs, pdb, StringIO
 from xml.dom.minidom import parse, Node
-
-# we are doing all this so that scripts that use mallet.py can be called from
-# any directory, the typical case is that mallet.py is used from scripts in
-# ontology/classifier or ontology/roles
-script_path = os.path.abspath(sys.argv[0])
-script_dir = os.path.dirname(script_path)
-current_dir = os.getcwd()
-os.chdir(script_dir)
-os.chdir('../..')
-sys.path.insert(0, os.getcwd())
-os.chdir(current_dir)
 
 from docstructure.main import Parser, create_fact_file, open_write_file
 from docstructure.main import load_data, restore_sentences
@@ -54,7 +42,7 @@ def print_tags():
         print "  %4d  '%s'" % (c, t)
 
 
-def xml2txt(xml_parser, source, source_file, target_file, workspace):
+def xml2txt(doc_parser, source, source_file, target_file, workspace):
     """Create a target_file in the d1_txt directory from a source_file in the
     xml directory. This includes some cleaning of the source file by adding some
     spaces, see clean_file() and clean_tag() for more details."""
@@ -67,41 +55,43 @@ def xml2txt(xml_parser, source, source_file, target_file, workspace):
         ds_fact_file = os.path.join(workspace, "%s.fact" % basename)
         ds_sect_file = os.path.join(workspace, "%s.sect" % basename)
         create_fact_file(cleaned_source_file, ds_text_file, ds_tags_file, ds_fact_file)
-        xml_parser.collection = 'LEXISNEXIS'
-        xml_parser.process_file(ds_text_file, ds_fact_file, ds_sect_file, fact_type='BASIC')
+        doc_parser.collection = 'LEXISNEXIS'
+        doc_parser.process_file(ds_text_file, ds_fact_file, ds_sect_file, fact_type='BASIC')
         (text, section_tags) = load_data(ds_text_file, ds_sect_file)
         fh_data = {}
         for f in USED_FIELDS:
             fh_data[f] = []
-        add_sections(xml_parser, section_tags, text, fh_data)
-        write_sections(xml_parser, target_file, fh_data)
+        add_sections(doc_parser, section_tags, text, fh_data)
+        write_sections(doc_parser, target_file, fh_data)
         for fname in (ds_text_file, ds_tags_file, ds_fact_file, ds_sect_file):
             os.remove(fname)
-    # for wos, cnki and pubmed we ignore the xml_parser that was handed in because we
-    # can use a simpler and faster one
+    # for wos, cnki, pubmed and the signal processing corpus we ignore the
+    # doc_parser that was handed in because we can use a simpler one
     elif source == 'wos':
         parse_wos_doc(cleaned_source_file, target_file)
     elif source == 'cnki':
         CNKIDoc(source_file, target_file).xml2txt()
     elif source == 'pm':
         PubMedDoc(source_file, target_file).xml2txt()
+    elif source == 'signal-processing':
+        parse_signal_processing_doc(cleaned_source_file, target_file)
     os.remove(cleaned_source_file)
 
 
-def add_sections(xml_parser, section_tags, text, fh_data):
+def add_sections(doc_parser, section_tags, text, fh_data):
     """Collect all the tags that have a mapping or that are claims. Then remove embedded
     tags and add content to the FH_DESC_REST section."""
     for stag in section_tags:
         (p1, p2, tagtype) = (stag.start_index, stag.end_index, stag.attr('TYPE'))
         section = (p1, p2, text[int(p1):int(p2)].strip())
         if MAPPINGS.get(tagtype) is not None:
-            add_mapped_tagtype(xml_parser, stag, fh_data, p1, p2, tagtype, section)
+            add_mapped_tagtype(doc_parser, stag, fh_data, p1, p2, tagtype, section)
         elif tagtype == 'CLAIM':
             add_claim(fh_data, stag, section)
     remove_embedded_section(fh_data)
     populate_desc_rest(fh_data, text)
 
-def write_sections(xml_parser, target_file, fh_data):
+def write_sections(doc_parser, target_file, fh_data):
     """Write the sections as requested by the technology tagger to a file."""
     onto_fh = open_write_file(target_file)
     for f in TARGET_FIELDS:
@@ -109,7 +99,7 @@ def write_sections(xml_parser, target_file, fh_data):
             onto_fh.write(u"%s:\n" % f)
             for sect in fh_data[f]:
                 data_to_write = sect[2]
-                if xml_parser.language == 'CHINESE':
+                if doc_parser.language == 'CHINESE':
                     data_to_write = restore_sentences(f, data_to_write)
                 onto_fh.write(data_to_write)
                 onto_fh.write(u"\n")
@@ -135,17 +125,17 @@ def populate_desc_rest(fh_data, text):
     elif desc:
         fh_data['FH_DESC_REST'].append((desc[0], desc[1], text[desc[0]:desc[1]].strip()))
 
-def add_mapped_tagtype(xml_parser, section_tag, fh_data, p1, p2, tagtype, section):
+def add_mapped_tagtype(doc_parser, section_tag, fh_data, p1, p2, tagtype, section):
     """Add a section tag for those tags whose tagtype are mapped to one of the FH_*
     fields used by the technology tagger."""
     mapped_type = MAPPINGS[tagtype]
     # Skip the title or abstract if it is in English and the language set is
     # German or Chinese. TODO: needs to be generalized to all languages.
-    if xml_parser.language != 'ENGLISH' and tagtype in ('META-TITLE', 'ABSTRACT'):
+    if doc_parser.language != 'ENGLISH' and tagtype in ('META-TITLE', 'ABSTRACT'):
         if section_tag.attr('LANGUAGE') == 'eng':
             return        
     # ad hoc fix for german
-    if mapped_type == 'FH_TITLE' and xml_parser.language == 'GERMAN':
+    if mapped_type == 'FH_TITLE' and doc_parser.language == 'GERMAN':
         section[2] = restore_proper_capitalization(section[2])
     if DEBUG:
         print_section(section, mapped_type)
@@ -278,9 +268,7 @@ def print_stats():
 def parse_wos_doc(cleaned_source_file, target_file):
     fh_in = codecs.open(cleaned_source_file)
     fh_out = codecs.open(target_file, 'w')
-    title = None
-    year = None
-    abstract = None
+    title, year, abstract = None, None, None
     for line in fh_in:
         if line.startswith('<item_title'): # wos12
             title = line.strip()[12:-13]
@@ -298,10 +286,31 @@ def parse_wos_doc(cleaned_source_file, target_file):
             STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
         elif line.startswith('<p>'): # wos12 and wos14
             abstract = line.strip()[3:-4]
-    fh_out.write("FH_DATE:\n%s\n" % year)
-    fh_out.write("FH_TITLE:\n%s\n" % title)
-    fh_out.write("FH_ABSTRACT:\n%s\nEND\n" % abstract)
+    write_wos_record(fh_out, year, title, abstract)
 
+
+def parse_signal_processing_doc(cleaned_source_file, target_file):
+    # Added for the 2017 WoS Signal Processing data drop which contained WoS
+    # files but in a slightly different format as used in parse_wos_doc()
+    fh_in = codecs.open(cleaned_source_file)
+    fh_out = codecs.open(target_file, 'w')
+    title, year, abstract = None, None, None
+    for line in fh_in:
+        if line.startswith('<title>'):
+            title = line.strip()[7:-8]
+            STATS_TITLES.append(title)
+        elif line.startswith('<year>'):
+            year = line.strip()[6:-7]
+            STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
+        elif line.startswith('<abstract>'):
+            abstract = line.strip()[10:-11]
+    write_wos_record(fh_out, year, title, abstract)
+
+
+def write_wos_record(fh, year, title, abstract):
+    fh.write("FH_DATE:\n%s\n" % year)
+    fh.write("FH_TITLE:\n%s\n" % title)
+    fh.write("FH_ABSTRACT:\n%s\nEND\n" % abstract)
 
 
 class CNKIDoc(object):
