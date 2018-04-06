@@ -851,7 +851,7 @@ def chunk_schema(lang):
             start_pat = []
             cont_pat = []
             end_pat = []
-            fh = codecs.open("chunk_schema_%s.txt" % lang)
+            fh = codecs.open("resources/chunk_schema_%s.txt" % lang)
             for line in fh:
                 line = line.strip()
                 if not line:
