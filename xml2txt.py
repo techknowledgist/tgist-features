@@ -1,7 +1,7 @@
 # xml2txt
 # module to create a fielded text file from an xml (patent) file
 
-import os, sys, re, codecs, pdb, StringIO
+import os, sys, re, codecs, pdb, StringIO, shutil
 from xml.dom.minidom import parse, Node
 
 from docstructure.main import Parser, create_fact_file, open_write_file
@@ -75,6 +75,8 @@ def xml2txt(doc_parser, source, source_file, target_file, workspace):
         PubMedDoc(source_file, target_file).xml2txt()
     elif source == 'signal-processing':
         parse_signal_processing_doc(cleaned_source_file, target_file)
+    elif source == "uspto":
+        PatentFile(source_file, target_file).xml2txt()
     os.remove(cleaned_source_file)
 
 
@@ -492,3 +494,139 @@ class PubMedDoc(object):
                 count += 1
                 for sentence in [s for s in tokenized_text.split("\n") if s]:
                     sentence = normalize(sentence)
+
+
+class PatentFile(object):
+
+    """Document parser for USPTO patents. What we retrieve from the patents is the
+    following: the title, the year, the abstract, the description and the list
+    of claims. Strings used to identify these are:
+
+    FH_TITLE:
+    FH_YEAR:
+    FH_ABSTRACT:
+    FH_DESCRIPTION:
+    FH_HEADER_LEVEL_N:
+    FH_CLAIM:
+
+    The description includes all headers found in the description so the content
+    of FH_DESCRIPTION does not end at the next FH_XXX header.
+
+    Warnings are printed in a few cases: when there is more than one title,
+    year, abstract, description or claims section, or when an abstract has more
+    than one paragraph.
+
+    """
+
+    def __init__(self, xmlfile, txtfile):
+        self.fname = xmlfile
+        self.outfile = txtfile
+        self.dom = parse(xmlfile)
+        self.title = None
+        self.year = None
+        self.abstract = []
+        self.paragraphs = []
+        self.claims = []
+        self._set_title()
+        self._set_year()
+        self._set_abstract()
+        self._set_paragraphs()
+        self._set_claims()
+        #print self
+
+    def __str__(self):
+        #return "%s\n\n%s %s\n%s" % (self.fname, self.year, self.title, self.abstract)
+        return "%s %s %s" % (os.path.split(self.fname)[1], self.year, self.title)
+
+    def get_first(self, tagname, warn=True):
+        tags = self.dom.getElementsByTagName(tagname)
+        if warn and len(tags) > 1:
+            print "Warning: more than one instance of", tagname
+        return tags[0]
+
+    def _set_title(self):
+        title = self.get_first('invention-title')
+        self.title = title.firstChild.nodeValue
+
+    def _set_year(self):
+        pubref = self.get_first('publication-reference')
+        date = pubref.getElementsByTagName('date')[0]
+        date = date.firstChild.nodeValue
+        self.year = date[:4]
+
+    def _set_abstract(self):
+        abstract = self.get_first('abstract')
+        for p in abstract.getElementsByTagName('p'):
+            self.abstract.append(p.firstChild.nodeValue)
+        if len(self.abstract) > 1:
+            print "WARNING: unexpected abstract for", self.fname
+
+    def _set_paragraphs(self):
+        description = self.get_first('description')
+        for n in description.childNodes:
+            if n.nodeType == Node.ELEMENT_NODE:
+                if n.tagName == 'p':
+                    self._add_paragraph(n)
+                elif n.tagName == 'heading':
+                    self._add_heading(n)
+                elif n.tagName == 'description-of-drawings':
+                    self._add_description_of_drawings(n)
+                else:
+                    print n
+
+    def _add_paragraph(self, paragraph):
+        text = collect_text(paragraph)
+        self.paragraphs.append(["P", text])
+
+    def _add_heading(self, heading):
+        text = collect_text(heading)
+        level = heading.attributes["level"].value
+        self.paragraphs.append(["HEADER", level, text])
+
+    def _add_description_of_drawings(self, node):
+        text = collect_text(node)
+        self.paragraphs.append(["DRAWINGS", text])
+
+    def _set_claims(self):
+        claims = self.get_first('claims')
+        for claim in claims.getElementsByTagName('claim'):
+            self.claims.append(collect_text(claim).strip())
+
+    def xml2txt(self):
+        fh = codecs.open(self.outfile, 'w', encoding='utf8')
+        if self.title:
+            fh.write(u"FH_TITLE:\n\n%s\n\n" % self.title)
+        if self.year:
+            fh.write(u"FH_DATE:\n\n%s\n\n" % self.year)
+        if self.abstract:
+            fh.write(u"FH_ABSTRACT:\n\n")
+            for element in self.abstract:
+                fh.write(u"%s\n\n" % element)
+        if self.paragraphs:
+            fh.write(u"FH_DESCRIPTION:\n\n")
+            for element in self.paragraphs:
+                if element[0] == "HEADER":
+                    fh.write(u"FH_HEADER_LEVEL_%s:\n\n" % element[1])
+                    fh.write(u"%s\n\n" % element[2].strip())
+                else:
+                    fh.write(u"FH_PARA:\n\n")
+                    fh.write(u"%s\n\n" % element[1].strip())
+        if self.claims:
+            for element in self.claims:
+                fh.write(u"FH_CLAIM:\n\n")
+                fh.write(u"%s\n\n" % element)
+
+
+
+def collect_text(n):
+
+    def collect(n, result):
+        if n.nodeType == Node.TEXT_NODE:
+            result.append(n.nodeValue)
+        elif n.nodeType == Node.ELEMENT_NODE:
+            for child in n.childNodes:
+                collect(child, result)
+
+    result = []
+    collect(n, result)
+    return "".join(result)

@@ -42,8 +42,8 @@ import cn_seg2tag
 import config
 
 from docstructure.main import Parser
-from utils.path import ensure_path, get_file_paths, read_only
-from utils.path import get_lines, compress, uncompress, get_year
+from utils.path import ensure_path, get_file_paths, read_only, open_input_file
+from utils.path import get_lines, compress, uncompress
 from utils.git import get_git_commit
 from utils.batch import RuntimeConfig, DataSet
 
@@ -286,7 +286,7 @@ def run_tag2chk(rconfig, limit, options, verbose):
         filename = fspec.target
         print_file_progress(TAG2CHK, rconfig.corpus, count, filename, verbose)
         file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
-        year = get_year(filename)
+        year = get_year_from_file(file_in)
         tag2chunk.Doc(file_in, file_out, year, rconfig.language,
                       filter_p=filter_p, chunker_rules=chunker_rules, compress=True)
         if count % STEP == 0:
@@ -390,6 +390,28 @@ def make_parser(language):
     mappings = {'en': 'ENGLISH', 'de': "GERMAN", 'cn': "CHINESE" }
     parser.language = mappings[language]
     return parser
+
+
+def get_year_from_file(file_name):
+    """The only reliable way to get the year is to open the file and read the data
+    from it. In the past we would try to finagle the year from the directory path,
+    but that was way too brittle."""
+    with open_input_file(file_name) as fh:
+        year = None
+        read_year = False
+        for line in fh:
+            if line.startswith('FH_TITLE:'):
+                pass
+            elif line.startswith('FH_DATE:'):
+                read_year = True
+            elif line.startswith('FH_'):
+                return "9999" if year is None else year
+            elif read_year:
+                # skip empty lines (shouldn't be there though)
+                if not line.strip():
+                    continue
+                year = line.strip()[:4]
+                return year
 
 
 class Corpus(object):
