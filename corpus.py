@@ -163,6 +163,7 @@ def run_xml2txt(rconfig, limit, options, verbose=False):
         print_file_progress(XML2TXT, rconfig.corpus, count, filename, verbose)
         file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
         uncompress(file_in)
+        #xml2txt.xml2txt(doc_parser, rconfig.datasource, file_in, file_out, workspace)
         try:
             xml2txt.xml2txt(doc_parser, rconfig.datasource, file_in, file_out, workspace)
         except Exception as e:

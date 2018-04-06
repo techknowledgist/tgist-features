@@ -512,9 +512,8 @@ class PatentFile(object):
     The description includes all headers found in the description so the content
     of FH_DESCRIPTION does not end at the next FH_XXX header.
 
-    Warnings are printed in a few cases: when there is more than one title,
-    year, abstract, description or claims section, or when an abstract has more
-    than one paragraph.
+    Warnings are printed when there is more than one title, year, abstract,
+    description or claims section.
 
     """
 
@@ -527,12 +526,13 @@ class PatentFile(object):
         self.abstract = []
         self.paragraphs = []
         self.claims = []
-        self._set_title()
-        self._set_year()
-        self._set_abstract()
-        self._set_paragraphs()
-        self._set_claims()
-        #print self
+        # we are not interested in the sequences and other things
+        if self.dom.firstChild.name == 'us-patent-application':
+            self._set_title()
+            self._set_year()
+            self._set_abstract()
+            self._set_paragraphs()
+            self._set_claims()
 
     def __str__(self):
         #return "%s\n\n%s %s\n%s" % (self.fname, self.year, self.title, self.abstract)
@@ -556,10 +556,9 @@ class PatentFile(object):
 
     def _set_abstract(self):
         abstract = self.get_first('abstract')
+        # in rare cases an abstract has more than one paragraph
         for p in abstract.getElementsByTagName('p'):
             self.abstract.append(p.firstChild.nodeValue)
-        if len(self.abstract) > 1:
-            print "WARNING: unexpected abstract for", self.fname
 
     def _set_paragraphs(self):
         description = self.get_first('description')
@@ -594,9 +593,9 @@ class PatentFile(object):
 
     def xml2txt(self):
         fh = codecs.open(self.outfile, 'w', encoding='utf8')
-        if self.title:
+        if self.title is not None:
             fh.write(u"FH_TITLE:\n\n%s\n\n" % self.title)
-        if self.year:
+        if self.year is not None:
             fh.write(u"FH_DATE:\n\n%s\n\n" % self.year)
         if self.abstract:
             fh.write(u"FH_ABSTRACT:\n\n")
