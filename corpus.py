@@ -413,6 +413,8 @@ def get_year_from_file(file_name):
                     continue
                 year = line.strip()[:4]
                 return year
+    # make sure we do not return None ever
+    return '9999'
 
 
 class Corpus(object):

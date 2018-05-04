@@ -77,6 +77,8 @@ def xml2txt(doc_parser, source, source_file, target_file, workspace):
         parse_signal_processing_doc(cleaned_source_file, target_file)
     elif source == "uspto":
         PatentFile(source_file, target_file).xml2txt()
+    elif source == "thyme":
+        ThymeFile(source_file, target_file).xml2txt()
     os.remove(cleaned_source_file)
 
 
@@ -615,6 +617,30 @@ class PatentFile(object):
                 fh.write(u"FH_CLAIM:\n\n")
                 fh.write(u"%s\n\n" % element)
 
+
+class ThymeFile(object):
+
+    # TODO: note that for a Thyme file it is really not correct to call the
+    # source an xml file
+
+    def __init__(self, xmlfile, txtfile):
+        self.fname = xmlfile
+        self.outfile = txtfile
+
+    def xml2txt(self):
+        fh_in = codecs.open(self.fname, encoding='utf8')
+        fh_out = codecs.open(self.outfile, 'w', encoding='utf8')
+        for line in fh_in:
+            if line.startswith('[meta rev'):
+                continue
+            elif not line.strip():
+                continue
+            elif line.startswith('[start section'):
+                fh_out.write("FH_SECTION:\n")
+            elif line.startswith('[end section'):
+                continue
+            else:
+                fh_out.write(line)
 
 
 def collect_text(n):
