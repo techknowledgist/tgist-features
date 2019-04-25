@@ -120,7 +120,7 @@ STANFORD_TAGGER_DIR = "/tools/stanford-postagger-full-2012-07-09"
 <p>At this point you should be able to run the code and you can test it by doing</p>
 
 <pre class="example">
-$ python main.py -f data/lists/sample-us.txt -c data/sample-us
+$ python main.py -f ../data/lists/sample-us.txt -c sample-us
 </pre>
 
 <p>This should produce something very similar to the following output on your
@@ -128,21 +128,21 @@ screen</p>
 
 
 <pre class="example">
-[--init] initializing data/sample-us
+[--init] initializing sample-us
 
    timestamp    =  01/09/18 17:31:59
    language     =  en
    datasource   =  ln
-   source_file  =  data/lists/sample-us.txt
+   source_file  =  ../data/lists/sample-us.txt
    source_path  =  None
-   target_path  =  data/sample-us
+   target_path  =  sample-us
    shuffle      =  None
    git_commit   =  782749d
 
-[--init] creating directory structure in data/xxx
-[--init] creating data/xxx/config/general.txt
-[--init] creating data/xxx/config/pipeline-default.txt
-[--init] creating data/xxx/config/files.txt
+[--init] creating directory structure in sample-us
+[--init] creating sample-us/config/general.txt
+[--init] creating sample-us/config/pipeline-default.txt
+[--init] creating sample-us/config/files.txt
 
 [--populate] adding 4 files to &lt;DataSet d0_xml version_id=01 files=0>
 [--xml2txt] created &lt;DataSet d1_txt version_id=01 files=0>
@@ -158,7 +158,7 @@ screen</p>
 </pre>
 
 <p>In addition, you should now have a directory
-named <code>data/sample-us</code> with about 272K of
+named <code>sample-us</code> with about 272K of
 content. See <a href="#howto">below</a> for more details on how to run the
 code.</p>
 
@@ -194,10 +194,10 @@ two or three tab-separated fields: a year, a file path and an optional shortened
 path. An example is printed below.</p>
 
 <pre class="example">
-1980    data/patents/xml/us/1980/12.xml   1980/12.xml
-1980    data/patents/xml/us/1980/13.xml   1980/13.xml
-1980    data/patents/xml/us/1980/14.xml
-0000    data/patents/xml/us/1980/15.xml
+1980    ../data/patents/xml/us/1980/12.xml   1980/12.xml
+1980    ../data/patents/xml/us/1980/13.xml   1980/13.xml
+1980    ../data/patents/xml/us/1980/14.xml
+0000    ../data/patents/xml/us/1980/15.xml
 </pre>
 
 <p>The file path points to the actual location of the file to be processed for
@@ -225,7 +225,7 @@ input a file list and an output directory (using the -f and -c options
 respectively, or --filelist and --corpus when using their long forms):</p>
 
 <pre class="example">
-$ python main.py -f data/lists/sample-us.txt -c data/sample-us
+$ python main.py -f ../data/lists/sample-us.txt -c sample-us
 </pre>
 
 <p>There are two more options. The language defaults to English, but to specify
@@ -265,16 +265,16 @@ the same results as with the <code>main.py</code> script we would do the
 following:</p>
 
 <pre class="example">
-$ python step1_init.py -f data/lists/sample-us.txt -c data/sample-us
-$ python step2_process.py -c data/sample-us -n 4 --populate
-$ python step2_process.py -c data/sample-us -n 4 --xml2txt
-$ python step2_process.py -c data/sample-us -n 4 --txt2tag
-$ python step2_process.py -c data/sample-us -n 4 --tag2chk
+$ python step1_init.py -f ../data/lists/sample-us.txt -c sample-us
+$ python step2_process.py -c ../data/sample-us -n 4 --populate
+$ python step2_process.py -c ../data/sample-us -n 4 --xml2txt
+$ python step2_process.py -c ../data/sample-us -n 4 --txt2tag
+$ python step2_process.py -c ../data/sample-us -n 4 --tag2chk
 </pre>
 
 <p>This particular invocation may exit with a warning if you have run the
 example above with the <code>main.py</code> script because then the
-corpus <code>data/sample-us</code> would already exists, so then another
+corpus <code>sample-us</code> would already exists, so then another
 directory should be used. The main difference here, apart from using five
 commands instead of one, is that <code>main.py</code> processes all documents in
 the list but for these batch scripts the number of files to be processed has to
@@ -295,12 +295,12 @@ this is because all files are compressed.</p>
 We now look at the result of the command used above, repeated here for convenience.
 
 <pre class="example">
-$ python main.py -f data/lists/sample-us.txt -c data/sample-us
+$ python main.py -f ../data/lists/sample-us.txt -c sample-us
 </pre>
 
-<p>This creates a directory <code>data/sample-us</code>, in
-which the corpus is initialized and populated with the files listed
-in <code>data/lists/sample-us.txt</code>. The directory structure is as
+<p>This creates a directory <code>sample-us</code>, in which the corpus is
+initialized and populated with the files listed
+in <code>../data/lists/sample-us.txt</code>. The directory structure is as
 follows:
 
 <pre class="example">
@@ -368,8 +368,8 @@ copying all files from the file list to it. Recall that lines in the file list
 look as follows:</p>
 
 <pre class="example">
-1980    data/patents/xml/us/1980/12.xml   1980/12.xml
-1980    data/patents/xml/us/1980/13.xml   1980/13.xml
+1980    ../data/patents/xml/us/1980/12.xml   1980/12.xml
+1980    ../data/patents/xml/us/1980/13.xml   1980/13.xml
 </pre>
 
 <p>The second column contains the path external to the corpus and the third the

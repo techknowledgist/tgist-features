@@ -23,7 +23,7 @@ Edit the contents of the configuration file (`config.py`) if needed. If you inst
 Now you can run the code on some example input:
 
 ```sh
-$ python main.py -f data/lists/sample-us.txt -c data/sample-us
+$ python main.py -f ../data/lists/sample-us.txt -c sample-us
 ```
 
-This takes the files listed in `data/lists/sample-us.txt` and creates feature vectors of all terms in those files in `data/sample-us`. See the manual for a description of the input and output.
+This takes the files listed in `../data/lists/sample-us.txt` and creates feature vectors of all terms in those files in `sample-us`. See the manual for a description of the input and output.
