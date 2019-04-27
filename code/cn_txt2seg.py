@@ -19,51 +19,44 @@ of them through the segmenter, writing new files with the .seg extension:
 
 import os, sys, re, codecs, StringIO
 from time import sleep, time
-
 import sdp
 
-debug_p = False
-#debug_p = True
+
+DEBUG = False
+
 
 def debug(debug_string):
-    if debug_p:
+    if DEBUG:
         print debug_string
 
 
-### Previous version of segmenter, keep around for now
+def get_segmenter():
+    return sdp.Segmenter()
 
-#version to work with Popen --YZ
+
+### Previous version of segmenter, keep around for now, but may be obsolete
+
 def seg(infile, outfile, segmenter):
     s_input = codecs.open(infile, encoding='utf-8')
     s_output = codecs.open(outfile, "w", encoding='utf-8')
     output = []
-    t0 = time()
-    t1 = None
     for line in s_input:
         line = re.sub(r'^\s*$', '', line)
         line = ''.join([c for c in line if ord(c) != 12288])
-        if debug_p == True:
-            print "[tag]Processing line: %s\n" % line
+        debug("[tag]Processing line: %s\n" % line)
         if line != "":
             if is_omitable(line):
                 s_output.write(line)
-                #print "Omit: %s" %line
             else:
                 # this is a hack needed because the segmenter has a normalization error
                 # for non-breaking spaces, replace them here with regular spaces.
                 line = line.replace(unichr(160),' ')
-                #print type(line), line,
                 l_seg_string = segmenter.seg(line)
-                #if t1 is None: t1 = time
-                if t1 is None:
-                    t1 = time()
-                    print "setting time"
                 if l_seg_string != '':
                     s_output.write("%s" % l_seg_string)
     s_input.close()        
     s_output.close()
-    print t1 - t0
-    print time() - t1
+
     
 def is_omitable(s):
     """Do not segment anything over 500 characters or with ascii-8 only."""
@@ -171,27 +164,21 @@ def is_skipable(s):
         return True
     return False
 
+
 def is_ascii(s):
     return all(ord(c) < 256 for c in s)
 
 
 def split_cn(text):
-
     """A special split command for Chinese only. It is a rather simplistic
     version that first normalizes all whitespace with single \n characters
     and then splits on the Chinese period only, not using the \n character
     as an EOL marker."""
 
-    # NOTE: this was copied from ../../utils/splitter because I have still not
-    # figured out a good way to import things. In this case, appending ../.. to
-    # sys.path and then importing utils.splitter clashed with the utils module
-    # in this directory (at least, I think that that was the problem).
-
     (cn_comma, cn_period) = (u'\uff0c', u'\u3002')
-
     fh = StringIO.StringIO()
     text = text.strip()
-    # this normalizes all whitespace, used to get rid of linefeeds and other crap
+    # this normalizes all whitespace, gets rid of linefeeds and other crap
     text = "\n".join(text.split())
     length = len(text)
     for i in range(length):
@@ -253,11 +240,10 @@ def seg_lang(lang):
         patent_txt2seg_dir("/home/j/anick/fuse/data/patents", lang)
 
 
-
 if __name__ == '__main__':
 
     files_in = sys.argv[1:]
-    segmenter = sdp.Segmenter()
+    segmenter = get_segmenter()
     swrapper = SegmenterWrapper(segmenter)
     use_old = False
     for file_in in files_in:

@@ -44,9 +44,9 @@ DEFAULT_PIPELINE_CONFIGURATION_FILE = 'pipeline-default.txt'
 
 DEFAULT_PIPELINE = """
 # This file contains the default pipeline configuration settings. Settings in
-# here can be overruled by handing the step2_document_processing script the
-# identifier for another configuration file. All pipeline configuration files
-# live inside of the config directory configuration file.
+# here can be overruled by handing the step2_process.py script the identifier
+# for another configuration file. All pipeline configuration files live inside
+# of the config directory configuration file.
 
 --populate
 --xml2txt

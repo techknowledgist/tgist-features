@@ -1,8 +1,8 @@
 """main.py
 
 Script to process all documents in a file list and create an annotated
-corpus. Will initialize the corpus directory, adds the source data from the file
-list and adds results from the document structure parser, the tagger and the
+corpus. Will initialize the corpus directory, add the source data from the file
+list and add results from the document structure parser, the tagger and the
 feature extractor. This script combines what is done in the step1_init.py and
 step2_process.py scripts, but it simplifies the process a bit.
 
@@ -10,11 +10,11 @@ USAGE
    % python main.py OPTIONS
 
 OPTIONS
-   --language en|cn      language, default is 'en'
-   --data ln|wos|cnki    data source, default is 'ln'
-   --filelist PATH       a file with a list of source files
-   --corpus PATH         a directory where the corpus is created
-   -n INTEGER            number of files to process, defaults to all files
+   --language en|cn       language, default is 'en'
+   --source ln|wos|cnki   data source, default is 'ln'
+   --filelist PATH        a file with a list of source files
+   --corpus PATH          a directory where the corpus is created
+   -n INTEGER             number of files to process, defaults to all files
 
 You must run this script from the directory it is in.
 
@@ -98,24 +98,40 @@ from corpus import XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
 from utils.batch import RuntimeConfig
 
 
+def process_corpus(language, source, filelist, corpus, pipeline, limit):
+    c = Corpus(language, source, filelist, None, corpus, pipeline, None)
+    rconfig = RuntimeConfig(corpus, language, source, pipeline_file)
+    if limit is None:
+        limit = len([f for f in open(rconfig.filenames).readlines() if len(f.split()) > 1])
+    c.populate(rconfig, limit, verbose)
+    c.xml2txt(rconfig, limit, rconfig.get_options(XML2TXT), verbose)
+    exit()
+    if language == 'en':
+        c.txt2tag(rconfig, limit, rconfig.get_options(TXT2TAG), verbose)
+    elif language == 'cn':
+        c.txt2seg(rconfig, limit, rconfig.get_options(TXT2SEG), verbose)
+        c.seg2tag(rconfig, limit, rconfig.get_options(SEG2TAG), verbose)
+    c.tag2chk(rconfig, limit, rconfig.get_options(TAG2CHK), verbose)
+
+
 if __name__ == '__main__':
 
     options = ['language=', 'data=', 'corpus=', 'filelist=', 'verbose',
                'stanford-segmenter-dir=', 'stanford-tagger-dir=']
     (opts, args) = getopt.getopt(sys.argv[1:], 'l:d:f:c:n:v', options)
 
-    source_file = None
-    corpus_path = None
+    filelist = None
+    corpus = None
     verbose = False
     language = config.LANGUAGE
-    datasource = config.DATASOURCE
+    source = config.DATASOURCE
     limit = None
 
     for opt, val in opts:
         if opt in ('-l', '--language'): language = val
-        if opt in ('-d', '--data'): datasource = val
-        if opt in ('-f', '--filelist'): source_file = val
-        if opt in ('-c', '--corpus'): corpus_path = val
+        if opt in ('-d', '--source'): source = val
+        if opt in ('-f', '--filelist'): filelist = val
+        if opt in ('-c', '--corpus'): corpus = val
         if opt in ('-v', '--verbose'): verbose = True
         if opt == '-n': limit = int(val)
         if opt == '--stanford-segmenter-dir': config.update_stanford_segmenter(val)
@@ -126,25 +142,14 @@ if __name__ == '__main__':
 
     pipeline = config.DEFAULT_PIPELINE
     pipeline_file = 'pipeline-default.txt'
-    if datasource == 'cnki':
+    if source == 'cnki':
         language = 'cn'
     if language == 'cn':
         pipeline = config.DEFAULT_PIPELINE_CN
 
-    if source_file is None: exit("ERROR: missing -f or --filelist option")
-    if corpus_path is None: exit("ERROR: missing -c or --corpus option")
+    if filelist is None: exit("ERROR: missing -f or --filelist option")
+    if corpus is None: exit("ERROR: missing -c or --corpus option")
 
-    c = Corpus(language, datasource, source_file, None, corpus_path, pipeline, None)
-    rconfig = RuntimeConfig(corpus_path, None, None, language, datasource, pipeline_file)
-    if limit is None:
-        limit = len([f for f in open(rconfig.filenames).readlines() if len(f.split()) > 1])
+    process_corpus(language, source, filelist, corpus, pipeline, limit)
 
-    c.populate(rconfig, limit, verbose)
-    c.xml2txt(rconfig, limit, rconfig.get_options(XML2TXT), verbose)
-    if language == 'en':
-        c.txt2tag(rconfig, limit, rconfig.get_options(TXT2TAG), verbose)
-    elif language == 'cn':
-        c.txt2seg(rconfig, limit, rconfig.get_options(TXT2SEG), verbose)
-        c.seg2tag(rconfig, limit, rconfig.get_options(SEG2TAG), verbose)
-    c.tag2chk(rconfig, limit, rconfig.get_options(TAG2CHK), verbose)
 
