@@ -1,6 +1,6 @@
 """step1_init.py
 
-Script to initialize a working directory for patent processing. It does the
+Script to initialize a working directory for document processing. It does the
 following things:
 
     (1) initialize the directory structure for the corpus,

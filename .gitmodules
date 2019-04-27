@@ -1,6 +1,3 @@
 [submodule "docstructure"]
 	path = code/docstructure
 	url = https://github.com/techknowledgist/tgist-docstructure
-[submodule "utils"]
-	path = code/utils
-	url = https://github.com/techknowledgist/tgist-utils
