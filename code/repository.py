@@ -565,7 +565,7 @@ def get_patent_id(basename):
         id = id[2:]
     result = re_PATENT.match(id)
     if result is None:
-        print "WARNING: no match on", fname
+        print "WARNING: no match on", basename
         return None
     prefix = result.groups()[0]
     kind_code = result.groups()[-1]

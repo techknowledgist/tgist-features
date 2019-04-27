@@ -1,4 +1,7 @@
 *~
 *.pyc
-log.dat
-config.py
+.DS_Store
+.idea
+venv
+code/log.dat
+code/config.py
