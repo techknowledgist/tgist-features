@@ -2,11 +2,11 @@
 
 Code to extract features for use in the Techknowledgist system.
 
-This is a short introduction to get started, see the manual in `docs/manual/index.html` for more details.
+This is a short introduction to get started with a small data set, see the manual in `docs/manual/index.html` for more details.
 
 You will need Python 2.7, Java 1.8, the Stanford tagger and segmenter and Git. Git is only needed for installation.
 
-First clone the repository, initialize and update the submodules it uses, and copy the configuration file:
+First clone the repository, initialize and update the submodule it uses, and copy the configuration file:
 
 ```sh
 $ git clone https://github.com/techknowledgist/tgist-features

@@ -115,16 +115,9 @@ No existing files or directories will be overwritten, except for the files in
 the config directory that are listed above (general.txt, files.txt and
 pipeline-default.txt).
 
-
-TODO
-
-This script does not allow you to use command line arguments to override the
-location of the stanford tagger and segmenter (see the main.py script where this
-is possible).
-
 """
 
-import os, sys, shutil, getopt, errno, random, time
+import os, sys, shutil, getopt, time
 import config, corpus
 from utils.path import read_only, make_writable
 from utils.git import get_git_commit
@@ -146,13 +139,14 @@ def add_files_to_corpus(corpus_dir, extra_files):
     added = 0
     for line in open(extra_files):
         fname = line.strip().split("\t")[1]
-        if not fname in current_files:
+        if fname not in current_files:
             added += 1
             print "adding", fname
             fh_current.write(line)
     fh_current.close()
     read_only(fname_current)
     add_info_file(corpus_dir, extra_files, added)
+
 
 def read_files(filelist):
     fh = open(filelist)
@@ -162,6 +156,7 @@ def read_files(filelist):
         files[fname] = True
     fh.close()
     return files
+
 
 def add_info_file(corpus_dir, extra_files, added):
     """Append information to CORPUS/config/additions.txt."""

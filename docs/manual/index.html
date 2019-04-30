@@ -12,7 +12,7 @@
 <p class="abstract">
 The feature extractor collects documents into a corpus and then processes these
 documents, where processing includes document structure parsing (which creates a
-normalized representation for the document, sentence splitting, tokenization,
+normalized representation for the document), sentence splitting, tokenization,
 part-of-speech tagging, term extraction and feature extraction. This phase is a
 prerequisite for subsequent processing by other Techknowledgist modules. The
 documents processed can be US or Chinese patents from LexisNexis or Web of
@@ -62,7 +62,7 @@ and setting up your configuration.</p>
 $ git clone https://github.com/techknowledgist/tgist-features
 </pre>
 
-<p>After getting the clone, you need to initialize and update the submodules
+<p>After getting the clone, you need to initialize and update the submodule
 used by the repository:</p>
 
 <pre class="example">
@@ -91,13 +91,11 @@ there.</p>
 
 <li>Configuration
 
-<p>This distribution comes either with a configuration file
-named <code>config.py</code> or with a sample configuration file
-named <code>config-sample.py</code>. The former will be the case if you
-downloaded an archive, the latter if you got the code with Git. If you just have
-the sample file you need to copy it to <code>config.py</code>. To change the
-default settings edit the configuration file, typically all you need to do is to
-change the values of the following two variables:</p>
+<p>This distribution comes with a sample configuration file
+named <code>config-sample.py</code>, which you need to copy
+to <code>config.py</code>. To change the default settings edit this configuration
+file, typically all you need to do is to change the values of the following two
+variables:</p>
 
 <pre class="example">
 STANFORD_TAGGER_DIR
@@ -257,7 +255,8 @@ parallelized by splitting the corpus in smaller chunks, but in that case some
 extra bookkeeping is needed, especially to prepare for subsequent processing. In
 addition, the <code>main.py</code> script has been proven to a bit brittle at
 times. There is error trapping at the document processing level, but there are
-some ill-understood errors that are known to let the tagger hang at times.</p>
+some ill-understood errors that are known to cause the tagger to hang at
+times.</p>
 
 <p>As an alternative way to create and process a corpus, there is a slightly
 more complicated series of batch processing steps that can be taken. To achieve
@@ -272,7 +271,7 @@ $ python step2_process.py -c ../data/sample-us -n 4 --txt2tag
 $ python step2_process.py -c ../data/sample-us -n 4 --tag2chk
 </pre>
 
-<p>This particular invocation may exit with a warning if you have run the
+<p>This particular invocation may exit with a warning if you ran the
 example above with the <code>main.py</code> script because then the
 corpus <code>sample-us</code> would already exists, so then another
 directory should be used. The main difference here, apart from using five

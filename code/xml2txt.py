@@ -229,11 +229,9 @@ def clean_tag(line, tag, insert):
     idxs = findall(line, open_tag)
     if idxs:
         line = add_space_before(line, idxs, insert)
-        #print line
     idxs = findall(line, close_tag)
     if idxs:
         line = add_space_after(line, idxs, close_tag, insert)
-        #print line
     return line
 
 def add_space_before(line, idxs, insert):

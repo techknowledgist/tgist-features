@@ -6,6 +6,10 @@ list and add results from the document structure parser, the tagger and the
 feature extractor. This script combines what is done in the step1_init.py and
 step2_process.py scripts, but it simplifies the process a bit.
 
+Use this script when running on a small number fo documents, say a couple of
+hundred or less depending on the size. For larger jobs, use step1_init.py and
+step2_process.py.
+
 USAGE
    % python main.py OPTIONS
 
@@ -14,7 +18,6 @@ OPTIONS
    --source ln|wos|cnki   data source, default is 'ln'
    --filelist PATH        a file with a list of source files
    --corpus PATH          a directory where the corpus is created
-   -n INTEGER             number of files to process, defaults to all files
 
 You must run this script from the directory it is in.
 
@@ -90,7 +93,7 @@ tagger and segmenter.
 """
 
 
-import os, sys, getopt
+import sys, getopt
 
 import config
 from corpus import Corpus
@@ -98,58 +101,59 @@ from corpus import XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
 from utils.batch import RuntimeConfig
 
 
-def process_corpus(language, source, filelist, corpus, pipeline, limit):
-    c = Corpus(language, source, filelist, None, corpus, pipeline, None)
-    rconfig = RuntimeConfig(corpus, language, source, pipeline_file)
-    if limit is None:
-        limit = len([f for f in open(rconfig.filenames).readlines() if len(f.split()) > 1])
-    c.populate(rconfig, limit, verbose)
-    c.xml2txt(rconfig, limit, rconfig.get_options(XML2TXT), verbose)
-    exit()
-    if language == 'en':
-        c.txt2tag(rconfig, limit, rconfig.get_options(TXT2TAG), verbose)
-    elif language == 'cn':
-        c.txt2seg(rconfig, limit, rconfig.get_options(TXT2SEG), verbose)
-        c.seg2tag(rconfig, limit, rconfig.get_options(SEG2TAG), verbose)
-    c.tag2chk(rconfig, limit, rconfig.get_options(TAG2CHK), verbose)
+def process_corpus(language, source, filelist, corpus_location, verbose):
+    """Create a corpus at corpus_location and run the default pipeline over it."""
+    pipeline = config.DEFAULT_PIPELINE
+    if language == 'cn':
+        pipeline = config.DEFAULT_PIPELINE_CN
+    pipeline_file = config.DEFAULT_PIPELINE_CONFIGURATION_FILE
+    corpus = Corpus(language=language, datasource=source, source_file=filelist,
+                    corpus_path=corpus_location, pipeline_config=pipeline)
+    rconfig = RuntimeConfig(corpus_location, language, source, pipeline_file,
+                            verbose=verbose)
+    _run_default_pipeline(corpus, rconfig)
+
+
+def _run_default_pipeline(corpus, rconfig):
+    """Run the default pipeline given a runtime configuration."""
+    # TODO: would like to use a run_pipeline() method on Corpus
+    corpus.populate(rconfig)
+    corpus.xml2txt(rconfig, rconfig.get_options(XML2TXT))
+    #exit()
+    if rconfig.language == 'en':
+        corpus.txt2tag(rconfig, rconfig.get_options(TXT2TAG))
+    elif rconfig.language == 'cn':
+        corpus.txt2seg(rconfig, rconfig.get_options(TXT2SEG))
+        corpus.seg2tag(rconfig, rconfig.get_options(SEG2TAG))
+    corpus.tag2chk(rconfig, rconfig.get_options(TAG2CHK))
 
 
 if __name__ == '__main__':
 
     options = ['language=', 'data=', 'corpus=', 'filelist=', 'verbose',
                'stanford-segmenter-dir=', 'stanford-tagger-dir=']
-    (opts, args) = getopt.getopt(sys.argv[1:], 'l:d:f:c:n:v', options)
+    (opts, args) = getopt.getopt(sys.argv[1:], 'l:d:f:c:v', options)
 
-    filelist = None
-    corpus = None
-    verbose = False
-    language = config.LANGUAGE
-    source = config.DATASOURCE
-    limit = None
+    opt_filelist = None
+    opt_corpus = None
+    opt_verbose = False
+    opt_language = config.LANGUAGE
+    opt_source = config.DATASOURCE
 
     for opt, val in opts:
-        if opt in ('-l', '--language'): language = val
-        if opt in ('-d', '--source'): source = val
-        if opt in ('-f', '--filelist'): filelist = val
-        if opt in ('-c', '--corpus'): corpus = val
-        if opt in ('-v', '--verbose'): verbose = True
-        if opt == '-n': limit = int(val)
+        if opt in ('-l', '--language'): opt_language = val
+        if opt in ('-d', '--source'): opt_source = val
+        if opt in ('-f', '--filelist'): opt_filelist = val
+        if opt in ('-c', '--corpus'): opt_corpus = val
+        if opt in ('-v', '--verbose'): opt_verbose = True
         if opt == '--stanford-segmenter-dir': config.update_stanford_segmenter(val)
         if opt == '--stanford-tagger-dir': config.update_stanford_tagger(val)
 
     config.check_stanford_tagger()
     config.check_stanford_segmenter()
+    if opt_filelist is None:
+        exit("ERROR: missing -f or --filelist option")
+    if opt_corpus is None:
+        exit("ERROR: missing -c or --corpus option")
 
-    pipeline = config.DEFAULT_PIPELINE
-    pipeline_file = 'pipeline-default.txt'
-    if source == 'cnki':
-        language = 'cn'
-    if language == 'cn':
-        pipeline = config.DEFAULT_PIPELINE_CN
-
-    if filelist is None: exit("ERROR: missing -f or --filelist option")
-    if corpus is None: exit("ERROR: missing -c or --corpus option")
-
-    process_corpus(language, source, filelist, corpus, pipeline, limit)
-
-
+    process_corpus(opt_language, opt_source, opt_filelist, opt_corpus, opt_verbose)

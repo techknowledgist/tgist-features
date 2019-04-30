@@ -67,7 +67,7 @@ should be used.
 """
 
 
-import os, sys, getopt
+import sys, getopt
 
 import config
 from corpus import Corpus
@@ -93,56 +93,54 @@ def read_opts():
 if __name__ == '__main__':
 
     # default values of options
-    corpus_path = None
-    stage = None
-    pipeline_config = 'pipeline-default.txt'
-    verbose, show_data_p, show_pipelines_p = False, False, False
-    show_processing_time_p = False
-    limit = 1
+    opt_corpus_path = None
+    opt_stage = None
+    opt_pipeline_config = 'pipeline-default.txt'
+    opt_verbose, opt_show_data_p, opt_show_pipelines_p = False, False, False
+    opt_show_processing_time_p = False
+    opt_limit = 1
 
     (opts, args) = read_opts()
     for opt, val in opts:
-        if opt in ('-c', '--corpus'): corpus_path = val
-        if opt == '-n': limit = int(val)
-        if opt in ('-v', '--verbose'): verbose = True
-        if opt == '--pipeline': pipeline_config = val
-        if opt == '--show-data': show_data_p = True
-        if opt == '--show-pipelines': show_pipelines_p = True
-        if opt == '--show-processing-time': show_processing_time_p = True
+        if opt in ('-c', '--corpus'): opt_corpus_path = val
+        if opt == '-n': opt_limit = int(val)
+        if opt in ('-v', '--verbose'): opt_verbose = True
+        if opt == '--pipeline': opt_pipeline_config = val
+        if opt == '--show-data': opt_show_data_p = True
+        if opt == '--show-pipelines': opt_show_pipelines_p = True
+        if opt == '--show-processing-time': opt_show_processing_time_p = True
         if opt == '--stanford-segmenter-dir': config.update_stanford_segmenter(val)
         if opt == '--stanford-tagger-dir': config.update_stanford_tagger(val)
         if opt in ALL_STAGES:
-            stage = opt
+            opt_stage = opt
 
-    # NOTE: this is named rconfig to avoid confusion with config.py
-    rconfig = RuntimeConfig(corpus_path, None, None, None, None, pipeline_config)
-    #rconfig.pp()
+    runtime_configuration = RuntimeConfig(opt_corpus_path, None, None,
+                                          opt_pipeline_config,
+                                          verbose=opt_verbose, limit=opt_limit)
 
-    if show_data_p:
-        show_datasets(rconfig, config.DATA_DIRS, verbose)
+    if opt_show_data_p:
+        show_datasets(runtime_configuration, config.DATA_DIRS, opt_verbose)
         exit()
-    if show_pipelines_p:
-        show_pipelines(rconfig)
-    if show_processing_time_p:
-        show_processing_time(rconfig, config.DATA_DIRS)
+    if opt_show_pipelines_p:
+        show_pipelines(runtime_configuration)
+    if opt_show_processing_time_p:
+        show_processing_time(runtime_configuration, config.DATA_DIRS)
         exit()
 
-    options = rconfig.get_options(stage)
+    options = runtime_configuration.get_options(opt_stage)
 
-    # corpus already exists in a directory, so not all arguments are needed
-    corpus = Corpus(None, None, None, None, corpus_path, None, None)
+    # corpus already exists in a directory, so just need its location
+    corpus = Corpus(corpus_path=opt_corpus_path)
 
-    # note that the second argument always has to be the limit, this is required
-    # by update_state()
-    if stage == POPULATE:
-        corpus.populate(rconfig, limit, verbose)
-    elif stage == XML2TXT:
-        corpus.xml2txt(rconfig, limit, options, verbose)
-    elif stage == TXT2TAG:
-        corpus.txt2tag(rconfig, limit, options, verbose)
-    elif stage == TXT2SEG:
-        corpus.txt2seg(rconfig, limit, options, verbose)
-    elif stage == SEG2TAG:
-        corpus.seg2tag(rconfig, limit, options, verbose)
-    elif stage == TAG2CHK:
-        corpus.tag2chk(rconfig, limit, options, verbose)
+    if opt_stage == POPULATE:
+        corpus.populate(runtime_configuration)
+    elif opt_stage == XML2TXT:
+        corpus.xml2txt(runtime_configuration, options)
+    elif opt_stage == TXT2TAG:
+        corpus.txt2tag(runtime_configuration, options)
+    elif opt_stage == TXT2SEG:
+        corpus.txt2seg(runtime_configuration, options)
+    elif opt_stage == SEG2TAG:
+        corpus.seg2tag(runtime_configuration, options)
+    elif opt_stage == TAG2CHK:
+        corpus.tag2chk(runtime_configuration, options)

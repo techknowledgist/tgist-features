@@ -55,10 +55,11 @@ def ensure_path(path, verbose=False):
 
 
 def get_file_specifications(filename, start=0, limit=500):
-    """Return a list with n=limit file specifications from filename, starting
-    from line n=start. This function will return less than n=limit files if
-    their were less than n=limit lines left in filename, it will return an empty
-    list if start is larger than the number of lines in the file."""
+    """Return a list with n=limit file specifications from the filelist in
+    filename, starting from line n=start. This function will return less than
+    n=limit files if their were less than n=limit lines left in filename, it
+    will return an empty list if start is larger than the number of lines in
+    the file."""
     current_count = start
     fh = open(filename)
     line_number = 0
@@ -92,20 +93,6 @@ def create_file(filename, content=None):
     fh = open(filename, 'w')
     if content is not None:
         fh.write(content)
-    fh.close()
-
-
-# CHECK: used in batch
-def XXXfilename_generator(path, filelist):
-    """Creates generator on the filelist, yielding the concatenation of the path
-    and a path in filelist."""
-    fh = open(filelist)
-    for line in fh:
-        line = line.strip()
-        if not line or line.startswith('#'):
-            continue
-        fspec = FileSpec(line)
-        yield os.path.join(path, 'files', fspec.target)
     fh.close()
 
 

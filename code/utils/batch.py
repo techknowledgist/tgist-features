@@ -77,28 +77,32 @@ class RuntimeConfig(object):
     the language, the source directory or file list, pipeline configuration settings
     and others."""
 
-    def __init__(self, corpus_path,
-                 language, datasource, pipeline_config_file):
+    def __init__(self, corpus_path, language, datasource, pipeline_config_file,
+                 verbose=False, limit=None):
         self.corpus = corpus_path
         self.language = language
         self.datasource = datasource
+        self.limit = limit
+        self.verbose = verbose
         # the user can specify a file list and no corpus, allow for this here
         self.config_dir = None
         self.general_config_file = None
         self.pipeline_config_file = None
-        self.filenames = None
-        # The general settings are filled in by read_general_config() below, but
-        # older corpora do not have the datasource property, so set this to 'ln'
-        # since all older corpora are LexisNexis patent corpora.
-        self.general = {'datasource': 'ln'}
+        self.filelist = None
+        self.general = {}
         self.pipeline = []
         if corpus_path is not None:
             self.config_dir = os.path.join(corpus_path, 'config')
             self.general_config_file = os.path.join(self.config_dir, 'general.txt')
             self.pipeline_config_file = os.path.join(self.config_dir, pipeline_config_file)
-            self.filenames = os.path.join(self.config_dir, 'files.txt')
+            self.filelist = os.path.join(self.config_dir, 'files.txt')
             self.read_general_config()
             self.read_pipeline_config()
+            if limit is None:
+                with open(self.filelist) as fh:
+                    filenames = fh.readlines()
+                    limit = len([f for f in filenames if len(f.split()) > 1])
+                    self.limit = limit
 
     def __getattr__(self, name):
         return self.general.get(name)
@@ -199,7 +203,7 @@ class DataSet(object):
 
     def initialize_on_disk(self):
         """All that is guaranteed to exist is a directory like data/patents/en/d1_txt, but
-        sub structures is not there. Create the substructure and initial versions of all
+        sub structure is not there. Create the substructure and initial versions of all
         needed files in configuration and state directories."""
         for subdir in ('config', 'state', 'files'):
             ensure_path(os.path.join(self.path, subdir))

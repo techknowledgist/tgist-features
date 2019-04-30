@@ -25,7 +25,7 @@ typically used by scripts that process files in batch.
 #   add a line to the state/processing-history.txt file.
 
 
-import os, sys, shutil, getopt, errno, random, time, codecs
+import os, sys, shutil, random, time, codecs
 
 import xml2txt
 import txt2tag
@@ -38,7 +38,7 @@ from docstructure.main import Parser
 from utils.path import ensure_path, get_file_paths, read_only, open_input_file
 from utils.path import get_file_specifications, compress, uncompress
 from utils.git import get_git_commit
-from utils.batch import RuntimeConfig, DataSet
+from utils.batch import DataSet
 
 
 # Names of processing stages
@@ -56,12 +56,12 @@ ALL_STAGES = [POPULATE, XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK]
 # definition of mappings from document processing stage to input and output data
 # directories (named processing areas above)
 DOCUMENT_PROCESSING_IO = \
-    { POPULATE: { 'in': 'external', 'out': 'd0_xml' },
-      XML2TXT: { 'in': 'd0_xml', 'out': 'd1_txt' },
-      TXT2TAG: { 'in': 'd1_txt', 'out': 'd2_tag' },
-      TXT2SEG: { 'in': 'd1_txt', 'out': 'd2_seg' },
-      SEG2TAG: { 'in': 'd2_seg', 'out': 'd2_tag' },
-      TAG2CHK: { 'in': 'd2_tag', 'out': 'd3_feats' }}
+    {POPULATE: {'in': 'external', 'out': 'd0_xml'},
+     XML2TXT: {'in': 'd0_xml', 'out': 'd1_txt'},
+     TXT2TAG: {'in': 'd1_txt', 'out': 'd2_tag'},
+     TXT2SEG: {'in': 'd1_txt', 'out': 'd2_seg'},
+     SEG2TAG: {'in': 'd2_seg', 'out': 'd2_tag'},
+     TAG2CHK: {'in': 'd2_tag', 'out': 'd3_feats'}}
 
 # This variable governs after how many files the files_processed counter in the
 # state directory is updated, this way we still have a reasonably recent count
@@ -83,12 +83,13 @@ class Corpus(object):
     in the corpus. This class gives access to corpus initialization as well as
     corpus-level batch processing of the corpus contents."""
 
-    def __init__(self, language, datasource, source_file, source_path,
-                 corpus_path, pipeline_config, shuffle_file):
-        """Create the corpus object which keeps information about path,
-        pipeline, language, datasource and local file paths. Initialize
-        directories on disk if there is a source_file or source_path argument
-        that is not None."""
+    def __init__(self, language='en', datasource=None,
+                 source_file=None, source_path=None, corpus_path=None,
+                 pipeline_config=None, shuffle_file=False):
+        """Create the corpus object which keeps information about path, pipeline,
+        language, datasource and local file paths. Initialize directories on
+        disk if there is a source_file or source_path argument that is not None,
+        otherwise this will create an empty in-memory corpus."""
         self.location = corpus_path
         self.language = language
         self.datasource = datasource
@@ -107,16 +108,16 @@ class Corpus(object):
             + "\n   source_file = %s" % self.source_file \
             + "\n   source_path = %s" % self.source_path \
             + "\n   language = %s" % self.language \
-            + "\n   source = %s" % self.datasource \
+            + "\n   datasource = %s" % self.datasource
 
     def _initialize_directory(self):
-        """Creates a directory named target_path and all subdirectories and
-        files in there needed for further processing. See the module docstring
-        in step1_init.py for more details."""
-        self._generate_settings()
+        """Creates a directory named self.location and all subdirectories and 
+        files in there that are needed for further processing. See the module
+        docstring in step1_init.py for more details."""
         if os.path.exists(self.location):
             sys.exit("WARNING: %s already exists, exiting" % self.location)
-        self._print_initialize_message()
+        self._generate_settings()
+        self._print_initialization_message()
         self._create_directories()
         self._create_general_config_file()
         self._create_default_pipeline_config_file()
@@ -134,13 +135,13 @@ class Corpus(object):
                          "shuffle      =  %s\n" % str(self.shuffle_file),
                          "git_commit   =  %s\n" % get_git_commit()]
 
-    def _print_initialize_message(self):
-        print "\n[--init] initializing %s" % (self.location)
-        print "\n   %s" % ("   ".join(self.settings))
+    def _print_initialization_message(self):
+        print "\n[--init] initializing %s" % self.location
+        print "\n   %s" % "   ".join(self.settings)
 
     def _create_directories(self):
-        """Create subdirectory structure in target_path."""
-        print "[--init] creating directory structure in %s" % (self.location)
+        """Create subdirectory structure in self.location."""
+        print "[--init] creating directory structure in %s" % self.location
         ensure_path(self.conf_path)
         for subdir in config.DATA_DIRS:
             subdir_path = self.data_path + os.sep + subdir
@@ -167,7 +168,7 @@ class Corpus(object):
 
     def _create_general_config_file(self):
         filename = os.path.join(self.conf_path, FNAME_INFO_GENERAL)
-        print "[--init] creating %s" % (filename)
+        print "[--init] creating %s" % filename
         fh = open(filename, 'w')
         fh.write(self.command)
         fh.write("".join(self.settings))
@@ -175,34 +176,34 @@ class Corpus(object):
 
     def _create_default_pipeline_config_file(self):
         filename = os.path.join(self.conf_path, FNAME_PIPELINE_DEFAULT)
-        print "[--init] creating %s" % (filename)
+        print "[--init] creating %s" % filename
         fh = open(filename, 'w')
         fh.write(self.pipeline_config.lstrip())
         read_only(filename)
 
-    def populate(self, rconfig, limit, verbose):
-        run_populate(rconfig, limit, verbose)
-        if verbose: print
+    @staticmethod
+    def populate(rconfig):
+        run_populate(rconfig)
 
-    def xml2txt(self, rconfig, limit, options, verbose):
-        run_xml2txt(rconfig, limit, options, verbose)
-        if verbose: print
+    @staticmethod
+    def xml2txt(rconfig, options):
+        run_xml2txt(rconfig, options)
 
-    def txt2tag(self, rconfig, limit, options, verbose):
-        run_txt2tag(rconfig, limit, options, verbose)
-        if verbose: print
+    @staticmethod
+    def txt2tag(rconfig, options,):
+        run_txt2tag(rconfig, options)
 
-    def txt2seg(self, rconfig, limit, options, verbose):
-        run_txt2seg(rconfig, limit, options, verbose)
-        if verbose: print
+    @staticmethod
+    def txt2seg(rconfig, options):
+        run_txt2seg(rconfig, options)
 
-    def seg2tag(self, rconfig, limit, options, verbose):
-        run_seg2tag(rconfig, limit, options, verbose)
-        if verbose: print
+    @staticmethod
+    def seg2tag(rconfig, options,):
+        run_seg2tag(rconfig, options)
 
-    def tag2chk(self, rconfig, limit, options, verbose):
-        run_tag2chk(rconfig, limit, options, verbose)
-        if verbose: print
+    @staticmethod
+    def tag2chk(rconfig, options):
+        run_tag2chk(rconfig, options)
 
 
 def update_state(fun):
@@ -210,208 +211,163 @@ def update_state(fun):
     def wrapper(*args):
         t1 = time.time()
         files_processed, datasets = fun(*args)
+        # squeeze in adding an empty line in verbose mode
+        _print_empty_line(args[0].verbose)
         for dataset in datasets:
             dataset.files_processed += files_processed
-            dataset.update_state(args[1], t1)
+            dataset.update_state(args[0].limit, t1)
     return wrapper
 
 
 @update_state
-def run_populate(rconfig, limit, verbose=False):
+def run_populate(rconfig):
     """Populate xml directory in the target directory with limit files from the
     source file list or the source directory."""
 
     output_name = DOCUMENT_PROCESSING_IO[POPULATE]['out']
     dataset = DataSet(POPULATE, output_name, rconfig)
-
-    fspecs = get_file_specifications(rconfig.filenames, dataset.files_processed, limit)
+    fspecs = get_file_specifications(rconfig.filelist, dataset.files_processed, rconfig.limit)
     print "[--populate] adding %d files to %s" % (len(fspecs), dataset)
-    for (count, fspec) in enumerate(fspecs):
+    count = 0
+    for fspec in fspecs:
+        count += 1
         src_file = fspec.source
         dst_file = os.path.join(rconfig.corpus, 'data', output_name,
                                 dataset.version_id, 'files', fspec.target)
-        # allow for compressed files, while being handed the name without
-        # extension
+        # allow for compressed files, while being handed the name without extension
         if not os.path.exists(src_file):
             src_file += ".gz"
             dst_file += ".gz"
-        if verbose:
-            print "[--populate] %04d %s" % (count + 1, dst_file)
+        if rconfig.verbose:
+            print "[--populate] %04d %s" % (count, dst_file)
         ensure_path(os.path.dirname(dst_file))
         _copy_file(src_file, dst_file)
-        # at some point there seemed to be an issue with compressing for Chinese,
-        # so added this to do language dependent compressing, there is now no
-        # difference for the population phase
-        if rconfig.language == 'en': compress(dst_file)
-        elif rconfig.language == 'cn': compress(dst_file)
-        # TODO: does this mean that you miss some if total_count % STEP != 0
-        if count + 1 % STEP == 0:
-            dataset.update_processed_count(STEP)
-
-    return (count + 1 % STEP, [dataset])
+        compress(dst_file)
+        _update_state_files_processed(dataset, count)
+    return count % STEP, [dataset]
 
 
 @update_state
-def run_xml2txt(rconfig, limit, options, verbose=False):
-
+def run_xml2txt(rconfig, options):
     """Takes the xml file and produces a txt file with a simplified document
     structure, keeping date, title, abstract, summary, description_rest,
     first_claim and other_claims. Does this by calling the document structure
     parser in onto mode if the document source is LexisNexis and uses a simple
     parser defined in xml2txt if the source is WoS."""
 
-    input_dataset = find_input_dataset(XML2TXT, rconfig)
-    output_dataset = find_output_dataset(XML2TXT, rconfig)
-    print_datasets(XML2TXT, input_dataset, output_dataset)
-    check_file_counts(input_dataset, output_dataset, limit)
-
+    input_dataset, output_dataset = _get_datasets(XML2TXT, rconfig)
     count = 0
-    doc_parser = make_parser(rconfig.language)
-
+    doc_parser = _make_parser(rconfig.language)
     workspace = os.path.join(rconfig.corpus, 'data', 'workspace')
-    fspecs = get_file_specifications(rconfig.filenames, output_dataset.files_processed, limit)
+    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
-        filename = fspec.target
-        print_file_progress(XML2TXT, rconfig.corpus, count, filename, verbose)
-        file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
+        file_in, file_out = _prepare_io(XML2TXT, fspec, input_dataset, output_dataset, rconfig, count)
         uncompress(file_in)
-        #xml2txt.xml2txt(doc_parser, rconfig.datasource, file_in, file_out, workspace)
         try:
             xml2txt.xml2txt(doc_parser, rconfig.datasource, file_in, file_out, workspace)
-        except Exception as e:
+        except Exception:
             # just write an empty file that can be consumed downstream
             fh = codecs.open(file_out, 'w')
             fh.close()
             print "[--xml2txt] WARNING: error on", file_in
-            #print "           ", e
-        if rconfig.language == 'en': compress(file_in, file_out)
-        elif rconfig.language == 'cn': compress(file_in, file_out)
-        if count % STEP == 0:
-            output_dataset.update_processed_count(STEP)
-
-    #xml2txt.print_stats()
-    return (count % STEP, [output_dataset])
+        compress(file_in, file_out)
+        _update_state_files_processed(output_dataset, count)
+    return count % STEP, [output_dataset]
 
 
 @update_state
-def run_txt2tag(rconfig, limit, options, verbose):
+def run_txt2tag(rconfig, options):
     """Takes txt files and runs the tagger on them."""
 
-    input_dataset = find_input_dataset(TXT2TAG, rconfig)
-    output_dataset = find_output_dataset(TXT2TAG, rconfig)
-    print_datasets(TXT2TAG, input_dataset, output_dataset)
-    check_file_counts(input_dataset, output_dataset, limit)
-
+    input_dataset, output_dataset = _get_datasets(TXT2TAG, rconfig)
     count = 0
     tagger = txt2tag.get_tagger(rconfig.language)
-    fspecs = get_file_specifications(rconfig.filenames, output_dataset.files_processed, limit)
+    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
-        filename = fspec.target
-        print_file_progress(TXT2TAG, rconfig.corpus, count, filename, verbose)
-        file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
+        file_in, file_out = _prepare_io(TXT2TAG, fspec, input_dataset, output_dataset, rconfig, count)
         uncompress(file_in)
         txt2tag.tag(file_in, file_out, tagger)
         # this will become relevant for cn only when we have a segmenter/tagger
         # that uses only one step
-        if rconfig.language == 'en': compress(file_in, file_out)
-        if count % STEP == 0:
-            output_dataset.update_processed_count(STEP)
-
-    return (count % STEP, [output_dataset])
+        if rconfig.language == 'en':
+            compress(file_in, file_out)
+        _update_state_files_processed(output_dataset, count)
+    return count % STEP, [output_dataset]
 
 
 @update_state
-def run_txt2seg(rconfig, limit, options, verbose):
+def run_txt2seg(rconfig, options):
     """Takes txt files and runs the Chinese segmenter on them."""
 
-    input_dataset = find_input_dataset(TXT2SEG, rconfig)
-    output_dataset = find_output_dataset(TXT2SEG, rconfig)
-    print_datasets(TXT2SEG, input_dataset, output_dataset)
-    check_file_counts(input_dataset, output_dataset, limit)
-
+    input_dataset, output_dataset = _get_datasets(TXT2SEG, rconfig)
     count = 0
     segmenter = cn_txt2seg.get_segmenter()
     swrapper = cn_txt2seg.SegmenterWrapper(segmenter)
-
-    fspecs = get_file_specifications(rconfig.filenames, output_dataset.files_processed, limit)
+    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
-        filename = fspec.target
-        print_file_progress(TXT2SEG, rconfig.corpus, count, filename, verbose)
-        file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
+        file_in, file_out = _prepare_io(TXT2SEG, fspec, input_dataset, output_dataset, rconfig, count)
         uncompress(file_in)
-        #cn_txt2seg.seg(file_in, file_out, segmenter)
         swrapper.process(file_in, file_out)
         compress(file_in, file_out)
-        if count % STEP == 0:
-            output_dataset.update_processed_count(STEP)
-
-    return (count % STEP, [output_dataset])
+        _update_state_files_processed(output_dataset, count)
+    return count % STEP, [output_dataset]
 
 
 @update_state
-def run_seg2tag(rconfig, limit, options, verbose):
+def run_seg2tag(rconfig, options):
     """Takes seg files and runs the Chinese tagger on them."""
 
-    input_dataset = find_input_dataset(SEG2TAG, rconfig)
-    output_dataset = find_output_dataset(SEG2TAG, rconfig)
-    print_datasets(SEG2TAG, input_dataset, output_dataset)
-    check_file_counts(input_dataset, output_dataset, limit)
-
+    input_dataset, output_dataset = _get_datasets(SEG2TAG, rconfig)
     count = 0
     tagger = txt2tag.get_tagger(rconfig.language)
-    fspecs = get_file_specifications(rconfig.filenames, output_dataset.files_processed, limit)
+    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
-        filename = fspec.target
-        print_file_progress(SEG2TAG, rconfig.corpus, count, filename, verbose)
-        file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
+        file_in, file_out = _prepare_io(SEG2TAG, fspec, input_dataset, output_dataset, rconfig, count)
         uncompress(file_in)
         cn_seg2tag.tag(file_in, file_out, tagger)
         compress(file_in, file_out)
-        if count % STEP == 0:
-            output_dataset.update_processed_count(STEP)
-
-    return (count % STEP, [output_dataset])
+        _update_state_files_processed(output_dataset, count)
+    _print_empty_line(rconfig.verbose)
+    return count % STEP, [output_dataset]
 
 
 @update_state
-def run_tag2chk(rconfig, limit, options, verbose):
+def run_tag2chk(rconfig, options):
     """Runs the np-in-context code on tagged input. Populates d3_phr_feat."""
 
     candidate_filter = options.get('--candidate-filter', 'off')
     chunker_rules = options.get('--chunker-rules', 'en')
-
     # this is a hack that maps the value of the new official name to the value
     # expected by the old name
     filter_p = True if candidate_filter == 'on' else False
-    
-    input_dataset = find_input_dataset(TAG2CHK, rconfig)
-    output_dataset = find_output_dataset(TAG2CHK, rconfig)
-    print_datasets(TAG2CHK, input_dataset, output_dataset)
+    input_dataset, output_dataset = _get_datasets(TAG2CHK, rconfig)
     print "[--tag2chk] using '%s' chunker rules" % chunker_rules
-    check_file_counts(input_dataset, output_dataset, limit)
-
     count = 0
-    fspecs = get_file_specifications(rconfig.filenames, output_dataset.files_processed, limit)
+    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
-        filename = fspec.target
-        print_file_progress(TAG2CHK, rconfig.corpus, count, filename, verbose)
-        file_in, file_out = prepare_io(filename, input_dataset, output_dataset)
-        year = get_year_from_file(file_in)
+        file_in, file_out = _prepare_io(TAG2CHK, fspec, input_dataset, output_dataset, rconfig, count)
+        year = _get_year_from_file(file_in)
         tag2chunk.Doc(file_in, file_out, year, rconfig.language,
                       filter_p=filter_p, chunker_rules=chunker_rules, compress=True)
-        if count % STEP == 0:
-            output_dataset.update_processed_count(STEP)
-
-    return (count % STEP, [output_dataset])
+        _update_state_files_processed(output_dataset, count)
+    return count % STEP, [output_dataset]
 
 
+def _get_datasets(stage, rconfig):
+    """Return two DataSet instances for the processing stage."""
+    input_dataset = _find_input_dataset(stage, rconfig)
+    output_dataset = _find_output_dataset(stage, rconfig)
+    _print_datasets(stage, input_dataset, output_dataset)
+    _check_file_counts(input_dataset, output_dataset, rconfig.limit)
+    return input_dataset, output_dataset
 
-def find_input_dataset(stage, rconfig, data_type=None):
+
+def _find_input_dataset(stage, rconfig, data_type=None):
     """Find the input data set for a processing stage for a given configuration and return
     it. Print a warning and exit if no dataset or more than one dataset was found. If a
     data type is passed in, the dat type lookup for the stage is bypassed."""
@@ -439,7 +395,7 @@ def find_input_dataset(stage, rconfig, data_type=None):
         sys.exit("Exiting...")
 
     
-def find_output_dataset(stage, rconfig, data_type=None):
+def _find_output_dataset(stage, rconfig, data_type=None):
     """Find the output data set of a stage for a given configuration and return
     it. Print a warning and exit if no dataset or more than one dataset was
     found."""
@@ -447,7 +403,6 @@ def find_output_dataset(stage, rconfig, data_type=None):
     # Use the stage-to-data mapping to find the output names
     if data_type is None:
         data_type = DOCUMENT_PROCESSING_IO[stage]['out']
-    #for output_name in data_types:
     # Get all data sets D for input name
     dirname = os.path.join(rconfig.corpus, 'data', data_type)
     datasets1 = [ds for ds in os.listdir(dirname) if ds.isdigit()]
@@ -475,26 +430,34 @@ def find_output_dataset(stage, rconfig, data_type=None):
         return dataset
 
 
-def print_datasets(stage, input_dataset, output_dataset):
+def _print_empty_line(verbose):
+    if verbose:
+        print
+
+
+def _print_datasets(stage, input_dataset, output_dataset):
     print "[%s] input %s" % (stage, input_dataset)
     print "[%s] output %s" % (stage, output_dataset)
 
 
-def print_file_progress(stage, corpus, count, filename, verbose):
-    if verbose:
-        print "[%s] %04d %s %s" % (stage, count, os.path.basename(corpus), filename)
+def _print_file_progress(stage, filename, count, rconfig):
+    if rconfig.verbose:
+        print "[%s] %04d %s %s" \
+              % (stage, count, os.path.basename(rconfig.corpus), filename)
 
 
-def check_file_counts(input_dataset, output_dataset, limit):
+def _check_file_counts(input_dataset, output_dataset, limit):
     if input_dataset.files_processed < output_dataset.files_processed + limit:
         print "[check_file_counts] " + \
               "WARNING: input dataset does not have enough processed files"
         sys.exit("Exiting...")
 
 
-def prepare_io(filename, input_dataset, output_dataset):
+def _prepare_io(stage, fspec, input_dataset, output_dataset, rconfig, count):
     """Generate the file paths for the datasets and make sure the path to the file exists for
-    the output dataset. May need to add a version that deals with multiple output datasets."""
+    the output dataset."""
+    filename = fspec.target
+    _print_file_progress(stage, filename, count, rconfig)
     file_id = filename[1:] if filename.startswith(os.sep) else filename
     file_in = os.path.join(input_dataset.path, 'files', file_id)
     file_out = os.path.join(output_dataset.path, 'files', file_id)
@@ -502,16 +465,22 @@ def prepare_io(filename, input_dataset, output_dataset):
     return file_in, file_out
 
 
-def make_parser(language):
+def _make_parser(language):
     """Return a document structure parser for language."""
     parser = Parser()
     parser.onto_mode = True
-    mappings = {'en': 'ENGLISH', 'de': "GERMAN", 'cn': "CHINESE" }
+    mappings = {'en': 'ENGLISH', 'de': "GERMAN", 'cn': "CHINESE"}
     parser.language = mappings[language]
     return parser
 
 
-def get_year_from_file(file_name):
+def _update_state_files_processed(dataset, count):
+    # TODO: does this mean that you miss some if total_count % STEP != 0
+    if count % STEP == 0:
+        dataset.update_processed_count(STEP)
+
+
+def _get_year_from_file(file_name):
     """The only reliable way to get the year is to open the file and read the data
     from it. In the past we would try to finagle the year from the directory path,
     but that was way too brittle."""
@@ -541,5 +510,5 @@ def _copy_file(src_file, dst_file):
     try:
         shutil.copyfile(src_file, dst_file)
     except IOError:
-        print "                  WARNING: source file does not exist, not copying"
-        print "                  %s" % src_file
+        print "%sWARNING: source file does not exist, not copying" % ' ' * 18
+        print "%s%s" % src_file % ' ' * 18
