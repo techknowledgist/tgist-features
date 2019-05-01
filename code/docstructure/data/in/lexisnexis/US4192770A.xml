@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20110927" file="US4192770A.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20090728" time-changed="045545">
+  <bibliographic-data lang="eng">
+    <publication-reference publ-type="Grant" publ-desc="Patent">
+      <document-id>
+        <country>US</country>
+        <doc-number>4192770</doc-number>
+        <kind>A</kind>
+        <date>19800311</date>
+      </document-id>
+    </publication-reference>
+    <application-reference appl-type="utility">
+      <document-id>
+        <country>US</country>
+        <doc-number>05909234</doc-number>
+        <date>19780524</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>eng</language-of-publication>
+    <dates-of-public-availability date-changed="20090313">
+      <unexamined-printed-without-grant>
+        <date>19800311</date>
+      </unexamined-printed-without-grant>
+      <printed-with-grant>
+        <date>19800311</date>
+      </printed-with-grant>
+    </dates-of-public-availability>
+    <classification-ipc date-changed="20090728">
+      <main-classification>
+        <text>  B 01J  29/38   A</text>
+        <section>B</section>
+        <class>01</class>
+        <subclass>J</subclass>
+        <main-group>29</main-group>
+        <subgroup>38</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+      <further-classification sequence="1">
+        <text>  B 01J  21/02   B</text>
+        <section>B</section>
+        <class>01</class>
+        <subclass>J</subclass>
+        <main-group>21</main-group>
+        <subgroup>02</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+      <further-classification sequence="2">
+        <text>  B 01J  21/10   B</text>
+        <section>B</section>
+        <class>01</class>
+        <subclass>J</subclass>
+        <main-group>21</main-group>
+        <subgroup>10</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+      <further-classification sequence="3">
+        <text>  C 10G  11/04   B</text>
+        <section>C</section>
+        <class>10</class>
+        <subclass>G</subclass>
+        <main-group>11</main-group>
+        <subgroup>04</subgroup>
+        <qualifying-character>B</qualifying-character>
+      </further-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20090728">
+      <classification-ipcr sequence="1">
+        <text>B01J  29/00        20060101C I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>B</section>
+        <class>01</class>
+        <subclass>J</subclass>
+        <main-group>29</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>B01J  29/90        20060101A I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>B</section>
+        <class>01</class>
+        <subclass>J</subclass>
+        <main-group>29</main-group>
+        <subgroup>90</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="3">
+        <text>C10G  11/00        20060101C I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>C</section>
+        <class>10</class>
+        <subclass>G</subclass>
+        <main-group>11</main-group>
+        <subgroup>00</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="4">
+        <text>C10G  11/05        20060101A I20051008RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>C</section>
+        <class>10</class>
+        <subclass>G</subclass>
+        <main-group>11</main-group>
+        <subgroup>05</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051008</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <classification-national date-changed="20090728">
+      <country>US</country>
+      <main-classification>
+        <text>502/31</text>
+        <class>502</class>
+        <subclass>31</subclass>
+      </main-classification>
+      <further-classification sequence="1">
+        <text>208/52.CT</text>
+        <class>208</class>
+        <subclass>52.CT</subclass>
+      </further-classification>
+      <further-classification sequence="2">
+        <text>208/114</text>
+        <class>208</class>
+        <subclass>114</subclass>
+      </further-classification>
+      <further-classification sequence="3">
+        <text>208/120.01</text>
+        <class>208</class>
+        <subclass>120.01</subclass>
+      </further-classification>
+      <further-classification sequence="4">
+        <text>502/20</text>
+        <class>502</class>
+        <subclass>20</subclass>
+      </further-classification>
+      <further-classification sequence="5">
+        <text>502/26</text>
+        <class>502</class>
+        <subclass>26</subclass>
+      </further-classification>
+      <further-classification sequence="6">
+        <text>502/521</text>
+        <class>502</class>
+        <subclass>521</subclass>
+      </further-classification>
+    </classification-national>
+    <classifications-ecla date-changed="20090728">
+      <classification-ecla sequence="1" classification-scheme="EC" country="EP">
+        <text>B01J 29/90</text>
+        <section>B</section>
+        <class>01</class>
+        <subclass>J</subclass>
+        <main-group>29</main-group>
+        <subgroup>90</subgroup>
+      </classification-ecla>
+      <classification-ecla sequence="2" classification-scheme="EC" country="EP">
+        <text>C10G 11/05</text>
+        <section>C</section>
+        <class>10</class>
+        <subclass>G</subclass>
+        <main-group>11</main-group>
+        <subgroup>05</subgroup>
+      </classification-ecla>
+    </classifications-ecla>
+    <field-of-search date-changed="20070520">
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>252/414</text>
+          <class>252</class>
+          <subclass>414</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>252/413</text>
+          <class>252</class>
+          <subclass>413</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>252/412</text>
+          <class>252</class>
+          <subclass>412</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>252/411</text>
+          <class>252</class>
+          <subclass>411</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>252/416</text>
+          <class>252</class>
+          <subclass>416</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>252/432</text>
+          <class>252</class>
+          <subclass>432</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>208/114</text>
+          <class>208</class>
+          <subclass>114</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>208/120</text>
+          <class>208</class>
+          <subclass>120</subclass>
+        </main-classification>
+      </classification-national>
+      <classification-national>
+        <country>US</country>
+        <main-classification>
+          <text>208/52C.T</text>
+          <class>208</class>
+          <subclass>52C.T</subclass>
+        </main-classification>
+      </classification-national>
+    </field-of-search>
+    <number-of-claims calculated="yes">8</number-of-claims>
+    <invention-title id="title_eng" date-changed="20070520" lang="eng" format="original">Cracking catalyst restoration with boron compounds</invention-title>
+    <references-cited date-changed="20070713">
+      <patent-citations name="patcit" date-changed="20070713" />
+      <forward-citations name="fwdcit" date-changed="20070712" />
+      <citation srep-phase="e">
+        <patcit num="1">
+          <document-id>
+            <country>US</country>
+            <doc-number>2579133</doc-number>
+            <kind>A</kind>
+            <name>Warner et al.</name>
+            <date>19511218</date>
+          </document-id>
+          <application-date>
+            <date>19481202</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>252/413</text>
+            <class>252</class>
+            <subclass>413</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation srep-phase="e">
+        <patcit num="2">
+          <document-id>
+            <country>US</country>
+            <doc-number>2636845</doc-number>
+            <kind>A</kind>
+            <name>Richardson et al.</name>
+            <date>19530428</date>
+          </document-id>
+          <application-date>
+            <date>19490908</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>208/114</text>
+            <class>208</class>
+            <subclass>114</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation srep-phase="e">
+        <patcit num="3">
+          <document-id>
+            <country>US</country>
+            <doc-number>4049573</doc-number>
+            <kind>A</kind>
+            <name>Kaeding</name>
+            <date>19770920</date>
+          </document-id>
+          <application-date>
+            <date>19760205</date>
+          </application-date>
+        </patcit>
+        <classification-national>
+          <country>US</country>
+          <main-classification>
+            <text>252/432</text>
+            <class>252</class>
+            <subclass>432</subclass>
+          </main-classification>
+        </classification-national>
+      </citation>
+      <citation>
+        <fwdcit num="1">
+          <document-id>
+            <country>US</country>
+            <doc-number>5071539</doc-number>
+            <kind>A</kind>
+            <date>19911210</date>
+          </document-id>
+          <application-date>
+            <date>19900830</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="2">
+          <document-id>
+            <country>US</country>
+            <doc-number>4954244</doc-number>
+            <kind>A</kind>
+            <date>19900904</date>
+          </document-id>
+          <application-date>
+            <date>19890622</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="3">
+          <document-id>
+            <country>US</country>
+            <doc-number>4814066</doc-number>
+            <kind>A</kind>
+            <date>19890321</date>
+          </document-id>
+          <application-date>
+            <date>19880519</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="4">
+          <document-id>
+            <country>US</country>
+            <doc-number>4613720</doc-number>
+            <kind>A</kind>
+            <date>19860923</date>
+          </document-id>
+          <application-date>
+            <date>19860114</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="5">
+          <document-id>
+            <country>US</country>
+            <doc-number>4511454</doc-number>
+            <kind>A</kind>
+            <date>19850416</date>
+          </document-id>
+          <application-date>
+            <date>19831114</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="6">
+          <document-id>
+            <country>US</country>
+            <doc-number>4430199</doc-number>
+            <kind>A</kind>
+            <date>19840207</date>
+          </document-id>
+          <application-date>
+            <date>19810520</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="7">
+          <document-id>
+            <country>US</country>
+            <doc-number>4439542</doc-number>
+            <kind>A</kind>
+            <date>19840327</date>
+          </document-id>
+          <application-date>
+            <date>19820817</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="8">
+          <document-id>
+            <country>US</country>
+            <doc-number>4364847</doc-number>
+            <kind>A</kind>
+            <date>19821221</date>
+          </document-id>
+          <application-date>
+            <date>19810526</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="9">
+          <document-id>
+            <country>US</country>
+            <doc-number>4295955</doc-number>
+            <kind>A</kind>
+            <date>19811020</date>
+          </document-id>
+          <application-date>
+            <date>19800310</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+      <citation>
+        <fwdcit num="10">
+          <document-id>
+            <country>US</country>
+            <doc-number>6110357</doc-number>
+            <kind>A</kind>
+            <date>20000829</date>
+          </document-id>
+          <application-date>
+            <date>19940928</date>
+          </application-date>
+        </fwdcit>
+      </citation>
+    </references-cited>
+    <parties date-changed="20070520">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="eng">
+            <orgname>Shell Oil Company</orgname>
+            <address>
+              <city>Houston</city>
+              <state>TX</state>
+              <country>US</country>
+            </address>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="eng">
+            <last-name>Singleton</last-name>
+            <first-name>David M.</first-name>
+            <address>
+              <city>Houston</city>
+              <country>US</country>
+            </address>
+          </addressbook>
+        </inventor>
+      </inventors>
+      <agents>
+        <agent sequence="1" rep-type="attorney">
+          <addressbook lang="eng">
+            <last-name>Reper</last-name>
+            <first-name>Ronald R.</first-name>
+          </addressbook>
+        </agent>
+      </agents>
+    </parties>
+    <examiners>
+      <primary-examiner>
+        <name>Konopka; P. E.</name>
+      </primary-examiner>
+    </examiners>
+    <patent-family date-changed="20071124">
+      <main-family family-id="88941794">
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>4192770</doc-number>
+            <kind>A</kind>
+            <date>19800311</date>
+          </document-id>
+          <application-date>
+            <date>19780524</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="88941526">
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>4192770</doc-number>
+            <kind>A</kind>
+            <date>19800311</date>
+          </document-id>
+          <application-date>
+            <date>19780524</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_eng" date-changed="20070520" lang="eng" format="original">
+    <p>A process for restoring selectivity of cracking catalysts which are contaminated with metals during cracking operations which comprises contacting the catalyst with at least one boron compound for a time sufficient to restore selectivity of the catalyst.</p>
+  </abstract>
+  <description id="descr_eng" lang="eng" format="original" date-changed="20070520">
+    <summary>
+      <heading>BACKGROUND OF THE INVENTION</heading>
+      <p>This invention relates to restoring selectivity of cracking catalysts which are contaminated with metals during catalytic cracking operations. The term selectivity herein refers to conversion of the feed to desired gasoline range hydrocarbons. Corollary to increased selectivity is decreased production of coke and hydrogen.Conventionally catalytic cracking processes are used to crack heavy hydrocarbon feedstocks to produce gasoline and light distillate fractions and in which process there is no net consumption of hydrogen. Metals typically present in the feedstock, such as nickel, vanadium and iron tend to deposit on and contaminate the catalyst resulting in deterioration of its selectivity, which thereby results in decreased gasoline production. Further, the contaminant metals tend to increase undesirable coke production and to increase undesirable secondary cracking as manifested by an increase in hydrogen production.The use of boron is known in the original preparation of catalysts suitably employed for cracking of heavy hydrocarbons; see e.g., U.K. Pat. No. 1,313,174 and Netherlands patent application No. 7614020. Additionally, boron is disclosed as a promoter for a variety of crystalline alumino-silicate catalysts in e.g., U.S. Pat. Nos. 3,293,192; 3,328,119; 3,346,512; 3,740,347; 3,758,538; 3,072,563; 3,803,026 and 4,029,716. However, no patents have been found disclosing the use of boron for restoring the selectivity of metals contaminated cracking catalyst.</p>
+      <heading>SUMMARY OF THE INVENTION</heading>
+      <p>This invention provides a process for restoring, at least partially, the selectivity of a cracking catalyst which is contaminated with metals such as nickel, vanadium and iron during cracking operations which process comprises contacting said catalyst during cracking with at least one boron compound for a time sufficient to restore the activity of said catalyst.</p>
+    </summary>
+    <description-of-drawings>
+      <heading>BRIEF DESCRIPTION OF THE DRAWINGS</heading>
+      <p>FIG. 1 graphically compares product yields at a given conversion over as metals containing equilibrium catalyst treated with increasing concentrations of boron according to the invention.FIG. 2 illustrates the same relationship for a different catalyst containing lower level of metal contaminants and at a higher conversion.</p>
+      <heading>DESCRIPTION OF PREFERRED EMBODIMENTS</heading>
+      <p>The cracking catalysts to which the process of this invention may be applied are those conventionally employed in the petroleum industry for the production of motor fuel range hydrocarbons from heavier hydrocarbon oils, mostly in the gas oil or higher boiling ranges.Such conventional cracking operations generally are conducted at temperatures in the range from about 400.degree. C. (752.degree. F.) to about 650.degree. C. (1202.degree. F.) at pressures ranging from subatmospheric pressure to several hundred atmospheres, with widely varying feed rates and fixed bed, moving bed, fluid catalyst, suspensoid or riser type operation and in the absence of added hydrogen, specific conditions depending upon the character of the feed and the products desired. The feedstocks to the cracking operations generally are hydrocarbons derived from petroleum, shale oils and/or tar sands and have an initial boiling point substantially above the gasoline boiling range. Exemplary feedstocks include gas oils, fuel oils, deasphalted oils, waxes, residual oils and the like.These processes normally employ such catalysts as various natural and treated clays, various composites of silica gel with alumina, magnesia and/or boria, activated alumina and such materials composited with naturally occurring or synthetic crystalline alumino silicates or, as they are sometimes referred to, zeolites. The zeolite component of such catalysts can have been ion exchanged to provide metallic ions, such as for example rare earth metal ions, which affect the activity of the catalysts. This invention is particularly applicable to zeolite-containing cracking catalysts.The cracking catalysts employed in the process of this invention will be at least partly deactivated by contamination thereon of metals such as nickel, vanadium and iron and will deteriorate to such extent that optimum product yields are no longer obtained. The process of this invention is generally applicable to cracking catalysts containing up to about 20,000 ppm or more of metals.The level of boron on the cracking catalyst is maintained by the addition of a boron-containing treating agent either to the fresh make-up catalyst or to the catalyst during operations.The treating agents employed in the process of this invention are compounds of boron and may be organic or inorganic. Suitably the treating agent compounds are either oxides or are convertible to oxides upon calcination of the catalyst containing the treating agent. Exemplary treating agents are boric acid, boric oxide, boron pentasulfide, boron trichloride, ammonium biborate, calcium borate, diborane, magnesium borate, methyl borate, butyl borate, tricyclohexyl borate, 2,6-ditert-butylphenyl dibutyl borate, cyclohexyl boronic acid, monoethyl dodecyl acid boronate and mixtures of these. Treating compounds such as sodium tetraborate containing significant proportions of sodium or other known cracking catalyst poisons are less desirable as the effects of such poisons tend to obscure the beneficial effect of the boron.The treating agents can be employed in any method which causes the treating agent to contact with and deposit on the catalyst. Exemplary methods include e.g., deposition from suitable carrying agents, impregnation and dry mixing. The treating agent may be applied to the catalyst before or after contamination with metals from the feed. Deposition is the preferred method. A suitable organic boron compound such as an alcohol ester, e.g., tri-n-pentylborate, is dissolved or dispersed in a suitable carrier, e.g., xylene, added to the hydrocarbon charge stock to the cracking process and is contacted with the catalyst under cracking conditions. Suitably, amounts of the boron compound in the hydrocarbon feed may range from about 0.01 to about 10,000 ppm and preferably from about 0.1 to about 5000 ppm of said hydrocarbon. Alternately the boron treating compound, such as boric acid in aqueous solution, may be introduced into the regeneration zone along with the conventionally applied stripping steam. If the impregnation method is used, the boron-containing treating agent can be dissolved in either aqueous or non-aqueous solution. For example, an aqueous solution of ammonium biborate may be used or if a non-aqueous solvent is desired a xylene solution of an aryl borate compound such as 2,6-ditert-butylphenyl borate may be used. Typically the treating agent is applied to the catalyst in amounts of less than about 1%w of boron (calculated as metal) basis the cracking catalyst. It is generally preferred to supply an amount of boron in the range from about 0.05 to about 5 moles and particularly from about 0.1 to about 2 moles of boron per mole of contaminating metals.The amount of metals on the catalyst may be determined in any conventional manner, e.g., wet analysis, plasma emission spectroscopy and the like. This amount of added boron may be determined by any acceptable analytical procedure. The plasma emission procedure has been found particularly suitable.After deposition of the treating agent on the catalyst, the catalyst can be further treated according to conventional procedures. These procedures involve calcination of the catalyst at elevated temperatures, suitably in the range from about 425.degree. C. (797.degree. F.) to about 870.degree. C. (1598.degree. F.) for a period of time ranging from about 0.05 to 30 hours or more in an inert gas or preferably in the presence of a free oxygen-containing gas to convert any boron agent not already in the form of oxide, to the oxide. This further treatment can be effected in a conventional catalyst regeneration step.The feedstocks concerned herewith are those which are conventionally employed in catalytic cracking processes for the production of gasoline from heavier hydrocarbon stocks and include such materials as gas oils, cycle oils, residuums and the like. For catalytic cracking operations with feeds containing high levels of contaminating nickel and vanadium a preferred mode of operation would be to add fresh makeup catalyst which has been treated to contain a level of boron below that desired in the equilibrium catalyst, and to add additional quantities of boron compound during the cracking operation to facilitate more even distribution of boron within the catalyst and to maintain desired control of treating levels, whereby the deleterious effects may be avoided for levels of boron greatly in excess of the contaminant metal concentration on the catalyst.The following examples are given for the purpose of further illustrating the practice of the method of the present invention. However, it is to be understood that these examples are given by way of exemplification only, and are not intended in any way to limit the scope of the present invention.</p>
+      <heading>EXAMPLES</heading>
+      <p>The catalysts for Examples 1 and 2 were equilibrium catalysts obtained from commercial operations cracking feed derived from mid-continent crude. Each of the catalysts was treated with a boron treating agent and are shown as catalysts 1A and 2A, respectively. For the examples the concentration of the metals on the catalysts at the beginning of each run were as follows:<tables><table><tgroup cols="1"><tbody><row><entry><p-limited> ______________________________________ Example 1 1A 2 2A ______________________________________ Metal content, ppm Nickel 2700 2700 1300 1300 Vanadium 6300 6300 1100 1100 Iron 5900 5900 6600 6600 B 0 4300 0 520 ______________________________________</p-limited></entry></row></tbody></tgroup></table></tables>Boron was added to the catalyst for Example 1A by dry impregnation with a solution of 5.44 grams of tripentylborate in 15 ml toluene applied to 50 grams of catalyst. The tripentylborate is oil soluble and thus could be added with the feed during cracking operations. Following the boron impregnation, the catalyst was dried to a temperature of 482.degree. C. (900.degree. F.) under nitrogen (to avoid hazardous oxidation of the toluene) and then was calcined in air at about 482.degree. C. (900.degree. F.). For the catalyst of Example 2A the boron was added by dry impregnation with an aqueous solution of 0.74 grams of boric acid in 7.5 ml of water to 25 grams of catalyst, followed by drying in N.sub.2 for 1 hour at 482.degree. C. (900.degree. F.) followed by calcination in air for one hour at temperatures of about 482.degree. C. (900.degree. F.).Catalyst samples from the preceding and following examples were tested in a fixed bed micro-activity test catalytic cracking unit under standard conditions as shown in the following table:<tables><table><tgroup cols="1"><tbody><row><entry><p-limited> ______________________________________ Examples ______________________________________ Feed Preheat Temp., 900 .degree.F. Catalyst Temp., .degree.F. 900 Catalyst/oil ratio 2.5/1-7/1 Catalyst Holding Time, sec. 56 ______________________________________</p-limited></entry></row></tbody></tgroup></table></tables>The gas oil feed for the examples had the following properties:<tables><table><tgroup cols="1"><tbody><row><entry><p-limited> ______________________________________ Gravity, .degree.API 26.1 Sulfur, wt. % 0.8 Saturates, wt. % 56.88 Monoaromatics, wt. % 18.94 Diaromatics, wt. % 17.04 Triaromatics, wt. % 6.04 Tetraaromatics, wt. % 0.10 Basic Nitrogen Nuclei, wt. % 0.20 ______________________________________</p-limited></entry></row></tbody></tgroup></table></tables>Feed rate was varied to give at least three conversion levels to permit interpolation of the catalyst performance data to 70 or 75% by weight conversion as follows:<tables><table><tgroup cols="1"><tbody><row><entry><p-limited> ______________________________________ Example 1 1A 2 3A ______________________________________ 70% Conv. 75% Conv. WHSV for noted Conv. 12 12 13.2 15 Yields [!x40!] 70% Conv. 75% Conv. H.sub.2, SFC/bbl 460 270 190 130 C.sub.5 -450.degree. F. Gasoline, % w 51.2 55 57 59 Coke, % w 8.6 5 6.2 4.6 ______________________________________</p-limited></entry></row></tbody></tgroup></table></tables>From the above it is apparent in both examples that gasoline yield has been increased and coke and hydrogen yields have been significantly reduced according to the invention through the addition of an organoboron compound in Example 1A or boric acid in Example 2A to the metal contaminated catalysts, as compared to the untreated catalysts of Examples 1 and 2, respectively.For examples 3 and 4 a sample of the contaminated catalyst of example 1 was dry impregnated with an aqueous solution of boric acid so as to give the same level of added boron (4300 ppm) as example 1A. The boron containing catalyst was dried to a temperature of about 482.degree. C. (900.degree. F.) under nitrogen. One-half of the dried catalyst was tested to determine its cracking performance and the results are shown as example 3. The other half of the dried catalyst was calcined in air at about 482.degree. C. (900.degree. F.) for one hour to fix the boron on the catalyst. Results of the testing of the air calcined catalyst of Example 4 are summarized below:<tables><table><tgroup cols="1"><tbody><row><entry><p-limited> ______________________________________ Example 1 3 4 ______________________________________ WHSV for 70% Conversion 12 12.5 12.5 Yields at 70% Conversion H.sub.2, SCF/bbl 460 320 320 C.sub.5 -450.degree. F. Gasoline, %w 51.2 55 55 Coke, %w 8.6 5.0 4.8 ______________________________________</p-limited></entry></row></tbody></tgroup></table></tables>From the results it appears that calcination environment has no significant affect on the performance of contaminated catalysts impregnated with boric acid. Similar studies with an organo-boron (tripentylborate) impregnated catalyst showed slightly higher activity for the air calcined catalyst. It is worthy of note that, within the experimental uncertainty of the tests, the catalysts of Examples 3 and 4 showed the same catalytic performance as that of Example 1A indicating that this organoboron compound and boric acid are essentially equivalent in their efficacy for passivation of metal contaminants.From the data illustrated in FIGS. 1 and 2 it can be seen that there is a preferred level of boron to be added to a given contaminated catalyst. In the drawing FIG. 1 clearly shows an optimum level of boric acid to be added to the catalyst of Example 1. In FIG. 2 the catalyst of Example 2 shows a lower optimum level of boric acid to be added in agreement with its lower contaminants level.To further delineate the role of boron as a metals control agent, known amounts of each of nickel, vanadium and iron, were added to a base catalyst. The base cracking catalyst employed in the following Examples 5-14 was a crystalline alumino silicate dispersed in a refractory oxide matrix and was an equilibrium catalyst obtained from a commercial fluid catalytic cracking unit cracking feed derived from Gulf Coast Crude. Performance testing of the base catalyst established that the low level of metal contaminants present in this equilibrium catalyst appeared to have essentially no effect on the catalytic cracking yields. Accordingly, any changes in catalyst performance are attributed to the added contaminant metal, and the boron restoration agent. In the following examples the catalyst prepared as indicated in each example was tested for cracking performance as previously described and the results are summarized in Table 1.EXAMPLE 5The base catalyst was calcined in air at about 538.degree. C. for a period of 2 hours and was tested as described above.EXAMPLE 6To a first portion of the base catalyst nickel was added by impregnation with solution of nickel naphthenate in toluene. The impregnated catalyst was dried to a temperature of about 538.degree. C. under nitrogen (to avoid hazardous oxidation of the toluene) and then was calcined in air at about 538.degree. C. for 2 hours to fix the added nickel on the catalyst, after which the catalyst was tested as described above.EXAMPLE 7To a portion of the base catalyst boron was added by impregnation with an aqueous solution of boric acid. The catalyst was dried and calcined in N.sub.2 at 482.degree. C. (900.degree. F.) for one hour and was tested as described above.EXAMPLE 8The procedure of Example 7 was repeated except that a larger amount of boron (shown in the Table) was impregnated into the catalyst.EXAMPLE 9The procedure of Example 6 was repeated except that the nickel naphthenate was replaced with vanadium naphthenate and a larger amount of vanadium was impregnated into the catalyst (since vanadium is less deleterious than nickel).EXAMPLE 10The procedure of Example 7 was repeated except that the starting catalyst was the product of Example 9 and that a higher amount of boron (shown in the table) was added to the catalyst.EXAMPLE 11The procedure of Example 10 was repeated except that a still greater amount of boron was added to the catalyst (see table).EXAMPLE 12The procedure of Example 6 was repeated except that the nickel naphthenate was replaced with a still larger amount of iron oxalate since iron is least deleterious to cracking activity of the three tested metal contaminants.EXAMPLE 13The procedure of Example 7 was repeated except that the starting catalyst was the product of Example 12 and that a larger amount of boron was added (see table).EXAMPLE 14The procedure of Example 13 was repeated except that the still greater amount of boron was added, as shown in the table.<tables><table><tgroup cols="1"><tbody><row><entry><p-limited> TABLE 1 ______________________________________ EFFECTIVENESS OF BORON CONTROL AGENT WITH ARTIFICIALLY CONTAMINATED CATALYST Equilibrium zeolitic catalyst Plus Contaminants ______________________________________ Base + 495 ppm N. Base (0.84 mg At./100g Cat.) Example 5 6 7 8 ______________________________________ Boron, mg At./100g Cat. 0 0 1.06 3.2 Microactivity Results WHSV at 70% Conv. 23 18 16.5 20.0 Yields at 70% Conv. H.sub.2, SFC/B 25 270 170 190 Gasoline, %w 58.0 54 54.5 54.5 Coke, %w 2.8 5.4 5.0 5.2 Base + 1225 ppm V Base (2.4 mg At./100g Cat.) Example 5 9 10 11 ______________________________________ Boron, mg At./100g Cat. 0 0 2.2 8.8 Microactivity Results WHSV at 70% Conv. 23 20 20 20 Yields at 70% Conv. H.sub.2, SCF/B 25 145 90 60 Gasoline, %w 58.0 56.0 56.0 56.5 Coke, %w 2.8 4.0 4.0 3.9 Base + 6550 ppm Fe Base (11.7 mg At./100g Cat.) Example 5 12 13 14 ______________________________________ Boron, mg At./100g Cat. 0 0 10.9 43.0 Microactivity Results WHSV at 70% Conv. 23 15.5 16 19 Yields at 70% Conv. H.sub.2, SCF/B 25 400 310 230 Gasoline, w% 58.0 52.0 53.0 54.8 Coke, %w 2.8 7.8 6.9 5.3 ______________________________________</p-limited></entry></row></tbody></tgroup></table></tables>Comparison of the results summarized in the table (Examples 7 and 8 vs. Example 6; Examples 10 &amp;11 vs. Example 9; and Examples 13 &amp;14 vs. Example 12) show that boron is an effective control agent against each of the contaminant metals, since hydrogen yields have been significantly reduced together with an increase in gasoline yield and generally lower coke production.</p>
+    </description-of-drawings>
+  </description>
+  <claims id="claims_eng" lang="eng" format="original" date-changed="20070520">
+    <claim num="1">
+      <claim-text>1. A process for restoring the selectivity of a zeolite-containing cracking catalyst which has become contaminated with at least one metal from the group consisting of nickel, vanadium and iron which comprises contacting said catalyst with a sole treating agent consisting essentially of at least one boron compound for a time sufficient to apply less than 1%w of boron to the cracking catalyst and to restore the selectivity of said catalyst. </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>2. A process as in claim 1 wherein said catalyst is contacted with said boron compound to deposit on said catalyst an amount of boron in the range from about 0.05 to about 2 moles per mole of contaminating metal present on said catalyst. </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>3. A process as in claim 1 wherein said boron compound is mixed with a hydrocarbon oil feed and then charged to a catalytic cracking zone along with said cracking catalyst. </claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>4. A process as in claim 1 wherein said boron compound is contacted with said catalyst by impregnating said catalyst with a solution of said boron compound. </claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>5. A process as in claim 1 wherein said boron compound is an inorganic compound. </claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>6. A process as in claim 1 wherein said boron compound is an organic boron compound. </claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>7. A process as in claim 1 wherein said cracking catalyst is first contacted with said boron compound and then is heated in the presence of free oxygen to regenerate said catalyst. </claim-text>
+    </claim>
+    <claim num="8">
+      <claim-text>8. A process as in claim 7 wherein said catalyst is heated to a temperature in the range from about 800.degree. to about 1600.degree. F. for a period of time from about 0.05 to about 30 hours. </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

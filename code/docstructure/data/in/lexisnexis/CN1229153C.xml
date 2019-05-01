@@ -1,0 +1,1726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111028" file="CN1229153C.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20110421" time-changed="070127">
+  <bibliographic-data lang="chi">
+    <publication-reference publ-type="Grant" publ-desc="Granted patent for invention">
+      <document-id>
+        <country>CN</country>
+        <doc-number>1229153</doc-number>
+        <kind>C</kind>
+        <date>20051130</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>01811471</doc-number>
+        <date>20010622</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>chi</language-of-publication>
+    <priority-claims date-changed="20090228">
+      <priority-claim sequence="1" kind="national">
+        <country>GB</country>
+        <doc-number>0015541</doc-number>
+        <kind>A</kind>
+        <date>20000623</date>
+      </priority-claim>
+      <priority-claim sequence="2" kind="national">
+        <country>GB</country>
+        <doc-number>0015620</doc-number>
+        <kind>A</kind>
+        <date>20000626</date>
+      </priority-claim>
+      <priority-claim sequence="3" kind="national">
+        <country>GB</country>
+        <doc-number>0015631</doc-number>
+        <kind>A</kind>
+        <date>20000626</date>
+      </priority-claim>
+      <priority-claim sequence="4" kind="national">
+        <country>GB</country>
+        <doc-number>0016281</doc-number>
+        <kind>A</kind>
+        <date>20000704</date>
+      </priority-claim>
+      <priority-claim sequence="5" kind="national">
+        <country>GB</country>
+        <doc-number>0016279</doc-number>
+        <kind>A</kind>
+        <date>20000704</date>
+      </priority-claim>
+      <priority-claim sequence="6" kind="national">
+        <country>GB</country>
+        <doc-number>0018606</doc-number>
+        <kind>A</kind>
+        <date>20000731</date>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="original">
+        <doc-number>0015541.6</doc-number>
+      </priority-claim>
+      <priority-claim sequence="2" data-format="original">
+        <doc-number>0015620.8</doc-number>
+      </priority-claim>
+      <priority-claim sequence="3" data-format="original">
+        <doc-number>0015631.5</doc-number>
+      </priority-claim>
+      <priority-claim sequence="4" data-format="original">
+        <doc-number>0016279.2</doc-number>
+      </priority-claim>
+      <priority-claim sequence="5" data-format="original">
+        <doc-number>0016281.8</doc-number>
+      </priority-claim>
+      <priority-claim sequence="6" data-format="original">
+        <doc-number>0018606.4</doc-number>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="epodoc">
+        <doc-number>GB20000015541</doc-number>
+      </priority-claim>
+      <priority-claim sequence="2" data-format="epodoc">
+        <doc-number>GB20000015620</doc-number>
+      </priority-claim>
+      <priority-claim sequence="3" data-format="epodoc">
+        <doc-number>GB20000015631</doc-number>
+      </priority-claim>
+      <priority-claim sequence="4" data-format="epodoc">
+        <doc-number>GB20000016281</doc-number>
+      </priority-claim>
+      <priority-claim sequence="5" data-format="epodoc">
+        <doc-number>GB20000016279</doc-number>
+      </priority-claim>
+      <priority-claim sequence="6" data-format="epodoc">
+        <doc-number>GB20000018606</doc-number>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20091227">
+      <gazette-reference>
+        <date>20051130</date>
+      </gazette-reference>
+      <printed-with-grant>
+        <date>20051130</date>
+      </printed-with-grant>
+    </dates-of-public-availability>
+    <classification-ipc date-changed="20090708">
+      <main-classification>
+        <text> 7A 62C   3/02   A</text>
+        <edition>7</edition>
+        <section>A</section>
+        <class>62</class>
+        <subclass>C</subclass>
+        <main-group>3</main-group>
+        <subgroup>02</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20090708">
+      <classification-ipcr sequence="1">
+        <text>A62C   3/00        20060101CFI20060101BMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>A</section>
+        <class>62</class>
+        <subclass>C</subclass>
+        <main-group>3</main-group>
+        <subgroup>00</subgroup>
+        <symbol-position>F</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20060101</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>B</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>A62C  37/08        20060101AFI20051220RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>A</section>
+        <class>62</class>
+        <subclass>C</subclass>
+        <main-group>37</main-group>
+        <subgroup>08</subgroup>
+        <symbol-position>F</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051220</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="3">
+        <text>A62C   3/00        20060101ALI20051220RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>A</section>
+        <class>62</class>
+        <subclass>C</subclass>
+        <main-group>3</main-group>
+        <subgroup>00</subgroup>
+        <symbol-position>L</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051220</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="4">
+        <text>A62C   3/02        20060101A I20051110RMEP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>A</section>
+        <class>62</class>
+        <subclass>C</subclass>
+        <main-group>3</main-group>
+        <subgroup>02</subgroup>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051110</date>
+        </action-date>
+        <generating-office>
+          <country>EP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="5">
+        <text>A62C  37/08        20060101CLI20051220RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>A</section>
+        <class>62</class>
+        <subclass>C</subclass>
+        <main-group>37</main-group>
+        <subgroup>08</subgroup>
+        <symbol-position>L</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051220</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="6">
+        <text>B05B  13/02        20060101CLI20051220RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>B</section>
+        <class>05</class>
+        <subclass>B</subclass>
+        <main-group>13</main-group>
+        <subgroup>02</subgroup>
+        <symbol-position>L</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051220</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="7">
+        <text>B05B  13/04        20060101ALI20051220RMJP        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>B</section>
+        <class>05</class>
+        <subclass>B</subclass>
+        <main-group>13</main-group>
+        <subgroup>04</subgroup>
+        <symbol-position>L</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20051220</date>
+        </action-date>
+        <generating-office>
+          <country>JP</country>
+        </generating-office>
+        <classification-status>R</classification-status>
+        <classification-data-source>M</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <classifications-ecla date-changed="20090708">
+      <classification-ecla sequence="1" classification-scheme="EC" country="EP">
+        <text>A62C  3/02</text>
+        <section>A</section>
+        <class>62</class>
+        <subclass>C</subclass>
+        <main-group>3</main-group>
+        <subgroup>02</subgroup>
+      </classification-ecla>
+    </classifications-ecla>
+    <number-of-claims calculated="yes">17</number-of-claims>
+    <invention-title id="title_chi" date-changed="20091229" lang="chi" format="original">灭火系统</invention-title>
+    <invention-title id="title_eng" date-changed="20091229" lang="eng" format="original">Fire extinguishing system</invention-title>
+    <parties date-changed="20091229">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>弗雷德里克·让－皮埃尔·德莫勒</orgname>
+            <address>
+              <address-1>英国伦敦</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>FRIDERIC. JEAN-PIERRE. DEMOLE</orgname>
+            <address>
+              <country>GB</country>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="original">
+          <addressbook lang="chi">
+            <orgname>弗雷德里克·让－皮埃尔·德莫勒</orgname>
+            <address>
+              <address-1>英国伦敦</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdb">
+          <addressbook lang="eng">
+            <orgname>DEMOLE FRIDERIC JEAN-PIERRE</orgname>
+            <address>
+              <country>GB</country>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>FRIDERIC. JEAN-PIERRE. DEMOLE</orgname>
+            <address>
+              <country>GB</country>
+            </address>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>弗雷德里克·让－皮埃尔·德莫勒</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>FRIDERIC. JEAN-PIERRE. DEMOLE</name>
+            <address>
+              <country>GB</country>
+            </address>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="original">
+          <addressbook lang="chi">
+            <name>弗雷德里克·让－皮埃尔·德莫勒</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdb">
+          <addressbook lang="eng">
+            <name>DEMOLE FRIDERIC JEAN-PIERRE</name>
+            <address>
+              <country>GB</country>
+            </address>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>FRIDERIC. JEAN-PIERRE. DEMOLE</name>
+            <address>
+              <country>GB</country>
+            </address>
+          </addressbook>
+        </inventor>
+      </inventors>
+      <agents>
+        <agent sequence="1" rep-type="attorney">
+          <addressbook lang="chi">
+            <name>中国国际贸易促进委员会专利商标事务所 (寇英杰)</name>
+          </addressbook>
+        </agent>
+        <agent sequence="1" rep-type="attorney" data-format="original">
+          <addressbook lang="chi">
+            <name>中国国际贸易促进委员会专利商标事务所 (寇英杰)</name>
+          </addressbook>
+        </agent>
+      </agents>
+    </parties>
+    <examiners>
+      <primary-examiner>
+        <name>张京德</name>
+      </primary-examiner>
+    </examiners>
+    <pct-or-regional-filing-data>
+      <document-id>
+        <country>WO</country>
+        <doc-number>IB01001102</doc-number>
+        <date>20010622</date>
+      </document-id>
+    </pct-or-regional-filing-data>
+    <pct-or-regional-publishing-data>
+      <document-id>
+        <country>WO</country>
+        <doc-number>2001/097918</doc-number>
+        <date>20011227</date>
+      </document-id>
+    </pct-or-regional-publishing-data>
+    <patent-family date-changed="20100327">
+      <main-family family-id="127385760">
+        <family-member>
+          <document-id>
+            <country>PT</country>
+            <doc-number>1292364</doc-number>
+            <kind>E</kind>
+            <date>20040227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>MX</country>
+            <doc-number>PA02012869</doc-number>
+            <kind>A</kind>
+            <date>20030514</date>
+          </document-id>
+          <application-date>
+            <date>20021219</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1292364</doc-number>
+            <kind>B1</kind>
+            <date>20031001</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1292364</doc-number>
+            <kind>A1</kind>
+            <date>20030319</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>0197918</doc-number>
+            <kind>A1</kind>
+            <date>20011227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>1020030017544</doc-number>
+            <kind>A</kind>
+            <date>20030303</date>
+          </document-id>
+          <application-date>
+            <date>20021217</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>60100905</doc-number>
+            <kind>T2</kind>
+            <date>20040519</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>6834728</doc-number>
+            <kind>B2</kind>
+            <date>20041228</date>
+          </document-id>
+          <application-date>
+            <date>20021223</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AT</country>
+            <doc-number>250959</doc-number>
+            <kind>T</kind>
+            <date>20031015</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AU</country>
+            <doc-number>6418001</doc-number>
+            <kind>A</kind>
+            <date>20020102</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1229153</doc-number>
+            <kind>C</kind>
+            <date>20051130</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1437495</doc-number>
+            <kind>A</kind>
+            <date>20030820</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>ES</country>
+            <doc-number>2206419</doc-number>
+            <kind>T3</kind>
+            <date>20040516</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CA</country>
+            <doc-number>2412159</doc-number>
+            <kind>A1</kind>
+            <date>20011227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AU</country>
+            <doc-number>772432</doc-number>
+            <kind>B2</kind>
+            <date>20040429</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CZ</country>
+            <doc-number>20024136</doc-number>
+            <kind>A3</kind>
+            <date>20030514</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EE</country>
+            <doc-number>200200696</doc-number>
+            <kind>A</kind>
+            <date>20040816</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EA</country>
+            <doc-number>3803</doc-number>
+            <kind>B1</kind>
+            <date>20031030</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DK</country>
+            <doc-number>1292364</doc-number>
+            <kind>T3</kind>
+            <date>20031229</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>YU</country>
+            <doc-number>49510</doc-number>
+            <kind>B</kind>
+            <date>20030829</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>HU</country>
+            <doc-number>301565</doc-number>
+            <kind>A2</kind>
+            <date>20030828</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IL</country>
+            <doc-number>153423</doc-number>
+            <kind>D0</kind>
+            <date>20030706</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NO</country>
+            <doc-number>20025942</doc-number>
+            <kind>D0</kind>
+            <date>20021211</date>
+          </document-id>
+          <application-date>
+            <date>20021211</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>PT</country>
+            <doc-number>1292364</doc-number>
+            <kind>T</kind>
+            <date>20040227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>MA</country>
+            <doc-number>25889</doc-number>
+            <kind>A1</kind>
+            <date>20031001</date>
+          </document-id>
+          <application-date>
+            <date>20021212</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NZ</country>
+            <doc-number>523248</doc-number>
+            <kind>A</kind>
+            <date>20040625</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>OA</country>
+            <doc-number>12289</doc-number>
+            <kind>A</kind>
+            <date>20060512</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>PL</country>
+            <doc-number>358523</doc-number>
+            <kind>A1</kind>
+            <date>20040809</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>SK</country>
+            <doc-number>17692002</doc-number>
+            <kind>A3</kind>
+            <date>20030502</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>SI</country>
+            <doc-number>1292364</doc-number>
+            <kind>T1</kind>
+            <date>20040430</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2003535660</doc-number>
+            <kind>T</kind>
+            <date>20031202</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>60100905</doc-number>
+            <kind>D1</kind>
+            <date>20031106</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>TR</country>
+            <doc-number>200301348</doc-number>
+            <kind>T3</kind>
+            <date>20031021</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>BR</country>
+            <doc-number>PI0111671</doc-number>
+            <kind>A</kind>
+            <date>20030401</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="127385754">
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>15631</doc-number>
+            <kind>D0</kind>
+            <date>20000816</date>
+          </document-id>
+          <application-date>
+            <date>20000626</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>16281</doc-number>
+            <kind>D0</kind>
+            <date>20000823</date>
+          </document-id>
+          <application-date>
+            <date>20000704</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>18606</doc-number>
+            <kind>D0</kind>
+            <date>20000913</date>
+          </document-id>
+          <application-date>
+            <date>20000731</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2003535660</doc-number>
+            <kind>T</kind>
+            <date>20031202</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>60100905</doc-number>
+            <kind>D1</kind>
+            <date>20031106</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>60100905</doc-number>
+            <kind>T2</kind>
+            <date>20040519</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20030094287</doc-number>
+            <kind>A1</kind>
+            <date>20030522</date>
+          </document-id>
+          <application-date>
+            <date>20021223</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>6834728</doc-number>
+            <kind>B2</kind>
+            <date>20041228</date>
+          </document-id>
+          <application-date>
+            <date>20021223</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AP</country>
+            <doc-number>200202701</doc-number>
+            <kind>D0</kind>
+            <date>20021231</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AT</country>
+            <doc-number>250959</doc-number>
+            <kind>T</kind>
+            <date>20031015</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AU</country>
+            <doc-number>6418001</doc-number>
+            <kind>A</kind>
+            <date>20020102</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>MX</country>
+            <doc-number>PA02012869</doc-number>
+            <kind>A</kind>
+            <date>20030514</date>
+          </document-id>
+          <application-date>
+            <date>20021219</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>1020030017544</doc-number>
+            <kind>A</kind>
+            <date>20030303</date>
+          </document-id>
+          <application-date>
+            <date>20021217</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IN</country>
+            <doc-number>INPCT20021265DEL</doc-number>
+            <kind>A</kind>
+            <date>20100326</date>
+          </document-id>
+          <application-date>
+            <date>20021218</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1292364</doc-number>
+            <kind>B1</kind>
+            <date>20031001</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1292364</doc-number>
+            <kind>A1</kind>
+            <date>20030319</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>0197918</doc-number>
+            <kind>A1</kind>
+            <date>20011227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>2370765</doc-number>
+            <kind>A</kind>
+            <date>20020710</date>
+          </document-id>
+          <application-date>
+            <date>20000623</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>0015541</doc-number>
+            <kind>D0</kind>
+            <date>20000816</date>
+          </document-id>
+          <application-date>
+            <date>20000623</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>0015620</doc-number>
+            <kind>D0</kind>
+            <date>20000816</date>
+          </document-id>
+          <application-date>
+            <date>20000626</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>0015631</doc-number>
+            <kind>D0</kind>
+            <date>20000816</date>
+          </document-id>
+          <application-date>
+            <date>20000626</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>0016279</doc-number>
+            <kind>D0</kind>
+            <date>20000823</date>
+          </document-id>
+          <application-date>
+            <date>20000704</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AU</country>
+            <doc-number>772432</doc-number>
+            <kind>B2</kind>
+            <date>20040429</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CZ</country>
+            <doc-number>20024136</doc-number>
+            <kind>A3</kind>
+            <date>20030514</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EE</country>
+            <doc-number>200200696</doc-number>
+            <kind>A</kind>
+            <date>20040816</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EA</country>
+            <doc-number>3803</doc-number>
+            <kind>B1</kind>
+            <date>20031030</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DK</country>
+            <doc-number>1292364</doc-number>
+            <kind>T3</kind>
+            <date>20031229</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1229153</doc-number>
+            <kind>C</kind>
+            <date>20051130</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IL</country>
+            <doc-number>153423</doc-number>
+            <kind>D0</kind>
+            <date>20030706</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NO</country>
+            <doc-number>20025942</doc-number>
+            <kind>D0</kind>
+            <date>20021211</date>
+          </document-id>
+          <application-date>
+            <date>20021211</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>0016281</doc-number>
+            <kind>D0</kind>
+            <date>20000823</date>
+          </document-id>
+          <application-date>
+            <date>20000704</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>0018606</doc-number>
+            <kind>D0</kind>
+            <date>20000913</date>
+          </document-id>
+          <application-date>
+            <date>20000731</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>15541</doc-number>
+            <kind>D0</kind>
+            <date>20000816</date>
+          </document-id>
+          <application-date>
+            <date>20000623</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>16279</doc-number>
+            <kind>D0</kind>
+            <date>20000823</date>
+          </document-id>
+          <application-date>
+            <date>20000704</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>GB</country>
+            <doc-number>15620</doc-number>
+            <kind>D0</kind>
+            <date>20000816</date>
+          </document-id>
+          <application-date>
+            <date>20000626</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1437495</doc-number>
+            <kind>A</kind>
+            <date>20030820</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>ES</country>
+            <doc-number>2206419</doc-number>
+            <kind>T3</kind>
+            <date>20040516</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CA</country>
+            <doc-number>2412159</doc-number>
+            <kind>A1</kind>
+            <date>20011227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>YU</country>
+            <doc-number>49510</doc-number>
+            <kind>B</kind>
+            <date>20030829</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>HU</country>
+            <doc-number>301565</doc-number>
+            <kind>A2</kind>
+            <date>20030828</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>PT</country>
+            <doc-number>1292364</doc-number>
+            <kind>T</kind>
+            <date>20040227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>MA</country>
+            <doc-number>25889</doc-number>
+            <kind>A1</kind>
+            <date>20031001</date>
+          </document-id>
+          <application-date>
+            <date>20021212</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>NZ</country>
+            <doc-number>523248</doc-number>
+            <kind>A</kind>
+            <date>20040625</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>OA</country>
+            <doc-number>12289</doc-number>
+            <kind>A</kind>
+            <date>20060512</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>PL</country>
+            <doc-number>358523</doc-number>
+            <kind>A1</kind>
+            <date>20040809</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>SK</country>
+            <doc-number>17692002</doc-number>
+            <kind>A3</kind>
+            <date>20030502</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>SI</country>
+            <doc-number>1292364</doc-number>
+            <kind>T1</kind>
+            <date>20040430</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>UA</country>
+            <doc-number>72810</doc-number>
+            <kind>C2</kind>
+            <date>20030317</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>TR</country>
+            <doc-number>200301348</doc-number>
+            <kind>T3</kind>
+            <date>20031021</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>ZA</country>
+            <doc-number>200210181</doc-number>
+            <kind>A</kind>
+            <date>20030205</date>
+          </document-id>
+          <application-date>
+            <date>20021217</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>PT</country>
+            <doc-number>1292364</doc-number>
+            <kind>E</kind>
+            <date>20040227</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>BR</country>
+            <doc-number>PI0111671</doc-number>
+            <kind>A</kind>
+            <date>20030401</date>
+          </document-id>
+          <application-date>
+            <date>20010622</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20091229" lang="chi" format="original">
+    <p num="1">一种用于浇灭例如隧道中的火的系统(10)，包括：管道(11)，用于供给灭火液体；以及槽道(12)，该槽道平行于该管道延伸，用于接收来自管道(11)的液体(18)；滑架(27)布置成在一包括槽道12的上边缘(19)的轨道上运动；该滑架(27)上载有泵，该泵具有喷嘴(25)、摄像机(33)以及进口(26)，该喷嘴(25)、摄像机(33)以及进口(26)各自通过遥控站自动控制，进口(26)伸入槽道(12)中，以便从该槽道(12)中抽吸液体。该系统避免了用于泵的复杂对接过程。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20091229" lang="eng" format="equivalent">
+    <p>A system (10) for dousing a fire, such as a tunnel, includes a conduit (11) for delivering a fire extinguishing liquid and a trough (12) extending parallel to the conduit (11) for receiving liquid from the conduit (11). A carriage (27) is arranged to move on a track comprising an upper edge (19) of the trough (12) and the carriage (27) carries a pump having a nozzle (25), a video camera (33) and an inlet (26) each of which can be controlled robotically from a remote control station. The inlet (26) is deployed in the trough (12) to draw liquid from the trough (12). The system avoids complicated docking procedures for the pump.</p>
+  </abstract>
+  <legal-data date-changed="20100205">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>20030820</date>
+      </publication-date>
+      <event-code-1>C06</event-code-1>
+      <effect>+</effect>
+      <legal-description>PUBLICATION</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1229153C</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="2">
+      <publication-date>
+        <date>20031105</date>
+      </publication-date>
+      <event-code-1>C10</event-code-1>
+      <legal-description>REQUEST OF EXAMINATION AS TO SUBSTANCE</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1229153C</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="3">
+      <publication-date>
+        <date>20051130</date>
+      </publication-date>
+      <event-code-1>C14</event-code-1>
+      <effect>+</effect>
+      <legal-description>GRANTED</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1229153C</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="4">
+      <publication-date>
+        <date>20070829</date>
+      </publication-date>
+      <event-code-1>C19</event-code-1>
+      <effect>-</effect>
+      <legal-description>LAPSE OF PATENT RIGHT DUE TO NON-PAYMENT OF THE ANNUAL FEE</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1229153C</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="5">
+      <publication-date>
+        <date>20100129</date>
+      </publication-date>
+      <event-code-1>REG</event-code-1>
+      <legal-description>REFERENCE TO A NATIONAL CODE</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1229153C</docdb-publication-number>
+      <designated-state-authority>
+        <country>HK</country>
+      </designated-state-authority>
+      <designated-state-event-code>WD</designated-state-event-code>
+      <designated-state-description>APPLICATIONS WITHDRAWN, DEEMED TO BE WITHDRAWN, OR REFUSED AFTER PUBLICATION IN HONG KONG</designated-state-description>
+      <corresponding-publication-number>1056699</corresponding-publication-number>
+      <corresponding-authority>
+        <country>HK</country>
+      </corresponding-authority>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20091229">
+    <technical-field>
+      <p id="p-d0-zh" num="001">发明领域 		 	 	 
+            <br /></p>
+      <p id="p-d1-zh" num="002">本发明涉及一种灭火系统。 	    	 
+            <br /></p>
+    </technical-field>
+    <background-art>
+      <p id="p-d2-zh" num="003">背景技术 		 	 	 
+            <br /></p>
+      <p id="p-d3-zh" num="004">由JP-100179782-A可知一种用于浇灭火的系统，该系统包括：管 	    	 
+            <br />道，用于在空间中延伸；轨道，该轨道沿管道的纵向延伸；泵装置，用 		 	 	 
+            <br />于在该管道上运动，并用于泵送供给管道的液体；驱动装置，用于使泵  		  	 
+            <br />装置沿轨道运动；控制装置，用于控制泵装置相对于轨道的运动，并包	 	 	 	 
+            <br />括： 	    	 
+            <br /></p>
+      <p id="p-d4-zh" num="005">视频装置，用于从遥控站观察该泵装置附近的现场情况。	 	 	 	 
+            <br /></p>
+      <p id="p-d5-zh" num="006">该已知技术的一个问题是需要有浇灭装置，因此，泵装置可选择  		  	 
+            <br />地与管道连接。	 	 	 	 
+            <br /></p>
+      <p id="p-d6-zh" num="007">因此，希望提供一种用于浇灭火的系统，其中，不需要该浇灭装  		  	 
+            <br />置。	 	 	 	 
+            <br /></p>
+    </background-art>
+    <disclosure>
+      <p id="p-d7-zh" num="008">发明内容 	    	 
+            <br /></p>
+      <p id="p-d8-zh" num="009">本发明的特征在于：提供有槽道，用于接收来自管道的液体，且	 	 	 	 
+            <br />泵装置包括进口，用于进入由管道传送给槽道地液体内。 	    	 
+            <br /></p>
+      <p id="p-d9-zh" num="010">尤其是，本发明涉及一种用于浇灭火的系统，该系统包括：管道，	 	 	 	 
+            <br />用于在空间中延伸，并将灭火液体供给该空间；轨道，该轨道沿管道的 	    	 
+            <br />纵向延伸；泵装置，用于在该轨道上运动，并用于泵送供给管道的液体； 		 	 	 
+            <br />驱动装置，用于使泵装置沿轨道运动；控制装置，用于控制泵装置相对  		  	 
+            <br />于轨道的运动，其特征在于：提供有槽道，用于接收来自管道的液体，	 	 	 	 
+            <br />且泵装置包括进口，用于进入由管道传送给槽道的液体内。 	    	 
+            <br /></p>
+      <p id="p-d10-zh" num="011">在本发明的各种优选实施例中：	 	 	 	 
+            <br /></p>
+      <p id="p-d11-zh" num="012">该槽道包括多个壁，从而形成一系列隔腔；  		  	 
+            <br /></p>
+      <p id="p-d12-zh" num="013">设置有多个连接部件，用于使管道与槽道连接，各连接部件与一 		 	 	 
+            <br />个相应的隔腔相连。	 	 	 	 
+            <br /></p>
+      <p id="p-d13-zh" num="014">各连接部件有阀，用于控制液体从管道向槽道的流动；  		  	 
+            <br /></p>
+      <p id="p-d14-zh" num="015">各隔腔有检测装置，用于检测相应隔腔内的液体是否在预定高度； 		 	 	 
+            <br /></p>
+      <p id="p-d15-zh" num="016">各检测装置用于控制相应阀的操作； 	    	 
+            <br /></p>
+      <p id="p-d16-zh" num="017">该进口用于从离开槽道的非工作位置向进入槽道中的液体内的工	 	 	 	 
+            <br />作位置； 	    	 
+            <br /></p>
+      <p id="p-d17-zh" num="018">用于进入液体的该进口在槽道没有分成隔腔的情况下可以是固定	 	 	 	 
+            <br />的； 	    	 
+            <br /></p>
+      <p id="p-d18-zh" num="019">在控制装置中包括视频装置，摄像机安装在泵装置上；	 	 	 	 
+            <br /></p>
+      <p id="p-d19-zh" num="020">轨道位于槽道的一侧；  		  	 
+            <br /></p>
+      <p id="p-d20-zh" num="021">驱动装置是电操作的，并包括用于与位于槽道上的导体导轨啮合 		 	 	 
+            <br />的滑靴；  		  	 
+            <br /></p>
+      <p id="p-d21-zh" num="022">视频装置至少在线路中的一部分通过电磁辐射与遥控站相连； 		 	 	 
+            <br /></p>
+      <p id="p-d22-zh" num="023">喷嘴可运动，以便将水或泡沫的射流引向火，其中该控制装置用 	    	 
+            <br />于使该喷嘴运动； 		 	 	 
+            <br /></p>
+      <p id="p-d23-zh" num="024">包括光源，用于照亮现场情况； 	    	 
+            <br /></p>
+      <p id="p-d24-zh" num="025">包括连接在泵装置上的臂，该臂沿与轨道不同的方向延伸，泵装	 	 	 	 
+            <br />置的喷嘴可沿该臂运动。 	    	 
+            <br /></p>
+    </disclosure>
+    <description-of-drawings>
+      <p id="p-d25-zh" num="026">附图说明 		 	 	 
+            <br /></p>
+      <p id="p-d26-zh" num="027">下面将通过实例和参考附图来介绍实施本发明的一种方法。 	    	 
+            <br /></p>
+      <p id="p-d27-zh" num="028">附图中：	 	 	 	 
+            <br /></p>
+      <p id="p-d28-zh" num="029">图1是本发明的浇灭火的系统的一个实施例的示意图，表示该系  		  	 
+            <br />统处于非工作状态。	 	 	 	 
+            <br /></p>
+      <p id="p-d29-zh" num="030">图2是与图1相对应的视图，表示该系统处于工作状态。  		  	 
+            <br /></p>
+      <p id="p-d30-zh" num="031">图3是当处于工作状态时，包含于图1和2中所示系统中的装置 		 	 	 
+            <br />的示意剖面图，以及  		  	 
+            <br /></p>
+      <p id="p-d31-zh" num="032">图4是当处于非工作状态时沿图3中的箭头A方向的视图。 		 	 	 
+            <br /></p>
+    </description-of-drawings>
+    <mode-for-invention>
+      <p id="p-d32-zh" num="033">具体实施方式 	    	 
+            <br /></p>
+      <p id="p-d33-zh" num="034">下面参考附图，图中表示了用于在隧道中浇灭火的系统10。该系	 	 	 	 
+            <br />统10包括：管道11，该管道11沿隧道的纵向延伸；以及从上面开口的 		 	 	 
+            <br />细长槽道12，该细长槽道12平行于管道11延伸，并通过一系列间开的  		  	 
+            <br />平行空心连接器13安装在该管道11上，各空心连接器13中布置有阀	 	 	 	 
+            <br />14。各连接器13使管道11的内部与槽道12的内部连通。该槽道12有 	    	 
+            <br />多个纵向间隔开的壁15，这些壁15将槽道12分成一系列隔腔16，每 		 	 	 
+            <br />个隔腔16与一个相应的连接器13连接。该槽道12还有多个传感器17，  		  	 
+            <br />用于检测在相连隔腔16中装有的液体18的高度。传感器17的数据用	 	 	 	 
+            <br />于控制与该隔腔16相连的相应阀14，其中，泵装置以这样的方式泵送 	    	 
+            <br />流体，即当隔腔16内的液体18升高到预定高度时，使相应阀14关闭。 		 	 	 
+            <br /></p>
+      <p id="p-d34-zh" num="035">槽道12有细长的上边缘19和轨道20，该轨道20沿纵向和向下方 	    	 
+            <br />向从该槽道12上延伸。槽道12还有向内延伸的凸缘21，一系列由弹性 		 	 	 
+            <br />非导电材料形成的杆22安装在该凸缘21上，该杆22支承由导电材料  		  	 
+            <br />制成的导体导轨23。	 	 	 	 
+            <br /></p>
+      <p id="p-d35-zh" num="036">槽道12的上边缘19以及轨道20载有电控泵24，该电控泵24有  		  	 
+            <br />喷嘴25和进口26，该泵24安装在滑架27上，该滑架27有间隔开的一	 	 	 	 
+            <br />对轮子28、29，用于分别与槽道12的上边缘19以及轨道20啮合。滑 	    	 
+            <br />架27有滑靴30，用于与导体导轨23啮合。该滑架27还有电操作马达 		 	 	 
+            <br />31、32，用于驱动上侧的轮子28，马达31、32的电流通过滑靴30与导  		  	 
+            <br />体导轨32相连。	 	 	 	 
+            <br /></p>
+      <p id="p-d36-zh" num="037">进口26控制成从非工作状态向工作状态运动，在非工作状态，如  		  	 
+            <br />图1和4所示，该进口26布置成并不伸入槽道12内，而在工作状态，	 	 	 	 
+            <br />如图2和3所示，该进口26延伸入槽道12中。 	    	 
+            <br /></p>
+      <p id="p-d37-zh" num="038">喷嘴25装有摄像机33，滑架27上设有天线34，因此，由摄像机	 	 	 	 
+            <br />33发出的信号通过电磁辐射传递给通过光纤36与遥控站相连的遥控天 	    	 
+            <br />线35。电机装置的控制信号通过光纤传递。 		 	 	 
+            <br /></p>
+      <p id="p-d38-zh" num="039">泵24与空气压缩机37以及装有发泡剂的容器38相连。 	    	 
+            <br /></p>
+      <p id="p-d39-zh" num="040">该机结构为这样，当隧道内起火时，水或泡沫形式的灭火液体泵	 	 	 	 
+            <br />送到管道11中，滑架27在通过天线34、35传输的信号的控制下沿槽 	    	 
+            <br />道12的纵向推进，而由摄像机33接收的信号产生的现场图像在遥控站 		 	 	 
+            <br />进行监控。同时，再操作合适的阀14，从而使水或泡沫在压力下流过相	 	 	 	 
+            <br />应连接器13，并流入槽道12的相应隔腔16中。 	    	 
+            <br /></p>
+      <p id="p-d40-zh" num="041">当在遥控站中观察到屏幕上的火时，滑架27布置成尽可能靠近火，	 	 	 	 
+            <br />且该滑架27在槽道12上刹车在该位置处。再使进口26伸展，从而使 	    	 
+            <br />该进口26的自由端部分伸入已经送入隔腔16中的水或泡沫中，并且该 		 	 	 
+            <br />泵24运作以沿朝着火的方向提供水或泡沫的射流。  		  	 
+            <br /></p>
+      <p id="p-d41-zh" num="042">第二实施例的说明 		 	 	 
+            <br /></p>
+      <p id="p-d42-zh" num="043">如果槽道12并没有分成隔腔(例如当该槽道12只有几米的很小 	    	 
+            <br />长度时)，则不需要使系统有活动进口26。在这种情况下，该进口26 		 	 	 
+            <br />可以固定。  		  	 
+            <br /></p>
+      <p id="p-d43-zh" num="044">应当知道，通过本发明的浇灭火的系统，并不需要有使泵24与水 		 	 	 
+            <br />或泡沫的供给源相连的对接装置。  		  	 
+            <br /></p>
+      <p id="p-d44-zh" num="045">应当知道，消防员或保安人员可以装备有双向无线电装置，该双 		 	 	 
+            <br />向无线电装置再通过中继站和光纤36传递给遥控站，这样，这些人员  		  	 
+            <br />可以与遥控站进行通讯。滑架27还可以有麦克风和扬声器，这样，可	 	 	 	 
+            <br />以监视靠近泵装置的噪音和声音，并且可以从遥控站宣布火的位置。 	    	 
+            <br /></p>
+      <p id="p-d45-zh" num="046">第三实施例的说明	 	 	 	 
+            <br /></p>
+      <p id="p-d46-zh" num="047">根据本发明的一种变化形式，一臂沿与轨道20不同的方向从该泵  		  	 
+            <br />装置24延伸出。	 	 	 	 
+            <br /></p>
+      <p id="p-d47-zh" num="048">泵装置的出口25可沿该臂运动，以便尽可能靠近火的位置。  		  	 
+            <br /></p>
+      <p id="p-d48-zh" num="049">第四实施例的说明 		 	 	 
+            <br /></p>
+      <p id="p-d49-zh" num="050">根据第三实施例的变化形式，在系统的一定距离处提供有第二轨 	    	 
+            <br />道，还提供有在该轨道上运动的滑架，且臂的没有连接在泵装置上的一 		 	 	 
+            <br />端布置在该滑架上。  		  	 
+            <br /></p>
+    </mode-for-invention>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20091229">
+    <claim num="1">
+      <claim-text>
+        <claim-text>1.一种用于浇灭火的灭火系统(1)，包括：管道(11)，用于  		  	 
+                <br />在空间中延伸，并将灭火液体(18)供给该空间；轨道(20)，该轨	 	 	 	 
+                <br />道沿管道(11)的纵向延伸；泵装置(24)，用于在该轨道(20)上 	    	 
+                <br />运动，并用于泵送供给管道(11)的液体；驱动装置(28、29)，用 		 	 	 
+                <br />于使泵装置(24)沿轨道(20)运动；控制装置(33)，用于控制泵  		  	 
+                <br />装置(24)相对于轨道(20)的运动，其特征在于：设置有槽道(12)，	 	 	 	 
+                <br />用于接收来自管道(11)的液体(18)，该槽道(12)包括多个壁(15)， 	    	 
+                <br />该多个壁形成一系列在槽道(12)中的隔腔(16)，至少一个隔腔(16) 		 	 	 
+                <br />上设有连接部件(13)，用于使隔腔(16)与管道(11)连通，至少  		  	 
+                <br />一个连接部件(13)上设有阀(14)，用于控制液体(18)从管道(11)	 	 	 	 
+                <br />向隔腔(16)的流动，泵装置(24)上设有进口(26)，该进口(26) 	    	 
+                <br />能够运动到一非工作位置，这样，泵装置(24)能够无阻碍地从一个 		 	 	 
+                <br />隔腔(16)向另一隔腔(16)运动，直到它靠近接近火的隔腔(16)，  		  	 
+                <br />或者该进口(26)能够运动到一工作位置，进入到已经从管道(11)	 	 	 	 
+                <br />传送到接近火的隔腔(16)内的液体(18)中，这样，该泵装置(24) 	    	 
+                <br />能够从上述接近火的隔腔(16)中泵送液体(18)并浇灭火。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>
+        <claim-text>2.根据权利要求1所述的灭火系统，其特征在于：各隔腔(16)  		  	 
+                <br />上设有检测装置(17)，用于检测相应隔腔(16)内的液体(18)是	 	 	 	 
+                <br />否在预定高度。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>
+        <claim-text>3.根据前述权利要求1或2所述的灭火系统，其特征在于：所 		 	 	 
+                <br />述控制装置(33)包括视频装置，摄像机安装在所述泵装置(24)上。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>
+        <claim-text>4.根据前述权利要求1或2所述的灭火系统，其特征在于：轨	 	 	 	 
+                <br />道(19)位于槽道(12)的一侧。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>
+        <claim-text>5.根据前述权利要求1或2所述的灭火系统，其特征在于：驱 		 	 	 
+                <br />动装置(28、29)是电操作的，其包括用于与一导体导轨(23)啮合  		  	 
+                <br />的滑靴(30)。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>
+        <claim-text>6.根据前述权利要求1或2所述的灭火系统，其特征在于：泵 	    	 
+                <br />装置(33)至少在一部分线路中通过电磁辐射与遥控站相连。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>
+        <claim-text>7.根据前述权利要求1或2所述的灭火系统，其特征在于：喷	 	 	 	 
+                <br />嘴(25)可以运动，以便将水或泡沫的射流引向火。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="8">
+      <claim-text>
+        <claim-text>8.根据前述权利要求1或2所述的灭火系统，其特征在于：它 		 	 	 
+                <br />包括光源，用于照亮现场情况。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="9">
+      <claim-text>
+        <claim-text>9.一种用于浇灭火的灭火系统(1)，包括：管道(11)，用于	 	 	 	 
+                <br />在空间中延伸，并将灭火液体(18)供给该空间；轨道(20)，该轨 	    	 
+                <br />道沿管道(11)的纵向延伸；泵装置(24)，用于在该轨道(20)上 		 	 	 
+                <br />运动，并用于泵送供给管道(11)的液体；驱动装置(28、29)，用  		  	 
+                <br />于使泵装置(24)沿轨道(20)运动；控制装置(33)，用于控制泵	 	 	 	 
+                <br />装置(24)相对于轨道(20)的运动，其特征在于：设置有槽道(12)， 	    	 
+                <br />用于接收来自管道(11)的液体(18)，泵装置(24)上设有进口(26)， 		 	 	 
+                <br />该进口(26)用于进入由管道(11)传送给槽道(12)的液体(18)  		  	 
+                <br />内，且该进口(26)是固定的。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="10">
+      <claim-text>
+        <claim-text>10.根据前述权利要求1，2或9所述的灭火系统，其特征在于： 	    	 
+                <br />设置有连接在泵装置(24)上的臂，该臂沿与轨道(20)不同的方向 		 	 	 
+                <br />延伸，泵装置(24)的喷嘴(25)可沿该臂运动。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="11">
+      <claim-text>
+        <claim-text>11.根据权利要求10所述的灭火系统，其特征在于：设置有第	 	 	 	 
+                <br />二轨道，该第二轨道位于该系统的一定距离处，还设置有在该轨道上 	    	 
+                <br />运动的滑架，所述臂的没有连接在泵装置(24)上的一端布置在该滑 		 	 	 
+                <br />架上。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="12">
+      <claim-text>
+        <claim-text>12.根据前述权利要求9所述的灭火系统，其特征在于：所述控	 	 	 	 
+                <br />制装置(33)包括视频装置，摄像机安装在所述泵装置(24)上。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="13">
+      <claim-text>
+        <claim-text>13.根据前述权利要求9所述的灭火系统，其特征在于：轨道(19) 		 	 	 
+                <br />位于槽道(12)的一侧。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="14">
+      <claim-text>
+        <claim-text>14.根据前述权利要求9所述的灭火系统，其特征在于：驱动装	 	 	 	 
+                <br />置(28、29)是电操作的，其包括用于与一导体导轨(23)啮合的滑 	    	 
+                <br />靴(30)。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="15">
+      <claim-text>
+        <claim-text>15.根据前述权利要求9所述的灭火系统，其特征在于：泵装置  		  	 
+                <br />(33)至少在一部分线路中通过电磁辐射与遥控站相连。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="16">
+      <claim-text>
+        <claim-text>16.根据前述权利要求9所述的灭火系统，其特征在于：喷嘴(25) 		 	 	 
+                <br />可以运动，以便将水或泡沫的射流引向火。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="17">
+      <claim-text>
+        <claim-text>17.根据前述权利要求9所述的灭火系统，其特征在于：它包括	 	 	 	 
+                <br />光源，用于照亮现场情况。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

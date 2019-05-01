@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- Comments and processing instructions are permitted in the prolog. -->
+<?process-doc type="document"?>
+<document>
+  <!-- A document in two chapters. -->
+  <?process-doc chapters="1 2"?>
+  Prologue text.
+  <chapter number="1">The first chapter, in two parts.
+    <section name="first">The first part of the first chapter.</section>
+    <section name="second">The second part of the first chapter.</section>
+  </chapter>
+  <chapter number="2">The second chapter.</chapter>
+  <epilogue>That's all, folks!</epilogue>
+</document>

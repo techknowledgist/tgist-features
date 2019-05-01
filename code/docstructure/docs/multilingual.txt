@@ -1,0 +1,44 @@
+
+There are two kinds of Chinese patents:
+
+Look at the directory in 
+
+/Users/marc/Documents/FUSE/data/fuse-patents/500-patents/DATA/Lexis-Nexis/CN/Xml/
+
+Most patents are in the following format:
+
+     2005/CN1229153C.xml
+
+They have two subsections of description that are useful:
+
+     <description id="descr_chi" lang="chi" format="original" date-changed="20091229">
+     		  <technical-field>...</technical-field>
+		  <background-art>...</background-art>
+		  <disclosure>...</disclosure>
+		  <description-of-drawings>...</description-of-drawings>
+		  <mode-for-invention>...</mode-for-invention>
+	</description>
+
+But since 2011 this changed (see desciption1.jpg):
+       
+       2011/CN101978588A.xml
+
+Here you should look at the first and third paragraph because the string there encodes
+technical-field and background-art:
+
+technical-field 技术领域
+background-art 背景技术
+
+Sometimes they are not in a separate <p> but in the beginning of a <p> with a space after them.
+
+And sometimes they are a bit longer (eg 所属技术领域)
+
+
+
+Note that there are two abstracts, we now miss one of them
+
+And note that something seems to go wrong with the claims section
+
+
+UNRELATED TO THIS:
+running document structure parser on all 500 en patents breaks at number 496

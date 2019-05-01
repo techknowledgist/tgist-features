@@ -1,0 +1,45 @@
+
+Heuristics to figure out the input source
+==============================================================================
+
+
+
+A. from the file name (not the path)
+------------------------------------------------------------------------------
+
+Biomed data
+
+   has .nxml extension
+
+Elsevier
+
+   length of filename is 20, 21 or 24
+   filename matches '^[A-Z]?[CEOPTX\d]+[A-Z]*\.xml$'
+
+LexisNexis patents
+
+   length of filename is 13, 14, 15, 16, 19 or 20
+   filename matches '^US[A-Z\d]+[A-Z]*\.xml$'
+	   
+WOS
+
+   length of filename is 19
+   filename matches '^[A-Z\d]+\.xml$'
+
+
+
+B. from a command line argument
+------------------------------------------------------------------------------
+
+This is added for debugging, just add one of PUBMED, WEB_OF_SCIENCE, LEXISNEXIS or
+ELSEVIER as a last optional argument to main.py.
+
+   
+C. from the fact file
+------------------------------------------------------------------------------
+
+This is for the runtime version. The fact file has a line
+
+     DOCUMENT COLLECTION="$COLLECTION"
+
+which has the same values as the command line argument.

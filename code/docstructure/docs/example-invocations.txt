@@ -1,0 +1,24 @@
+# parsing an XML file
+
+python main.py -h -c LEXISNEXIS data/in/lexisnexis/US4192770A.xml data/tmp/US4192770A.txt data/tmp/US4192770A.tags data/tmp/US4192770A.fact data/out/US4192770A.sect.basic
+
+
+# A 1986 german XML file that caused troubles in the past 
+# (invalid literal for int() with base 10: '0/')
+
+python main.py -h -c LEXISNEXIS -l GERMAN data/in/lexisnexis/DE3539484C1.xml data/tmp/DE3539484C1.txt data/tmp/DE3539484C1.tags data/tmp/DE3539484C1.fact data/out/DE3539484C1.sect.basic
+
+
+# testing create_ontology_creation_input() (US)
+python main.py -o data/in/lexisnexis/US4192770A.xml data/tmp/US4192770A.text data/tmp/US4192770A.tags data/tmp/US4192770A.fact data/tmp/US4192770A.sect US4192770A.onto
+
+# testing create_ontology_creation_input() (DE)
+python main.py -l GERMAN -o data/in/lexisnexis/DE4214475A1.xml data/tmp/DE4214475A1.text data/tmp/DE4214475A1.tags data/tmp/DE4214475A1.fact data/tmp/DE4214475A1.sect DE4214475A1.onto
+python main.py -l GERMAN -o data/in/lexisnexis/DE3718295A1.xml data/tmp/DE3718295A1.text data/tmp/DE3718295A1.tags data/tmp/DE3718295A1.fact data/tmp/DE3718295A1.sect DE3718295A1.onto
+
+# testing create_ontology_creation_input() (CN)
+python main.py -l CHINESE -o data/in/lexisnexis/CN101978588A.xml data/tmp/CN101978588A.text data/tmp/CN101978588A.tags data/tmp/CN101978588A.fact data/tmp/CN101978588A.sect CN101978588A.onto
+python main.py -l CHINESE -o data/in/lexisnexis/CN201693419U.xml data/tmp/CN201693419U.text data/tmp/CN201693419U.tags data/tmp/CN201693419U.fact data/tmp/CN201693419U.sect CN201693419U.onto
+
+
+DE3718295A1

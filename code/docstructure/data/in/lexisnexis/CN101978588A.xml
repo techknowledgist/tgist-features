@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111006" file="CN101978588A.xml" produced-by="LexisNexis-Univentio" lang="eng" date-inserted="20110221" time-inserted="082844" date-changed="20110927" time-changed="154606">
+  <bibliographic-data lang="eng">
+    <publication-reference publ-type="Application" publ-desc="Unexamined application for a patent for invention">
+      <document-id>
+        <country>CN</country>
+        <doc-number>101978588</doc-number>
+        <kind>A</kind>
+        <date>20110216</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>200980109705</doc-number>
+        <date>20090318</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>eng</language-of-publication>
+    <priority-claims date-changed="20110808">
+      <priority-claim sequence="1" kind="national">
+        <country>JP</country>
+        <doc-number>2008070831</doc-number>
+        <date>20080319</date>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="docdb">
+        <country>JP</country>
+        <doc-number>2009001194</doc-number>
+        <kind>W</kind>
+        <date>20090318</date>
+      </priority-claim>
+      <priority-claim sequence="2" data-format="docdb">
+        <country>JP</country>
+        <doc-number>2008070831</doc-number>
+        <kind>A</kind>
+        <date>20080319</date>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="original">
+        <doc-number>PCT/JP2009/001194</doc-number>
+      </priority-claim>
+      <priority-claim sequence="2" data-format="original">
+        <doc-number>2008-070831</doc-number>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="epodoc">
+        <doc-number>WO2009JP01194</doc-number>
+      </priority-claim>
+      <priority-claim sequence="2" data-format="epodoc">
+        <doc-number>JP20080070831</doc-number>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20110224">
+      <gazette-reference>
+        <date>20110216</date>
+      </gazette-reference>
+      <unexamined-printed-without-grant>
+        <date>20110216</date>
+      </unexamined-printed-without-grant>
+    </dates-of-public-availability>
+    <kind-of-official-gazette lang="eng">27-07</kind-of-official-gazette>
+    <classifications-ipcr date-changed="20110927">
+      <classification-ipcr sequence="1">
+        <text>H02M   7/49        20070101AFI20110922BHCN        </text>
+        <ipc-version-indicator>
+          <date>20070101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>H</section>
+        <class>02</class>
+        <subclass>M</subclass>
+        <main-group>7</main-group>
+        <subgroup>49</subgroup>
+        <symbol-position>F</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20110922</date>
+        </action-date>
+        <generating-office>
+          <country>CN</country>
+        </generating-office>
+        <classification-status>B</classification-status>
+        <classification-data-source>H</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>H02M   7/501       20070101ALI20110922BHCN        </text>
+        <ipc-version-indicator>
+          <date>20070101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>H</section>
+        <class>02</class>
+        <subclass>M</subclass>
+        <main-group>7</main-group>
+        <subgroup>501</subgroup>
+        <symbol-position>L</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20110922</date>
+        </action-date>
+        <generating-office>
+          <country>CN</country>
+        </generating-office>
+        <classification-status>B</classification-status>
+        <classification-data-source>H</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <classifications-ecla date-changed="20110927">
+      <classification-ecla sequence="1" classification-scheme="EC" country="EP">
+        <text>H02M  7/49</text>
+        <section>H</section>
+        <class>02</class>
+        <subclass>M</subclass>
+        <main-group>7</main-group>
+        <subgroup>49</subgroup>
+      </classification-ecla>
+      <classification-ecla sequence="2" classification-scheme="EC" country="EP">
+        <text>H02M  7/501</text>
+        <section>H</section>
+        <class>02</class>
+        <subclass>M</subclass>
+        <main-group>7</main-group>
+        <subgroup>501</subgroup>
+      </classification-ecla>
+    </classifications-ecla>
+    <number-of-claims calculated="yes">21</number-of-claims>
+    <invention-title id="title_chi" date-changed="20110607" lang="chi" format="original">电力变换装置</invention-title>
+    <invention-title id="title_eng" date-changed="20110607" lang="eng" format="original">Power converter</invention-title>
+    <parties date-changed="20110927">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>三菱电机株式会社</orgname>
+            <address>
+              <address-1>日本东京</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>MITSUBISHI ELECTRIC CORP.</orgname>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdb">
+          <addressbook lang="eng">
+            <orgname>MITSUBISHI ELECTRIC CORP</orgname>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>MITSUBISHI ELECTRIC CORP.</orgname>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>岩田明彦</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>IWATA AKIHIKO</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2">
+          <addressbook lang="chi">
+            <name>大井健史</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>OI TAKESHI</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3">
+          <addressbook lang="chi">
+            <name>小山正人</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>KOYAMA MASATO</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdb">
+          <addressbook lang="eng">
+            <name>AKIHIKO IWATA</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>IWATA AKIHIKO</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2" data-format="docdba">
+          <addressbook lang="eng">
+            <name>OI TAKESHI</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2" data-format="docdb">
+          <addressbook lang="eng">
+            <name>TAKESHI OI</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3" data-format="docdb">
+          <addressbook lang="eng">
+            <name>MASATO KOYAMA</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3" data-format="docdba">
+          <addressbook lang="eng">
+            <name>KOYAMA MASATO</name>
+          </addressbook>
+        </inventor>
+      </inventors>
+      <agents>
+        <agent sequence="1" rep-type="attorney">
+          <addressbook lang="chi">
+            <name>中国国际贸易促进委员会专利商标事务所 11038 (金春实)</name>
+          </addressbook>
+        </agent>
+      </agents>
+    </parties>
+    <pct-or-regional-filing-data>
+      <document-id>
+        <country>WO</country>
+        <doc-number>JP09001194</doc-number>
+        <date>20090318</date>
+      </document-id>
+    </pct-or-regional-filing-data>
+    <pct-or-regional-publishing-data>
+      <document-id>
+        <country>WO</country>
+        <doc-number>2009116273</doc-number>
+        <date>20090924</date>
+      </document-id>
+    </pct-or-regional-publishing-data>
+    <patent-family date-changed="20110725">
+      <main-family family-id="130729592">
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20110089765</doc-number>
+            <kind>A1</kind>
+            <date>20110421</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>2009116273</doc-number>
+            <kind>A1</kind>
+            <date>20090924</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>2256916</doc-number>
+            <kind>A1</kind>
+            <date>20101201</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>101978588</doc-number>
+            <kind>A</kind>
+            <date>20110216</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>WO2009116273</doc-number>
+            <kind>S</kind>
+            <date>20110721</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="130729591">
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20110089765</doc-number>
+            <kind>A1</kind>
+            <date>20110421</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>2009116273</doc-number>
+            <kind>A1</kind>
+            <date>20090924</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>2256916</doc-number>
+            <kind>A1</kind>
+            <date>20101201</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>101978588</doc-number>
+            <kind>A</kind>
+            <date>20110216</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>WO2009116273</doc-number>
+            <kind>S</kind>
+            <date>20110721</date>
+          </document-id>
+          <application-date>
+            <date>20090318</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20110607" lang="chi" format="original">
+    <p num="1">针对具有高电压的第一直流电源(5)并使用超过1000V的高耐压Vx的Si-IGBT(3)而低频地动作的第一逆变器电路(1)、和具有低电压的电容器(8)并使用低耐压Vy的SiC-MOSFET(6)而通过高频PWM动作的第二逆变器电路(2)，对交流侧进行串联连接而构成电力变换装置，通过第一、第二逆变器电路(1)、(2)的各产生电压之和来输出规定的电压波形的交流电力。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20110607" lang="eng" format="original">
+    <p>The patent refers to the field of 'Conversion of ac power input into dc power output AND Conversion of dc power input into ac power output'. First go against, to have high-voltage flow power (5) and use Si-IGBT (3) over high pressure tight Vx of 1000V and low frequency act Device circuit (1), and and the capacitor (8) with low-voltage uses SiC-MOSFET (6) and the second inverter circuit (2) to pass high-frequency PWM movement of low pressure tight Vy, carry on series connection in exchanging the side and form the power converter, output the corrugate exchange electricity of specified voltage the second inverter circuit (1), every sum of producing the voltage of the (2), through the first.</p>
+  </abstract>
+  <legal-data date-changed="20110610">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>20110216</date>
+      </publication-date>
+      <event-code-1>C06</event-code-1>
+      <effect>+</effect>
+      <legal-description>PUBLICATION</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN   101978588A</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="2">
+      <publication-date>
+        <date>20110330</date>
+      </publication-date>
+      <event-code-1>C10</event-code-1>
+      <legal-description>REQUEST OF EXAMINATION AS TO SUBSTANCE</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN   101978588A</docdb-publication-number>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20110515">
+    <p id="p-0001-zh" num="0001">技术领域     	  
+	</p>
+    <p id="p-0002-zh" num="0002">本发明涉及电力变换装置，特别涉及可以在大电力控制中使用且     	  
+		<br />降低了电力损失的逆变器。     	  
+		</p>
+    <p id="p-0003-zh" num="0003">背景技术     	  
+	</p>
+    <p id="p-0004-zh" num="0004">作为以往的逆变器电路，在可以使用于大电力控制中的低电力损     	  
+		<br />失的开关电路中有以下所示的电路。     	  
+		</p>
+    <p id="p-0005-zh" num="0005">具备将Si晶体管和非Si晶体管串联连接而成的串联电路，Si晶     	  
+		<br />体管的变换电容是0.1kVA～200kVA，且非Si晶体管由SiC或者GaN     	  
+		<br />系半导体构成。通过这样串联连接2个晶体管，串联电路整体的耐电  		  	 
+		<br />压提高，并且可以通过非Si系的晶体管的高速动作在串联电路整体中	 	   	 
+		<br />降低开关损失(例如，参照专利文献1)。   		 	 
+		</p>
+    <p id="p-0006-zh" num="0006">【专利文献1】日本再公表WO00/72433号公报    		  
+		</p>
+    <p id="p-0007-zh" num="0007">发明内容	   		  
+	</p>
+    <p id="p-0008-zh" num="0008">在以往的逆变器电路中，如果在2个串联连接的晶体管的分压中     	  
+		<br />产生不均衡，则有使元件破坏的危险。因此，为了确保可靠性而提高     	  
+		<br />输入直流电压，需要将作为非Si晶体管地非Si-MOSFET的耐压设     	  
+		<br />定得较高。这样，如果提高了非Si-MOSFET的耐压，则导通电阻急     	  
+		<br />剧地增加，而作为串联电路整体，也增大导通损失，存在无法得到高     	  
+		<br />电力变换效率这样的问题。     	  
+		</p>
+    <p id="p-0009-zh" num="0009">本发明是为了消除所述那样的问题而完成的，其目的在于得到一     	  
+		<br />种在大电力控制中可以使用且可以高可靠性地降低电力损失的高效的     	  
+		<br />电力变换装置。     	  
+		</p>
+    <p id="p-0010-zh" num="0010">本发明的电力变换装置，具备：第一逆变器电路，具备第一直流     	  
+		<br />电压部和基于Si的多个半导体元件；以及第二逆变器电路，具备第二  		  	 
+		<br />直流电压部和基于非Si的多个半导体元件，将所述第一逆变器电路的	 	   	 
+		<br />交流侧输出端与所述第二逆变器电路的交流侧输出端串联连接，通过   		 	 
+		<br />合成所述第一、第二逆变器电路的输出，将基于规定的电压波形的交    		  
+		<br />流电力供给到负载。    		  
+		</p>
+    <p id="p-0011-zh" num="0011">本发明的电力变换装置可以通过具备基于Si的半导体元件的第	   		  
+		<br />一逆变器电路和具备基于非Si的半导体元件的第二逆变器电路，根据	   		  
+		<br />元件的特性来改变电压电平、频率等动作条件，降低电力变换装置整     	  
+		<br />体的电力损失，并且得到高的输出电力。     	  
+		</p>
+    <p id="p-0012-zh" num="0012">附图说明     	  
+	</p>
+    <p id="p-0013-zh" num="0013">图1是示出本发明的实施方式1的电力变换装置的结构的图。     	  
+		</p>
+    <p id="p-0014-zh" num="0014">图2是示出本发明的实施方式1的第二直流电压部的另一例子的     	  
+		<br />图。     	  
+		</p>
+    <p id="p-0015-zh" num="0015">图3是示出本发明的实施方式1的第一、第二单相逆变器的输出     	  
+		<br />电压的波形图。     	  
+		</p>
+    <p id="p-0016-zh" num="0016">图4是示出本发明的实施方式1的电力变换装置整体的动作的	 	   	 
+		<br />图。   		 	 
+		</p>
+    <p id="p-0017-zh" num="0017">图5是示出本发明的实施方式1的Si-IGBT和SiC-MOSFET    		  
+		<br />的特性的图。    		  
+		</p>
+    <p id="p-0018-zh" num="0018">图6是示出本发明的实施方式2的电力变换装置的结构的图。     	  
+		</p>
+    <p id="p-0019-zh" num="0019">图7是示出本发明的实施方式3的电力变换装置的结构的图。     	  
+		</p>
+    <p id="p-0020-zh" num="0020">图8是示出本发明的实施方式4的Si-IGBT和SiC-MOSFET     	  
+		<br />的特性的图。     	  
+		</p>
+    <p id="p-0021-zh" num="0021">图9是示出本发明的实施方式5的电力变换装置的结构的图。     	  
+		</p>
+    <p id="p-0022-zh" num="0022">图10是示出本发明的实施方式6的模块的结构的图。     	  
+		</p>
+    <p id="p-0023-zh" num="0023">图11是示出本发明的实施方式6的另一例子的3相混合模块的  		  	 
+		<br />结构的图。	 	   	 
+		</p>
+    <p id="p-0024-zh" num="0024">具体实施方式    		  
+	</p>
+    <p id="p-0025-zh" num="0025">(实施方式1)	   		  
+		</p>
+    <p id="p-0026-zh" num="0026">以下，根据附图，对本发明的实施方式1进行说明。     	  
+		</p>
+    <p id="p-0027-zh" num="0027">图1是示出本发明的实施方式1的电力变换装置的结构的图。     	  
+		</p>
+    <p id="p-0028-zh" num="0028">如图1所示，电力变换装置具备由第一单相逆变器1构成的主逆     	  
+		<br />变器(第一逆变器电路)和由第二单相逆变器2构成的副逆变器(第     	  
+		<br />二逆变器电路)，向单相负载9供给交流电力。     	  
+		</p>
+    <p id="p-0029-zh" num="0029">在第一单相逆变器1中，使用了基于Si的器件。在该情况下，     	  
+		<br />第一单相逆变器1由将Si-二极管4反并联连接的多个作为Si半导体     	  
+		<br />开关元件的Si-IGBT3构成，在直流输入部分中具备作为第一直流电     	  
+		<br />压部的第一直流电源5，将来自该第一直流电源5的直流电力变换为     	  
+		<br />交流电力而输出。该第一单相逆变器1作为向单相负载9的能量的供  		  	 
+		<br />给源而动作。	 	   	 
+		</p>
+    <p id="p-0030-zh" num="0030">在第二单相逆变器2中，使用了基于非Si的、且禁带宽度比Si    		  
+		<br />宽的半导体材料、例如SiC、GaN的器件。在该情况下，第二单相逆    		  
+		<br />变器2由将SiC-SBD(SiC-肖特基势垒二极管(SiC Schottky barrier    		  
+		<br />diode))7反并联连接的多个作为非Si半导体开关元件的SiC-	   		  
+		<br />MOSFET6构成，在直流输入部分中具备作为第二直流电压部的电容	   		  
+		<br />器8，将来自该电容器8的直流电力变换为交流电力而输出。在该情     	  
+		<br />况下，由于在直流输入部分中仅具备电容器8，所以控制成使电容器8     	  
+		<br />的充放电平衡、即令第二单相逆变器2的平均电力负担成为零。     	  
+		</p>
+    <p id="p-0031-zh" num="0031">另外，在第二直流电压部中，也可以如图2所示使用第二直流电     	  
+		<br />源10，在该情况下，第二单相逆变器2也作为向单相负载9的能量的     	  
+		<br />供给源而动作。     	  
+		</p>
+    <p id="p-0032-zh" num="0032">第一单相逆变器1的第一直流电源5的电压Vdc-main是例如     	  
+		<br />超过1000V的高电压，被设定得大于第二单相逆变器2的电容器8的     	  
+		<br />电压Vdc-sub。     	  
+		</p>
+    <p id="p-0033-zh" num="0033">第一、第二单相逆变器1、2可以产生正、负以及零的电压而作     	  
+		<br />为输出。电力变换装置是将第一单相逆变器1的交流侧输出端与第二  		  	 
+		<br />单相逆变器2的交流侧输出端串联连接而构成的，通过组合各单相逆   		 	 
+		<br />变器1、2的产生电压，作为其总和将基于规定的电压波形的交流电力    		  
+		<br />供给到单相负载9。    		  
+		</p>
+    <p id="p-0034-zh" num="0034">即，第一直流电源5的电压Vdc-main和电容器8的电压Vdc	   		  
+		<br />-sub被设定成：	   		  
+		</p>
+    <p id="p-0035-zh" num="0035">Vdc-main＞Vdc-sub     	  
+		</p>
+    <p id="p-0036-zh" num="0036">Vdc-main+Vdc-sub≥负载最大电压。     	  
+		</p>
+    <p id="p-0037-zh" num="0037">以下，对第一、第二单相逆变器1、2以及电力变换装置整体的     	  
+		<br />动作进行说明。     	  
+		</p>
+    <p id="p-0038-zh" num="0038">图3是示出第一、第二单相逆变器1、2的输出电压的波形图。     	  
+		<br />图3(a1)、图3(a2)是示出第一单相逆变器1的2种输出电压的图，     	  
+		<br />图3(a1)示出在半周期中以1个脉冲输出的情况，图3(a2)示出在     	  
+		<br />半周期中以3个脉冲输出的情况。图3(b)示出第二单相逆变器2的     	  
+		<br />输出电压。  		  	 
+		</p>
+    <p id="p-0039-zh" num="0039">如图所示，使用了Si-IGBT3的第一单相逆变器1在半周期中    		  
+		<br />以1个脉冲到几个脉冲左右的电压波形来进行输出，即第一单相逆变    		  
+		<br />器1通过低频下的开关而动作。另外，使用了SiC-MOSFET6的第    		  
+		<br />二单相逆变器2通过基于高频PWM的开关而动作。    		  
+		</p>
+    <p id="p-0040-zh" num="0040">图4是示出电力变换装置整体的动作的图。     	  
+		</p>
+    <p id="p-0041-zh" num="0041">如图4所示，通过运算器13运算出从电力变换装置整体的目标     	  
+		<br />输出负载电压11中减去第一单相逆变器1的输出电压12(主逆变器     	  
+		<br />输出电压)而得到的差电压的值，将该差电压值作为第二单相逆变器     	  
+		<br />2的目标输出电压(副逆变器目标电压)，通过PWM电路14进行     	  
+		<br />PWM变换，从而生成对第二单相逆变器2进行驱动的PWM信号(副     	  
+		<br />逆变器驱动信号)。     	  
+		</p>
+    <p id="p-0042-zh" num="0042">此时，为了使第二单相逆变器2的电容器8的充放电平衡，对第     	  
+		<br />一单相逆变器1的输出进行控制，以使第二单相逆变器2的1个周期     	  
+		<br />中的电力负担成为0。     	  
+		</p>
+    <p id="p-0043-zh" num="0043">另外，关于从电力变换装置整体的目标输出负载电压11减去的  		  	 
+		<br />电压，也可以代替第一单相逆变器1的输出电压12而使用第一单相逆   		 	 
+		<br />变器1的目标输出电压。    		  
+		</p>
+    <p id="p-0044-zh" num="0044">关于如上所述构成的电力变换装置中的电力损失，以下与第一单    		  
+		<br />相逆变器1中使用的Si-IGBT、以及第二单相逆变器2中使用的SiC	   		  
+		<br />-MOSFET的特性的说明一起详细叙述。	   		  
+		</p>
+    <p id="p-0045-zh" num="0045">图5(a)、图5(b)是示出Si-IGBT和SiC-MOSFET的器     	  
+		<br />件的特性的图，图5(a)示出元件耐压与导通损失的关系，图5(b)     	  
+		<br />示出元件耐压与开关损失的关系。     	  
+		</p>
+    <p id="p-0046-zh" num="0046">一般，作为非Si的SiC材料具备绝缘耐压高这样的优良的特性，     	  
+		<br />所以SiC-MOSFET的导通电阻与Si-MOSFET的导通电阻相比，     	  
+		<br />是1/10～1/50的低值。但是，由于MOSFET是单极器件，所以与IGBT     	  
+		<br />等双极器件相比难以使电流流过。特别在超过1000V地使用的SiC-     	  
+		<br />MOSFET的情况下，由于导通电阻引起的损失急剧地增大。图5(a)     	  
+		<br />示出，在Si-IGBT中，即使元件耐压变大，导通损失也没有变得太     	  
+		<br />大，但在SiC-MOSFET中，如果元件耐压提高则导通损失急剧地增     	  
+		<br />大。     	  
+		</p>
+    <p id="p-0047-zh" num="0047">另外，非Si器件的特征在于开关速度快，SiC-MOSFET、SiC	 	   	 
+		<br />-SBD与作为Si器件的Si-IGBT、PN二极管相比，开关速度是约   		 	 
+		<br />1/10～1/50以下。因此，即使高频地进行开关，开关损失也非常小。图    		  
+		<br />5(b)示出SiC-MOSFET的开关损失比Si-IGBT非常小的情况。    		  
+		</p>
+    <p id="p-0048-zh" num="0048">根据这样的特性，SiC-MOSFET、SiC-SBD适合于进行高频	   		  
+		<br />开关的逆变器用途，但不适合于超过1000V的逆变器电路。即，适合	   		  
+		<br />于在1000V以下的电路中进行高频开关的用途。     	  
+		</p>
+    <p id="p-0049-zh" num="0049">相反，Si-IGBT由于是双极器件，所以易于使电流流过，即使     	  
+		<br />元件耐压大到超过1000V，导通损失也不太会增大，但由于开关速度     	  
+		<br />较慢，所以不适合于高频地进行开关的用途。即，适合于在超过1000V     	  
+		<br />的逆变器电路中以低的频率进行开关的用途。     	  
+		</p>
+    <p id="p-0050-zh" num="0050">在图5(a)、图5(b)中，将第一单相逆变器1中使用的Si-     	  
+		<br />IGBT3设为耐压Vx的Si-IGBT元件a1，将第二单相逆变器2中使     	  
+		<br />用的SiC-MOSFET6设为耐压Vy的SiC-MOSFET元件a2。另外，     	  
+		<br />将Si-IGBT元件a1的耐压Vx设为超过1000～1200V。     	  
+		</p>
+    <p id="p-0051-zh" num="0051">另外，作为第一比较例，仅由Si-IGBT构成单独的高频高电压  		  	 
+		<br />的单相逆变器，将在该例子中使用的元件设为耐压Vx+Vy的Si-	 	   	 
+		<br />IGBT元件b。作为第二比较例，在仅由SiC-MOSFET构成了单独   		 	 
+		<br />的高频高电压的单相逆变器的情况下，将所使用的元件设为耐压Vx    		  
+		<br />+Vy的SiC-MOSFET元件c。    		  
+		</p>
+    <p id="p-0052-zh" num="0052">在该实施方式中，令使用Si-IGBT元件a1(Si-IGBT3)、并	   		  
+		<br />具备电压Vdc-main(＝kVx)的第一直流电源5的第一单相逆变器	   		  
+		<br />1低频地动作。由于该Si-IGBT元件a1低频地动作，所以开关损失     	  
+		<br />成为非常小的值(在图中忽略)。因此，几乎所有损失是导通损失ax，     	  
+		<br />Si-IGBT元件a1的损失是约ax。     	  
+		</p>
+    <p id="p-0053-zh" num="0053">另外，令使用SiC-MOSFET元件a2(SiC-MOSFET6)、并     	  
+		<br />具备电压Vdc-sub(＝mVy)的电容器8的第二单相逆变器2高频地     	  
+		<br />动作。SiC-MOSFET元件a2的开关损失as非常小。SiC-MOSFET     	  
+		<br />元件a2的损失是导通损失ay与开关损失as的合计。     	  
+		</p>
+    <p id="p-0054-zh" num="0054">另外，此处k、m是逆变器直流电压相对于元件耐压的比率，一     	  
+		<br />般选择0.5～0.8的值。另外，各元件a1、a2构成第一、第二单相逆变     	  
+		<br />器1、2，所以对Si-IGBT元件a1施加kVx以下的电压，对SiC-     	  
+		<br />MOSFET元件a2施加mVy以下的电压。     	  
+		</p>
+    <p id="p-0055-zh" num="0055">如果用Si-IGBT元件a1和SiC-MOSFET元件a2的导通损失、	 	   	 
+		<br />开关损失的合计来表示电力变换装置整体的电力损失，则整体损失   		 	 
+		<br />Loss-a成为ax+ay+as。    		  
+		</p>
+    <p id="p-0056-zh" num="0056">在仅使用了耐压Vx+Vy的Si-IGBT元件b的第一比较例中，    		  
+		<br />开关损失bs非常大，且加上了导通损失的电路整体的损失Loss-b大	   		  
+		<br />于损失Loss-a。另外，在仅使用了耐压Vx+Vy的SiC-MOSFET	   		  
+		<br />元件c的第二比较例中，导通损失非常大，加上了开关损失cs的电路     	  
+		<br />整体的损失Loss-c大于损失Loss-a。     	  
+		</p>
+    <p id="p-0057-zh" num="0057">这样，该实施方式的电力变换装置的电力损失Loss-a小于仅由     	  
+		<br />Si-IGBT或者SiC-MOSFET构成了单独的高频高电压的单相逆变     	  
+		<br />器的第一、第二比较例的电力损失Loss-b、Loss-c。     	  
+		</p>
+    <p id="p-0058-zh" num="0058">如上所述，在该实施方式中，将使用超过1000V的高耐压Vx的     	  
+		<br />Si-IGBT元件a1(Si-IGBT3)并低频地动作的第一单相逆变器1、     	  
+		<br />和使用比较低的耐压Vy的SiC-MOSFET元件a2(SiC-MOSFET6)     	  
+		<br />并高频地动作的第二单相逆变器2组合而构成了电力变换装置。由此，     	  
+		<br />被设定成Si-IGBT3的导通损失占据整体的导通损失的大半，并且整     	  
+		<br />体的开关损失大幅降低，损失整体(导通损失+开关损失)中所占的     	  
+		<br />比例变小。另外，由于第一、第二单相逆变器1、2的输出和成为电力  		  	 
+		<br />变换装置的输出，所以可以通过各单相逆变器1、2来分担输出电压而	 	   	 
+		<br />降低各元件的耐压，可以降低整体的导通损失。由此，电力变换装置   		 	 
+		<br />的可靠性良好且损失降低，变换效率提高。    		  
+		</p>
+    <p id="p-0059-zh" num="0059">另外，通过组合由具备这样相异的特性的2种元件构成的第一、    		  
+		<br />第二逆变器1、2，即使在超过1000V的高电压的电路结构中也可以低	   		  
+		<br />损失地实现高频的开关动作，得到高精度的基于电压波形的输出电压。	   		  
+		</p>
+    <p id="p-0060-zh" num="0060">另外，如图5(a)所示，Si-IGBT元件a1和SiC-MOSFET     	  
+		<br />元件a2的导通损失的合计ax+ay被设定成小于耐压Vx+Vy的SiC     	  
+		<br />-MOSFET元件c的导通损失。由此，可靠地得到损失降低效果。如     	  
+		<br />果将耐压Vx+Vy的SiC-MOSFET元件c的导通损失设为cxy，则     	  
+		<br />该关系表示为     	  
+		</p>
+    <p id="p-0061-zh" num="0061">ax+ay＞cxy。     	  
+		</p>
+    <p id="p-0062-zh" num="0062">即，     	  
+		</p>
+    <p id="p-0063-zh" num="0063">(ax+ay)/(Vx+Vy)＞cxy/(Vx+Vy)，     	  
+		</p>
+    <p id="p-0064-zh" num="0064">根据SiC-MOSFET的特性，   		 	 
+		</p>
+    <p id="p-0065-zh" num="0065">cxy/(Vx+Vy)＝ay/Vy。    		  
+		</p>
+    <p id="p-0066-zh" num="0066">因此，成为	   		  
+		</p>
+    <p id="p-0067-zh" num="0067">(ax+ay)/(Vx+Vy)＞ay/Vy。     	  
+		</p>
+    <p id="p-0068-zh" num="0068">在该式中，也可以用作为导通时的电压降低量的导通电压来置换     	  
+		<br />导通损失，用各单相逆变器1、2的直流电压Vdc-main、Vdc-sub     	  
+		<br />来置换耐压Vx、Vy，可以如下表现。即，Si-IGBT元件a1和SiC     	  
+		<br />-MOSFET元件a2的导通电压合计相对于Vdc-main+Vdc-sub     	  
+		<br />的比小于SiC-MOSFET元件a2的导通电压相对于Vdc-sub的比。     	  
+		<br />通过这样构成各单相逆变器1、2，可靠地得到损失降低效果。     	  
+		</p>
+    <p id="p-0069-zh" num="0069">(实施方式2)     	  
+		</p>
+    <p id="p-0070-zh" num="0070">接下来，根据附图，对本发明的实施方式2进行说明。	 	   	 
+		</p>
+    <p id="p-0071-zh" num="0071">图6是示出本发明的实施方式2的电力变换装置的结构的图。    		  
+		</p>
+    <p id="p-0072-zh" num="0072">如图6所示，电力变换装置对由3相逆变器21构成的主逆变器	   		  
+		<br />(第一逆变器电路)的各相交流输出线分别串联连接单相逆变器22a、	   		  
+		<br />22b、22c的交流侧输出端，而向3相负载29供给交流电力。     	  
+		</p>
+    <p id="p-0073-zh" num="0073">在3相逆变器21中，使用了基于Si的器件。在该情况下，3相     	  
+		<br />逆变器21由将Si-二极管24反并联连接的多个作为Si半导体开关元     	  
+		<br />件的Si-IGBT23构成，在直流输入部分中具备作为第一直流电压部     	  
+		<br />的第一直流电源25，而将来自该第一直流电源25的直流电力变换为     	  
+		<br />交流电力而输出。该3相逆变器21作为向3相负载29的能量的供给     	  
+		<br />源而动作。     	  
+		</p>
+    <p id="p-0074-zh" num="0074">在由3个单相逆变器22a、22b、22c构成的副逆变器22(第二逆     	  
+		<br />变器电路)中，使用了基于非Si的、且禁带宽度比Si宽的半导体材     	  
+		<br />料、例如SiC、GaN的器件。在该情况下，各单相逆变器22a、22b、     	  
+		<br />22c由将SiC-SBD27反并联连接的多个作为非Si半导体开关元件的     	  
+		<br />SiC-MOSFET26构成，在直流输入部分中具备作为第二直流电压部     	  
+		<br />的电容器28，而将来自该电容器28的直流电力变换为交流电力而输  		  	 
+		<br />出。在该情况下，由于在各单相逆变器22a～22c的直流输入部分中仅	 	   	 
+		<br />具备电容器28，所以控制成使电容器28的充放电平衡、即令各单相   		 	 
+		<br />逆变器22a～22c的平均电力负担成为零。    		  
+		</p>
+    <p id="p-0075-zh" num="0075">另外，在第二直流电压部中，也可以如图2所示使用第二直流电    		  
+		<br />源10，在该情况下，各单相逆变器22a～22c也作为向3相负载29的	   		  
+		<br />能量的供给源而进行动作。	   		  
+		</p>
+    <p id="p-0076-zh" num="0076">3相逆变器21的第一直流电源25的电压Vdc-main是例如超过     	  
+		<br />1000V的高电压，被设定为大于各单相逆变器22a～22c的电容器8的     	  
+		<br />电压Vdc-sub。     	  
+		</p>
+    <p id="p-0077-zh" num="0077">由于对3相逆变器21的各相交流输出线分别连接单相逆变器     	  
+		<br />22a、22b、22c，所以在各相中组合3相逆变器21和单相逆变器22a～22c     	  
+		<br />的产生电压，将基于规定的电压波形的3相交流电力供给到3相负载     	  
+		<br />29。在该情况下，对3相逆变器21的电压加上2个单相逆变器22a～22c     	  
+		<br />的电压而得到的电压值成为所需最大线电压以上，从而可以产生所需     	  
+		<br />的电压。     	  
+		</p>
+    <p id="p-0078-zh" num="0078">即，第一直流电源25的电压Vdc-main、和电容器28的电压  		  	 
+		<br />Vdc-sub被设定为，	 	   	 
+		</p>
+    <p id="p-0079-zh" num="0079">Vdc-main＞Vdc-sub    		  
+		</p>
+    <p id="p-0080-zh" num="0080">Vdc-main+Vdc-sub×2≥负载最大电压(最大线电压)。	   		  
+		</p>
+    <p id="p-0081-zh" num="0081">另外，与所述实施方式1同样地，在主逆变器(3相逆变器21)     	  
+		<br />中，将超过1000V的高耐压Vx的Si-IGBT元件a1用作Si-IGBT23，     	  
+		<br />通过低频下的开关而动作。另外，在副逆变器22的各单相逆变器     	  
+		<br />22a～22c中，将比较低的耐压Vy的SiC-MOSFET元件a2用作SiC     	  
+		<br />-MOSFET26，通过基于高频PWM的开关而动作。     	  
+		</p>
+    <p id="p-0082-zh" num="0082">由此，与所述实施方式1同样地，电力变换装置的可靠性良好且     	  
+		<br />损失降低，变换效率提高。     	  
+		</p>
+    <p id="p-0083-zh" num="0083">另外，通过组合这样由具备相异的特性的2种元件构成的第一、     	  
+		<br />第二逆变器1、2，在超过1000V的高电压的电路结构中也可以低损失     	  
+		<br />地实现高频的开关动作，得到高精度的基于电压波形的输出电压。     	  
+		</p>
+    <p id="p-0084-zh" num="0084">另外，在该实施方式中，通过以使Si-IGBT23和SiC-	 	   	 
+		<br />MOSFET26的导通电压合计相对于Vdc-main+Vdc-sub的比小于   		 	 
+		<br />SiC-MOSFET26的导通电压相对于Vdc-sub的比的方式，构成3    		  
+		<br />相逆变器21以及副逆变器22，可靠地得到损失降低效果。    		  
+		</p>
+    <p id="p-0085-zh" num="0085">(实施方式3)	   		  
+		</p>
+    <p id="p-0086-zh" num="0086">接下来，根据附图对本发明的实施方式3进行说明。     	  
+		</p>
+    <p id="p-0087-zh" num="0087">图7是示出本发明的实施方式3的电力变换装置的结构的图。     	  
+		</p>
+    <p id="p-0088-zh" num="0088">如图7所示，电力变换装置具备由第一3相逆变器31构成的主     	  
+		<br />逆变器(第一逆变器电路)和由第二3相逆变器32构成的副逆变器(第     	  
+		<br />二逆变器电路)，而对3相负载39供给交流电力。3相负载39由各     	  
+		<br />相独立的绕组负载等构成且各相被分开。另外，第一3相逆变器31     	  
+		<br />的各相交流输出线经由3相负载39的各相而串联连接到第二3相逆变     	  
+		<br />器32的各相的交流输出端上。即，第一、第二3相逆变器31、32向     	  
+		<br />3相负载39从两侧进行电力供给。     	  
+		</p>
+    <p id="p-0089-zh" num="0089">在第一3相逆变器31中，使用了基于Si的器件。在该情况下，	 	   	 
+		<br />第一3相逆变器31由将Si-二极管34反并联连接的多个作为Si半导   		 	 
+		<br />体开关元件的Si-IGBT33构成，在直流输入部分中具备作为第一直    		  
+		<br />流电压部的第一直流电源35，而将来自该第一直流电源35的直流电    		  
+		<br />力变换为交流电力而输出。该第一3相逆变器31作为向3相负载39    		  
+		<br />的能量的供给源而动作。    		  
+		</p>
+    <p id="p-0090-zh" num="0090">在第二3相逆变器32中，使用了基于非Si的、禁带宽度比Si     	  
+		<br />宽的半导体材料、例如SiC、GaN的器件。在该情况下，第二3相逆     	  
+		<br />变器32由将SiC-SBD37反并联连接的多个作为非Si半导体开关元     	  
+		<br />件的SiC-MOSFET36构成，在直流输入部分中具备作为第二直流电     	  
+		<br />压部的电容器38，而将来自该电容器38的直流电力变换为交流电力     	  
+		<br />而输出。在该情况下，由于在第二3相逆变器32的直流输入部分中仅     	  
+		<br />具备电容器38，所以控制成使电容器38的充放电平衡、即令第二3     	  
+		<br />相逆变器32的平均电力负担成为零。     	  
+		</p>
+    <p id="p-0091-zh" num="0091">另外，在第二直流电压部中，也可以如图2所示使用第二直流电     	  
+		<br />源10，在该情况下，第二3相逆变器32也作为向3相负载39的能量     	  
+		<br />的供给源而动作。     	  
+		</p>
+    <p id="p-0092-zh" num="0092">第一3相逆变器31的第一直流电源35的电压Vdc-main是例     	  
+		<br />如超过1000V的高电压，被设定为大于第二3相逆变器32的电容器  		  	 
+		<br />38的电压Vdc-sub。	 	   	 
+		</p>
+    <p id="p-0093-zh" num="0093">通过在各相中组合第一3相逆变器31和第二3相逆变器32的产    		  
+		<br />生电压，将基于规定的电压波形的3相交流电力供给到3相负载39。    		  
+		<br />在该情况下，对第一3相逆变器31的电压加上第二3相逆变器32的	   		  
+		<br />电压而得到的电压值成为所需的最大线电压以上，从而可以产生所需	   		  
+		<br />的电压。     	  
+		</p>
+    <p id="p-0094-zh" num="0094">即，第一直流电源35的电压Vdc-main和电容器38的电压Vdc     	  
+		<br />-sub被设定为。     	  
+		</p>
+    <p id="p-0095-zh" num="0095">Vdc-main＞Vdc-sub     	  
+		</p>
+    <p id="p-0096-zh" num="0096">Vdc-main+Vdc-sub≥负载最大电压(最大线电压)。     	  
+		</p>
+    <p id="p-0097-zh" num="0097">另外，与所述实施方式1同样地，在主逆变器(第一3相逆变器     	  
+		<br />31)中，将超过1000V的高耐压Vx的Si-IGBT元件a1用作Si-     	  
+		<br />IGBT33，通过低频下的开关而动作。另外，在副逆变器(第二3相逆     	  
+		<br />变器32)中，将比较低的耐压Vy的SiC-MOSFET元件a2用作SiC  		  	 
+		<br />-MOSFET36，通过基于高频PWM的开关而动作。	 	   	 
+		</p>
+    <p id="p-0098-zh" num="0098">由此，与所述实施方式1同样地，电力变换装置的可靠性良好且    		  
+		<br />损失降低，变换效率提高。    		  
+		</p>
+    <p id="p-0099-zh" num="0099">另外，通过组合这样由具备相异的特性的2种元件构成的第一、	   		  
+		<br />第二3相逆变器31、32，在超过1000V的高电压的电路结构中也可以     	  
+		<br />低损失地实现高频的开关动作，得到高精度的基于电压波形的输出电     	  
+		<br />压。     	  
+		</p>
+    <p id="p-0100-zh" num="0100">另外，在该实施方式中，也通过以使Si-IGBT33和SiC-     	  
+		<br />MOSFET36的导通电压合计相对于Vdc-main+Vdc-sub的比小于     	  
+		<br />SiC-MOSFET36的导通电压相对于Vdc-sub的比的方式，构成第     	  
+		<br />一、第二3相逆变器31、32，可靠地得到损失降低效果。     	  
+		</p>
+    <p id="p-0101-zh" num="0101">另外，在该实施方式3中，示出了3相的电力变换装置，但也可     	  
+		<br />以独立地考虑各相，将第一、第二3相逆变器31、32置换为单相逆变     	  
+		<br />器，将3相负载39置换为单相负载。即，经由单相负载连接作为主逆     	  
+		<br />变器的单相逆变器的交流输出端与作为副逆变器的单相逆变器的交流     	  
+		<br />输出端，从单相负载的两侧进行电力供给。在该情况下，在主逆变器     	  
+		<br />中，使用超过1000V的高耐压Vx的Si-IGBT通过低频开关而动作，  		  	 
+		<br />在副逆变器中，使用比较低的耐压Vy的SiC-MOSFET通过基于高	 	   	 
+		<br />频PWM的开关而动作，从而也得到同样的效果。    		  
+		</p>
+    <p id="p-0102-zh" num="0102">另外，在所述实施方式1～3中，在主逆变器(第一逆变器电路)、    		  
+		<br />副逆变器(第二逆变器电路)中，具备将2个反并联连接了二极管的	   		  
+		<br />半导体开关元件串联连接的串联连接体。在副逆变器中，使串联连接	   		  
+		<br />了2个SiC-MOSFET的串联连接体通过基于高频PWM的开关而动     	  
+		<br />作，如果使一个SiC-MOSFET截止，则另一个SiC-MOSFET的反     	  
+		<br />并联二极管成为导通状态。此时，即，在所述一个SiC-MOSFET的     	  
+		<br />从截止动作结束起直到即将开始导通动作的期间，使所述另一个SiC     	  
+		<br />-MOSFET成为导通状态。如果MOSFET成为导通状态，则可以双     	  
+		<br />向地通电，所以向所述另一个SiC-MOSFET和反并联二极管这双方     	  
+		<br />流过电流。因此，导通电压降低，可以进一步降低导通损失。     	  
+		</p>
+    <p id="p-0103-zh" num="0103">进而，MOSFET在内部形成有寄生二极管(未图示)，其连接     	  
+		<br />方向与图1的SiC-SBD相同。因此，在主逆变器、副逆变器内的半     	  
+		<br />导体开关元件中使用MOSFET的情况下，通过代替反并联二极管而     	  
+		<br />使用寄生二极管，可以省略SiC-SBD等反并联二极管。由此，可以     	  
+		<br />降低反并联二极管的成本，并缩小安装面积。     	  
+		</p>
+    <p id="p-0104-zh" num="0104">另外，在所述实施方式1～3中，在主逆变器和副逆变器中，主逆  		  	 
+		<br />变器的直流电压更大，而且开关频率更小，但也可以设为开关频率相	 	   	 
+		<br />同且主逆变器的直流电压更大、或者直流电压相同且主逆变器的开关   		 	 
+		<br />频率更小，也得到整体的损失降低的效果。    		  
+		</p>
+    <p id="p-0105-zh" num="0105">另外，在所述实施方式1～3中，说明了在副逆变器中具备的半导    		  
+		<br />体开关元件和二极管这双方是非Si、例如SiC器件的情况，但也可以	   		  
+		<br />仅将半导体开关元件设为非Si器件。	   		  
+		</p>
+    <p id="p-0106-zh" num="0106">进而，也可以在副逆变器内仅将二极管设为作为非Si器件的例     	  
+		<br />如SiC-SBD。在该情况下，也可以大幅降低副逆变器内的Si半导体     	  
+		<br />开关元件的导通损失、和SiC-SBD的恢复(recovery)时的损失，     	  
+		<br />具有比由Si器件构成了副逆变器内的半导体开关元件和二极管这双     	  
+		<br />方的情况大的损失降低效果。     	  
+		</p>
+    <p id="p-0107-zh" num="0107">(实施方式4)     	  
+		</p>
+    <p id="p-0108-zh" num="0108">接下来，对本发明的实施方式4进行说明。     	  
+		</p>
+    <p id="p-0109-zh" num="0109">在所述实施方式1～3中，使用了具有图5(a)、图5(b)所示  		  	 
+		<br />那样的特性的Si-IGBT和SiC-MOSFET的器件，而在Si-IGBT	 	   	 
+		<br />中，已知可以通过器件形成时的注入载流子的增减来改变特性，如果   		 	 
+		<br />使开关速度变慢则可以使导通电阻降低、即令导通损失降低。    		  
+		</p>
+    <p id="p-0110-zh" num="0110">在该实施方式中，使用与所述实施方式1的情况相比使开关速度    		  
+		<br />变慢而降低了导通损失的器件结构的Si-IGBT、和与所述实施方式1	   		  
+		<br />同样的SiC-MOSFET，来构成所述实施方式1～3中示出的电力变换	   		  
+		<br />装置。图8是示出该实施方式中使用的Si-IGBT和SiC-MOSFET     	  
+		<br />的器件的特性的图，示出元件耐压和导通损失的关系。     	  
+		</p>
+    <p id="p-0111-zh" num="0111">将主逆变器1、21、31中使用的Si-IGBT3、23、33设为耐压     	  
+		<br />Vx的Si-IGBT元件a1，将副逆变器2、22、32中使用的SiC-     	  
+		<br />MOSFET6、26、36设为耐压Vy的SiC-MOSFET元件a2。另外，     	  
+		<br />设Si-IGBT元件a1的耐压Vx超过1000～1200V。     	  
+		</p>
+    <p id="p-0112-zh" num="0112">另外，作为第一比较例，在仅由Si-IGBT构成了单独的高频高     	  
+		<br />电压的单相逆变器的情况下，将所使用的元件设为耐压Vx+Vy的Si     	  
+		<br />-IGBT元件b。作为第二比较例，在仅由SiC-MOSFET构成了单     	  
+		<br />独的高频高电压的单相逆变器的情况下，将所使用的元件设为耐压Vx     	  
+		<br />+Vy的SiC-MOSFET元件c。     	  
+		</p>
+    <p id="p-0113-zh" num="0113">在该实施方式中，也使利用Si-IGBT元件a1的主逆变器1、21、	 	   	 
+		<br />31低频地动作，使利用SiC-MOSFET元件a2的副逆变器2、22、   		 	 
+		<br />32高频地动作，通过主逆变器1、21、31和副逆变器2、22、32的输    		  
+		<br />出的合成，对负载9、29、39进行电力供给。    		  
+		</p>
+    <p id="p-0114-zh" num="0114">如图8所示，以使Si-IGBT元件a1的导通损失ax小于SiC-	   		  
+		<br />MOSFET元件a2的导通损失ay的方式，构成Si-IGBT元件a1的	   		  
+		<br />器件。在该情况下，Si-IGBT元件a1的导通损失ax大幅降低，所     	  
+		<br />以整体的导通损失ax+ay也比所述实施方式1大幅降低。此时，Si     	  
+		<br />-IGBT元件a1的开关速度变慢而开关损失增加，但Si-IGBT元件     	  
+		<br />a1由于低频地进行开关，所以增加量的影响较小，整体的开关损失as     	  
+		<br />的增加量也比较小。由此，可以比所述实施方式1降低Si-IGBT元     	  
+		<br />件a1和SiC-MOSFET元件a2的导通损失、开关损失的合计ax+ay     	  
+		<br />+as即整体损失Loss-a。     	  
+		</p>
+    <p id="p-0115-zh" num="0115">在该情况下，在仅使用了耐压Vx+Vy的Si-IGBT元件b的第     	  
+		<br />一比较例中，由于进行高频动作，所以开关损失非常大，加上了导通     	  
+		<br />损失的电路整体的损失大于损失Loss-a。另外，在仅使用了耐压Vx     	  
+		<br />+Vy的SiC-MOSFET元件c的第二比较例中，导通损失非常大，     	  
+		<br />加上了开关损失的电路整体的损失大于损失Loss-a。     	  
+		</p>
+    <p id="p-0116-zh" num="0116">另外，在所述实施方式1中，整体的开关损失在损失整体(导通	 	   	 
+		<br />损失+开关损失)中所占的比例较小，但通过如该实施方式4所述，   		 	 
+		<br />使Si-IGBTa1的导通损失ax降低，整体的开关损失在损失整体中所    		  
+		<br />占的比例增加。一般，在设计元件的特性时，在设定成使导通损失与    		  
+		<br />开关损失成为等同时，认为设计效率是最好的。另外，在高电压元件    		  
+		<br />的情况下，开关速度非常慢，在开关损失相对于导通损失成为1～2倍    		  
+		<br />的区域中使用的情况也较多。	   		  
+		</p>
+    <p id="p-0117-zh" num="0117">因此，如果以使Si-IGBT的开关速度变慢并使导通电压降低，     	  
+		<br />而使整体的开关损失相对于整体的导通损失成为1～2倍的方式，设计     	  
+		<br />Si-IGBT元件，则可以期待作为电力变换装置整体而得到最佳的点。     	  
+		</p>
+    <p id="p-0118-zh" num="0118">(实施方式5)     	  
+		</p>
+    <p id="p-0119-zh" num="0119">接下来，对本发明的实施方式5进行说明。     	  
+		</p>
+    <p id="p-0120-zh" num="0120">在该实施方式5中，如图9所示，在所述实施方式1中示出的第     	  
+		<br />一、第二单相逆变器1、2的作为直流电压部的第一直流电源5、电容     	  
+		<br />器8与各臂之间连接电容器Co、Cs。     	  
+		</p>
+    <p id="p-0121-zh" num="0121">第二单相逆变器2由于高频地动作，所以为了降低开关损失需要	 	   	 
+		<br />使元件的开关速度变快。此时，如果布线的电感Ls较大，则通过基于   		 	 
+		<br />Ls·di/dt的浪涌电压(surge voltage)，元件有被破坏的危险，所以需    		  
+		<br />要减小布线的电感Ls。因此，在第二单相逆变器2的电容器8与各臂    		  
+		<br />之间连接的电容器Cs是使用电感较小的电容器。另外，优选的是选    		  
+		<br />择不仅是电感、还包括电阻成分的阻抗较小的电容器。    		  
+		</p>
+    <p id="p-0122-zh" num="0122">另一方面，低频地动作的第一单相逆变器1由于无需使开关速度     	  
+		<br />变快，所以无需考虑由于浪涌电压引起的恶劣影响。因此，关于在第     	  
+		<br />一单相逆变器1的第一直流电源5与各臂之间连接的电容器Co，无需     	  
+		<br />如电容器Cs那样减小电感、阻抗，而可以使用廉价的电容器。     	  
+		</p>
+    <p id="p-0123-zh" num="0123">另外，即使不降低电容器Cs本身的电感、阻抗，通过降低从电     	  
+		<br />容器Cs到各臂的路径整体的电感、阻抗，也可以抑制浪涌电压。即，     	  
+		<br />使从电容器Cs到各臂的电感、阻抗小于从电容器Co到各臂的电感、     	  
+		<br />阻抗。     	  
+		</p>
+    <p id="p-0124-zh" num="0124">这样，通过使第二单相逆变器2的从电容器8到各臂的布线的电     	  
+		<br />感、阻抗小于第一单相逆变器1的从第一直流电源5到各臂的布线的     	  
+		<br />电感、阻抗，可以实现可靠性高且廉价的电路结构的电力变换装置。     	  
+		</p>
+    <p id="p-0125-zh" num="0125">另外，该实施方式还可以应用于所述实施方式2、3的电路结构   		 	 
+		<br />的电力变换装置，通过使副逆变器22、32的从电容器28、38到各臂    		  
+		<br />的布线的电感、阻抗小于主逆变器21、31的从第一直流电源25、35    		  
+		<br />到各臂的布线的电感、阻抗，同样地可以实现可靠性高且廉价的电路    		  
+		<br />结构的电力变换装置。    		  
+		</p>
+    <p id="p-0126-zh" num="0126">(实施方式6)     	  
+		</p>
+    <p id="p-0127-zh" num="0127">接下来，对本发明的实施方式6进行说明。     	  
+		</p>
+    <p id="p-0128-zh" num="0128">在该实施方式6中，如图10所示，将所述实施方式1的构成第     	  
+		<br />一单相逆变器1的各臂的Si元件部1a和构成第二单相逆变器2的各     	  
+		<br />臂的SiC元件部2a收纳在1个模块40中。     	  
+		</p>
+    <p id="p-0129-zh" num="0129">第一单相逆变器1的Si元件部1a由Si-IGBT3和Si-二极管4     	  
+		<br />构成，第二单相逆变器2的SiC元件部2a由SiC-MOSFET6和SiC     	  
+		<br />-SBD7构成。另外，Ps、Ns是第一单相逆变器1的直流母线，Pf、     	  
+		<br />Nf是第二单相逆变器2的直流母线。另外，用Lms1、Lms2表示模块     	  
+		<br />内的Si元件部1a的2个臂的各布线电感，用Lmf1、Lmf2表示SiC     	  
+		<br />元件部2a的2个臂的各布线电感。  		  	 
+		</p>
+    <p id="p-0130-zh" num="0130">第二单相逆变器2的SiC元件部2a由于高频地动作，所以需要    		  
+		<br />减小布线电感Lmf1、Lmf2来抑制开关时的浪涌电压。另一方面，低    		  
+		<br />频地动作的第一单相逆变器1的Si元件部1a无需使开关速度加快，    		  
+		<br />所以无需考虑由于浪涌电压引起的恶劣影响。	   		  
+		</p>
+    <p id="p-0131-zh" num="0131">在该实施方式中，以满足Lms1＞Lmf1、Lms2＞Lmf2的方式，配     	  
+		<br />设各元件以及布线。由此，可以通过廉价的电路结构来减小SiC元件     	  
+		<br />部2a的布线电感Lmf1、Lmf2，可以实现抑制了浪涌电压的可靠性高     	  
+		<br />的电力变换装置。     	  
+		</p>
+    <p id="p-0132-zh" num="0132">通常，不将基于不同的材料的器件收纳在同一模块中，但在该实     	  
+		<br />施方式中，如上所述，使布线电感满足Lms1＞Lmf1、Lms2＞Lmf2的     	  
+		<br />关系，而将Si元件部1a和SiC元件部2a高可靠性地收纳在1个模块     	  
+		<br />40中。由此，可以促进电力变换装置的小型化。     	  
+		</p>
+    <p id="p-0133-zh" num="0133">另外，该实施方式还可以应用于所述实施方式2、3的电路结构     	  
+		<br />的电力变换装置，对于主逆变器21、31的Si元件部、和副逆变器22、     	  
+		<br />32的SiC元件部，使SiC元件部的布线电感小于Si元件部的布线电     	  
+		<br />感，而收纳在1个模块中。  		  	 
+		</p>
+    <p id="p-0134-zh" num="0134">图11示出应用于所述实施方式2的情况。如图所示，将主逆变    		  
+		<br />器21的Si元件部21a、和副逆变器22的各单相逆变器22a、22b、22c    		  
+		<br />的SiC元件部22aa、22ba、22ca收纳在作为1个模块的3相混合模块    		  
+		<br />41中。    		  
+		</p>
+    <p id="p-0135-zh" num="0135">即使在这样应用于所述实施方式2、3的电路结构的电力变换装     	  
+		<br />置中的情况下，也可以与该实施方式同样地，通过廉价的电路结构来     	  
+		<br />实现抑制了浪涌电压的可靠性高的电力变换装置，并且还可以促进电     	  
+		<br />力变换装置的小型化。     	  
+		</p>
+    <p id="p-0136-zh" num="0136">另外，在所述各实施方式中，作为Si半导体开关元件使用了     	  
+		<br />IGBT，也可以使用作为双极器件的GCT、双极晶体管，也得到同样     	  
+		<br />的效果。     	  
+		</p>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20110515">
+    <claim num="1">
+      <claim-text>1.一种电力变换装置，其特征在于，具备：     	  
+			</claim-text>
+      <claim-text>第一逆变器电路，具备第一直流电压部和基于Si的多个半导体   		 	 
+			<br />元件；以及    		  
+			</claim-text>
+      <claim-text>第二逆变器电路，具备第二直流电压部和基于非Si的多个半导    		  
+			<br />体元件，	   		  
+			</claim-text>
+      <claim-text>将所述第一逆变器电路的交流侧输出端与所述第二逆变器电路     	  
+			<br />的交流侧输出端串联连接，通过合成所述第一、第二逆变器电路的输     	  
+			<br />出，将基于规定的电压波形的交流电力供给到负载。     	  
+			</claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>2.根据权利要求1所述的电力变换装置，其特征在于，     	  
+			</claim-text>
+      <claim-text>所述第一直流电压部的电压大于所述第二直流电压部的电压。     	  
+			</claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>3.根据权利要求1所述的电力变换装置，其特征在于，  		  	 
+			</claim-text>
+      <claim-text>对所述第一逆变器电路进行驱动的开关频率小于对所述第二逆    		  
+			<br />变器电路进行驱动的开关频率。    		  
+			</claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>4.根据权利要求1所述的电力变换装置，其特征在于，     	  
+			</claim-text>
+      <claim-text>所述第一直流电压部的电压大于所述第二直流电压部的电压，     	  
+			</claim-text>
+      <claim-text>对所述第一逆变器电路进行驱动的开关频率小于对所述第二逆     	  
+			<br />变器电路进行驱动的开关频率。     	  
+			</claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>5.根据权利要求1～4中的任意一项所述的电力变换装置，其特征     	  
+			<br />在于，     	  
+			</claim-text>
+      <claim-text>所述第一逆变器电路以及所述第二逆变器电路分别由单相逆变  		  	 
+			<br />器构成。	 	   	 
+			</claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>6.根据权利要求1～4中的任意一项所述的电力变换装置，其特征    		  
+			<br />在于，	   		  
+			</claim-text>
+      <claim-text>所述第一逆变器电路由n相逆变器构成，所述第二逆变器电路由     	  
+			<br />至少n个单相逆变器构成，     	  
+			</claim-text>
+      <claim-text>对所述第一逆变器电路的各相交流输出线，串联连接所述第二逆     	  
+			<br />变器电路的所述各单相逆变器的交流侧输出端，在各相中对所述第一、     	  
+			<br />第二逆变器电路的输出进行合成，将基于规定的电压波形的n相交流     	  
+			<br />电力供给到n相负载。     	  
+			</claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>7.根据权利要求1～4中的任意一项所述的电力变换装置，其特征     	  
+			<br />在于，     	  
+			</claim-text>
+      <claim-text>所述第一逆变器电路的交流侧输出端与所述第二逆变器电路的   		 	 
+			<br />交流侧输出端夹着所述负载被串联连接，通过所述第一逆变器电路和    		  
+			<br />所述第二逆变器电路对所述负载从两侧进行电力供给。    		  
+			</claim-text>
+    </claim>
+    <claim num="8">
+      <claim-text>8.根据权利要求1～4中的任意一项所述的电力变换装置，其特征     	  
+			<br />在于，     	  
+			</claim-text>
+      <claim-text>所述第一逆变器电路具备多个Si半导体开关元件而作为所述基     	  
+			<br />于Si的多个半导体元件，所述第二逆变器电路具备多个非Si半导体     	  
+			<br />开关元件而作为所述基于非Si的多个半导体元件。     	  
+			</claim-text>
+    </claim>
+    <claim num="9">
+      <claim-text>9.根据权利要求8所述的电力变换装置，其特征在于，     	  
+			</claim-text>
+      <claim-text>所述第一逆变器电路内的所述Si半导体开关元件以及所述第二     	  
+			<br />逆变器电路内的所述非Si半导体开关元件的2种导通电压合计相对于     	  
+			<br />所述第一直流电压部以及所述第二直流电压部的直流电压合计的比小  		  	 
+			<br />于所述非Si半导体开关元件的导通电压相对于所述第二直流电压部	 	   	 
+			<br />的直流电压的比。   		 	 
+			</claim-text>
+    </claim>
+    <claim num="10">
+      <claim-text>10.根据权利要求8所述的电力变换装置，其特征在于，	   		  
+			</claim-text>
+      <claim-text>使所述第一逆变器电路内的所述Si半导体开关元件的导通电压     	  
+			<br />低于所述第二逆变器电路内的所述非Si半导体开关元件的导通电压。     	  
+			</claim-text>
+    </claim>
+    <claim num="11">
+      <claim-text>11.根据权利要求8所述的电力变换装置，其特征在于，     	  
+			</claim-text>
+      <claim-text>将所述第一逆变器电路内的所述Si半导体开关元件构成为使开     	  
+			<br />关速度慢且使导通电压低，而使所述第一、第二逆变器电路中的开关     	  
+			<br />损失的合计相对于导通损失的合计成为1～2倍。     	  
+			</claim-text>
+    </claim>
+    <claim num="12">
+      <claim-text>12.根据权利要求8所述的电力变换装置，其特征在于，	 	   	 
+			</claim-text>
+      <claim-text>所述第一逆变器电路内的所述Si半导体开关元件的耐压是    		  
+			<br />1000V以上。    		  
+			</claim-text>
+    </claim>
+    <claim num="13">
+      <claim-text>13.根据权利要求8所述的电力变换装置，其特征在于，     	  
+			</claim-text>
+      <claim-text>所述第一逆变器电路内的所述各Si半导体开关元件使用了     	  
+			<br />IGBT、GCT、双极晶体管中的某一种。     	  
+			</claim-text>
+    </claim>
+    <claim num="14">
+      <claim-text>14.根据权利要求8所述的电力变换装置，其特征在于，     	  
+			</claim-text>
+      <claim-text>所述第二逆变器电路至少具有一对串联连接体，该串联连接体是     	  
+			<br />2个非Si半导体开关元件的串联连接体，在该串联连接体的一个非Si     	  
+			<br />半导体开关元件的从截止动作结束起直到即将开始接下来的导通动作  		  	 
+			<br />的期间，使另一个非Si半导体开关元件导通。	 	   	 
+			</claim-text>
+    </claim>
+    <claim num="15">
+      <claim-text>15.根据权利要求8所述的电力变换装置，其特征在于，    		  
+			</claim-text>
+      <claim-text>所述第二逆变器电路内的所述各非Si半导体开关元件使用了     	  
+			<br />SiC-MOSFET。     	  
+			</claim-text>
+    </claim>
+    <claim num="16">
+      <claim-text>16.根据权利要求1～4中的任意一项所述的电力变换装置，其特     	  
+			<br />征在于，     	  
+			</claim-text>
+      <claim-text>所述第二逆变器电路具备多个半导体开关元件以及多个二极管，     	  
+			<br />该多个二极管是所述基于非Si的多个半导体元件。     	  
+			</claim-text>
+    </claim>
+    <claim num="17">
+      <claim-text>17.根据权利要求16所述的电力变换装置，其特征在于，  		  	 
+			</claim-text>
+      <claim-text>所述多个二极管是SiC-肖特基势垒二极管。    		  
+			</claim-text>
+    </claim>
+    <claim num="18">
+      <claim-text>18.根据权利要求1～4中的任意一项所述的电力变换装置，其特	   		  
+			<br />征在于，     	  
+			</claim-text>
+      <claim-text>所述第二逆变器电路中的从所述第二直流电压部到所述单相逆     	  
+			<br />变器的各臂的布线电感小于所述第一逆变器电路中的从所述第一直流     	  
+			<br />电压部到该第一逆变器电路的各臂的布线电感。     	  
+			</claim-text>
+    </claim>
+    <claim num="19">
+      <claim-text>19.根据权利要求1～4中的任意一项所述的电力变换装置，其特     	  
+			<br />征在于，     	  
+			</claim-text>
+      <claim-text>将所述第一逆变器电路内的所述基于Si的多个半导体元件和所     	  
+			<br />述第二逆变器电路内的所述基于非Si的多个半导体元件收纳在同一     	  
+			<br />模块内。  		  	 
+			</claim-text>
+    </claim>
+    <claim num="20">
+      <claim-text>20.根据权利要求3或4所述的电力变换装置，其特征在于，    		  
+			</claim-text>
+      <claim-text>仅对在所述第一、第二逆变器电路之中的所述第二逆变器电路进	   		  
+			<br />行高频PWM控制。     	  
+			</claim-text>
+    </claim>
+    <claim num="21">
+      <claim-text>21.根据权利要求1～4中的任意一项所述的电力变换装置，其特     	  
+			<br />征在于，     	  
+			</claim-text>
+      <claim-text>所述第二逆变器电路内的所述由非Si构成的半导体元件由禁带     	  
+			<br />宽度比Si宽的半导体材料构成。     	  
+			</claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

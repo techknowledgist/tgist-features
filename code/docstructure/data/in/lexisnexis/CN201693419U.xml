@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111006" file="CN201693419U.xml" produced-by="LexisNexis-Univentio" lang="eng" date-inserted="20110113" time-inserted="035548" date-changed="20110927" time-changed="202946">
+  <bibliographic-data lang="eng">
+    <publication-reference publ-type="undefined" publ-desc="Utility model application">
+      <document-id>
+        <country>CN</country>
+        <doc-number>201693419</doc-number>
+        <kind>U</kind>
+        <date>20110105</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>200920276079</doc-number>
+        <date>20091207</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>eng</language-of-publication>
+    <priority-claims>
+      <priority-claim sequence="1" data-format="docdb">
+        <country>CN</country>
+        <doc-number>200920276079</doc-number>
+        <kind>U</kind>
+        <date>20091207</date>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="epodoc">
+        <doc-number>CN20092276079U</doc-number>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20110118">
+      <gazette-reference>
+        <date>20110105</date>
+      </gazette-reference>
+      <printed-with-grant>
+        <date>20110105</date>
+      </printed-with-grant>
+    </dates-of-public-availability>
+    <kind-of-official-gazette lang="eng">27-01</kind-of-official-gazette>
+    <classifications-ipcr date-changed="20110927">
+      <classification-ipcr sequence="1">
+        <text>B24B   7/18        20060101AFI20110922BHCN        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>B</section>
+        <class>24</class>
+        <subclass>B</subclass>
+        <main-group>7</main-group>
+        <subgroup>18</subgroup>
+        <symbol-position>F</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20110922</date>
+        </action-date>
+        <generating-office>
+          <country>CN</country>
+        </generating-office>
+        <classification-status>B</classification-status>
+        <classification-data-source>H</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <number-of-claims calculated="yes">9</number-of-claims>
+    <invention-title id="title_chi" date-changed="20110927" lang="chi" format="original">一种墙壁打磨机的手柄</invention-title>
+    <invention-title id="title_eng" date-changed="20110927" lang="eng" format="original">Handle of wall grinding machine</invention-title>
+    <parties date-changed="20110927">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>永康市豪迈工具有限公司</orgname>
+            <address>
+              <address-1>321300 浙江省永康市五金科技工业园华夏路95号</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>YONGKANG HAOMAI TOOLS CO., LTD.</orgname>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdb">
+          <addressbook lang="eng">
+            <orgname>YONGKANG HAOMAI TOOLS CO LTD</orgname>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>YONGKANG HAOMAI TOOLS CO., LTD.</orgname>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>应志宁</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>YING ZHINING</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdb">
+          <addressbook lang="eng">
+            <name>ZHINING YING</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>YING ZHINING</name>
+          </addressbook>
+        </inventor>
+      </inventors>
+    </parties>
+    <patent-family date-changed="20110113">
+      <main-family family-id="141425003">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>201693419</doc-number>
+            <kind>U</kind>
+            <date>20110105</date>
+          </document-id>
+          <application-date>
+            <date>20091207</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="141425002">
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>201693419</doc-number>
+            <kind>U</kind>
+            <date>20110105</date>
+          </document-id>
+          <application-date>
+            <date>20091207</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20110927" lang="chi" format="original">
+    <p num="1">一种墙壁打磨机的手柄，手柄由至少两根呈纵向设置的第一、第二杆件，该第一、第二杆件内分别固接第一、第二导尘管，其中，第一导尘管后端向外延伸并外露于第一杆件，第二杆件内壁上于第二导尘管前端处设有一夹紧部件，先将第一导尘管后端穿过夹紧部件并与第二导尘管前端连通，然后通过夹紧部件夹紧第一导尘管后端，即可将第一、第二杆件固定连接起来，同样的，松开夹紧部件，即可将第一、第二杆件拆下并装箱，存储或携带都非常的方便。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20110927" lang="eng" format="original">
+    <p>The utility model relates to a handle of a wall grinding machine. The handle consists of at least two rod elements: a first rod element and a second rod element which are arranged in the vertical direction, and the first rod element and the second rod element are respectively and fixedly connected with a first dust guide pipe and a second dust guide pipe, wherein the back end of the first dust guide pipe outwards extends and is exposed out of the first rod element, a position on the inner wall of the second rod element at the front end of the second dust guide pipe is provided with a clamping component, firstly, the back end of the first dust guide pipe passes through the clamping component and is communicated with the front end of the second dust guide pipe, then, the back end of the first dust guide pipe is tightly clamped through the clamping component, the first rod element and the second rod element can be fixedly connected, in a same way, the first rod element and the second rod element can be dismounted and can be loaded into a box through releasing the clamping component, and both the storage and the carrying are very convenient.</p>
+  </abstract>
+  <legal-data date-changed="20110408">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>20110105</date>
+      </publication-date>
+      <event-code-1>C14</event-code-1>
+      <effect>+</effect>
+      <legal-description>GRANTED</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN   201693419U</docdb-publication-number>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20110330">
+    <p id="p-0001-zh" num="0001">技术领域：     	  
+	</p>
+    <p id="p-0002-zh" num="0002">本实用新型涉及一种对墙壁表面进行打磨清洁的墙壁打磨机，特别     	  
+		<br />是一种墙壁打磨机的手柄。     	  
+		</p>
+    <p id="p-0003-zh" num="0003">背景技术：     	  
+	</p>
+    <p id="p-0004-zh" num="0004">如专利DE69615879C2所公开的一种对墙壁表面进行打磨清洁的长颈     	  
+		<br />磨机，包括空心手柄和磨削头，磨削头可旋转的安装在空心手柄前端，     	  
+		<br />包括磨盘和抽吸罩，电机安装在手柄后端并通过软轴带动磨削头里的磨     	  
+		<br />盘转动，由磨盘对墙壁进行打磨清洁，手柄设置得较长，可对较高墙壁     	  
+		<br />及墙顶进行打磨，非常方便，但是，该手柄是整根的、不可折叠或拆卸     	  
+		<br />的，对该长颈磨机的存储或携带带来非常大的麻烦。     	  
+		</p>
+    <p id="p-0005-zh" num="0005">实用新型内容：   		 	 
+	</p>
+    <p id="p-0006-zh" num="0006">本实用新型的目的在于克服上述现有技术的不足，提供一种墙壁打    		  
+		<br />磨机的手柄，使用该手柄地墙壁打磨机可方便的存储或携带。    		  
+		</p>
+    <p id="p-0007-zh" num="0007">按照本实用新型提供的一种墙壁打磨机的手柄，包括至少两根呈纵	   		  
+		<br />向设置的第一、第二杆件，该第一、第二杆件内分别固接第一、第二导     	  
+		<br />尘管，其中，第一导尘管后端向外延伸并外露于第一杆件，第二杆件内     	  
+		<br />壁上于第二导尘管前端处设有一夹紧部件，第一导尘管后端穿过夹紧部     	  
+		<br />件并与第二导尘管前端连通，然后通过夹紧部件夹紧第一导尘管后端，     	  
+		<br />即可将第一、第二杆件固定连接起来。     	  
+		</p>
+    <p id="p-0008-zh" num="0008">本实用新型还具有如下附属技术特征：     	  
+		</p>
+    <p id="p-0009-zh" num="0009">所述第一导尘管后端面上设有开口，第二杆件内壁上于所述夹紧部     	  
+		<br />件和所述第二导尘管前端面之间固定有一挡块，该挡块与开口可滑动配     	  
+		<br />合。     	  
+		</p>
+    <p id="p-0010-zh" num="0010">所述开口一侧壁的下端还开有一可与所述挡块卡接配合的挡槽。  		  	 
+		</p>
+    <p id="p-0011-zh" num="0011">所述第一导尘管和第二导尘管之间通过密封套筒连通，该密封套筒    		  
+		<br />内壁的后端部分上向内延伸有一环形挡壁，该环形挡壁后端面上沿密封    		  
+		<br />套筒内壁开有一环形卡槽，所述第二导尘管前端内套于密封套筒后端且    		  
+		<br />与环形卡槽卡接配合，密封套筒内壁的前端部分上开有一通孔，挡块末    		  
+		<br />端穿过通孔置于密封套筒内部。	   		  
+		</p>
+    <p id="p-0012-zh" num="0012">所述第一导尘管后端可拆卸的插接到所述筒前端部分内，在插接过     	  
+		<br />程中，所述挡块先与所述第一开口可滑动配合，后与所述挡槽卡节配合。     	  
+		</p>
+    <p id="p-0013-zh" num="0013">所述夹紧部件包括夹紧轴套、调节螺帽、偏心轮夹紧帮手和连接轴     	  
+		<br />销，其中，夹紧轴套的周壁上轴向开有一通槽，自该通槽两端壁向外延     	  
+		<br />伸有两平行设置的支板，其中一支板固定在所述第二杆件上，另一支板     	  
+		<br />悬空。     	  
+		</p>
+    <p id="p-0014-zh" num="0014">所述两支板上均对应的开有安装孔，所述连接轴销穿过并安装在两     	  
+		<br />安装孔上，所述调节螺帽与连接轴销的一端螺纹连接，所述偏心轮夹紧     	  
+		<br />帮手与连接轴销的另一端活动连接。     	  
+		</p>
+    <p id="p-0015-zh" num="0015">所述夹紧轴套内周壁上覆盖有一层防滑垫。  		  	 
+		</p>
+    <p id="p-0016-zh" num="0016">所述所述所述调节螺帽和所述偏心轮夹紧帮手均外露于第二杆件的    		  
+		<br />外周壁。    		  
+		</p>
+    <p id="p-0017-zh" num="0017">按照本实用新型提供的一种墙壁打磨机的手柄，相对于现有技术的	   		  
+		<br />优点为：	   		  
+		</p>
+    <p id="p-0018-zh" num="0018">本实用新型中，手柄由至少两根呈纵向设置的第一、第二杆件，该     	  
+		<br />第一、第二杆件内分别固接第一、第二导尘管，其中，第一导尘管后端     	  
+		<br />向外延伸并外露于第一杆件，第二杆件内壁上于第二导尘管前端处设有     	  
+		<br />一夹紧部件，先将第一导尘管后端穿过夹紧部件并与第二导尘管前端连     	  
+		<br />通，然后通过夹紧部件夹紧第一导尘管后端，即可将第一、第二杆件固     	  
+		<br />定连接起来，同样的，松开夹紧部件，即可将第一、第二杆件拆下并装     	  
+		<br />箱，存储或携带都非常的方便。     	  
+		</p>
+    <p id="p-0019-zh" num="0019">附图说明：     	  
+	</p>
+    <p id="p-0020-zh" num="0020">下面结合附图和具体实施例详细介绍本实用新型。     	  
+		</p>
+    <p id="p-0021-zh" num="0021">图1为本实用新型的结构示意图；	 	   	 
+		</p>
+    <p id="p-0022-zh" num="0022">图2为图1中I的放大后的结构示意图；    		  
+		</p>
+    <p id="p-0023-zh" num="0023">图3为本实用新型中密封套筒的结构示意图；	   		  
+		</p>
+    <p id="p-0024-zh" num="0024">图4为本实用新型中夹紧部件的结构示意图；     	  
+		</p>
+    <p id="p-0025-zh" num="0025">图5为本实用新型中开口和挡槽的结构示意图。     	  
+		</p>
+    <p id="p-0026-zh" num="0026">具体实施方式：     	  
+	</p>
+    <p id="p-0027-zh" num="0027">参照图1至图5，按照本实用新型提供的一种墙壁打磨机的手柄，     	  
+		<br />包括至少两根呈纵向设置的第一、第二杆件1、2，该第一、第二杆件1、     	  
+		<br />2内分别固接第一、第二导尘管3、4，其中，第一导尘管3后端向外延     	  
+		<br />伸并外露于第一杆件1，第二杆件2内壁上于第二导尘管4前端处设有一     	  
+		<br />夹紧部件5，第一导尘管3后端穿过夹紧部件5并与第二导尘管4前端连     	  
+		<br />通，然后通过夹紧部件5夹紧第一导尘管3后端，即可将第一、第二杆     	  
+		<br />件1、2固定连接起来，同样的，松开夹紧部件5，即可将第一、第二杆     	  
+		<br />件1、2拆下并装箱，存储或携带都非常的方便。  		  	 
+		</p>
+    <p id="p-0028-zh" num="0028">第一导尘管3后端面上设有开口31，第二杆件2内壁上于夹紧部件5和    		  
+		<br />二导尘管4前端面之间固定有一挡块6，该挡块6与开口31可滑动配合，开    		  
+		<br />口31一侧壁的下端还开有一可与挡块6卡接配合的挡槽32，第一导尘管3    		  
+		<br />和第二导尘管4之间通过密封套筒7连通，该密封套筒7内壁的后端部分上    		  
+		<br />向内延伸有一环形挡壁71，该环形挡壁71后端面上沿密封套筒7内壁开有	   		  
+		<br />一环形卡槽72，第二导尘管4前端内套于密封套筒7后端且与环形卡槽72     	  
+		<br />卡接配合，密封套筒7内壁的前端部分上开有一通孔73，挡块6末端穿过     	  
+		<br />通孔73置于密封套筒7内部，安装时，第一导尘管3后端穿过夹紧部件5插     	  
+		<br />接到密封套筒7前端部分内，在插接过程中，挡块6先与开口31可滑动配     	  
+		<br />合，当插接到预定位置时，相互旋转第一、第二杆件1、2，即可使挡块6     	  
+		<br />卡接到挡槽32内，此时，第一、第二导尘管3、4连通，自第一、第二导     	  
+		<br />尘管3、4内经过的尘土在密封套筒7的阻挡下不能从其连通处外漏，保证     	  
+		<br />了尘土吸收的稳定性。     	  
+		</p>
+    <p id="p-0029-zh" num="0029">夹紧部件5包括夹紧轴套51、调节螺帽52、偏心轮夹紧帮手53和连接     	  
+		<br />轴销54，其中，夹紧轴套51与第一导尘管3后端部分配合，其周壁上轴向     	  
+		<br />开有一通槽511，自该通槽511两端壁向外延伸有两平行设置的支板512、     	  
+		<br />513，其中一支板513固定在第二杆件2上，另一支板512悬空，两支板512、     	  
+		<br />513上均对应的开有安装孔514，连接轴销54穿过并安装在两安装孔514     	  
+		<br />上，调节螺帽52与连接轴销54的一端螺纹连接，偏心轮夹紧帮手53与连     	  
+		<br />接轴销54的另一端活动连接，调节螺帽52和偏心轮夹紧帮手53均外露于  		  	 
+		<br />第二杆件2的外周壁，夹紧时，旋转偏心轮夹紧帮手53，在偏心轮的作用	 	   	 
+		<br />下，连接轴销54及调节螺帽52向内移动，同时，节螺帽52拉动支板512内   		 	 
+		<br />移，通槽511宽度逐渐减小，夹紧轴套51内径也随之减小，置于夹紧轴套    		  
+		<br />51内的第一导尘管3后端被夹紧，此时，第一、第二杆件1、2被固定连接    		  
+		<br />起来。    		  
+		</p>
+    <p id="p-0030-zh" num="0030">夹紧轴套51内周壁上覆盖有一层防滑垫55，增加夹紧轴套51对第一	   		  
+		<br />导尘管3后端夹紧的稳定性。     	  
+		</p>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20110330">
+    <claim num="1">
+      <claim-text>1.一种墙壁打磨机的手柄，其特征在于包括至少两根呈纵向设置的第一、第二杆件(1、2)，该第一、第二杆件(1、2)内分别固接第一、第二导尘管(3、4)，其中，第一导尘管(3)后端向外延伸并外露于第一杆件(1)，第二杆件(2)内壁上于第二导尘管(4)前端处设有一夹紧部件(5)，第一导尘管(3)后端穿过夹紧部件(5)并与第二导尘管(4)前端连通，然后通过夹紧部件(5)夹紧第一导尘管(3)后端，即可将第一、第二杆件(1、2)固定连接起来。     	  
+		</claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>2.如权利要求1所述墙壁打磨机的手柄，其特征在于：所述第一导尘管(3)后端面上设有开口(31)，第二杆件(2)内壁上于所述夹紧部件(5)和所述第二导尘管(4)前端面之间固定有一挡块(6)，该挡块(6)与开口(31)可滑动配合。     	  
+		</claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>3.如权利要求2所述墙壁打磨机的手柄，其特征在于：所述开口(31)一侧壁的下端还开有一可与所述挡块(6)卡接配合的挡槽(32)。     	  
+		</claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>4.如权利要求3所述墙壁打磨机的手柄，其特征在于：所述第一导尘管(3)和第二导尘管(4)之间通过密封套筒(7)连通，该密封套筒(7)内壁的后端部分上向内延伸有一环形挡壁(71)，该环形挡壁(71)后端面上沿密封套筒(7)内壁开有一环形卡槽(72)，所述第二导尘管(4)前端内套于密封套筒(7)后端且与环形卡槽(72)卡接配合，密封套筒(7)内壁的前端部分上开有一通孔(73)，挡块(6)末端穿过通孔(73)置于密封套筒(7)内部。    		  
+		</claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>5.如权利要求4所述墙壁打磨机的手柄，其特征在于：所述第一导尘管(3)后端可拆卸的插接到所述密封套筒(7)前端部分内，在插接过程中，所述挡块(6)先与所述开口(31)可滑动配合，后与所述挡槽(32)卡节配合。	   		  
+		</claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>6.如权利要求5所述墙壁打磨机的手柄，其特征在于：所述夹紧部件(5)包括夹紧轴套(51)、调节螺帽(52)、偏心轮夹紧帮手(53)和连接轴销(54)，其中，夹紧轴套(51)的周壁上轴向开有一通槽(511)，自该通槽(511)两端壁向外延伸有两平行设置的支板(512、513)，其中一支板(513)固定在所述第二杆件(2)上，另一支板(512)悬空。     	  
+		</claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>7.如权利要求6所述墙壁打磨机的手柄，其特征在于：所述两支板(512、513)上均对应的开有安装孔(514)，所述连接轴销(54)穿过并安装在两安装孔(514)上，所述调节螺帽(52)与连接轴销(54)的一端螺纹连接，所述偏心轮夹紧帮手(53)与连接轴销(54)的另一端活动连接。     	  
+		</claim-text>
+    </claim>
+    <claim num="8">
+      <claim-text>8.如权利要求7所述墙壁打磨机的手柄，其特征在于：所述夹紧轴套(51)内周壁上覆盖有一层防滑垫(55)。     	  
+		</claim-text>
+    </claim>
+    <claim num="9">
+      <claim-text>9.如权利要求8所述墙壁打磨机的手柄，其特征在于：所述调节螺帽(52)和所述偏心轮夹紧帮手(53)均外露于第二杆件(2)的外周壁。     	  
+		</claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

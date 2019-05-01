@@ -1,12 +1,13 @@
 # xml2txt
 # module to create a fielded text file from an xml (patent) file
 
-import os, sys, re, codecs, pdb, StringIO, shutil
+import os, re, codecs, StringIO
 from xml.dom.minidom import parse, Node
 
-from docstructure.main import Parser, create_fact_file, open_write_file
-from docstructure.main import load_data, restore_sentences
+from docstructure.main import create_fact_file, open_write_file
+from docstructure.main import load_data, restore_sentences, restore_proper_capitalization
 from utils.misc import findall
+
 
 TARGET_FIELDS = ['FH_TITLE', 'FH_DATE', 'FH_ABSTRACT', 'FH_SUMMARY',
                  'FH_TECHNICAL_FIELD', 'FH_BACKGROUND_ART',
@@ -17,13 +18,13 @@ USED_FIELDS = TARGET_FIELDS + ['FH_DESCRIPTION']
 # all the fields that should only have one element in their list
 SINGLETON_FIELDS = TARGET_FIELDS[:-1]
 
-MAPPINGS = { 'META-TITLE': 'FH_TITLE',
-             'META-DATE': 'FH_DATE',
-             'ABSTRACT': 'FH_ABSTRACT',
-             'SUMMARY': 'FH_SUMMARY',
-             'DESCRIPTION': 'FH_DESCRIPTION',
-             'TECHNICAL_FIELD': 'FH_TECHNICAL_FIELD',
-             'BACKGROUND_ART': 'FH_BACKGROUND_ART' }
+MAPPINGS = {'META-TITLE': 'FH_TITLE',
+            'META-DATE': 'FH_DATE',
+            'ABSTRACT': 'FH_ABSTRACT',
+            'SUMMARY': 'FH_SUMMARY',
+            'DESCRIPTION': 'FH_DESCRIPTION',
+            'TECHNICAL_FIELD': 'FH_TECHNICAL_FIELD',
+            'BACKGROUND_ART': 'FH_BACKGROUND_ART'}
 
 DEBUG = False
 
@@ -65,10 +66,8 @@ def xml2txt(doc_parser, source, source_file, target_file, workspace):
         write_sections(doc_parser, target_file, fh_data)
         for fname in (ds_text_file, ds_tags_file, ds_fact_file, ds_sect_file):
             os.remove(fname)
-    # for wos, cnki, pubmed and the signal processing corpus we ignore the
+    # for cnki, pubmed and the signal processing corpus we ignore the
     # doc_parser that was handed in because we can use a simpler one
-    elif source == 'wos':
-        parse_wos_doc(cleaned_source_file, target_file)
     elif source == 'cnki':
         CNKIDoc(source_file, target_file).xml2txt()
     elif source == 'pm':
@@ -95,11 +94,12 @@ def add_sections(doc_parser, section_tags, text, fh_data):
     remove_embedded_section(fh_data)
     populate_desc_rest(fh_data, text)
 
+
 def write_sections(doc_parser, target_file, fh_data):
     """Write the sections as requested by the technology tagger to a file."""
     onto_fh = open_write_file(target_file)
     for f in TARGET_FIELDS:
-        if fh_data.has_key(f) and fh_data[f]:
+        if f in fh_data and fh_data[f]:
             onto_fh.write(u"%s:\n" % f)
             for sect in fh_data[f]:
                 data_to_write = sect[2]
@@ -108,7 +108,8 @@ def write_sections(doc_parser, target_file, fh_data):
                 onto_fh.write(data_to_write)
                 onto_fh.write(u"\n")
     onto_fh.write("END\n")
-    
+
+
 def populate_desc_rest(fh_data, text):
     """Create the content of FH_DESC_REST, which has the parts of the description that are
     not in the summary, technical field or backhruond art. A summary is used for English
@@ -129,6 +130,7 @@ def populate_desc_rest(fh_data, text):
     elif desc:
         fh_data['FH_DESC_REST'].append((desc[0], desc[1], text[desc[0]:desc[1]].strip()))
 
+
 def add_mapped_tagtype(doc_parser, section_tag, fh_data, p1, p2, tagtype, section):
     """Add a section tag for those tags whose tagtype are mapped to one of the FH_*
     fields used by the technology tagger."""
@@ -145,6 +147,7 @@ def add_mapped_tagtype(doc_parser, section_tag, fh_data, p1, p2, tagtype, sectio
         print_section(section, mapped_type)
     fh_data[mapped_type].append(section)
     
+
 def add_claim(fh_data, section_tag, section):
     """Add a claim section, distinguishing between first claim and other claims."""
     if section_tag.attr('CLAIM_NUMBER') == '1':
@@ -156,6 +159,7 @@ def add_claim(fh_data, section_tag, section):
             print_section(section, 'FH_OTHER_CLAIMS')
         fh_data['FH_OTHER_CLAIMS'].append(section)
 
+
 def remove_embedded_section(fh_data):
     """Remove all the embedded tags. For example, it is quite common for there
     to be a summary inside of a summary (where there is a summary tag and within
@@ -166,9 +170,11 @@ def remove_embedded_section(fh_data):
     for tagtype in SINGLETON_FIELDS:
         fh_data[tagtype] = fh_data[tagtype][:1]
 
+
 def get_first(fh_data, field):
     return fh_data[field][0] if fh_data[field] else None
     
+
 def print_section(section, prefix=''):
     if prefix:
         print prefix,
@@ -184,7 +190,7 @@ def clean_file(source_file, cleaned_source_file, opentag_idx, closetag_idx):
     fh_in = codecs.open(source_file, encoding="utf-8")
     fh_out = codecs.open(cleaned_source_file, 'w', encoding="utf-8")
     for line in fh_in:
-        #_store_tag_statistics(line, opentag_idx, closetag_idx)
+        # _store_tag_statistics(line, opentag_idx, closetag_idx)
         if line.find(tm) > -1:
             line = remove_trademark(line)
         if line.find('claim-text') > -1:
@@ -196,6 +202,7 @@ def clean_file(source_file, cleaned_source_file, opentag_idx, closetag_idx):
         if line.find('figref') > -1:
             line = clean_tag(line, 'figref', ' ')
         fh_out.write(line)
+
 
 def _store_tag_statistics(line, opentag_idx, closetag_idx):
     """Store some tag statistics in the two indexes. This could be used later on
@@ -214,8 +221,10 @@ def _store_tag_statistics(line, opentag_idx, closetag_idx):
         if r[-1] != ' ':
             closetag_idx[r] = closetag_idx.get(r, 0) + 1
 
+
 def remove_trademark(line):
     return line.replace(tm, '')
+
 
 def clean_tag(line, tag, insert):
     """Clean a tag by surrounding it by spaces if needed. This turned out to be
@@ -234,16 +243,18 @@ def clean_tag(line, tag, insert):
         line = add_space_after(line, idxs, close_tag, insert)
     return line
 
+
 def add_space_before(line, idxs, insert):
     output = StringIO.StringIO()
     idx = -1
     for c in line:
         idx += 1
         if idx in idxs and idx > 0 and not line[idx-1].isspace():
-            #print "Adding space before: [%s]" % (line[idx:idx+20])
+            # print "Adding space before: [%s]" % (line[idx:idx+20])
             output.write(insert)
         output.write(c)
     return output.getvalue()
+
 
 def add_space_after(line, idxs, tag_string, insert):
     step = len(tag_string)
@@ -252,7 +263,7 @@ def add_space_after(line, idxs, tag_string, insert):
     for c in line:
         idx += 1
         if idx - step in idxs and idx < len(line) and line[idx].isalnum():
-            #print "Adding space after: [%s] and before [%s]" % \
+            # print "Adding space after: [%s] and before [%s]" % \
             #      (line[idx-20:idx], line[idx:idx+20])
             output.write(insert)
         output.write(c)
@@ -262,38 +273,14 @@ def add_space_after(line, idxs, tag_string, insert):
 STATS_TITLES = []
 STATS_DATES = {}
 
+
 def print_stats():
     print "\n".join(STATS_TITLES)
-    for k,v in STATS_DATES.items(): print k, v
-
-
-def parse_wos_doc(cleaned_source_file, target_file):
-    fh_in = codecs.open(cleaned_source_file)
-    fh_out = codecs.open(target_file, 'w')
-    title, year, abstract = None, None, None
-    for line in fh_in:
-        if line.startswith('<item_title'): # wos12
-            title = line.strip()[12:-13]
-            STATS_TITLES.append(title)
-        elif line.startswith('<title type="item">'): # wos14
-            title = line.strip()[19:-8]
-            STATS_TITLES.append(title)
-        elif line.startswith('<bib_date'): #  wos12
-            year_idx = line.find('year="')
-            year = line[year_idx+6:year_idx+10]
-            STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
-        elif line.startswith('<pub_info'): # wos14
-            year_idx = line.find('pubyear="')
-            year = line[year_idx+9:year_idx+13]
-            STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
-        elif line.startswith('<p>'): # wos12 and wos14
-            abstract = line.strip()[3:-4]
-    write_wos_record(fh_out, year, title, abstract)
+    for k, v in STATS_DATES.items():
+        print k, v
 
 
 def parse_signal_processing_doc(cleaned_source_file, target_file):
-    # Added for the 2017 WoS Signal Processing data drop which contained WoS
-    # files but in a slightly different format as used in parse_wos_doc()
     fh_in = codecs.open(cleaned_source_file)
     fh_out = codecs.open(target_file, 'w')
     title, year, abstract = None, None, None
@@ -306,10 +293,10 @@ def parse_signal_processing_doc(cleaned_source_file, target_file):
             STATS_DATES[year] = STATS_DATES.get(year, 0) + 1
         elif line.startswith('<abstract>'):
             abstract = line.strip()[10:-11]
-    write_wos_record(fh_out, year, title, abstract)
+    _write_wos_record(fh_out, year, title, abstract)
 
 
-def write_wos_record(fh, year, title, abstract):
+def _write_wos_record(fh, year, title, abstract):
     fh.write("FH_DATE:\n%s\n" % year)
     fh.write("FH_TITLE:\n%s\n" % title)
     fh.write("FH_ABSTRACT:\n%s\nEND\n" % abstract)
@@ -332,14 +319,19 @@ class CNKIDoc(object):
         return "<CNKIDoc year=%s fname=%s>" % (self.year, os.path.basename(self.source))
 
     def xml2txt(self):
-        #print len(self.title), len(self.abstract), len(self.body)
-        #if self.title: print self.title
+        # print len(self.title), len(self.abstract), len(self.body)
+        # if self.title: print self.title
         fh = codecs.open(self.target, 'w', encoding='utf8')
-        if self.title: fh.write(u"FH_TITLE:\n%s\n" % self.title)
-        if self.year: fh.write(u"FH_DATE:\n%s\n" % self.year)
-        if self.abstract: fh.write(u"FH_ABSTRACT:\n%s\n" % self.abstract)
-        if self.body: fh.write(u"FH_BODY:\n%s\n" % self.body)
-        if self.stuff: fh.write(u"FH_STUFF:\n%s\n" % self.stuff)
+        if self.title:
+            fh.write(u"FH_TITLE:\n%s\n" % self.title)
+        if self.year:
+            fh.write(u"FH_DATE:\n%s\n" % self.year)
+        if self.abstract:
+            fh.write(u"FH_ABSTRACT:\n%s\n" % self.abstract)
+        if self.body:
+            fh.write(u"FH_BODY:\n%s\n" % self.body)
+        if self.stuff:
+            fh.write(u"FH_STUFF:\n%s\n" % self.stuff)
 
     def get_title(self):
         return self.get_tag('fs:ArticleTitle lang="zh"')
@@ -377,8 +369,7 @@ class CNKIDoc(object):
 
 def is_chinese(c):
     """Return True if c is a Chinese character, return False otherwise. This is
-    based in a range of chinese characters"""
-    # TODO: check with Si Li what is included
+    based on a range of chinese characters"""
     return c >= u'\u4e00' and c <= u'\u9fa5'
 
 
@@ -444,56 +435,34 @@ class PubMedDoc(object):
                     for n2 in n1.childNodes:
                         if n2.nodeType == Node.TEXT_NODE:
                             ptext += n2.nodeValue
-            #self.paragraphs.append([parent_tag, ptext])
+            # self.paragraphs.append([parent_tag, ptext])
             if grandparent_tag == 'abstract':
                 self.abstract.append([parent_tag, ptext])
             elif grandparent_tag == 'body':
                 self.paragraphs.append([parent_tag, ptext])
 
     def xml2txt(self):
-        #print len(self.title), len(self.abstract), len(self.body)
-        #if self.title: print self.title
+        # print len(self.title), len(self.abstract), len(self.body)
+        # if self.title: print self.title
         fh = codecs.open(self.outfile, 'w', encoding='utf8')
-        if self.title: fh.write(u"FH_TITLE:\n%s\n" % self.title)
-        if self.journal: fh.write(u"FH_JOURNAL:\n%s\n" % self.journal)
-        if self.subject: fh.write(u"FH_SUBJECT:\n%s\n" % self.subject)
-        if self.year: fh.write(u"FH_DATE:\n%s\n" % self.year)
+        if self.title:
+            fh.write(u"FH_TITLE:\n%s\n" % self.title)
+        if self.journal:
+            fh.write(u"FH_JOURNAL:\n%s\n" % self.journal)
+        if self.subject:
+            fh.write(u"FH_SUBJECT:\n%s\n" % self.subject)
+        if self.year:
+            fh.write(u"FH_DATE:\n%s\n" % self.year)
         if self.abstract:
             fh.write(u"FH_ABSTRACT:\n")
             for para in self.abstract:
-                if para[0] == 'sec': fh.write("%s\n" % para[1])
+                if para[0] == 'sec':
+                    fh.write("%s\n" % para[1])
         if self.paragraphs:
             fh.write(u"FH_BODY:\n")
             for para in self.paragraphs:
-                if para[0] == 'sec': fh.write("%s\n" % para[1])
-
-    def save_to_file(self, output_directory):
-        output_file = os.path.basename(self.fname)
-        output_file = os.path.splitext(output_file)[0] + '.txt'
-        fh = open(os.path.join(output_directory, output_file), 'w')
-        self.save_to_fh(fh)
-
-    def save_to_fh(self, fh):
-        fh.write("SOURCE\t%s\n" % self.fname)
-        fh.write("TITLE\t%s\n" % normalize(self.title))
-        fh.write("YEAR\t%s\n" % self.year)
-        count = 0
-        for (parent, text, tokenized_text) in self.paragraphs:
-            count += 1
-            for sentence in [s for s in tokenized_text.split("\n") if s]:
-                sentence = normalize(sentence)
-                fh.write("P%d\t%s\t%s\n" % (count, parent.upper(), sentence))
-
-    def pp(self, verbose=False):
-        print "\n\n>>> %s\n%s\n" % (self.fname, '-' * 80)
-        print "YEAR:\t%s" % self.year
-        print "TITLE\t%s\n" % normalize(self.title)
-        if verbose:
-            count = 0
-            for (parent, text, tokenized_text) in self.paragraphs:
-                count += 1
-                for sentence in [s for s in tokenized_text.split("\n") if s]:
-                    sentence = normalize(sentence)
+                if para[0] == 'sec':
+                    fh.write("%s\n" % para[1])
 
 
 class PatentFile(object):
@@ -535,7 +504,7 @@ class PatentFile(object):
             self._set_claims()
 
     def __str__(self):
-        #return "%s\n\n%s %s\n%s" % (self.fname, self.year, self.title, self.abstract)
+        # return "%s\n\n%s %s\n%s" % (self.fname, self.year, self.title, self.abstract)
         return "%s %s %s" % (os.path.split(self.fname)[1], self.year, self.title)
 
     def get_first(self, tagname, warn=True):

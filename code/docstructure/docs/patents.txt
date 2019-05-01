@@ -1,0 +1,79 @@
+Document Structure for Patents -- Approach
+================================================================================
+
+April 17th, 2013
+
+
+>>> OLD
+
+Everything is done in make_sections(), which is called from main: self.factory.make_sections()
+
+1. read all tags from the fact file
+Returns: the full unicode text (TEXT) and a dictionary of tags  of TAGS
+- TEXT: the full unicode text
+- TAGS: a dictionary of tags indexed on things like 'meta_tags', 'sections' and 'paragraphs'
+
+2. move paragraphs
+For all tags t in TAGS['paragraphs']
+	if the text is a header and < 100
+		t.set_type('SECTITLE')
+		move t to TAGS['headers']
+
+3. add meta sections
+We now start adding to self.sections, which is initialy an empty list.
+For all tags t in TAGS['meta_sections']
+	if t.name == 'date'
+		ADD make_section(self.text_file, t, text, 'Meta-Date')
+	if t.name == 'invention_title'
+		ADD make_section(self.text_file, t, text, 'Meta-Title')
+
+4. add basic sections
+Get description, summary and claims by getting first element of TAGS['sections'],
+TAGS['summaries'] and TAGS['claims_sections'], and get all abstracts from TAGS['abstracts'].
+ADD make_section(self.text_file, tag, text, name) with
+	name in 'Description', 'Summary', 'Claims', 'Abstract'
+
+5. add_summary_sections
+        Get TAGS['summaries'][0]
+Find all TAGS['headers'] and TAGS['paragraphs'] contained in the summary.
+ADD sections with 'Header' and 'Other' types.
+
+6. add description sections
+Get TAGS['sections'][0]
+Get headers and paragrpas contained in description
+ADD sections with 'Header' and 'Other' types
+For Chinese:
+	Get tags TAGS['technical-field'] and TAGS['background-art']
+	ADD as sections with types 'Techincal_Field' and 'Background_Art'
+
+7. add claims
+Get TAGS['claims']
+ADD ClaimSection instances
+
+8. add section gaps
+self.sections.extend(section_gaps(self.sections, text))
+
+9. sort sections
+Using the start index:
+	self.sections.sort(key= lambda x: x.start_index)
+
+10. remove duplicate section
+Sometimes paragraphs or headers are added twice, for example when a paragraph is both
+inside the summary and the description.
+
+11. link sections
+link_sections(self.sections)
+
+12. connect sections
+connect(self.sections)
+
+13 add types
+For all headers in self.sections
+    section_types = normheader.header_to_types(header.text)
+    header_title = header.text
+    parents = sorted([ss.start_index for ss in section.subsumers])
+    get all following sections up to the end, the claims, or the next header
+    add section_types and header title to these sections
+
+
+>>> NEW

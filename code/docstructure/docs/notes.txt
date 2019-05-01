@@ -1,0 +1,35 @@
+== July 10th, 2012
+
+Created initial repository with John's code as of July 2nd, 2012. Added marc's changes
+along the master branch.
+
+
+== July 8th, 2012
+
+Little write-up of some of the changes made to John's code from July 2nd 2012
+
+Overall:
+- Some minor style changes (see Python styleguide), most notably adding spaces around the
+assignment operator (but not if it is used for keywords) and after commas.
+
+main.py:
+- Fixed convert_files for the case where it takes a file list
+- Moved data-specific code (reading and printing) to sections.py. The deal is that code in
+this file should be mostly oblivious to what the actual data are. The only exception is th
+ecode that determines what section factory to use.
+
+sections.py:
+- General refactoring, using classes for each text type
+
+med_read.py:
+- __repr__() is used to create a string that when evaluated creates a the object, in this case
+use __str__() instead.
+
+
+== Spetember, 2012
+
+Tested how many sections there are in the 500 sample patents for each language:
+
+       US  54720
+       CN  39640
+       DE  17017

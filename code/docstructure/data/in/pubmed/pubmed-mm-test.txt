@@ -1,0 +1,1025 @@
+
+      
+         J Korean Med Sci
+         JKMS
+         
+            Journal of Korean Medical Science
+         
+         1011-8934
+         1598-6357
+         
+            The Korean Academy of Medical Sciences
+         
+      
+      
+         2693577
+         10.3346/jkms.2007.22.1.99
+         17297259
+         
+            
+               Original Article
+            
+         
+         
+            Clinical Efficacy of Human Papillomavirus DNA Detection in Urine from Patients with Various Cervical Lesions
+         
+         
+            
+               
+                  Song
+                  Eun-Seop
+               
+               
+            
+            
+               
+                  Lee
+                  Hun Jae
+               
+               *
+            
+            
+               
+                  Hwang
+                  Tae Sook
+               
+               †
+            
+         
+         Department of Obsterics and Gynecology, Inha University College of Medicine, Incheon, Korea.
+         
+            *Department of Preventive and Social Medicine, Inha University College of Medicine, Incheon, Korea.
+         
+            †Department of Pathology, Konkuk University Hospital, Konkuk University School of Medicine, Seoul, Korea.
+         
+            
+Address for correspondence: Tae Sook Hwang, M.D. Department of Pathology, Konkuk University Hospital, 4-12 Hwayang-dong, Gwangjin-gu, Seoul 143-729, Korea. Tel: +82.2-2030-5641, Fax: +82.2-2030-5629, tshwang@kuh.ac.kr
+            
+         
+         
+            2
+            2007
+         
+         
+            28
+            2
+            2007
+         
+         22
+         1
+         99
+         104
+         
+            
+               03
+               4
+               2006
+            
+            
+               22
+               6
+               2006
+            
+         
+         
+            Copyright © 2007 The Korean Academy of Medical Sciences
+            2007
+            
+               This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/by-nc/3.0) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.
+            
+         
+         
+            A considerable number of adult Korean women avoid a Pap smear due to fear and discomfort of the pelvic examination. A reliable but noninvasive and comfortable screening method would considerably increase the participation rate. To evaluate the clinical efficacy of urine-based human papillomavirus (HPV) detection by oligonucleotide microarray, the results of HPV test from matched cervical swab specimens were compared. HPV DNA was detected in 70 of 100 cervical samples. HPV 16 was the most prevalent type (38/70), followed by types 18, 58, 52, 33, 35, 31, and 51. HPV DNA was identified in 47 of 90 urine samples. HPV 16 was the most prevalent type (30/45), followed by types 18, 52, 35, 51, 58, 33, and 56. The HPV detection rates of the cervical swabs increased in accordance with the severity of the cytologic and histologic diagnosis. The type specific agreement of HPV DNA tests between cervical swabs and urine was good in HPV 16 (kappa index=0.64 [95% CI: 0.50-0.79]), 18, 52, and 58 and fair in HPV 33 and 35. We propose that a urine HPV test is a valuable adjunctive method for a conventional Pap smear and can be used in population screening for cervical cancer in countries where it is difficult to obtain colposcopic specimens for cultural or religious reasons.
+         
+         
+            DNA Probes, HPV
+            Oligonucleotide Microarray
+            Microarray Analysis
+            Cervical Swab
+            Vaginal Smears
+            Urine
+         
+      
+   
+   
+      
+         INTRODUCTION
+         Human papillomaviruses (HPVs) are naturally occurring DNA tumor viruses which induce epithelial cell proliferation during the course of a productive infection, and epidemiologic and laboratory data have clearly established that infection with specific types of human papillomavirus (HPV) appeared to be an essential step in the development of invasive cervical cancer and its precursor lesion, cervical intraepithelial neoplasia (CIN). HPV DNA can be identified in more than 90% of invasive cervical carcinomas (1, 2), and women who are HPV DNA positive but lack cervical lesions are still at greatly increased risk for developing and progression of CIN (3-5). To date, more than 96 HPV types have been identified, of which approximately 30-40 types have been found in female genital tract infections (6, 7).
+         The efficacy of the Pap smear for the screening method of cervical cancer has been criticized due to substantial false negative rates and low participation rates. Approximately 10% of women in the U.S.A. have never had a Pap smear and approximately 30% of women do not have this examination on a regular basis (8, 9) and the participation rate is even worse in Australia (10). According to the recent nationwide survey of Korean Ministry of Health and Welfare, just 58.5% of the Korean women over 30 yr old had Pap Smear during last two years (11). This rate is far lower than that of Western countries including the U.S.A. where 84.4% of the women over 18 yr had a Pap smear during last 3 yr (12). A Pap smear requires a pelvic examination, which is invasive and uncomfortable for the patient as well as time-consuming for the health care provider (13). In fact, 8.2% of Korean women in their 4th decade chose fear and discomfort of the pelvic examination as the first reason for not having a Pap smear (11).
+         HPV DNA test is now accepted as a useful adjunctive method that increases the sensitivity of the conventional cervical cytology. Since most of HPV DNA tests use cervical swab samples obtained by cytobrush as a DNA source, patients must overcome the discomfort and the emotional stress of the colposcopic examination. Therefore, a reliable screening method which is noninvasive and comfortable would increase the participation rate. Perhaps the use of urine sample for the detection of HPV could provide a preliminary screening for a cervical cancer and thus circumvent the need for an annual Pap smear for women who are negative for HPV DNA. Alternatively, detection of HPV DNA in urine can function as a secondary screening technique for cervical cancer in triage for women with atypical squamous cells of undetermined significance (ASC-US). It has been previously reported that women with cytological abnormalities are likely to have detectable HPV DNA in urine as in cervical swab samples (14-16). There has been only one preliminary report which evauated the efficacy of urine HPV dectection in Korea (17).
+         We have previously reported that HPV detection and typing by HPV oligonucleotide microarray is a highly comparable method to the previously used PCR-RFLP method (18). We performed the present study to evaluate the clinical efficacy of the urine-based HPV DNA detection by HPV oligonucleotide microarray by comparing the results from matched cervical swab specimens.
+      
+      
+         MATERIALS AND METHODS
+         The samples were collected consecutively from 181 Korean women who visited the Department of Obstetrics and Gynecology, Inha University Hospital, Incheon, Korea from January to December 2003. Among those, 100 patients who had adequately analysed cervical swabs for HPV DNA (beta-globin positive) and a biopsy proven histological diagnosis were selected for this study. Twenty three chronic cervicitis patients, 48 patients with CIN, and 29 patients with invasive cervical carcinomas, including 3 adenocarcinomas, were analysed.
+         
+            Cell collection from patients
+            The cervical swab samples were collected by scraping the uterine cervical canal with a small cytobrush after a Pap smear, and the brush was put into a 15 mL centrifuge tube containing 7 mL of phosphate buffered saline. Urine samples were collected two weeks after the cervical scraping was performed. After cleaning the external genital area twice with alcohol swab, the first voided 30 to 50 mL of urine was collected. Specimens were collected as part of an informed consent protocol approved by the clinical studies committee of Inha University Hospital.
+         
+         
+            DNA extraction from cervical swabs and urine samples
+            DNA was extracted using Wizard genomic DNA purification kit (Promega, Madison, WI, U.S.A.). After vortexing the 15 mL centrifuge tube to dissociate cells from a cytobrush and centrifugation at 1,200 rpm and 4℃ for 3 min, DNA was isolated from cells by detergent lysis buffer and protease digestion. RNA was removed by digestion with ribonuclease and DNA was concentrated by ethanol precipitation. A 15 mL urine sample was centrifuged at 2,000 rpm and 4℃ for 5-10 min. After discarding the supernatant, DNA was isolated as above.
+         
+         
+            HPV detection and typing by oligonucleotide microarray (HPV DNA Chip)
+            HPV detection and genotyping was performed using an HPV DNA Chip, a PCR-based DNA microarray system (Biomedlab Co., Seoul, Korea). The HPV DNA Chip contains 22 type specific probes; 15 high-risk groups (16/18/31/33/35/39/45/51/52/56/58/59/66/68/69) and 7 low-risk groups (6/11/34/40/42/43/44). The samples were prepared according to the manufacturer's instructions. The target HPV DNA was amplified by PCR using primers (HPV and beta-globin) supplied by the manufacturers. Amplified DNA was labeled by Cy5-dUTP (NEN®Life Science Products, Inc., Boston, MA, U.S.A.). The PCR product was mixed with a hybridization solution made up of 6× SSPE (saline-sodium phosphate-EDTA buffer, Sigma, St. Louis, MO, U.S.A.) and 0.2% SDS, and then hybridized on to the chip at 40℃ for 2 hr and washed with 3× SSPE and 1× SSPE for 2 min each. Hybridized HPV DNA was visualized using a DNA Chip Scanner (GSI Lumonics®, Scanarray lite, Ottawa, Canada). An image of a HPV oligonucleotide microarray is illustrated in Fig. 1.
+         
+         
+            Statistical analysis
+            Ninety cases showing positive beta-globin bands in both cervical and urine samples after PCR were analysed for the agreement study. The rate of concordance for HPV detection is a measure of whether both cervical and urine samples contained any HPV type or whether no HPV was present in the paired samples. The agreement of the result between HPV detection in cervical swab and urine was evaluated using kappa index which was defined by a chance corrected proportional agreement rate. Kappa was meant to be adopted to improve the simpler measure, a percent of agreement, because it discounts the proportion of agreement which is expected by chance alone (Pe
+               ). Instead of the total proportion of observations on which there is agreement (Po
+               ) being compared as a ratio with its maximum value (100 percent), the attributable proportion (Po-Pe
+               ), the fraction of observations for which agreement can be attributed to the reproducibility of the observations rather than to mere chance, is compared as a ratio with its maximum possible value (1-Pe
+               ). Thus,
+            
+               
+            
+            It has maximum of 1.00 when agreement is perfect, a value of zero indicates no agreement better than chance, and negative values show worse than chance agreement, which is unlikely (19).
+         
+      
+      
+         RESULTS
+         
+            Patient characteristics
+            The patients' age ranged from 26 to 77 yr, with a mean of 45.2 yr. Mean±SD of parity was 2.0±0.89. Ninty five patients have been married for 16 to 43 yr with a mean of 23.9 yr.
+         
+         
+            HPV prevalence in cervical swabs and urine samples
+            DNA was present in all samples extracted from cervical cytobrush swabs and in 90 (90.0%) of 100 samples extracted from urine. HPV DNA was detected in 70 (70.0%) of 100 cervical samples; 4 (17.4%) of 23 chronic cervicitis, 40 (83.3%) of 48 CIN, and 26 (89.7%) of 29 carcinoma samples and were all high risk HPVs except for one triple infection. HPV 16 was the most prevalent type (38 of 70 patients, 54.3%), followed by type 18 (n=5, 7.1%), type 58 (n=5, 7.1%), type 52 (n=4, 5.8%), types 33 (n=3, 4.3%), type 35 (n=3, 4.3%), type 31 (n=2, 2.9%), and type 51 (n=2, 2.9%). Multiple HPV infection was identified in 8 (11.4%) of 70 HPV-positive patients. HPV DNA was identified in 47 (52.2%) of 90 urine samples; 3 (13.0%) of 23 chronic cervicitis, 27 (62.8%) of 43 CIN, and 17 (70.8%) of 24 carcinoma patients and were all high-risk HPVs except for one triple infection. HPV 16 was the most prevalent type (30 of 45 patients; 63.8%), followed by type 18 (n=3, 6.4%), type 52 (n=3, 6.4%), type 35 (n=2, 4.3%), type 51 (n=2, 4.3%), type 58 (n=2, 4.3%), type 33 (n=1, 2.1%), type 56 (n=1, 2.1%). Multiple infection was identified in 3 (6.4%) of 47 HPV-positive patients (Table 1). The cytologic diagnosis of 100 cases was normal in 24 cases, ASC-US in 2 cases, atypical squamous cells cannot exclude HSIL in 4 cases, SIL in 44 cases (low-grade squamous intraepithelial lesion in 2 cases and high-grade squamous intraepithelial lesion in 42 cases), and carcinoma in 26 cases (squamous cell carcinoma [SCC] in 25 cases and adenocarcinoma in 1 case). Among 70 cervical HPV positive cases, 5 cases (20.8%) of 24 normal group were HPV positive, 1 of 2 ASC-US cases, 4 of 4 ASC-H cases, 36 of 44 SIL cases and 24 of 26 carcinoma cases. Histologically, 2 ASC-US cases exhibited a chronic cervicitis and a CIN I. Four ASC-H cases were CIN III. The HPV DNA detection rate of the cervical swab samples increased in accordance with the severity of the cytologic and histologic diagnosis, and was higher than the rate of urine samples in both CIN and carcinoma patients (Table 1, 2). The concordance rate for HPV detection between cervical swabs and urine was 69.3%. The type specific agreement of the HPV DNA test between cervical swabs and urine was good in HPV 16, 18, 52, and 58 and fair in HPV 33 and 35 (Table 3).
+         
+      
+      
+         DISCUSSION
+         Cervical cancer is the fifth most common cancer in Korean women (20). However, a substantial proportion of Korean women do not visit a gynecology clinic unless they experience a specific problem. This phenomenon may also be present in most of Asian and Arabic countries, where women are reluctant to have pelvic examinations for cultural or religious reasons. There is an increasing population of unmarried women who had sexual experiences in these countries. Those women would be more reluctant to visit gynecology clinic to get a routine Pap smear. In fact, more than 40% of Korean women over age 30 yr do not have a Pap smear on a regular base (11). Strategies for preventing cervical cancer in countries similar to Korea must overcome the barriers of poor rates of participation in screening programs and an inadequate medical infrastructure. Therefore, a screening of cervical cancer bypassing an invasive colposcopic examination would provide a greatly increased chance of participation in these countries compared to the Western countries.
+         Even though HPV DNA test is now accepted as a useful adjunctive method to the conventional cervical cytology, HPV DNA test using cervical swab samples still requires colposcopic examination. Urine HPV test would identify a majority of women with CIN even though substantial proportion of the women without CIN would also be positive for high risk HPVs. On the other hand, a negative urine HPV assay for high risk HPVs would strongly indicate normal cervical cytology (15). HPV assays of urine samples have an advantage in sample collection. The sample collection is done by a method that is noninvasive and is readily accepted in clinical practice. Several studies have explored the use of self-collected material for HPV DNA testing with various methods (14-17, 21). The other advantage is a simultaneous detection of other common sexually transmitted diseases that affect the cervix, such as Chlamydia trachomatis and Neisseria gonorrhoeae infections (22). These reports support our proposition that a urine HPV test may be used as an adjunct to conventional Pap smear or replace the Pap smear for the mass population screening of Korean cervical cancer in the future.
+         In the present study, the overall detection rate of HPV in adequate urine sample was 52.2% and increased to 62.8% in CIN and 70.8% in carcinoma. This result was similar to that of Stanczuk et al. (23) showing 72% urine HPV DNA positivity in cervical cancer patients and higher than that of Brinkman et al. (24) showing overall 48% urine HPV DNA detection rate. The findings of higher detection rate in the cervix are consistent with the concept that HPV in urine largely represents passive carryover of HPV-infected cells from the genital tract. The concordance rate of 69.3% for HPV detection in cervical swabs and urine in the present study was almost same as that of Brinkman et al. (24). The type specific agreement of the result between HPV test in cervical swabs and urine was rather in a wide range. HPV 16 which has a relatively large sample size showed a good agreement (kappa index=0.64 [95% CI:0.50-0.79]). However, the positive rate for other types are too low to assess the confidence interval of kappa index (25).
+         The major drawback of urine samples in our study was that it was a poor source of DNA in 10 of 100 cases (10.0%). This was slightly better than that of Stanczuk et al. (23) who were able to detect DNA in 81% of the urine samples. The small amount of HPV DNA in urine samples makes urine HPV testing difficult and sometimes unsuccessful. Others have even reported inhibitory effects of urine on PCR (16). Since the main source of DNA and HPV in urine was attributed to the contamination by desquamated cervical cells, the amount of HPV DNA in the urine may thus be related to the quantity of the epithelial cells as well as viral load. The result of present study showing higher HPV positivity of urine samples in carcinoma patients also supports this idea. The yield of HPV DNA obtained from urine could be improved by collecting larger sample volumes such as 24 hr urine or full first voided urine. Serial tests rather than a single test augment the sensitivity of an assay. Given the simplicity of obtaining urine samples, we could detect transient, prolonged, and persistent HPV infection which carries a risk of malignant transformation. Even though the detection rate of urine samples and the agreement rate of HPV test between cervical swab and urine was not highly satisfactory at this point, this test still have an advantage of detecting cervical cancer or its precursor lesion in population who will not be exposed to a Pap smear. It is also promising that we could improve the yield of HPV DNA of urine and the sensitivity of the HPV detection.
+         A global effort to improve the prevention of cervical cancer by a Pap smear is still worthwhile especially in developing countries. However, given the low accuracy rate (26) and the low participation rate (8-11) of the conventional Pap smear based cancer screening, we would improve the efficacy of cervical cancer screening in Korea by applying a HPV test of self-collected urine specimen as an adjunct to the conventional Pap smear, or even a tool for cervical cancer screening.
+         Urine testing as a substitute for cytologic evaluation appears to have little use when cytologic testing is readily available and acceptable. However, it may be a valuable adjunctive method for a conventional Pap smear or can be used in population screening for cervical cancer where obtaining genital specimens is difficult for cultural or religious reasons. Further research with a larger sample size, and an improved technology for sample collection, DNA retrieval, and the detection system is needed.
+      
+   
+   
+      
+         ACKNOWLEDGEMENTS
+         The authors wish to thank to Yon Il Choi in Department of Pathology, Inha University Hospital for the excellent technical assistance.
+      
+      
+         
+            This paper was supported by Konkuk University in 2006. The authors do not have any conflict of interest with Biomedlas, Co., Seoul, Korea.
+         
+      
+      
+         
+            1
+            
+               
+                  
+                     An
+                     HJ
+                  
+                  
+                     Cho
+                     NH
+                  
+                  
+                     Lee
+                     SY
+                  
+                  
+                     Kim
+                     IH
+                  
+                  
+                     Lee
+                     C
+                  
+                  
+                     Kim
+                     SJ
+                  
+                  
+                     Mun
+                     MS
+                  
+                  
+                     Kim
+                     SH
+                  
+                  
+                     Jeong
+                     JK
+                  
+               
+               Correlation of cervical carcinoma and precancerous lesions with human papillomavirus (HPV) genotypes detected with HPV DNA Chip microarray method
+               Cancer
+               2003
+               97
+               1672
+               1680
+               12655524
+            
+         
+         
+            2
+            
+               
+                  
+                     Munoz
+                     N
+                  
+                  
+                     Bosch
+                     FX
+                  
+                  
+                     de Sanjose
+                     S
+                  
+                  
+                     Herrero
+                     R
+                  
+                  
+                     Castellsague
+                     X
+                  
+                  
+                     Shah
+                     KV
+                  
+                  
+                     Snijders
+                     PJ
+                  
+                  
+                     Meijer
+                     CJ
+                  
+               
+               International Agency for Research on Cancer Multicenter Cervical Cancer Study Group
+               Epidemiologic classification of human papillomavirus types associated with cervical cancer
+               N Engl J Med
+               2003
+               348
+               518
+               527
+               12571259
+            
+         
+         
+            3
+            
+               
+                  
+                     Lee
+                     HP
+                  
+                  
+                     Seo
+                     SS
+                  
+               
+               The application of human papillomavirus testing to cervical cancer screening
+               Yonsei Med J
+               2002
+               43
+               763
+               768
+               12497660
+            
+         
+         
+            4
+            
+               
+                  
+                     Ho
+                     GY
+                  
+                  
+                     Bierman
+                     R
+                  
+                  
+                     Beardsley
+                     L
+                  
+                  
+                     Chang
+                     CJ
+                  
+                  
+                     Burk
+                     RD
+                  
+               
+               Natural history of cervicovaginal papillomavirus infection in young women
+               N Engl J Med
+               1998
+               338
+               423
+               428
+               9459645
+            
+         
+         
+            5
+            
+               
+                  
+                     Rozendaal
+                     L
+                  
+                  
+                     Walboomers
+                     JM
+                  
+                  
+                     van der Linden
+                     JC
+                  
+                  
+                     Voorhorst
+                     FJ
+                  
+                  
+                     Kenemans
+                     P
+                  
+                  
+                     Helmerhorst
+                     TJ
+                  
+                  
+                     van Ballegooijen
+                     M
+                  
+                  
+                     Meijer
+                     CJ
+                  
+               
+               PCR-based high-risk HPV test in cervical cancer screening gives objective risk assessment of women with cytomorphologically normal cervical smears
+               Int J Cancer
+               1996
+               68
+               766
+               769
+               8980181
+            
+         
+         
+            6
+            
+               
+                  
+                     Stanley
+                     MA
+                  
+               
+               Human papillomavirus vaccines
+               Rev Med Virol
+               2006
+               16
+               139
+               149
+               16710836
+            
+         
+         
+            7
+            
+               
+                  
+                     de Villiers
+                     EM
+                  
+               
+               Human pathogenic papillomavirus types: an update
+               Curr Top Microbiol Immunol
+               1994
+               186
+               1
+               12
+               8205835
+            
+         
+         
+            8
+            
+               
+                  
+                     Ackermann
+                     SP
+                  
+                  
+                     Brackbill
+                     RM
+                  
+                  
+                     Bewerse
+                     BA
+                  
+                  
+                     Cheal
+                     NE
+                  
+                  
+                     Sanderson
+                     LM
+                  
+               
+               Cancer screening behaviors among U.S. women: breast cancer, 1987-1989, and cervical cancer, 1988-1989
+               MMWR CDC Surveill Summ
+               1992
+               41
+               17
+               25
+               1594013
+            
+         
+         
+            9
+            
+               
+                  
+                     Anderson
+                     LM
+                  
+                  
+                     May
+                     DS
+                  
+               
+               Has the use of cervical, breast, and colorectal cancer screening increased in the United States?
+               Am J Public Health
+               1995
+               85
+               840
+               842
+               7762721
+            
+         
+         
+            10
+            
+               
+                  
+                     Breeze
+                     C
+                  
+                  
+                     de Costa
+                     CM
+                  
+                  
+                     Jagusch
+                     M
+                  
+               
+               Do women in rural and remote areas need different guidelines for management of low-grade abnormalities found on cervical screening?
+               Med J Aust
+               2006
+               184
+               307
+               308
+               16548840
+            
+         
+         
+            11
+            
+               KMOHW (Korean Ministry of Health and Welfare)
+               A study on the expansion of national cancer screening programme
+               2004
+            
+         
+         
+            12
+            
+               
+                  
+                     Coughlin
+                     SS
+                  
+                  
+                     Uhler
+                     RJ
+                  
+                  
+                     Hall
+                     HI
+                  
+                  
+                     Briss
+                     PA
+                  
+               
+               Nonadherence to breast and cervical cancer screening: what are the linkages to chronic disease risk?
+               Prev Chronic Dis
+               2004
+               1
+               1
+               15
+            
+         
+         
+            13
+            
+               
+                  
+                     Reddy
+                     DM
+                  
+                  
+                     Wasserman
+                     SA
+                  
+               
+               Patient anxiety during gynecologic examinations. Behavioral indicators
+               J Reprod Med
+               1997
+               42
+               631
+               636
+               9350018
+            
+         
+         
+            14
+            
+               
+                  
+                     Prusty
+                     BK
+                  
+                  
+                     Kumar
+                     A
+                  
+                  
+                     Arora
+                     R
+                  
+                  
+                     Batra
+                     S
+                  
+                  
+                     Das
+                     BC
+                  
+               
+               Human papillomavirus (HPV) DNA detection in self-collected urine
+               Int J Gynaecol Obstet
+               2005
+               90
+               223
+               227
+               16043176
+            
+         
+         
+            15
+            
+               
+                  
+                     Jacobson
+                     DL
+                  
+                  
+                     Womack
+                     SD
+                  
+                  
+                     Peralta
+                     L
+                  
+                  
+                     Zenilman
+                     JM
+                  
+                  
+                     Feroli
+                     K
+                  
+                  
+                     Maehr
+                     J
+                  
+                  
+                     Daniel
+                     RW
+                  
+                  
+                     Shah
+                     KV
+                  
+               
+               Concordance of human papillomavirus in the cervix and urine among inner city adolescents
+               Pediatr Infect Dis J
+               2000
+               19
+               722
+               728
+               10959740
+            
+         
+         
+            16
+            
+               
+                  
+                     Vossler
+                     JL
+                  
+                  
+                     Forbes
+                     BA
+                  
+                  
+                     Adelson
+                     MD
+                  
+               
+               Evaluation of the polymerase chain reaction for the detection of human papillomavirus from urine
+               J Med Virol
+               1995
+               45
+               354
+               360
+               7775961
+            
+         
+         
+            17
+            
+               
+                  
+                     Song
+                     ES
+                  
+                  
+                     Koh
+                     SH
+                  
+                  
+                     Song
+                     YS
+                  
+                  
+                     Kim
+                     SR
+                  
+                  
+                     Hwang
+                     SO
+                  
+                  
+                     Park
+                     JH
+                  
+                  
+                     Koh
+                     SK
+                  
+                  
+                     Im
+                     MW
+                  
+                  
+                     Lee
+                     BI
+                  
+                  
+                     Lee
+                     WY
+                  
+               
+               The report of the results of HPV oligonucleotide microarray tested on the first voided urine of patients of CIN and cervix cancer
+               Korean J Obstet gynecol
+               2003
+               46
+               2139
+               2145
+            
+         
+         
+            18
+            
+               
+                  
+                     Hwang
+                     TS
+                  
+                  
+                     Jeong
+                     JK
+                  
+                  
+                     Park
+                     M
+                  
+                  
+                     Han
+                     HS
+                  
+                  
+                     Choi
+                     HK
+                  
+                  
+                     Park
+                     TS
+                  
+               
+               Detection and typing of HPV genotypes in various cervical lesions by HPV oligonucleotide microarray
+               Gynecol Oncol
+               2003
+               90
+               51
+               56
+               12821341
+            
+         
+         
+            19
+            
+               
+                  
+                     Maclure
+                     M
+                  
+                  
+                     Willett
+                     WC
+                  
+               
+               Misinterpretation and misuse of the kappa statistic
+               Am J Epidemiol
+               1987
+               126
+               161
+               169
+               3300279
+            
+         
+         
+            20
+            
+               KMOHW (Korean Ministry of Health and Welfare)
+               Overview of Cancer Control Programs in Korea
+               2004
+            
+         
+         
+            21
+            
+               
+                  
+                     Wright
+                     TC
+                     Jr
+                  
+                  
+                     Denny
+                     L
+                  
+                  
+                     Kuhn
+                     L
+                  
+                  
+                     Pollack
+                     A
+                  
+                  
+                     Lorincz
+                     A
+                  
+               
+               HPV DNA testing of self-collected vaginal samples compared with cytologic screening to detect cervical cancer
+               JAMA
+               2000
+               283
+               81
+               86
+               10632284
+            
+         
+         
+            22
+            
+               
+                  
+                     Crotchfelt
+                     KA
+                  
+                  
+                     Welsh
+                     LE
+                  
+                  
+                     DeBonville
+                     D
+                  
+                  
+                     Rosenstraus
+                     M
+                  
+                  
+                     Quinn
+                     TC
+                  
+               
+               Detection of Neisseria gonorrhoeae and Chlamydia trachomatis in genitourinary specimens from men and women by a coamplification PCR assay
+               J Clin Microbiol
+               1997
+               35
+               1536
+               1540
+               9163477
+            
+         
+         
+            23
+            
+               
+                  
+                     Stanczuk
+                     GA
+                  
+                  
+                     Kay
+                     P
+                  
+                  
+                     Allan
+                     B
+                  
+                  
+                     Chirara
+                     M
+                  
+                  
+                     Tswana
+                     SA
+                  
+                  
+                     Bergstrom
+                     S
+                  
+                  
+                     Sibanda
+                     EN
+                  
+                  
+                     Williamson
+                     AL
+                  
+               
+               Detection of human papillomavirus in urine and cervical swabs from patients with invasive cervical cancer
+               J Med Virol
+               2003
+               71
+               110
+               114
+               12858416
+            
+         
+         
+            24
+            
+               
+                  
+                     Brinkman
+                     JA
+                  
+                  
+                     Jones
+                     WE
+                  
+                  
+                     Gaffga
+                     AM
+                  
+                  
+                     Sanders
+                     JA
+                  
+                  
+                     Chatuvedi
+                     AK
+                  
+                  
+                     Slavinsky
+                     J
+                     III
+                  
+                  
+                     Clayton
+                     JL
+                  
+                  
+                     Dumestre
+                     J
+                  
+                  
+                     Hagensee
+                     ME
+                  
+               
+               Dectection of human papillomavirus DNA in urine specimens from human immunodeficiency virus-positive women
+               J Clin Microbiol
+               2002
+               40
+               3155
+               3161
+               12202546
+            
+         
+         
+            25
+            
+               
+                  
+                     Landis
+                     JR
+                  
+                  
+                     Koch
+                     GG
+                  
+               
+               The measurement of observer agreement for categorical data
+               Biometrics
+               1977
+               33
+               159
+               174
+               843571
+            
+         
+         
+            26
+            
+               
+                  
+                     Fahey
+                     MT
+                  
+                  
+                     Irwig
+                     L
+                  
+                  
+                     Macaskill
+                     P
+                  
+               
+               Meta-analysis of Pap test accuracy
+               Am J Epidemiol
+               1995
+               141
+               680
+               689
+               7702044
+            
+         
+      
+   
+   
+      
+         Fig. 1
+         
+            Patterns of HPV typing by HPV oligonucleotide microarray. Each slide contains a pair of oligonucleotide probes of the 22 HPV genotypes. Image from a single HPV 16 infection (A), single HPV 18 infection (B), double HPV 16, 33 infection (C), and triple HPV 44, 59, 68 infection (D). A probe for beta-globin (BG) was used as an internal control.
+         
+         
+      
+      
+         Table 1
+         
+            Detection of HPV subtypes by oligonucleotide microarray in cervical swabs and urines from patients with various cervical lesions
+         
+         
+      
+      
+         Table 2
+         
+            The comparison of cytologic and histologic diagnosis and HPVs distribution
+         
+         
+         
+            
+               ASC-US, atypical squamous cells of undetermined significance; ASC-H, atypical squamous cells cannot exclude HSIL; SIL. squamous intraepithelial lesion; LSIL, low-grade squamous intraepithelial lesion; HSIL, high grade squamous intraepithelial lesion; SCC, squamous cell carcinoma; AC, adenocarcinoma.
+            
+         
+      
+      
+         Table 3
+         
+            The type specific agreement of HPV test between cervical swabs and urines by oligonucleotide microarray
+         
+         
+      
+   

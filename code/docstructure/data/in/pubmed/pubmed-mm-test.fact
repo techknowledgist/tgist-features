@@ -1,0 +1,148 @@
+DOCUMENT COLLECTION="PUBMED"
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_ack_0" TITLE="Acknowledgements" START=20154 END=20330
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section6" TITLE="RESULTS" START=11597 END=14263
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section5" TITLE="Statistical analysis" START=10175 END=11583
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section4" TITLE="HPV detection and typing by oligonucleotide microarray (HPV DNA Chip)" START=9056 END=10165
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section8" TITLE="HPV prevalence in cervical swabs and urine samples" START=11869 END=14256
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section7" TITLE="Patient characteristics" START=11624 END=11859
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section2" TITLE="Cell collection from patients" START=7799 END=8420
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section0" TITLE="INTRODUCTION" START=3853 END=7214
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section3" TITLE="DNA extraction from cervical swabs and urine samples" START=8430 END=9046
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section9" TITLE="DISCUSSION" START=14270 END=20139
+DOC_SEGMENT ID="http://bae.ait.com/fuse/FuseOntology#Document111_section1" TITLE="MATERIALS AND METHODS" START=7221 END=11590
+STRUCTURE TYPE="TEXT" START=6842 END=7207
+STRUCTURE TYPE="TITLE" START=23849 END=23922
+STRUCTURE TYPE="TEXT" START=7854 END=8410
+STRUCTURE TYPE="TITLE" START=8443 END=8495
+STRUCTURE TYPE="TITLE" START=28575 END=28675
+STRUCTURE TYPE="EMPHASIS" START=39672 END=39673
+STRUCTURE TYPE="TEXT" START=14300 END=15346
+STRUCTURE TYPE="TITLE" START=33539 END=33638
+STRUCTURE TYPE="TEXT" START=11945 END=14246
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation2" TITLE="The application of human papillomavirus testing to cervical cancer screening" YEAR="2002" START=4540 END=4541
+STRUCTURE TYPE="TITLE" START=27629 END=27760
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation9" TITLE="Do women in rural and remote areas need different guidelines for management of low-grade abnormalities found on cervical screening?" YEAR="2006" START=5075 END=5077
+STRUCTURE TYPE="EMPHASIS" START=39639 END=39640
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation5" TITLE="Human papillomavirus vaccines" YEAR="2006" START=4566 END=4567
+STRUCTURE TYPE="TITLE" START=20164 END=20180
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation23" TITLE="Dectection of human papillomavirus DNA in urine specimens from human immunodeficiency virus-positive women" YEAR="2002" START=16843 END=16845
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation1" TITLE="Epidemiologic classification of human papillomavirus types associated with cervical cancer" YEAR="2003" START=4400 END=4401
+STRUCTURE TYPE="TITLE" START=22591 END=22681
+AUTHOR FNAME="Tae Sook" LNAME="Hwang" ORGID="http://bae.ait.com/fuse/FuseOntology#Document111_OrgInfoA3"
+STRUCTURE TYPE="TEXT" START=15356 END=16526
+STRUCTURE TYPE="TITLE" START=407 END=515
+STRUCTURE TYPE="EMPHASIS" START=11307 END=11308
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation14" TITLE="Concordance of human papillomavirus in the cervix and urine among inner city adolescents" YEAR="2000" START=15824 END=15826
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation23" TITLE="Dectection of human papillomavirus DNA in urine specimens from human immunodeficiency virus-positive women" YEAR="2002" START=17223 END=17225
+STRUCTURE TYPE="TEXT" START=40054 END=40128
+STRUCTURE TYPE="TITLE" START=38628 END=38686
+STRUCTURE TYPE="TEXT" START=11345 END=11374
+STRUCTURE TYPE="EMPHASIS" START=10876 END=10877
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation19" TITLE="Overview of Cancer Control Programs in Korea" YEAR="2004" START=14365 END=14367
+STRUCTURE TYPE="TEXT" START=4703 END=5712
+STRUCTURE TYPE="TEXT_CHUNK" START=11869 END=14256
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation10" TITLE="A study on the expansion of national cancer screening programme" YEAR="2004" START=19346 END=19348
+STRUCTURE TYPE="TEXT" START=2355 END=3631
+STRUCTURE TYPE="TEXT_CHUNK" START=11624 END=11859
+STRUCTURE TYPE="TITLE" START=29817 END=29881
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation15" TITLE="Evaluation of the polymerase chain reaction for the detection of human papillomavirus from urine" YEAR="1995" START=17972 END=17974
+STRUCTURE TYPE="TITLE" START=11882 END=11932
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation6" TITLE="Human pathogenic papillomavirus types: an update" YEAR="1994" START=4690 END=4691
+STRUCTURE TYPE="TITLE" START=10188 END=10208
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation16" TITLE="The report of the results of HPV oligonucleotide microarray tested on the first voided urine of patients of CIN and cervix cancer" YEAR="2003" START=6828 END=6830
+STRUCTURE TYPE="TEXT" START=11673 END=11849
+STRUCTURE TYPE="EMPHASIS" START=11089 END=11107
+STRUCTURE TYPE="ABSTRACT" START=2342 END=3641
+STRUCTURE TYPE="EMPHASIS" START=11087 END=11088
+STRUCTURE TYPE="TITLE" START=35016 END=35125
+STRUCTURE TYPE="TEXT_CHUNK" START=3846 END=20143
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation7" TITLE="Cancer screening behaviors among U.S. women: breast cancer, 1987-1989, and cervical cancer, 1988-1989" YEAR="1992" START=19344 END=19345
+ORG ID="http://bae.ait.com/fuse/FuseOntology#Document111_OrgInfoA3" NAME="Konkuk University Hospital" SUBSIDIARY="Konkuk University School of Medicine"
+STRUCTURE TYPE="EMPHASIS" START=16276 END=16297
+STRUCTURE TYPE="TITLE" START=7812 END=7841
+STRUCTURE TYPE="FOOTNOTE" START=20347 END=20508
+STRUCTURE TYPE="TEXT_CHUNK" START=20154 END=20330
+STRUCTURE TYPE="TITLE" START=26497 END=26598
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation11" TITLE="Nonadherence to breast and cervical cancer screening: what are the linkages to chronic disease risk?" YEAR="2004" START=5397 END=5399
+STRUCTURE TYPE="TEXT" START=11387 END=11573
+STRUCTURE TYPE="EMPHASIS" START=10973 END=10991
+STRUCTURE TYPE="EMPHASIS" START=39610 END=39611
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation21" TITLE="Detection of Neisseria gonorrhoeae and Chlamydia trachomatis in genitourinary specimens from men and women by a coamplification PCR assay" YEAR="1997" START=16310 END=16312
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation4" TITLE="PCR-based high-risk HPV test in cervical cancer screening gives objective risk assessment of women with cytomorphologically normal cervical smears" YEAR="1996" START=4542 END=4543
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation20" TITLE="HPV DNA testing of self-collected vaginal samples compared with cytologic screening to detect cervical cancer" YEAR="2000" START=16119 END=16121
+STRUCTURE TYPE="TITLE" START=36914 END=37019
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation22" TITLE="Detection of human papillomavirus in urine and cervical swabs from patients with invasive cervical cancer" YEAR="2003" START=17742 END=17744
+STRUCTURE TYPE="TEXT" START=17573 END=19128
+STRUCTURE TYPE="TITLE" START=11637 END=11660
+STRUCTURE TYPE="TEXT" START=20190 END=20323
+STRUCTURE TYPE="TEXT" START=19628 END=20132
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation18" TITLE="Misinterpretation and misuse of the kappa statistic" YEAR="1987" START=11569 END=11571
+STRUCTURE TYPE="FOOTNOTE" START=40171 END=40500
+STRUCTURE TYPE="TITLE" START=7231 END=7252
+STRUCTURE TYPE="TITLE" START=39188 END=39222
+AUTHOR FNAME="Eun-Seop" LNAME="Song" ORGID="http://bae.ait.com/fuse/FuseOntology#Document111_OrgInfoA1"
+STRUCTURE TYPE="TEXT" START=20360 END=20498
+STRUCTURE TYPE="TITLE" START=9069 END=9138
+STRUCTURE TYPE="TITLE" START=25382 END=25411
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation13" TITLE="Human papillomavirus (HPV) DNA detection in self-collected urine" YEAR="2005" START=6715 END=6717
+STRUCTURE TYPE="TEXT_CHUNK" START=9056 END=10165
+STRUCTURE TYPE="TEXT" START=16536 END=17563
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation24" TITLE="The measurement of observer agreement for categorical data" YEAR="1977" START=17559 END=17561
+STRUCTURE TYPE="TEXT" START=40187 END=40487
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation25" TITLE="Meta-analysis of Pap test accuracy" YEAR="1995" START=19308 END=19310
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation8" TITLE="Has the use of cervical, breast, and colorectal cancer screening increased in the United States?" YEAR="1995" START=5017 END=5018
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation16" TITLE="The report of the results of HPV oligonucleotide microarray tested on the first voided urine of patients of CIN and cervix cancer" YEAR="2003" START=16115 END=16117
+STRUCTURE TYPE="TEXT" START=19138 END=19618
+STRUCTURE TYPE="TEXT_CHUNK" START=11597 END=14263
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation12" TITLE="Patient anxiety during gynecologic examinations. Behavioral indicators" YEAR="1997" START=5553 END=5555
+STRUCTURE TYPE="TEXT" START=9151 END=10155
+STRUCTURE TYPE="TEXT" START=7262 END=7789
+STRUCTURE TYPE="EMPHASIS" START=10875 END=10893
+STRUCTURE TYPE="TITLE" START=27020 END=27116
+STRUCTURE TYPE="TITLE" START=23092 END=23168
+STRUCTURE TYPE="TEXT_CHUNK" START=7221 END=11590
+STRUCTURE TYPE="TITLE" START=3863 END=3875
+STRUCTURE TYPE="EMPHASIS" START=11086 END=11107
+STRUCTURE TYPE="EMPHASIS" START=11090 END=11091
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation22" TITLE="Detection of human papillomavirus in urine and cervical swabs from patients with invasive cervical cancer" YEAR="2003" START=16733 END=16735
+STRUCTURE TYPE="TITLE" START=29070 END=29140
+STRUCTURE TYPE="TEXT" START=8508 END=9036
+STRUCTURE TYPE="TITLE" START=24910 END=25056
+STRUCTURE TYPE="TEXT_CHUNK" START=10175 END=11583
+STRUCTURE TYPE="TITLE" START=32656 END=32785
+STRUCTURE TYPE="EMPHASIS" START=39713 END=39714
+STRUCTURE TYPE="TEXT" START=3885 END=4693
+STRUCTURE TYPE="TEXT" START=5722 END=6832
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation10" TITLE="A study on the expansion of national cancer screening programme" YEAR="2004" START=5708 END=5710
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation0" TITLE="Correlation of cervical carcinoma and precancerous lesions with human papillomavirus (HPV) genotypes detected with HPV DNA Chip microarray method" YEAR="2003" START=4397 END=4398
+STRUCTURE TYPE="FIGURE" START=39397 END=39805
+STRUCTURE TYPE="TITLE" START=30846 END=30934
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation7" TITLE="Cancer screening behaviors among U.S. women: breast cancer, 1987-1989, and cervical cancer, 1988-1989" YEAR="1992" START=5014 END=5015
+ORG ID="http://bae.ait.com/fuse/FuseOntology#Document111_OrgInfoA2" NAME="Inha University College of Medicine" SUBSIDIARY="Department of Preventive and Social Medicine"
+STRUCTURE TYPE="TITLE" START=11607 END=11614
+STRUCTURE TYPE="TITLE" START=25743 END=25791
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation17" TITLE="Detection and typing of HPV genotypes in various cervical lesions by HPV oligonucleotide microarray" YEAR="2003" START=7004 END=7006
+STRUCTURE TYPE="TITLE" START=34055 END=34106
+STRUCTURE TYPE="TITLE" START=38101 END=38207
+STRUCTURE TYPE="TITLE" START=14280 END=14290
+STRUCTURE TYPE="TEXT" START=40564 END=40667
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation3" TITLE="Natural history of cervicovaginal papillomavirus infection in young women" YEAR="1998"
+STRUCTURE TYPE="TEXT_CHUNK" START=8430 END=9046
+STRUCTURE TYPE="EMPHASIS" START=10974 END=10975
+STRUCTURE TYPE="TEXT_CHUNK" START=7799 END=8420
+STRUCTURE TYPE="EMPHASIS" START=16250 END=16271
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation10" TITLE="A study on the expansion of national cancer screening programme" YEAR="2004" START=5247 END=5249
+AUTHOR FNAME="Hun Jae" LNAME="Lee" ORGID="http://bae.ait.com/fuse/FuseOntology#Document111_OrgInfoA2"
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation13" TITLE="Human papillomavirus (HPV) DNA detection in self-collected urine" YEAR="2005" START=16112 END=16114
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation15" TITLE="Evaluation of the polymerase chain reaction for the detection of human papillomavirus from urine" YEAR="1995" START=6718 END=6720
+PAPER TITLE="Clinical Efficacy of Human Papillomavirus DNA Detection in Urine from Patients with Various Cervical Lesions" ID="http://bae.ait.com/fuse/FuseOntology#Document111" YEAR=2007
+CITATION ID="http://bae.ait.com/fuse/FuseOntology#Document111_citation10" TITLE="A study on the expansion of national cancer screening programme" YEAR="2004" START=14948 END=14950
+STRUCTURE TYPE="TITLE" START=35812 END=35949
+STRUCTURE TYPE="TEXT" START=39852 END=39980
+ORG ID="http://bae.ait.com/fuse/FuseOntology#Document111_OrgInfoA1" NAME="Inha University College of Medicine" SUBSIDIARY="Department of Obsterics and Gynecology"
+STRUCTURE TYPE="TEXT_CHUNK" START=14270 END=20139
+STRUCTURE TYPE="TITLE" START=31451 END=31547
+STRUCTURE TYPE="TEXT" START=10221 END=11332
+STRUCTURE TYPE="TITLE" START=21390 END=21535
+STRUCTURE TYPE="TEXT_CHUNK" START=3853 END=7214
+STRUCTURE TYPE="TEXT" START=39436 END=39778
