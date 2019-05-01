@@ -18,6 +18,8 @@ OPTIONS
    --source ln|wos|cnki   data source, default is 'ln'
    --filelist PATH        a file with a list of source files
    --corpus PATH          a directory where the corpus is created
+   --verbose              print more verbose information
+   --overwrite            overwrite existing corpus
 
 You must run this script from the directory it is in.
 
@@ -41,7 +43,7 @@ three columns in a line of the file list could be:
 
 In this case, the source file (second column) will be copied to a local path
 1980/US4192770A.xml inside the corpus. If there is no third column than the path
-of the source file will be copied into the corpus directory in its entirity.
+of the source file will be copied into the corpus directory in its entirety.
 
 The directory tree created inside the test directory is as follows:
 
@@ -82,7 +84,7 @@ ways (using different chunker rules for example). As mentioned above, the
 structure under the files directory is determined by the third column in the
 file list.
 
-There are two options that allow you to specifiy the location of the Stanford
+There are two options that allow you to specify the location of the Stanford
 tagger and segmenter.
 
 --stanford-tagger-dir PATH
@@ -93,11 +95,10 @@ tagger and segmenter.
 """
 
 
-import sys, getopt
+import sys, getopt, shutil
 
 import config
 from corpus import Corpus
-from corpus import XML2TXT, TXT2TAG, TXT2SEG, SEG2TAG, TAG2CHK
 from utils.batch import RuntimeConfig
 
 
@@ -111,29 +112,16 @@ def process_corpus(language, source, filelist, corpus_location, verbose):
                     corpus_path=corpus_location, pipeline_config=pipeline)
     rconfig = RuntimeConfig(corpus_location, language, source, pipeline_file,
                             verbose=verbose)
-    _run_default_pipeline(corpus, rconfig)
-
-
-def _run_default_pipeline(corpus, rconfig):
-    """Run the default pipeline given a runtime configuration."""
-    # TODO: would like to use a run_pipeline() method on Corpus
-    corpus.populate(rconfig)
-    corpus.xml2txt(rconfig, rconfig.get_options(XML2TXT))
-    #exit()
-    if rconfig.language == 'en':
-        corpus.txt2tag(rconfig, rconfig.get_options(TXT2TAG))
-    elif rconfig.language == 'cn':
-        corpus.txt2seg(rconfig, rconfig.get_options(TXT2SEG))
-        corpus.seg2tag(rconfig, rconfig.get_options(SEG2TAG))
-    corpus.tag2chk(rconfig, rconfig.get_options(TAG2CHK))
+    corpus.run_default_pipeline(rconfig)
 
 
 if __name__ == '__main__':
 
-    options = ['language=', 'data=', 'corpus=', 'filelist=', 'verbose',
+    options = ['language=', 'data=', 'corpus=', 'filelist=', 'verbose', 'overwrite',
                'stanford-segmenter-dir=', 'stanford-tagger-dir=']
-    (opts, args) = getopt.getopt(sys.argv[1:], 'l:d:f:c:v', options)
+    (opts, args) = getopt.getopt(sys.argv[1:], 'l:d:f:c:', options)
 
+    opt_overwrite = False
     opt_filelist = None
     opt_corpus = None
     opt_verbose = False
@@ -145,12 +133,15 @@ if __name__ == '__main__':
         if opt in ('-d', '--source'): opt_source = val
         if opt in ('-f', '--filelist'): opt_filelist = val
         if opt in ('-c', '--corpus'): opt_corpus = val
-        if opt in ('-v', '--verbose'): opt_verbose = True
+        if opt == '--verbose': opt_verbose = True
+        if opt == '--overwrite': opt_overwrite = True
         if opt == '--stanford-segmenter-dir': config.update_stanford_segmenter(val)
         if opt == '--stanford-tagger-dir': config.update_stanford_tagger(val)
 
     config.check_stanford_tagger()
     config.check_stanford_segmenter()
+    if opt_overwrite:
+        shutil.rmtree(opt_corpus)
     if opt_filelist is None:
         exit("ERROR: missing -f or --filelist option")
     if opt_corpus is None:

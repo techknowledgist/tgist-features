@@ -54,31 +54,6 @@ def ensure_path(path, verbose=False):
             raise
 
 
-def get_file_specifications(filename, start=0, limit=500):
-    """Return a list with n=limit file specifications from the filelist in
-    filename, starting from line n=start. This function will return less than
-    n=limit files if their were less than n=limit lines left in filename, it
-    will return an empty list if start is larger than the number of lines in
-    the file."""
-    current_count = start
-    fh = open(filename)
-    line_number = 0
-    while line_number < current_count:
-        fh.readline(),
-        line_number += 1
-    lines_read = 0
-    fspecs = []
-    while lines_read < limit:
-        line = fh.readline().strip()
-        if line == '':
-            break
-        fspec = FileSpec(line)
-        fspecs.append(fspec)
-        lines_read += 1
-    fh.close()
-    return fspecs
-
-
 def get_file_paths(source_path):
     """Return a list with all filenames in source_path."""
     file_paths = []
@@ -114,42 +89,3 @@ def uncompress(*fnames):
     for fname in fnames:
         if not os.path.exists(fname):
             subprocess.call(['gunzip', fname + '.gz'])
-
-
-class FileSpec(object):
-
-    """A FileSpec is created from a line from a file that specifies the
-    sources. Such a file has two mandatory columns: year and source_file. These
-    fill the year and source instance variables in the FileSpec. The target
-    instance variable is by default the same as the source, but can be overruled
-    if there is a third column in the file. Example input lines:
-
-       1980    /data/patents/xml/us/1980/12.xml   1980/12.xml
-       1980    /data/patents/xml/us/1980/13.xml   1980/13.xml
-       1980    /data/patents/xml/us/1980/14.xml
-       0000    /data/patents/xml/us/1980/15.xml
-
-    FileSpec can also be created from a line with just one field, in that case
-    the year and source are set to None and the target to the only field. This
-    is typically used for files that simply list filenames for testing or
-    training.
-    """
-
-    def __init__(self, line):
-        fields = line.strip().split("\t")
-        if len(fields) > 1:
-            self.year = fields[0]
-            self.source = fields[1]
-            self.target = fields[2] if len(fields) > 2 else fields[1]
-        else:
-            self.year = None
-            self.source = None
-            self.target = fields[0]
-        self._strip_slashes()
-
-    def __str__(self):
-        return "<%s %s %s>" % (self.year, self.source, self.target)
-
-    def _strip_slashes(self):
-        if self.target.startswith(os.sep):
-            self.target = self.target[1:]

@@ -29,46 +29,12 @@ def debug(debug_string):
         print debug_string
 
 
-def get_segmenter():
-    return sdp.Segmenter()
-
-
-# Previous version of segmenter, keep around for now, but may be obsolete
-
-def seg(infile, outfile, segmenter):
-    s_input = codecs.open(infile, encoding='utf-8')
-    s_output = codecs.open(outfile, "w", encoding='utf-8')
-    for line in s_input:
-        line = re.sub(r'^\s*$', '', line)
-        line = ''.join([c for c in line if ord(c) != 12288])
-        debug("[tag]Processing line: %s\n" % line)
-        if line != "":
-            if is_omitable(line):
-                s_output.write(line)
-            else:
-                # this is a hack needed because the segmenter has a normalization error
-                # for non-breaking spaces, replace them here with regular spaces.
-                line = line.replace(unichr(160), ' ')
-                l_seg_string = segmenter.seg(line)
-                if l_seg_string != '':
-                    s_output.write("%s" % l_seg_string)
-    s_input.close()        
-    s_output.close()
-
-    
-def is_omitable(s):
-    """Do not segment anything over 500 characters or with ascii-8 only."""
-    if len(s) > 500:
-        return True
-    return all(ord(c) < 256 for c in s)
-
-
 # New version of segmenter, does some sentence splitting
 
-class SegmenterWrapper(object):
+class Segmenter(object):
 
-    def __init__(self, segmenter=None):
-        self.segmenter = sdp.Segmenter() if segmenter is None else segmenter
+    def __init__(self):
+        self.segmenter = sdp.Segmenter()
         self.s_input = None
         self.s_output = None
         self.lines = []
@@ -181,15 +147,44 @@ def split_cn(text):
     return return_string
 
 
+def seg(infile, outfile, segmenter):
+    # Previous version of segmenter, keep around for now, but may be obsolete
+    s_input = codecs.open(infile, encoding='utf-8')
+    s_output = codecs.open(outfile, "w", encoding='utf-8')
+    for line in s_input:
+        line = re.sub(r'^\s*$', '', line)
+        line = ''.join([c for c in line if ord(c) != 12288])
+        debug("[tag]Processing line: %s\n" % line)
+        if line != "":
+            if is_omitable(line):
+                s_output.write(line)
+            else:
+                # this is a hack needed because the segmenter has a normalization error
+                # for non-breaking spaces, replace them here with regular spaces.
+                line = line.replace(unichr(160), ' ')
+                l_seg_string = segmenter.seg(line)
+                if l_seg_string != '':
+                    s_output.write("%s" % l_seg_string)
+    s_input.close()
+    s_output.close()
+
+
+def is_omitable(s):
+    """Do not segment anything over 500 characters or with ascii-8 only."""
+    if len(s) > 500:
+        return True
+    return all(ord(c) < 256 for c in s)
+
+
 if __name__ == '__main__':
 
     files_in = sys.argv[1:]
-    segmenter = get_segmenter()
-    swrapper = SegmenterWrapper(segmenter)
+    sdp_segmenter = sdp.Segmenter()
+    swrapper = Segmenter()
     use_old = False
     for file_in in files_in:
         file_out = file_in + '.seg'
         if use_old:
-            seg(file_in, file_out, segmenter)
+            seg(file_in, file_out, sdp_segmenter)
         else:
             swrapper.process(file_in, file_out, verbose=True)

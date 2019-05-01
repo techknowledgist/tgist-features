@@ -36,7 +36,7 @@ import config
 
 from docstructure.main import Parser
 from utils.path import ensure_path, get_file_paths, read_only, open_input_file
-from utils.path import get_file_specifications, compress, uncompress
+from utils.path import compress, uncompress
 from utils.git import get_git_commit
 from utils.batch import DataSet
 
@@ -205,6 +205,19 @@ class Corpus(object):
     def tag2chk(rconfig, options):
         run_tag2chk(rconfig, options)
 
+    @staticmethod
+    def run_default_pipeline(rconfig):
+        """Runs the default pipeline, but does it without even bothering to open
+        the pipeline file in the configuration."""
+        run_populate(rconfig)
+        run_xml2txt(rconfig, rconfig.get_options(XML2TXT))
+        if rconfig.language == 'en':
+            run_txt2tag(rconfig, rconfig.get_options(TXT2TAG))
+        elif rconfig.language == 'cn':
+            run_txt2seg(rconfig, rconfig.get_options(TXT2SEG))
+            run_seg2tag(rconfig, rconfig.get_options(SEG2TAG))
+        run_tag2chk(rconfig, rconfig.get_options(TAG2CHK))
+
 
 def update_state(fun):
     """To be used as a decorator around functions that run one of the processing steps."""
@@ -226,7 +239,7 @@ def run_populate(rconfig):
 
     output_name = DOCUMENT_PROCESSING_IO[POPULATE]['out']
     dataset = DataSet(POPULATE, output_name, rconfig)
-    fspecs = get_file_specifications(rconfig.filelist, dataset.files_processed, rconfig.limit)
+    fspecs = FileSpecificationList(rconfig.filelist, dataset.files_processed, rconfig.limit)
     print "[--populate] adding %d files to %s" % (len(fspecs), dataset)
     count = 0
     for fspec in fspecs:
@@ -259,7 +272,7 @@ def run_xml2txt(rconfig, options):
     count = 0
     doc_parser = _make_parser(rconfig.language)
     workspace = os.path.join(rconfig.corpus, 'data', 'workspace')
-    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
+    fspecs = FileSpecificationList(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
         file_in, file_out = _prepare_io(XML2TXT, fspec, input_dataset, output_dataset, rconfig, count)
@@ -282,17 +295,14 @@ def run_txt2tag(rconfig, options):
 
     input_dataset, output_dataset = _get_datasets(TXT2TAG, rconfig)
     count = 0
-    tagger = txt2tag.get_tagger(rconfig.language)
-    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
+    tagger = txt2tag.Tagger(rconfig.language)
+    fspecs = FileSpecificationList(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
         file_in, file_out = _prepare_io(TXT2TAG, fspec, input_dataset, output_dataset, rconfig, count)
         uncompress(file_in)
-        txt2tag.tag(file_in, file_out, tagger)
-        # this will become relevant for cn only when we have a segmenter/tagger
-        # that uses only one step
-        if rconfig.language == 'en':
-            compress(file_in, file_out)
+        tagger.tag(file_in, file_out)
+        compress(file_in, file_out)
         _update_state_files_processed(output_dataset, count)
     return count % STEP, [output_dataset]
 
@@ -303,14 +313,13 @@ def run_txt2seg(rconfig, options):
 
     input_dataset, output_dataset = _get_datasets(TXT2SEG, rconfig)
     count = 0
-    segmenter = cn_txt2seg.get_segmenter()
-    swrapper = cn_txt2seg.SegmenterWrapper(segmenter)
-    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
+    segmenter = cn_txt2seg.Segmenter()
+    fspecs = FileSpecificationList(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
         file_in, file_out = _prepare_io(TXT2SEG, fspec, input_dataset, output_dataset, rconfig, count)
         uncompress(file_in)
-        swrapper.process(file_in, file_out)
+        segmenter.process(file_in, file_out)
         compress(file_in, file_out)
         _update_state_files_processed(output_dataset, count)
     return count % STEP, [output_dataset]
@@ -322,16 +331,15 @@ def run_seg2tag(rconfig, options):
 
     input_dataset, output_dataset = _get_datasets(SEG2TAG, rconfig)
     count = 0
-    tagger = txt2tag.get_tagger(rconfig.language)
-    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
+    tagger = cn_seg2tag.Tagger()
+    fspecs = FileSpecificationList(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
         file_in, file_out = _prepare_io(SEG2TAG, fspec, input_dataset, output_dataset, rconfig, count)
         uncompress(file_in)
-        cn_seg2tag.tag(file_in, file_out, tagger)
+        tagger.tag(file_in, file_out)
         compress(file_in, file_out)
         _update_state_files_processed(output_dataset, count)
-    _print_empty_line(rconfig.verbose)
     return count % STEP, [output_dataset]
 
 
@@ -347,7 +355,7 @@ def run_tag2chk(rconfig, options):
     input_dataset, output_dataset = _get_datasets(TAG2CHK, rconfig)
     print "[--tag2chk] using '%s' chunker rules" % chunker_rules
     count = 0
-    fspecs = get_file_specifications(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
+    fspecs = FileSpecificationList(rconfig.filelist, output_dataset.files_processed, rconfig.limit)
     for fspec in fspecs:
         count += 1
         file_in, file_out = _prepare_io(TAG2CHK, fspec, input_dataset, output_dataset, rconfig, count)
@@ -512,3 +520,78 @@ def _copy_file(src_file, dst_file):
     except IOError:
         print "%sWARNING: source file does not exist, not copying" % ' ' * 18
         print "%s%s" % src_file % ' ' * 18
+
+
+class FileSpecificationList(object):
+
+    """Maintains a list of FileSpecifications for a corpus, initialized from the
+    list of files in the configuration of the Corpus. This picks out a subset of
+    the files listed by using the index of the first file requested and a total
+    number. The default file list is in config/files.txt."""
+
+    def __init__(self, filename, start=0, limit=500):
+        """Populate a list with n=limit file specifications from the filelist in
+        filename, starting from line n=start. This function will return less than
+        n=limit files if their were less than n=limit lines left in filename, it
+        will return an empty list if start is larger than the number of lines in
+        the file."""
+        self.data = []
+        current_count = start
+        fh = open(filename)
+        line_number = 0
+        while line_number < current_count:
+            fh.readline(),
+            line_number += 1
+        lines_read = 0
+        while lines_read < limit:
+            line = fh.readline().strip()
+            if line == '':
+                break
+            self.data.append(FileSpecification(line))
+            lines_read += 1
+        fh.close()
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, item):
+        return self.data[item]
+
+
+class FileSpecification(object):
+
+    """A FileSpecification is created from a line from a file that specifies the
+    sources. Such a file has two mandatory columns: year and source_file. These
+    fill the year and source instance variables in the FileSpec. The target
+    instance variable is by default the same as the source, but can be overruled
+    if there is a third column in the file. Example input lines:
+
+       1980    /data/patents/xml/us/1980/12.xml   1980/12.xml
+       1980    /data/patents/xml/us/1980/13.xml   1980/13.xml
+       1980    /data/patents/xml/us/1980/14.xml
+       0000    /data/patents/xml/us/1980/15.xml
+
+    FileSpec can also be created from a line with just one field, in that case
+    the year and source are set to None and the target to the only field. This
+    is typically used for files that simply list filenames for testing or
+    training.
+    """
+
+    def __init__(self, line):
+        fields = line.strip().split("\t")
+        if len(fields) > 1:
+            self.year = fields[0]
+            self.source = fields[1]
+            self.target = fields[2] if len(fields) > 2 else fields[1]
+        else:
+            self.year = None
+            self.source = None
+            self.target = fields[0]
+        self._strip_slashes()
+
+    def __str__(self):
+        return "<%s %s %s>" % (self.year, self.source, self.target)
+
+    def _strip_slashes(self):
+        if self.target.startswith(os.sep):
+            self.target = self.target[1:]

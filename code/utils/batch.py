@@ -77,6 +77,8 @@ class RuntimeConfig(object):
     the language, the source directory or file list, pipeline configuration settings
     and others."""
 
+    # TODO: there is overlap here with the Corpus class, maybe merge
+
     def __init__(self, corpus_path, language, datasource, pipeline_config_file,
                  verbose=False, limit=None):
         self.corpus = corpus_path

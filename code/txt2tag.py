@@ -9,32 +9,36 @@ Files are formatted as follows:
 
 A line can consist of multiple sentences, which will be split by the tagger
 
-Last line must be 'END:'
-
 """
 
 import codecs
 import sdp
 
-debug_p = False
+DEBUG = False
 
-
-# TODO: create a Tagger class that uses the language to initialize and then has the tag method
-# TODO: check how that works with the Chinese tagger
 
 def get_tagger(language):
     """Get the tagger appropriate for the language. Stanford tagger options are listed at
     http://ufallab.ms.mff.cuni.cz/tectomt/share/data/models/tagger/stanford/README-Models.txt)
     """
     if language == "en":
-        return sdp.STagger("english-caseless-left3words-distsim.tagger")
+        return sdp.Tagger("english-caseless-left3words-distsim.tagger")
     elif language == "cn":
-        return sdp.STagger("chinese.tagger")
+        return sdp.Tagger("chinese.tagger")
     else:
         exit("There is no tagger for language=%s" % language)
 
 
-def tag(input_file, output_file, tagger):
+class Tagger(object):
+
+    def __init__(self, language):
+        self.tagger = get_tagger(language)
+
+    def tag(self, input_file, output_file):
+        _tag(input_file, output_file, self.tagger)
+
+
+def _tag(input_file, output_file, tagger):
     s_input = codecs.open(input_file, encoding='utf-8')
     s_output = open(output_file, "w")
     line_no = 0
@@ -57,11 +61,6 @@ def tag(input_file, output_file, tagger):
     s_output.close()
 
 
-def _debug(text):
-    if debug_p:
-        print text
-
-
 def _skip_line(line):
     """Very long lines typically contain non-textual garbage like gene sequences,
      skip them because some of them break the tagger.
@@ -76,7 +75,7 @@ def _fix_line(line):
     line = line.strip("\n\r\f")
     # This is a hack to make the tagger work, but it loses information
     # TODO: could replace "~" with "&tilde;" or find the real solution
-    line = line.replace('~','')
+    line = line.replace('~', '')
     # backspace characters break the sdp tagger code
     line = line.replace(unichr(8), '')
     return line
@@ -92,3 +91,8 @@ def _tag_line(line, line_no, tagger, s_output):
             s_output.write("%s\n" % tag_string)
     except Exception:
         print "WARNING: tagger error for line %d, skipping" % line_no
+
+
+def _debug(text):
+    if DEBUG:
+        print text

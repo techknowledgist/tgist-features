@@ -6,15 +6,24 @@
 # field headers of the form    FH_<name>:
 # each followed by one or more lines of text (without any empty lines)
 # A line can consist of multiple sentences, which will be split by the tagger
-# Last line must be     END:
 
 import codecs
 import re
+import sdp
 
 debug_p = False
 
 # pattern to match a parenthesis and its tag (e.g. )_NN )
 paren_tag = re.compile('([()])_[^\s]*')
+
+
+class Tagger(object):
+
+    def __init__(self):
+        self.tagger = sdp.Tagger("chinese.tagger")
+
+    def tag(self, file_in, file_out):
+        tag(file_in, file_out, self.tagger)
 
 
 # replace all parenthesis tags in a tagger output line with the tag <paren>_PU
