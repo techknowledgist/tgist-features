@@ -10,7 +10,7 @@ First clone the repository and copy the configuration file:
 
 ```sh
 $ git clone https://github.com/techknowledgist/tgist-features
-$ cd tgist-features
+$ cd tgist-features/code
 $ cp config-sample.py config.py
 ```
 

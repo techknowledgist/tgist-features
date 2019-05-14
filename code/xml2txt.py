@@ -1,7 +1,7 @@
 # xml2txt
 # module to create a fielded text file from an xml (patent) file
 
-import os, re, codecs, StringIO
+import os, re, codecs, StringIO, json
 from xml.dom.minidom import parse, Node
 
 from docstructure.main import create_fact_file, open_write_file
@@ -78,6 +78,10 @@ def xml2txt(doc_parser, source, source_file, target_file, workspace):
         PatentFile(source_file, target_file).xml2txt()
     elif source == "thyme":
         ThymeFile(source_file, target_file).xml2txt()
+    elif source == 'spv1':
+        SPV1File(source_file, target_file).xml2txt()
+    else:
+        exit("ERROR -- unknown data source: %s" % source)
     os.remove(cleaned_source_file)
 
 
@@ -608,6 +612,37 @@ class ThymeFile(object):
                 continue
             else:
                 fh_out.write(line)
+
+
+class SPV1File(object):
+
+    """Document parser for SPV1 files. SPV1 is the JSON format produced by Science Parse
+    (https://github.com/allenai/science-parse)."""
+
+    def __init__(self, json_file, txt_file):
+        self.fname = json_file
+        self.outfile = txt_file
+
+    def xml2txt(self):
+        out = codecs.open(self.outfile, 'w', encoding='utf8')
+        with open(self.fname) as fh:
+            json_obj = json.loads(fh.read())
+            title = json_obj.get("title")
+            year = json_obj.get("year")
+            abstract = json_obj.get("abstractText")
+            sections = json_obj.get("sections")
+            if title is not None:
+                out.write("FH_TITLE:\n%s\n" % title)
+            if year is not None:
+                out.write("FH_DATE:\n%s\n" % year)
+            if abstract is not None:
+                out.write("FH_ABSTRACT:\n%s\n" % abstract)
+            if sections is not None:
+                out.write("FH_DESCRIPTION:\n")
+                for section in sections:
+                    text = section.get("text")
+                    if text is not None:
+                        out.write(text + "\n")
 
 
 def collect_text(n):
